@@ -17,5 +17,18 @@ namespace e_cosmetics.Data
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Product> Products { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder
+                .Entity<Category>()
+                .HasMany(p => p.Products)
+                .WithOne(c => c.Category)
+                .HasForeignKey(f => f.CategoryId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            base.OnModelCreating(builder);
+        }
     }
+
 }
