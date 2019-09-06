@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using e_cosmetics.Services.Categories.Models;
 
 namespace e_cosmetics.Services.Contracts
@@ -7,7 +8,7 @@ namespace e_cosmetics.Services.Contracts
     {
         IEnumerable<CategoryViewModel> GetAll();
 
-        bool Create(string uniqueFileName, CreateCategoryInputModel model);
+        Task<bool> CreateAsync(string uniqueFileName, CreateCategoryInputModel model);
 
     }
 }

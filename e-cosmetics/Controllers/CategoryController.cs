@@ -30,6 +30,7 @@ namespace e_cosmetics.Controllers
         }
 
         public IActionResult GetAll()
+
         {
             var categories = this._categoryService
                 .GetAll();
@@ -61,6 +62,7 @@ namespace e_cosmetics.Controllers
                 else
                 {
                     var errors = ModelState.Values.SelectMany(v => v.Errors);
+
                 }
 
             }
