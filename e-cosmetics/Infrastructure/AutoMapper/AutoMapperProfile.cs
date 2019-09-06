@@ -9,6 +9,7 @@ namespace e_cosmetics.Infrastructure.AutoMapper
         public AutoMapperProfile()
         {
             CreateMap<Category, CategoryViewModel>().ReverseMap();
+            //CreateMap<Product, CategoryViewModel>().ReverseMap();
         }
     }
 }

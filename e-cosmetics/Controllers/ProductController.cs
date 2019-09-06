@@ -1,42 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using e_cosmetics.Data;
-using e_cosmetics.Services.Categories.Models;
-using e_cosmetics.Services.Contracts;
+using e_cosmetics.Services.Products.Contracts;
+using e_cosmetics.Services.Products.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
 namespace e_cosmetics.Controllers
 {
-    public class CategoryController : Controller
+    public class ProductController : Controller
     {
-        private readonly ICategoryService _categoryService;
         private readonly IHostingEnvironment _appEnvironment;
-        private readonly ApplicationDbContext _dbContext;
+        private readonly IProductService _productService;
 
-        public CategoryController(ICategoryService categoryService,
-            IHostingEnvironment appEnvironment,
-            ApplicationDbContext dbContext)
+        public ProductController(IHostingEnvironment appEnvironment)
         {
-            this._categoryService = categoryService;
             this._appEnvironment = appEnvironment;
-            this._dbContext = dbContext;
         }
 
         public IActionResult Index()
         {
             return View();
-        }
-
-        public IActionResult GetAll()
-
-        {
-            var categories = this._categoryService
-                .GetAll();
-
-            return View(categories);
         }
 
         [HttpGet]
@@ -46,7 +32,7 @@ namespace e_cosmetics.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(CreateCategoryInputModel model)
+        public IActionResult Create(CreateProductInputModel model)
         {
             if (ModelState.IsValid)
             {
@@ -55,7 +41,7 @@ namespace e_cosmetics.Controllers
                 {
                     uniqueFileName = SavePictureInImageFolder(uniqueFileName, model);
 
-                    var result = this._categoryService
+                    var result = this._productService
                         .CreateAsync(uniqueFileName, model);
 
                     return RedirectToAction();
@@ -76,7 +62,7 @@ namespace e_cosmetics.Controllers
 
         }
 
-        private string SavePictureInImageFolder(string uniqueFileName, CreateCategoryInputModel model)
+        public string SavePictureInImageFolder(string uniqueFileName, CreateProductInputModel model)
         {
             string uploadsFolder = Path.Combine(_appEnvironment.WebRootPath, "img");
             uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Picture.FileName;

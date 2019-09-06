@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using e_cosmetics.Infrastructure.AutoMapper;
 using e_cosmetics.Services.Contracts;
 using e_cosmetics.Services.Categories.Implementation;
+using e_cosmetics.Services.Products.Contracts;
+using e_cosmetics.Services.Products.Implementation;
 
 namespace e_cosmetics
 {
@@ -41,6 +43,7 @@ namespace e_cosmetics
             services.AddSingleton(mapper);
 
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(

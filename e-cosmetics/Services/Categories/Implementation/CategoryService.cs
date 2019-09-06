@@ -13,8 +13,8 @@ namespace e_cosmetics.Services.Categories.Implementation
 {
     public class CategoryService : ICategoryService
     {
-        private readonly ApplicationDbContext _dbContext;
         private readonly IHostingEnvironment _appEnvironment;
+        private readonly ApplicationDbContext _dbContext;
         private readonly IMapper _mapper;
 
         public CategoryService(ApplicationDbContext dbContext, IMapper mapper,
@@ -32,7 +32,7 @@ namespace e_cosmetics.Services.Categories.Implementation
             {
                 Name = model.Name,
                 Description = model.Description,
-                PicturePath = uniqueFileName
+                PictureName = uniqueFileName
             };
 
             this._dbContext.Categories.Add(category);

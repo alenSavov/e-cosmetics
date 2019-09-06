@@ -15,7 +15,7 @@ namespace e_cosmetics.Models
 
         public string Description { get; set; }
 
-        public string PicturePath { get; set; }
+        public string PictureName { get; set; }
 
         public ICollection<Product> Products { get; set; }
     }
