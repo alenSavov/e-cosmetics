@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using e_cosmetics.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using e_cosmetics.Infrastructure.AutoMapper;
+using e_cosmetics.Services.Contracts;
+using e_cosmetics.Services.Categories.Implementation;
 
 namespace e_cosmetics
 {
@@ -34,6 +32,15 @@ namespace e_cosmetics
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+            var config = new AutoMapper.MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new AutoMapperProfile());
+            });
+            var mapper = config.CreateMapper();
+            services.AddSingleton(mapper);
+
+            services.AddScoped<ICategoryService, CategoryService>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(

@@ -30,3 +30,5 @@ C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcore
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\e-cosmetics.dll
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\e-cosmetics.pdb
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\e-cosmetics.csproj.CopyComplete
+C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\Razor\Views\Category\GetAll.g.cshtml.cs
+C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\Razor\Views\Category\Create.g.cshtml.cs
