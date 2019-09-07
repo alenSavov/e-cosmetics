@@ -31,6 +31,14 @@ namespace e_cosmetics.Controllers
             return View();
         }
 
+        public IActionResult GetAll()
+        {
+            var products = this._productService
+                .GetAll();
+
+            return this.View(products);
+        }
+
         [HttpGet]
         public IActionResult Create()
         {

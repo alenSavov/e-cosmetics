@@ -7,6 +7,7 @@ namespace e_cosmetics
 {
     public class GlobalConstants
     {
+        public const string imageFolderName = "img";
         public const string imageFolderPath = "../../img/";
 
     }

@@ -9,5 +9,7 @@ namespace e_cosmetics.Services.Products.Contracts
     public interface IProductService
     {
         Task<bool> CreateAsync(string uniqueFileName, CreateProductInputModel model);
+
+        IEnumerable<ProductViewModel> GetAll();
     }
 }

@@ -50,7 +50,7 @@ namespace e_cosmetics.Services.Categories.Implementation
             var categoriesView = _mapper
                 .Map<List<CategoryViewModel>>(categories);
 
-            string uploadsFolder = Path.Combine(_appEnvironment.WebRootPath, "img");
+            string uploadsFolder = Path.Combine(_appEnvironment.WebRootPath, GlobalConstants.imageFolderName);
 
             foreach (var category in categoriesView)
             {

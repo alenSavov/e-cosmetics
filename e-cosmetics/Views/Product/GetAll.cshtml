@@ -1,0 +1,15 @@
+﻿@model IEnumerable<e_cosmetics.Services.Products.Models.ProductViewModel>
+
+@{
+    ViewData["Title"] = "All";
+}
+
+<div>
+
+    @foreach (var product in Model)
+    {
+        <p>@product.Name</p>
+        <p>@product.Description</p>
+
+        <img src="@product.PictureName" width="800" height="400" />}
+</div>
