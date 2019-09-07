@@ -54,8 +54,8 @@ namespace e_cosmetics.Services.Categories.Implementation
 
             foreach (var category in categoriesView)
             {
-                string filePath = Path.Combine(uploadsFolder, category.PicturePath);
-                category.PicturePath = $"{GlobalConstants.imageFolderPath}{category.PicturePath}";
+                string filePath = Path.Combine(uploadsFolder, category.PictureName);
+                category.PictureName = $"{GlobalConstants.imageFolderPath}{category.PictureName}";
             }
 
             return categoriesView;

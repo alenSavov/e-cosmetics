@@ -1,9 +1,4 @@
-﻿using e_cosmetics.Models;
-using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
 
 namespace e_cosmetics.Services.Products.Models
 {
@@ -15,8 +10,8 @@ namespace e_cosmetics.Services.Products.Models
 
         public string Description { get; set; }
 
-        public string CategoryName { get; set; }
-        public IEnumerable<Category> Categories { get; set; }
+        public int CategoryId { get; set; }
+        //public IEnumerable<Category> Categories { get; set; }
 
         public IFormFile Picture { get; set; }
     }

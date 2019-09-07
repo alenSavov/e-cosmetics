@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using e_cosmetics.Services.Contracts;
 using e_cosmetics.Services.Products.Contracts;
 using e_cosmetics.Services.Products.Models;
 using Microsoft.AspNetCore.Hosting;
@@ -14,10 +15,15 @@ namespace e_cosmetics.Controllers
     {
         private readonly IHostingEnvironment _appEnvironment;
         private readonly IProductService _productService;
+        private readonly ICategoryService _categoryService;
 
-        public ProductController(IHostingEnvironment appEnvironment)
+        public ProductController(IHostingEnvironment appEnvironment,
+                                 IProductService productService,
+                                 ICategoryService categoryService)
         {
             this._appEnvironment = appEnvironment;
+            this._productService = productService;
+            this._categoryService = categoryService;
         }
 
         public IActionResult Index()
@@ -28,7 +34,12 @@ namespace e_cosmetics.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            var categoryList = this._categoryService
+                .GetAll();
+
+            ViewBag.ListOfCategories = categoryList;
+
+            return this.View();
         }
 
         [HttpPost]

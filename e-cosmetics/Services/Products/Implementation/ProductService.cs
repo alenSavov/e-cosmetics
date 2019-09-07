@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using e_cosmetics.Data;
+using e_cosmetics.Models;
 using e_cosmetics.Services.Contracts;
 using e_cosmetics.Services.Products.Contracts;
 using e_cosmetics.Services.Products.Models;
@@ -27,9 +28,20 @@ namespace e_cosmetics.Services.Products.Implementation
             this._mapper = mapper;
         }
 
-        public Task<bool> CreateAsync(string uniqueFileName, CreateProductInputModel model)
+        public async Task<bool> CreateAsync(string uniqueFileName, CreateProductInputModel model)
         {
-            throw new NotImplementedException();
+            Product product = new Product
+            {
+                Name = model.Name,
+                Description = model.Description,
+                PictureName = uniqueFileName,
+                CategoryId = model.CategoryId
+            };
+
+            this._dbContext.Products.Add(product);
+            await this._dbContext.SaveChangesAsync();
+
+            return true;
         }
     }
 }

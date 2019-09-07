@@ -1,7 +1,43 @@
-﻿
+﻿@model e_cosmetics.Services.Products.Models.CreateProductInputModel
+@using e_cosmetics.Services.Contracts
+
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Product";
 }
 
-<h1>Create</h1>
+<h2 class="text-center p-3">Create Course</h2>
+<hr />
+
+<div class="container-fluid  ">
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-area="Administration" asp-controller="Product" asp-action="CreateProduct" class="contact-form" enctype="multipart/form-data">
+                <div asp-validation-summary="All" class="text-danger "></div>
+
+                <label asp-for="Name" class="control-label font-weight-bold"></label>
+                <input asp-for="Name" class="font-weight-bold form-control">
+                <span asp-validation-for="Name" class="text-danger"></span>
+
+                <div class="">
+                    <label asp-for="Description" class="control-label font-weight-bold"></label>
+                    <textarea asp-for="Description" class="font-weight-bold form-control"></textarea>
+                    <span asp-validation-for="Description" class="text-danger "></span>
+                </div>
+                <div>
+                    <label asp-for="CategoryId" class="control-label font-weight-bold"></label>
+                    <select asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.ListOfCategories,"Id","Name"))" class="form-control"></select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Picture" class="control-label btn btn-warning">Upload Picture </label>
+                    <input asp-for="Picture" hidden accept=".gif,.png,.jpg,.jpeg" />
+                    <span asp-validation-for="Picture" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success">Create Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
