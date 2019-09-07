@@ -46,7 +46,7 @@ namespace e_cosmetics.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(CreateCategoryInputModel model)
+        public async Task<IActionResult> Create(CreateCategoryInputModel model)
         {
             if (ModelState.IsValid)
             {
@@ -55,7 +55,7 @@ namespace e_cosmetics.Controllers
                 {
                     uniqueFileName = SavePictureInImageFolder(uniqueFileName, model);
 
-                    var result = this._categoryService
+                    var result = await this._categoryService
                         .CreateAsync(uniqueFileName, model);
 
                     return RedirectToAction();

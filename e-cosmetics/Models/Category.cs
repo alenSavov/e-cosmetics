@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace e_cosmetics.Models
 {
@@ -6,10 +7,11 @@ namespace e_cosmetics.Models
     {
         public Category()
         {
+            this.Id = Guid.NewGuid().ToString();
             this.Products = new List<Product>();
         }
 
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public string Name { get; set; }
 

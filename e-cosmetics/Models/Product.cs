@@ -7,7 +7,12 @@ namespace e_cosmetics.Models
 {
     public class Product
     {
-        public int Id { get; set; }
+        public Product()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
+
+        public string Id { get; set; }
 
         public string Name { get; set; }
 
@@ -15,7 +20,7 @@ namespace e_cosmetics.Models
 
         public string PictureName { get; set; }
 
-        public int CategoryId { get; set; }
+        public string CategoryId { get; set; }
 
         public Category Category { get; set; }
     }

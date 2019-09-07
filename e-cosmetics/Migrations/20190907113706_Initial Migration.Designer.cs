@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using e_cosmetics.Data;
 
-namespace e_cosmetics.Data.Migrations
+namespace e_cosmetics.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190906191408_Changed PicturePath to PictureName")]
-    partial class ChangedPicturePathtoPictureName
+    [Migration("20190907113706_Initial Migration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -188,9 +188,8 @@ namespace e_cosmetics.Data.Migrations
 
             modelBuilder.Entity("e_cosmetics.Models.Category", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Description");
 
@@ -205,17 +204,16 @@ namespace e_cosmetics.Data.Migrations
 
             modelBuilder.Entity("e_cosmetics.Models.Product", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<int>("CategoryId");
+                    b.Property<string>("CategoryId");
 
                     b.Property<string>("Description");
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("PicturePath");
+                    b.Property<string>("PictureName");
 
                     b.HasKey("Id");
 

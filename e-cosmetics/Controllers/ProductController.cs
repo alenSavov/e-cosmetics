@@ -43,7 +43,7 @@ namespace e_cosmetics.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(CreateProductInputModel model)
+        public async Task<IActionResult> Create(CreateProductInputModel model)
         {
             if (ModelState.IsValid)
             {
@@ -52,7 +52,7 @@ namespace e_cosmetics.Controllers
                 {
                     uniqueFileName = SavePictureInImageFolder(uniqueFileName, model);
 
-                    var result = this._productService
+                    var result = await this._productService
                         .CreateAsync(uniqueFileName, model);
 
                     return RedirectToAction();
