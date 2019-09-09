@@ -10,7 +10,7 @@ namespace e_cosmetics.Services.Contracts
 
         Task<bool> CreateAsync(string uniqueFileName, CreateCategoryInputModel model);
 
-        void Delete(string id);
+        Task<bool> DeleteAsync(string id);
 
     }
 }

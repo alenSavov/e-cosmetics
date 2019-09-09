@@ -76,16 +76,21 @@ namespace e_cosmetics.Controllers
 
         }
 
-        public IActionResult Delete(string id)
+        public async Task<IActionResult> Delete(string id)
         {
+            if (id == null)
+            {
+                return View();
+            }
+
             //if (id == null)
             //{
             //    TempData[GlobalConstants.TempDataErrorMessageKey] = GlobalConstants.InvalidId;
             //    return Redirect("/");
             //}
 
-            this._categoryService
-                .Delete(id);
+          var success = await this._categoryService
+                .DeleteAsync(id);
 
             return RedirectToAction("GetAll");
         }
