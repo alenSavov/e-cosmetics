@@ -62,6 +62,15 @@ namespace e_cosmetics.Services.Categories.Implementation
 
         }
 
+        public void Delete(string id)
+        {
+            var category = this._dbContext.Categories
+                .FirstOrDefault(c => c.Id == id);
+
+            this._dbContext.Categories.Remove(category);
+            this._dbContext.SaveChanges();
+        }
+
 
     }
 }

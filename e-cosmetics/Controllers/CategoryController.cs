@@ -76,6 +76,20 @@ namespace e_cosmetics.Controllers
 
         }
 
+        public IActionResult Delete(string id)
+        {
+            //if (id == null)
+            //{
+            //    TempData[GlobalConstants.TempDataErrorMessageKey] = GlobalConstants.InvalidId;
+            //    return Redirect("/");
+            //}
+
+            this._categoryService
+                .Delete(id);
+
+            return RedirectToAction("GetAll");
+        }
+
         private string SavePictureInImageFolder(string uniqueFileName, CreateCategoryInputModel model)
         {
             string uploadsFolder = Path.Combine(_appEnvironment.WebRootPath, "img");
