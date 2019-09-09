@@ -1,8 +1,6 @@
-﻿using e_cosmetics.Services.Products.Models;
-using System;
+﻿using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using e_cosmetics.Services.Products.Models;
 
 namespace e_cosmetics.Services.Products.Contracts
 {
@@ -11,5 +9,7 @@ namespace e_cosmetics.Services.Products.Contracts
         Task<bool> CreateAsync(string uniqueFileName, CreateProductInputModel model);
 
         IEnumerable<ProductViewModel> GetAll();
+
+        Task<bool> DeleteAsync(string id);
     }
 }

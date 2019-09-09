@@ -81,6 +81,21 @@ namespace e_cosmetics.Controllers
 
         }
 
+        public async Task<IActionResult> DeleteAsync(string id)
+        {
+            if (id == null)
+            {
+                return View();
+            }
+                       
+            //TODO Add validations
+
+            var success = await this._productService
+                  .DeleteAsync(id);
+
+            return RedirectToAction("GetAll");
+        }
+
         public string SavePictureInImageFolder(string uniqueFileName, CreateProductInputModel model)
         {
             string uploadsFolder = Path.Combine(_appEnvironment.WebRootPath, "img");

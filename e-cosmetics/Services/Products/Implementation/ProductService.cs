@@ -9,6 +9,7 @@ using e_cosmetics.Services.Contracts;
 using e_cosmetics.Services.Products.Contracts;
 using e_cosmetics.Services.Products.Models;
 using System.Collections;
+using System.Linq;
 
 namespace e_cosmetics.Services.Products.Implementation
 {
@@ -65,6 +66,30 @@ namespace e_cosmetics.Services.Products.Implementation
             }
 
             return productsView;
+        }
+
+        public async Task<bool> DeleteAsync(string id)
+        {
+            var product = this._dbContext.Products
+                .FirstOrDefault(c => c.Id == id);
+
+            if (product == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                this._dbContext.Products.Remove(product);
+                await this._dbContext.SaveChangesAsync();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
     }
 }

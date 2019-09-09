@@ -4,12 +4,14 @@
     ViewData["Title"] = "All";
 }
 
-<div>
+    <div>
 
-    @foreach (var product in Model)
-    {
-        <p>@product.Name</p>
-        <p>@product.Description</p>
+        @foreach (var product in Model)
+        {
+            <p>@product.Name</p>
+            <p>@product.Description</p>
 
-        <img src="@product.PictureName" width="800" height="400" />}
-</div>
+            <img src="@product.PictureName" width="800" height="400" />
+            <a asp-controller="product" asp-action="deleteAsync" asp-route-id="@product.Id">Delete</a>
+        }
+    </div>
