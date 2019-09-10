@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using e_cosmetics.Data;
 using e_cosmetics.Services.Categories.Models;
 using e_cosmetics.Services.Contracts;
+using e_cosmetics.Services.Images.Contracts;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,16 +14,17 @@ namespace e_cosmetics.Controllers
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;
-        private readonly IHostingEnvironment _appEnvironment;
         private readonly ApplicationDbContext _dbContext;
+        private readonly IImageService _imageService;
+
 
         public CategoryController(ICategoryService categoryService,
-            IHostingEnvironment appEnvironment,
-            ApplicationDbContext dbContext)
+            ApplicationDbContext dbContext,
+            IImageService imageService)
         {
             this._categoryService = categoryService;
-            this._appEnvironment = appEnvironment;
             this._dbContext = dbContext;
+            this._imageService = imageService;
         }
 
         public IActionResult Index()
@@ -53,8 +55,8 @@ namespace e_cosmetics.Controllers
                 string uniqueFileName = null;
                 if (model.Picture != null)
                 {
-                    uniqueFileName = SavePictureInImageFolder(uniqueFileName, model);
-
+                    uniqueFileName = await this._imageService.SavePictureAsync(uniqueFileName, model.Picture);
+                    
                     var result = await this._categoryService
                         .CreateAsync(uniqueFileName, model);
 
@@ -91,14 +93,30 @@ namespace e_cosmetics.Controllers
             return RedirectToAction("GetAll");
         }
 
-        private string SavePictureInImageFolder(string uniqueFileName, CreateCategoryInputModel model)
-        {
-            string uploadsFolder = Path.Combine(_appEnvironment.WebRootPath, "img");
-            uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Picture.FileName;
-            string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-            model.Picture.CopyTo(new FileStream(filePath, FileMode.Create));
+        //[HttpGet]
+        //public IActionResult Edit(string id)
+        //{
 
-            return uniqueFileName;
-        }
+
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public async Task<IActionResult> EditAsync(string id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return View();
+        //    }
+
+        //    //TODO Add validations
+
+        //    var success = await this._categoryService
+        //        .EditAsync(id);
+
+        //    return RedirectToAction("GetAll");
+        //}
+
+        
     }
 }

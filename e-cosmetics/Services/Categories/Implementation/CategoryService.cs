@@ -79,7 +79,7 @@ namespace e_cosmetics.Services.Categories.Implementation
 
                 return true;
             }
-            catch 
+            catch
             {
 
                 return false;
@@ -87,6 +87,30 @@ namespace e_cosmetics.Services.Categories.Implementation
 
         }
 
+        public async Task<bool> EditAsync(string uniqueFileName, EditCategoryInputModel model)
+        {
+            var category = this._dbContext.Categories
+                .FirstOrDefault(x => x.Id == model.Id);
 
+            if (category == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                category.PictureName = uniqueFileName;
+                category.Name = model.Name;
+                category.Description = model.Description;
+
+                await this._dbContext.SaveChangesAsync();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

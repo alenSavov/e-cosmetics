@@ -4,24 +4,26 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using e_cosmetics.Services.Contracts;
+using e_cosmetics.Services.Images.Contracts;
 using e_cosmetics.Services.Products.Contracts;
 using e_cosmetics.Services.Products.Models;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace e_cosmetics.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly IHostingEnvironment _appEnvironment;
+        private readonly IImageService _imageService;
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
 
-        public ProductController(IHostingEnvironment appEnvironment,
+        public ProductController(IImageService imageService,
                                  IProductService productService,
                                  ICategoryService categoryService)
         {
-            this._appEnvironment = appEnvironment;
+            this._imageService = imageService;
             this._productService = productService;
             this._categoryService = categoryService;
         }
@@ -58,7 +60,7 @@ namespace e_cosmetics.Controllers
                 string uniqueFileName = null;
                 if (model.Picture != null)
                 {
-                    uniqueFileName = SavePictureInImageFolder(uniqueFileName, model);
+                    uniqueFileName = await this._imageService.SavePictureAsync(uniqueFileName, model.Picture);
 
                     var result = await this._productService
                         .CreateAsync(uniqueFileName, model);
@@ -81,29 +83,25 @@ namespace e_cosmetics.Controllers
 
         }
 
-        public async Task<IActionResult> DeleteAsync(string id)
+        [HttpGet]
+        public IActionResult Edit()
         {
-            if (id == null)
-            {
-                return View();
-            }
+            return this.View();
+        }
+
+        //public async Task<IActionResult> DeleteAsync(string id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return View();
+        //    }
                        
-            //TODO Add validations
+        //    //TODO Add validations
 
-            var success = await this._productService
-                  .DeleteAsync(id);
+        //    var success = await this._productService
+        //          .DeleteAsync(id);
 
-            return RedirectToAction("GetAll");
-        }
-
-        public string SavePictureInImageFolder(string uniqueFileName, CreateProductInputModel model)
-        {
-            string uploadsFolder = Path.Combine(_appEnvironment.WebRootPath, "img");
-            uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Picture.FileName;
-            string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-            model.Picture.CopyTo(new FileStream(filePath, FileMode.Create));
-
-            return uniqueFileName;
-        }
+        //    return RedirectToAction("GetAll");
+        //}      
     }
 }
