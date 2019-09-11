@@ -70,7 +70,6 @@ namespace e_cosmetics.Controllers
                 else
                 {
                     var errors = ModelState.Values.SelectMany(v => v.Errors);
-
                 }
 
             }

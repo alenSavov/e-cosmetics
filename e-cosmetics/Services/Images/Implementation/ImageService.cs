@@ -20,9 +20,29 @@ namespace e_cosmetics.Services.Images.Implementation
             string uploadsFolder = Path.Combine(_appEnvironment.WebRootPath, GlobalConstants.imageFolderName);
             uniqueFileName = Guid.NewGuid().ToString() + "_" + picture.FileName;
             string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-            await picture.CopyToAsync(new FileStream(filePath, FileMode.Create));
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await picture.CopyToAsync(stream);
+            }
+
 
             return uniqueFileName;
+        }
+
+        public bool DeletePicture(string uniqueFileName)
+        {
+            string uploadsFolder = Path.Combine(_appEnvironment.WebRootPath, GlobalConstants.imageFolderName);
+            string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+
+                return true;
+            }
+
+            return false;
         }
     }
 }

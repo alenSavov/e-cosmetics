@@ -33,7 +33,6 @@ namespace e_cosmetics.Controllers
         }
 
         public IActionResult GetAll()
-
         {
             var categories = this._categoryService
                 .GetAll();
@@ -56,7 +55,7 @@ namespace e_cosmetics.Controllers
                 if (model.Picture != null)
                 {
                     uniqueFileName = await this._imageService.SavePictureAsync(uniqueFileName, model.Picture);
-                    
+
                     var result = await this._categoryService
                         .CreateAsync(uniqueFileName, model);
 
@@ -78,7 +77,7 @@ namespace e_cosmetics.Controllers
 
         }
 
-        public async Task<IActionResult> DeleteAsync(string id)
+        public IActionResult Delete(string id)
         {
             if (id == null)
             {
@@ -86,9 +85,15 @@ namespace e_cosmetics.Controllers
             }
 
             //TODO Add validations
-            
-            var success = await this._categoryService
+
+            var category = this._categoryService
+                .GetById(id);
+
+
+            var success = this._categoryService
                 .DeleteAsync(id);
+
+            var isDeletePictureSuccess = this._imageService.DeletePicture(category.PictureName);
 
             return RedirectToAction("GetAll");
         }
@@ -117,6 +122,6 @@ namespace e_cosmetics.Controllers
         //    return RedirectToAction("GetAll");
         //}
 
-        
+
     }
 }
