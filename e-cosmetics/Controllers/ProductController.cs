@@ -60,7 +60,7 @@ namespace e_cosmetics.Controllers
                 string uniqueFileName = null;
                 if (model.Picture != null)
                 {
-                    uniqueFileName = await this._imageService.SavePictureAsync(uniqueFileName, model.Picture);
+                     uniqueFileName = await this._imageService.SavePictureAsync(uniqueFileName, model.Picture);
 
                     var result = await this._productService
                         .CreateAsync(uniqueFileName, model);
@@ -88,19 +88,24 @@ namespace e_cosmetics.Controllers
             return this.View();
         }
 
-        //public async Task<IActionResult> DeleteAsync(string id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return View();
-        //    }
-                       
-        //    //TODO Add validations
+        public async Task<IActionResult> DeleteAsync(string id)
+        {
+            if (id == null)
+            {
+                return View();
+            }
 
-        //    var success = await this._productService
-        //          .DeleteAsync(id);
+            var product = this._productService
+              .GetById(id);
 
-        //    return RedirectToAction("GetAll");
-        //}      
+            //TODO Add validations
+
+            var success = await this._productService
+                  .DeleteAsync(id);
+
+            var isDeletePictureSuccess = this._imageService.DeletePicture(product.PictureName);
+
+            return RedirectToAction("GetAll");
+        }
     }
 }

@@ -62,7 +62,7 @@ namespace e_cosmetics.Services.Categories.Implementation
 
         }
 
-        public bool DeleteAsync(string id)
+        public async Task<bool> DeleteAsync(string id)
         {
             var category = this._dbContext.Categories
                 .FirstOrDefault(c => c.Id == id);
@@ -75,7 +75,7 @@ namespace e_cosmetics.Services.Categories.Implementation
             try
             {
                 this._dbContext.Categories.Remove(category);
-                this._dbContext.SaveChanges();
+               await this._dbContext.SaveChangesAsync();
 
                 return true;
             }

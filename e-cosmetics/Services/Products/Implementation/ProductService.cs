@@ -91,5 +91,13 @@ namespace e_cosmetics.Services.Products.Implementation
             }
 
         }
+
+        public Product GetById(string id)
+        {
+            return this._dbContext
+                 .Products
+                 .FirstOrDefault(x => x.Id == id);
+
+        }
     }
 }

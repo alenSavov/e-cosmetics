@@ -77,7 +77,7 @@ namespace e_cosmetics.Controllers
 
         }
 
-        public IActionResult Delete(string id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
             {
@@ -90,7 +90,7 @@ namespace e_cosmetics.Controllers
                 .GetById(id);
 
 
-            var success = this._categoryService
+            var success = await this._categoryService
                 .DeleteAsync(id);
 
             var isDeletePictureSuccess = this._imageService.DeletePicture(category.PictureName);
