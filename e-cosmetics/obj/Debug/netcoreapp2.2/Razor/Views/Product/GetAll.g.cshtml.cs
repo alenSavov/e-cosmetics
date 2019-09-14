@@ -23,8 +23,13 @@ using e_cosmetics.Models;
 
 #line default
 #line hidden
+#line 3 "C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\Views\_ViewImports.cshtml"
+using e_cosmetics.Services.Categories.Models;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e26ca2b668fd70ed6f2f658a7646b37181ddb447", @"/Views/Product/GetAll.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"55dae080c30c99e3cc1672d05f4a66ce6d7fd8c0", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6a5d90e1a77e141cf5cf3ef1e8317ff705a6671b", @"/Views/_ViewImports.cshtml")]
     public class Views_Product_GetAll : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<e_cosmetics.Services.Products.Models.ProductViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "product", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -107,7 +112,7 @@ WriteAttributeValue("", 282, product.PictureName, 282, 20, false);
             WriteLiteral(" width=\"800\" height=\"400\" />\r\n            ");
             EndContext();
             BeginContext(345, 90, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e26ca2b668fd70ed6f2f658a7646b37181ddb4476064", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e26ca2b668fd70ed6f2f658a7646b37181ddb4476242", async() => {
                 BeginContext(425, 6, true);
                 WriteLiteral("Delete");
                 EndContext();
@@ -144,7 +149,7 @@ WriteAttributeValue("", 282, product.PictureName, 282, 20, false);
             WriteLiteral("\r\n            ");
             EndContext();
             BeginContext(449, 81, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e26ca2b668fd70ed6f2f658a7646b37181ddb4478650", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e26ca2b668fd70ed6f2f658a7646b37181ddb4478828", async() => {
                 BeginContext(522, 4, true);
                 WriteLiteral("Edit");
                 EndContext();

@@ -8,6 +8,8 @@
 
         public string Description { get; set; }
 
-        public string PictureName { get; set; }
+        public string ProjectVersionPicture { get; set; }
+
+        public string CategoryPictureUrl { get; set; }
     }
 }

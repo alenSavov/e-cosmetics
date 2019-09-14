@@ -8,6 +8,7 @@ using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using System.Threading.Tasks;
 using System.Linq;
+using e_cosmetics.Services.Interfaces;
 
 namespace e_cosmetics.Services.Categories.Implementation
 {
@@ -16,13 +17,17 @@ namespace e_cosmetics.Services.Categories.Implementation
         private readonly IHostingEnvironment _appEnvironment;
         private readonly ApplicationDbContext _dbContext;
         private readonly IMapper _mapper;
+        private readonly ICloudinaryService _cloudinaryService;
+
 
         public CategoryService(ApplicationDbContext dbContext, IMapper mapper,
-            IHostingEnvironment appEnvironment)
+            IHostingEnvironment appEnvironment,
+            ICloudinaryService cloudinaryService)
         {
             this._dbContext = dbContext;
             this._mapper = mapper;
             this._appEnvironment = appEnvironment;
+            this._cloudinaryService = cloudinaryService;
         }
 
         public async Task<bool> CreateAsync(CreateCategoryInputModel model, string imageUploadResult)
@@ -46,18 +51,11 @@ namespace e_cosmetics.Services.Categories.Implementation
         {
             var categories = this._dbContext
                 .Categories;
-
+                      
             var categoriesView = _mapper
                 .Map<List<CategoryViewModel>>(categories);
 
-            string uploadsFolder = Path.Combine(_appEnvironment.WebRootPath, GlobalConstants.imageFolderName);
-
-            foreach (var category in categoriesView)
-            {
-                //string filePath = Path.Combine(uploadsFolder, category.PictureName);
-                category.PictureName = $"{GlobalConstants.imageFolderPath}{category.PictureName}";
-            }
-
+            
             return categoriesView;
 
         }

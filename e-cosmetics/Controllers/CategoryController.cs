@@ -38,7 +38,17 @@ namespace e_cosmetics.Controllers
             var categories = this._categoryService
                 .GetAll();
 
-            return View(categories);
+            foreach (var category in categories)
+            {
+                category.CategoryPictureUrl = this._cloudinaryService.BuildCategoryPictureUrl(category.Name, category.ProjectVersionPicture);
+            }
+
+            var categoryCollection = new CategoriesCollectionViewModel
+            {
+                Categories = categories
+            };
+
+            return View(categoryCollection);
         }
 
         [HttpGet]

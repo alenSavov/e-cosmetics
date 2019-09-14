@@ -1,4 +1,4 @@
-﻿@model IEnumerable<e_cosmetics.Services.Categories.Models.CategoryViewModel>
+﻿@model CategoriesCollectionViewModel
 
 @{
     ViewData["Title"] = "All";
@@ -6,12 +6,12 @@
 
     <div>
 
-        @foreach (var category in Model)
+        @foreach (var category in Model.Categories)
         {
             <p>@category.Name</p>
             <p>@category.Description</p>
 
-            <img src="@category.PictureName" width="800" height="400" />
+            <img src="@category.CategoryPictureUrl" width="800" height="400" />
             <a asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
             <a asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
         }
