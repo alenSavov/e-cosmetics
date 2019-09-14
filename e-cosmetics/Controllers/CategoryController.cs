@@ -1,15 +1,10 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AutoMapper;
 using e_cosmetics.Data;
 using e_cosmetics.Models;
 using e_cosmetics.Services.Categories.Models;
 using e_cosmetics.Services.Contracts;
-using e_cosmetics.Services.Images.Contracts;
 using e_cosmetics.Services.Interfaces;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
 namespace e_cosmetics.Controllers
@@ -18,20 +13,17 @@ namespace e_cosmetics.Controllers
     {
         private readonly ICategoryService _categoryService;
         private readonly ApplicationDbContext _dbContext;
-        private readonly IImageService _imageService;
         private readonly ICloudinaryService _cloudinaryService;
         private readonly IMapper _mapper;
 
 
         public CategoryController(ICategoryService categoryService,
             ApplicationDbContext dbContext,
-            IImageService imageService,
             IMapper mapper,
             ICloudinaryService cloudinaryService)
         {
             this._categoryService = categoryService;
             this._dbContext = dbContext;
-            this._imageService = imageService;
             this._mapper = mapper;
             this._cloudinaryService = cloudinaryService;
         }
@@ -111,7 +103,6 @@ namespace e_cosmetics.Controllers
             var success = await this._categoryService
                 .DeleteAsync(id);
 
-            var isDeletePictureSuccess = this._imageService.DeletePicture(category.PictureName);
 
             return RedirectToAction("GetAll");
         }

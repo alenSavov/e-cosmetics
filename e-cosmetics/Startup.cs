@@ -13,8 +13,6 @@ using e_cosmetics.Services.Contracts;
 using e_cosmetics.Services.Categories.Implementation;
 using e_cosmetics.Services.Products.Contracts;
 using e_cosmetics.Services.Products.Implementation;
-using e_cosmetics.Services.Images.Contracts;
-using e_cosmetics.Services.Images.Implementation;
 using e_cosmetics.Services.Interfaces;
 using e_cosmetics.Services.Cloudinary.Implementation;
 using e_cosmetics.Models;
@@ -58,7 +56,6 @@ namespace e_cosmetics
             services.AddScoped<ICloudinaryService, CloudinaryService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
-            services.AddScoped<IImageService, ImageService>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
