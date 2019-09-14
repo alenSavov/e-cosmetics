@@ -10,6 +10,10 @@ namespace e_cosmetics.Services.Categories.Models
 
         public string Description { get; set; }
 
+        public string FullPicturePath { get; set; }
+
+        public string PictureName { get; set; }  
+
         public IFormFile Picture { get; set; }
     }
 }

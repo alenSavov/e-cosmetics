@@ -186,14 +186,19 @@ namespace e_cosmetics.Migrations
 
             modelBuilder.Entity("e_cosmetics.Models.Category", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description");
+
+                    b.Property<string>("FullPicturePath");
 
                     b.Property<string>("Name");
 
                     b.Property<string>("PictureName");
+
+                    b.Property<string>("ProjectVersionPicture");
 
                     b.HasKey("Id");
 
@@ -202,10 +207,11 @@ namespace e_cosmetics.Migrations
 
             modelBuilder.Entity("e_cosmetics.Models.Product", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CategoryId");
+                    b.Property<int>("CategoryId");
 
                     b.Property<string>("Description");
 

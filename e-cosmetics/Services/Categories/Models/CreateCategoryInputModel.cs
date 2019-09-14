@@ -11,5 +11,9 @@ namespace e_cosmetics.Services.Categories.Models
         public string Description { get; set; }
 
         public IFormFile Picture { get; set; }
+
+        public string ProjectVersionPicture { get; set; }
+
+        public string ProjectPictureUrl { get; set; }
     }
 }

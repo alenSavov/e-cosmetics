@@ -2,10 +2,13 @@
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using e_cosmetics.Data;
+using e_cosmetics.Models;
 using e_cosmetics.Services.Categories.Models;
 using e_cosmetics.Services.Contracts;
 using e_cosmetics.Services.Images.Contracts;
+using e_cosmetics.Services.Interfaces;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,15 +19,21 @@ namespace e_cosmetics.Controllers
         private readonly ICategoryService _categoryService;
         private readonly ApplicationDbContext _dbContext;
         private readonly IImageService _imageService;
+        private readonly ICloudinaryService _cloudinaryService;
+        private readonly IMapper _mapper;
 
 
         public CategoryController(ICategoryService categoryService,
             ApplicationDbContext dbContext,
-            IImageService imageService)
+            IImageService imageService,
+            IMapper mapper,
+            ICloudinaryService cloudinaryService)
         {
             this._categoryService = categoryService;
             this._dbContext = dbContext;
             this._imageService = imageService;
+            this._mapper = mapper;
+            this._cloudinaryService = cloudinaryService;
         }
 
         public IActionResult Index()
@@ -49,32 +58,41 @@ namespace e_cosmetics.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateCategoryInputModel model)
         {
-            if (ModelState.IsValid)
-            {
-                string uniqueFileName = null;
-                if (model.Picture != null)
-                {
-                    uniqueFileName = await this._imageService.SavePictureAsync(uniqueFileName, model.Picture);
+            Category category;
+            var file = model.Picture;
+            var categoryPictureId = string.Format(GlobalConstants.CategoryPicture, model.Name);
+            var fileStream = file.OpenReadStream();
 
-                    var result = await this._categoryService
-                        .CreateAsync(uniqueFileName, model);
+            category = this._mapper.Map<Category>(model);
 
-                    return RedirectToAction();
-                }
-                else
-                {
-                    var errors = ModelState.Values.SelectMany(v => v.Errors);
+            var imageUploadResult = this._cloudinaryService.UploadPicture(category.GetType(), categoryPictureId, fileStream);
+            var categoryCreateResult = await this._categoryService.CreateAsync(model, imageUploadResult.Version);
+            //    if (ModelState.IsValid)
+            //    {
+            //        string uniqueFileName = null;
+            //        if (model.Picture != null)
+            //        {
+            //            uniqueFileName = await this._imageService.SavePictureAsync(uniqueFileName, model.Picture);
 
-                }
+            //            var result = await this._categoryService
+            //                .CreateAsync(uniqueFileName, model);
 
-            }
-            else
-            {
-                var errors = ModelState.Values.SelectMany(v => v.Errors);
-            }
+            //            return RedirectToAction();
+            //        }
+            //        else
+            //        {
+            //            var errors = ModelState.Values.SelectMany(v => v.Errors);
 
+            //        }
+
+            //    }
+            //    else
+            //    {
+            //        var errors = ModelState.Values.SelectMany(v => v.Errors);
+            //    }
+
+            //    return View();
             return View();
-
         }
 
         public async Task<IActionResult> Delete(string id)
@@ -98,18 +116,22 @@ namespace e_cosmetics.Controllers
             return RedirectToAction("GetAll");
         }
 
-        //[HttpGet]
-        //public IActionResult Edit(string id)
-        //{
+        [HttpGet]
+        public IActionResult Edit(string id)
+        {
+            var category = this._categoryService
+                .GetById(id);
 
+            var categoryView = this._mapper
+                .Map<EditCategoryInputModel>(category);
 
-        //    return View();
-        //}
+            return View(categoryView);
+        }
 
         //[HttpPost]
-        //public async Task<IActionResult> EditAsync(string id)
+        //public async Task<IActionResult> EditAsync(CreateCategoryInputModel model)
         //{
-        //    if (id == null)
+        //    if (!ModelState.IsValid)
         //    {
         //        return View();
         //    }

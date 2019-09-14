@@ -9,11 +9,11 @@ namespace e_cosmetics.Services.Contracts
     {
         IEnumerable<CategoryViewModel> GetAll();
 
-        Task<bool> CreateAsync(string uniqueFileName, CreateCategoryInputModel model);
+        Task<bool> CreateAsync(CreateCategoryInputModel model, string uniqueFileName);
 
         Task<bool> DeleteAsync(string id);
 
-        Task<bool> EditAsync(string uniqueFileName, EditCategoryInputModel model);
+        //Task<bool> EditAsync(string uniqueFileName, EditCategoryInputModel model);
 
         Category GetById(string id);
 

@@ -25,14 +25,14 @@ namespace e_cosmetics.Services.Categories.Implementation
             this._appEnvironment = appEnvironment;
         }
 
-        public async Task<bool> CreateAsync(string uniqueFileName, CreateCategoryInputModel model)
+        public async Task<bool> CreateAsync(CreateCategoryInputModel model, string imageUploadResult)
         {
 
             Category category = new Category
             {
                 Name = model.Name,
                 Description = model.Description,
-                PictureName = uniqueFileName
+                ProjectVersionPicture = imageUploadResult
             };
 
             this._dbContext.Categories.Add(category);
@@ -54,7 +54,7 @@ namespace e_cosmetics.Services.Categories.Implementation
 
             foreach (var category in categoriesView)
             {
-                string filePath = Path.Combine(uploadsFolder, category.PictureName);
+                //string filePath = Path.Combine(uploadsFolder, category.PictureName);
                 category.PictureName = $"{GlobalConstants.imageFolderPath}{category.PictureName}";
             }
 
@@ -87,31 +87,31 @@ namespace e_cosmetics.Services.Categories.Implementation
 
         }
 
-        public async Task<bool> EditAsync(string uniqueFileName, EditCategoryInputModel model)
-        {
-            var category = this._dbContext.Categories
-                .FirstOrDefault(x => x.Id == model.Id);
+        //public async Task<bool> EditAsync(EditCategoryInputModel model)
+        //{
+        //    var category = this._dbContext.Categories
+        //        .FirstOrDefault(x => x.Id == model.Id);
 
-            if (category == null)
-            {
-                return false;
-            }
+        //    if (category == null)
+        //    {
+        //        return false;
+        //    }
 
-            try
-            {
-                category.PictureName = uniqueFileName;
-                category.Name = model.Name;
-                category.Description = model.Description;
+        //    try
+        //    {
+        //        category.Name = model.Name;
+        //        category.Description = model.Description;
+        //        category.
 
-                await this._dbContext.SaveChangesAsync();
+        //        await this._dbContext.SaveChangesAsync();
 
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
+        //        return true;
+        //    }
+        //    catch
+        //    {
+        //        return false;
+        //    }
+        //}
 
         public Category GetById(string id)
         {

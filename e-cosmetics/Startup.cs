@@ -15,6 +15,9 @@ using e_cosmetics.Services.Products.Contracts;
 using e_cosmetics.Services.Products.Implementation;
 using e_cosmetics.Services.Images.Contracts;
 using e_cosmetics.Services.Images.Implementation;
+using e_cosmetics.Services.Interfaces;
+using e_cosmetics.Services.Cloudinary.Implementation;
+using e_cosmetics.Models;
 
 namespace e_cosmetics
 {
@@ -30,6 +33,14 @@ namespace e_cosmetics
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services
+              .Configure<CloudinaryOptions>(options =>
+              {
+                  options.CloudName = this.Configuration.GetSection("Cloudinary:CloudName").Value;
+                  options.ApiKey = this.Configuration.GetSection("Cloudinary:ApiKey").Value;
+                  options.ApiSecret = this.Configuration.GetSection("Cloudinary:ApiSecret").Value;
+              });
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -44,6 +55,7 @@ namespace e_cosmetics
             var mapper = config.CreateMapper();
             services.AddSingleton(mapper);
 
+            services.AddScoped<ICloudinaryService, CloudinaryService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IImageService, ImageService>();

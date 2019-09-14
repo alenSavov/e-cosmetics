@@ -19,6 +19,10 @@ namespace e_cosmetics.Models
 
         public string PictureName { get; set; }
 
+        public string ProjectVersionPicture { get; set; }
+
+        public string FullPicturePath { get; set; }       
+
         public ICollection<Product> Products { get; set; }
     }
 }

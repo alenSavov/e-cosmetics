@@ -83,8 +83,9 @@ namespace e_cosmetics.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit()
+        public IActionResult Edit(string id)
         {
+            
             return this.View();
         }
 

@@ -44,5 +44,24 @@ namespace e_cosmetics.Services.Images.Implementation
 
             return false;
         }
+
+        public bool PictureExist(string uniqueFileName)
+        {
+            string uploadsFolder = Path.Combine(_appEnvironment.WebRootPath, GlobalConstants.imageFolderName);
+            string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+            if (File.Exists(filePath))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        //public string GetFullCategoryPicturePath()
+        //{
+        //    string filePath = Path.Combine(uploadsFolder, category.PictureName);
+        //    category.PictureName = $"{GlobalConstants.imageFolderPath}{category.PictureName}";
+        //}
     }
 }

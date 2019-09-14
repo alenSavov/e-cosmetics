@@ -8,5 +8,7 @@ namespace e_cosmetics.Services.Images.Contracts
         Task<string> SavePictureAsync(string uniqueFileName, IFormFile picture);
 
         bool DeletePicture(string uniqueFileName);
+
+        bool PictureExist(string uniqueFileName);
     }
 }
