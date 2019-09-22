@@ -10,7 +10,9 @@ namespace e_cosmetics.Infrastructure.AutoMapper
         public AutoMapperProfile()
         {
             CreateMap<Category, CategoryViewModel>().ReverseMap();
-            CreateMap<Category, CreateCategoryInputModel>().ReverseMap();
+            CreateMap<Category, CreateCategoryInputModel>().ReverseMap()
+                 .ForMember(dest => dest.Picture, opt => opt.Ignore()); ;
+
             CreateMap<Category, EditCategoryInputModel>().ReverseMap();
 
             CreateMap<Product, ProductViewModel>().ReverseMap();

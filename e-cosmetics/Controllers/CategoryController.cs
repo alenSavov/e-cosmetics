@@ -3,7 +3,6 @@ using AutoMapper;
 using e_cosmetics.Data;
 using e_cosmetics.Models;
 using e_cosmetics.Services.Categories.Models;
-using e_cosmetics.Services.Contracts;
 using e_cosmetics.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,19 +12,19 @@ namespace e_cosmetics.Controllers
     {
         private readonly ICategoryService _categoryService;
         private readonly ApplicationDbContext _dbContext;
-        private readonly ICloudinaryService _cloudinaryService;
+        private readonly IPictureService _pictureService;
         private readonly IMapper _mapper;
 
 
         public CategoryController(ICategoryService categoryService,
             ApplicationDbContext dbContext,
             IMapper mapper,
-            ICloudinaryService cloudinaryService)
+            IPictureService pictureService)
         {
             this._categoryService = categoryService;
             this._dbContext = dbContext;
             this._mapper = mapper;
-            this._cloudinaryService = cloudinaryService;
+            this._pictureService = pictureService;
         }
 
         public IActionResult Index()
@@ -40,7 +39,7 @@ namespace e_cosmetics.Controllers
 
             foreach (var category in categories)
             {
-                category.CategoryPictureUrl = this._cloudinaryService.BuildCategoryPictureUrl(category.Name, category.ProjectVersionPicture);
+                category.CategoryPictureUrl = this._pictureService.BuildCategoryPictureUrl(category.Name, category.ProjectVersionPicture);
             }
 
             var categoryCollection = new CategoriesCollectionViewModel
@@ -60,40 +59,16 @@ namespace e_cosmetics.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateCategoryInputModel model)
         {
-            Category category;
-            var file = model.Picture;
-            var categoryPictureId = string.Format(GlobalConstants.CategoryPicture, model.Name);
-            var fileStream = file.OpenReadStream();
+            if (!this.ModelState.IsValid)
+            {
+                return this.View();
+            }
 
-            category = this._mapper.Map<Category>(model);
+            var categoryCreateResult = await this._categoryService.CreateAsync(model);
 
-            var imageUploadResult = this._cloudinaryService.UploadPicture(category.GetType(), categoryPictureId, fileStream);
-            var categoryCreateResult = await this._categoryService.CreateAsync(model, imageUploadResult.Version);
-            //    if (ModelState.IsValid)
-            //    {
-            //        string uniqueFileName = null;
-            //        if (model.Picture != null)
-            //        {
-            //            uniqueFileName = await this._imageService.SavePictureAsync(uniqueFileName, model.Picture);
+            //var imageDeleteResult = this._cloudinaryService.DeletePicture(category.GetType(), categoryPictureId);
+            //var imageDeleteResult = this._pictureService.DeletePicture(category.GetType(), categoryPictureId);
 
-            //            var result = await this._categoryService
-            //                .CreateAsync(uniqueFileName, model);
-
-            //            return RedirectToAction();
-            //        }
-            //        else
-            //        {
-            //            var errors = ModelState.Values.SelectMany(v => v.Errors);
-
-            //        }
-
-            //    }
-            //    else
-            //    {
-            //        var errors = ModelState.Values.SelectMany(v => v.Errors);
-            //    }
-
-            //    return View();
             return View();
         }
 

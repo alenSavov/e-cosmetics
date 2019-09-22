@@ -10,8 +10,8 @@ using e_cosmetics.Data;
 namespace e_cosmetics.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190914143021_changed Id type to Int")]
-    partial class changedIdtypetoInt
+    [Migration("20190921192956_Removed picture from category")]
+    partial class Removedpicturefromcategory
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -188,32 +188,38 @@ namespace e_cosmetics.Migrations
 
             modelBuilder.Entity("e_cosmetics.Models.Category", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Description");
 
-                    b.Property<string>("FullPicturePath");
-
                     b.Property<string>("Name");
 
-                    b.Property<string>("PictureName");
-
-                    b.Property<string>("ProjectVersionPicture");
+                    b.Property<string>("PictureId");
 
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("e_cosmetics.Models.Picture", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Url");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Pictures");
+                });
+
             modelBuilder.Entity("e_cosmetics.Models.Product", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<int>("CategoryId");
+                    b.Property<string>("CategoryId");
 
                     b.Property<string>("Description");
 

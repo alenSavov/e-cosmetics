@@ -3,13 +3,13 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using e_cosmetics.Services.Categories.Models;
 
-namespace e_cosmetics.Services.Contracts
+namespace e_cosmetics.Services.Interfaces
 {
     public interface ICategoryService
     {
         IEnumerable<CategoryViewModel> GetAll();
 
-        Task<bool> CreateAsync(CreateCategoryInputModel model, string uniqueFileName);
+        Task<bool> CreateAsync(CreateCategoryInputModel model);
 
         Task<bool> DeleteAsync(string id);
 

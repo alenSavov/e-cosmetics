@@ -10,8 +10,8 @@ using e_cosmetics.Data;
 namespace e_cosmetics.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190913220121_Added to field to category")]
-    partial class Addedtofieldtocategory
+    [Migration("20190915152953_Changed entities")]
+    partial class Changedentities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -193,17 +193,31 @@ namespace e_cosmetics.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<string>("FullPicturePath");
-
                     b.Property<string>("Name");
 
-                    b.Property<string>("PictureName");
+                    b.Property<string>("PictureId");
 
-                    b.Property<string>("ProjectVersionPicture");
+                    b.Property<string>("PictureId1");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PictureId1");
+
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("e_cosmetics.Models.Picture", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CategoryId");
+
+                    b.Property<string>("Url");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Pictures");
                 });
 
             modelBuilder.Entity("e_cosmetics.Models.Product", b =>
@@ -269,6 +283,13 @@ namespace e_cosmetics.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("e_cosmetics.Models.Category", b =>
+                {
+                    b.HasOne("e_cosmetics.Models.Picture", "Picture")
+                        .WithMany()
+                        .HasForeignKey("PictureId1");
                 });
 
             modelBuilder.Entity("e_cosmetics.Models.Product", b =>

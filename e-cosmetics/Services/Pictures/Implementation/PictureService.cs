@@ -7,19 +7,27 @@ using e_cosmetics.Services.Interfaces;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using e_cosmetics.Models;
-using Microsoft.CodeAnalysis;
+using Microsoft.AspNetCore.Http;
+using System.Collections.Concurrent;
+using e_cosmetics.Data;
+using System.Threading.Tasks;
 
-namespace e_cosmetics.Services.Cloudinary.Implementation
+namespace e_cosmetics.Services.Pictures.Implementation
 {
-    public class CloudinaryService : ICloudinaryService
+    public class PictureService : IPictureService
     {
         private const string CategoryPictureFolder = "CategoryPicture";
         private const string ProductPictureFolder = "ProductPicture";
 
         private readonly CloudinaryOptions options;
         private readonly CloudinaryDotNet.Cloudinary cloudinary;
-        public CloudinaryService(IOptions<CloudinaryOptions> options)
+        private readonly ApplicationDbContext _dbContext;
+
+       
+        public PictureService(IOptions<CloudinaryOptions> options, ApplicationDbContext dbContext)
         {
+            this._dbContext = dbContext;
+
             this.options = options.Value;
 
             var account = new Account(
@@ -37,9 +45,9 @@ namespace e_cosmetics.Services.Cloudinary.Implementation
             { typeof(Product), ProductPictureFolder }
         };
 
-        public ImageUploadResult UploadPicture(Type entityType, string pictureId, Stream fileStream)
+        public async Task<ImageUploadResult> UploadPictureAsync(Type entityType, string pictureId, Stream fileStream)
         {
-            if (entityType == null || string.IsNullOrEmpty(pictureId) || string.IsNullOrWhiteSpace(pictureId) || fileStream == null)
+            if (entityType == null || string.IsNullOrEmpty(pictureId) || string.IsNullOrWhiteSpace(pictureId))
                 return null;
 
             ImageUploadParams imageUploadParams = new ImageUploadParams
@@ -48,9 +56,31 @@ namespace e_cosmetics.Services.Cloudinary.Implementation
                 Folder = this.EntityFolders[entityType],
                 PublicId = pictureId
             };
+            
+            Picture picture = new Picture
+            {
+                Id = imageUploadParams.PublicId,
+                Folder = imageUploadParams.Folder
+            };
+
+            await this._dbContext.Pictures.AddAsync(picture);
+            await this._dbContext.SaveChangesAsync();
 
             return this.cloudinary.Upload(imageUploadParams);
+
         }
+
+        public DelResResult DeletePicture(Type entityType, string pictureId)
+        {
+            if (entityType == null || string.IsNullOrEmpty(pictureId) || string.IsNullOrWhiteSpace(pictureId))
+                return null;
+
+            DeletionParams deletionParams = new DeletionParams($"{entityType.Name}Picture/{pictureId}");
+            var delResult = cloudinary.Destroy(deletionParams);
+
+            return null;
+        }
+
         public string BuildCategoryPictureUrl(string categoryName, string imageVersion)
         {
             if (string.IsNullOrEmpty(categoryName) || string.IsNullOrEmpty(imageVersion) || string.IsNullOrWhiteSpace(categoryName) || string.IsNullOrWhiteSpace(imageVersion))
@@ -73,6 +103,9 @@ namespace e_cosmetics.Services.Cloudinary.Implementation
             return pictureUrl;
         }
 
+     
 
     }
+
+    
 }

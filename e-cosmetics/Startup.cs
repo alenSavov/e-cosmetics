@@ -1,21 +1,20 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using e_cosmetics.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using e_cosmetics.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using e_cosmetics.Infrastructure.AutoMapper;
-using e_cosmetics.Services.Contracts;
 using e_cosmetics.Services.Categories.Implementation;
 using e_cosmetics.Services.Products.Contracts;
 using e_cosmetics.Services.Products.Implementation;
-using e_cosmetics.Services.Interfaces;
-using e_cosmetics.Services.Cloudinary.Implementation;
 using e_cosmetics.Models;
+using e_cosmetics.Services.Interfaces;
+using e_cosmetics.Services.Pictures.Implementation;
 
 namespace e_cosmetics
 {
@@ -45,6 +44,7 @@ namespace e_cosmetics
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+           
 
             var config = new AutoMapper.MapperConfiguration(cfg =>
             {
@@ -53,7 +53,8 @@ namespace e_cosmetics
             var mapper = config.CreateMapper();
             services.AddSingleton(mapper);
 
-            services.AddScoped<ICloudinaryService, CloudinaryService>();
+            //services.AddScoped<ICloudinaryService, CloudinaryService>();
+            services.AddScoped<IPictureService, PictureService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
 
@@ -64,6 +65,7 @@ namespace e_cosmetics
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddMvcCore().AddDataAnnotations();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

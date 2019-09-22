@@ -14,10 +14,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/02/2019 21:55:35</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>09/13/2019 22:10:53</publishTime>
+      <publishTime>09/14/2019 23:25:48</publishTime>
     </File>
     <File Include="appsettings.production.json">
-      <publishTime>09/13/2019 22:19:42</publishTime>
+      <publishTime>09/14/2019 23:26:40</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>08/12/2019 12:42:04</publishTime>
@@ -25,26 +25,29 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="AutoMapper.Extensions.Microsoft.DependencyInjection.dll">
       <publishTime>08/12/2019 13:19:42</publishTime>
     </File>
+    <File Include="CloudinaryDotNet.dll">
+      <publishTime>04/23/2019 07:13:00</publishTime>
+    </File>
     <File Include="dotnet-aspnet-codegenerator-design.dll">
       <publishTime>03/02/2019 19:52:30</publishTime>
     </File>
     <File Include="e-cosmetics.deps.json">
-      <publishTime>09/13/2019 22:19:42</publishTime>
+      <publishTime>09/14/2019 23:26:40</publishTime>
     </File>
     <File Include="e-cosmetics.dll">
-      <publishTime>09/13/2019 22:19:38</publishTime>
+      <publishTime>09/14/2019 23:26:37</publishTime>
     </File>
     <File Include="e-cosmetics.pdb">
-      <publishTime>09/13/2019 22:19:38</publishTime>
+      <publishTime>09/14/2019 23:26:37</publishTime>
     </File>
     <File Include="e-cosmetics.runtimeconfig.json">
-      <publishTime>09/13/2019 22:19:42</publishTime>
+      <publishTime>09/14/2019 23:26:40</publishTime>
     </File>
     <File Include="e-cosmetics.Views.dll">
-      <publishTime>09/13/2019 22:19:39</publishTime>
+      <publishTime>09/14/2019 23:26:37</publishTime>
     </File>
     <File Include="e-cosmetics.Views.pdb">
-      <publishTime>09/13/2019 22:19:39</publishTime>
+      <publishTime>09/14/2019 23:26:37</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
       <publishTime>08/14/2019 22:22:36</publishTime>
@@ -92,7 +95,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/14/2019 22:22:42</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>09/13/2019 22:19:42</publishTime>
+      <publishTime>09/14/2019 23:26:40</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
       <publishTime>09/02/2019 21:55:36</publishTime>
@@ -105,6 +108,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="wwwroot/img/9aa100ec-5f2a-47dd-b129-bdefb2fc0bf7_XT203599.jpg">
       <publishTime>09/12/2019 22:14:13</publishTime>
+    </File>
+    <File Include="wwwroot/img/b2cb8be0-96ce-482b-99dd-ddb8b0077fd6_XT203588.jpg">
+      <publishTime>09/13/2019 23:03:08</publishTime>
     </File>
     <File Include="wwwroot/img/ef021104-431a-4887-b951-cfde8cdc04c5_XT203601.jpg">
       <publishTime>09/12/2019 22:16:02</publishTime>

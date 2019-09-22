@@ -15,5 +15,7 @@ namespace e_cosmetics.Services.Categories.Models
         public string PictureName { get; set; }  
 
         public IFormFile Picture { get; set; }
+
+        public string CategoryPictureUrl { get; set; }
     }
 }

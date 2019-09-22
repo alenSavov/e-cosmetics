@@ -10,8 +10,8 @@ using e_cosmetics.Data;
 namespace e_cosmetics.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190907113706_Initial Migration")]
-    partial class InitialMigration
+    [Migration("20190915102613_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -195,7 +195,7 @@ namespace e_cosmetics.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("PictureName");
+                    b.Property<string>("ProjectVersionPicture");
 
                     b.HasKey("Id");
 
@@ -219,7 +219,7 @@ namespace e_cosmetics.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

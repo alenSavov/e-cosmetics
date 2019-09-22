@@ -2,9 +2,7 @@
 using e_cosmetics.Data;
 using e_cosmetics.Models;
 using System.Collections.Generic;
-using e_cosmetics.Services.Contracts;
 using e_cosmetics.Services.Categories.Models;
-using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using System.Threading.Tasks;
 using System.Linq;
@@ -17,32 +15,36 @@ namespace e_cosmetics.Services.Categories.Implementation
         private readonly IHostingEnvironment _appEnvironment;
         private readonly ApplicationDbContext _dbContext;
         private readonly IMapper _mapper;
-        private readonly ICloudinaryService _cloudinaryService;
+        private readonly IPictureService _pictureService;
 
 
         public CategoryService(ApplicationDbContext dbContext, IMapper mapper,
             IHostingEnvironment appEnvironment,
-            ICloudinaryService cloudinaryService)
+            IPictureService pictureService)
         {
             this._dbContext = dbContext;
             this._mapper = mapper;
             this._appEnvironment = appEnvironment;
-            this._cloudinaryService = cloudinaryService;
+            this._pictureService = pictureService;
         }
 
-        public async Task<bool> CreateAsync(CreateCategoryInputModel model, string imageUploadResult)
+        public async Task<bool> CreateAsync(CreateCategoryInputModel model)
         {
+            Category category;
+            var file = model.Picture;
+            var categoryPictureId = string.Format(GlobalConstants.CategoryPicture, model.Name);
+            var fileStream = file.OpenReadStream();
+            category = this._mapper.Map<Category>(model);
 
-            Category category = new Category
-            {
-                Name = model.Name,
-                Description = model.Description,
-                ProjectVersionPicture = imageUploadResult
-            };
+            category.Name = model.Name;
+            category.Description = model.Description;            
+
+            var imageUploadResult = await this._pictureService.UploadPictureAsync(category.GetType(), categoryPictureId, fileStream);
+            
 
             this._dbContext.Categories.Add(category);
+           
             await this._dbContext.SaveChangesAsync();
-
 
             return true;
         }
@@ -51,11 +53,11 @@ namespace e_cosmetics.Services.Categories.Implementation
         {
             var categories = this._dbContext
                 .Categories;
-                      
+
             var categoriesView = _mapper
                 .Map<List<CategoryViewModel>>(categories);
 
-            
+
             return categoriesView;
 
         }
@@ -73,7 +75,7 @@ namespace e_cosmetics.Services.Categories.Implementation
             try
             {
                 this._dbContext.Categories.Remove(category);
-               await this._dbContext.SaveChangesAsync();
+                await this._dbContext.SaveChangesAsync();
 
                 return true;
             }

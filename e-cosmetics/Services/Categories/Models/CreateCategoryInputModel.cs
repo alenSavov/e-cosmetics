@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
 
 namespace e_cosmetics.Services.Categories.Models
 {
@@ -6,14 +7,15 @@ namespace e_cosmetics.Services.Categories.Models
     {
         public string Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public string Description { get; set; }
 
+        [Required]
         public IFormFile Picture { get; set; }
 
-        public string ProjectVersionPicture { get; set; }
 
-        public string ProjectPictureUrl { get; set; }
     }
 }

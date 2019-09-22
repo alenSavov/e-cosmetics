@@ -1,15 +1,14 @@
 ﻿using System.IO;
 using AutoMapper;
+using System.Linq;
 using e_cosmetics.Data;
 using e_cosmetics.Models;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Hosting;
-using e_cosmetics.Services.Contracts;
-using e_cosmetics.Services.Products.Contracts;
+using e_cosmetics.Services.Interfaces;
 using e_cosmetics.Services.Products.Models;
-using System.Collections;
-using System.Linq;
+using e_cosmetics.Services.Products.Contracts;
 
 namespace e_cosmetics.Services.Products.Implementation
 {

@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using e_cosmetics.Services.Contracts;
 using e_cosmetics.Services.Products.Models;
 using e_cosmetics.Services.Products.Contracts;
+using e_cosmetics.Services.Interfaces;
 
 namespace e_cosmetics.Controllers
 {

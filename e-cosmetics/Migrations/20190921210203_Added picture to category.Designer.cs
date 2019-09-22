@@ -10,8 +10,8 @@ using e_cosmetics.Data;
 namespace e_cosmetics.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190914145709_changed id type")]
-    partial class changedidtype
+    [Migration("20190921210203_Added picture to category")]
+    partial class Addedpicturetocategory
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -188,32 +188,40 @@ namespace e_cosmetics.Migrations
 
             modelBuilder.Entity("e_cosmetics.Models.Category", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Description");
 
-                    b.Property<string>("FullPicturePath");
-
                     b.Property<string>("Name");
 
-                    b.Property<string>("PictureName");
-
-                    b.Property<string>("ProjectVersionPicture");
+                    b.Property<string>("PictureId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PictureId");
 
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("e_cosmetics.Models.Picture", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Url");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Pictures");
+                });
+
             modelBuilder.Entity("e_cosmetics.Models.Product", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<int>("CategoryId");
+                    b.Property<string>("CategoryId");
 
                     b.Property<string>("Description");
 
@@ -271,6 +279,13 @@ namespace e_cosmetics.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("e_cosmetics.Models.Category", b =>
+                {
+                    b.HasOne("e_cosmetics.Models.Picture", "Picture")
+                        .WithMany()
+                        .HasForeignKey("PictureId");
                 });
 
             modelBuilder.Entity("e_cosmetics.Models.Product", b =>

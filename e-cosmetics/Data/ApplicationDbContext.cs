@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using e_cosmetics.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using e_cosmetics.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace e_cosmetics.Data
 {
@@ -18,6 +15,8 @@ namespace e_cosmetics.Data
 
         public DbSet<Product> Products { get; set; }
 
+        public DbSet<Picture> Pictures { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder
@@ -26,6 +25,7 @@ namespace e_cosmetics.Data
                 .WithOne(c => c.Category)
                 .HasForeignKey(f => f.CategoryId)
                 .OnDelete(DeleteBehavior.Cascade);
+
 
             base.OnModelCreating(builder);
         }
