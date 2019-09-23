@@ -17,5 +17,7 @@ namespace e_cosmetics.Services.Interfaces
 
         Category GetById(string id);
 
+        //Task AddPicturesAsync(Picture picture, string categoryId);
+
     }
 }

@@ -47,36 +47,20 @@ namespace e_cosmetics.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateProductInputModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                string uniqueFileName = null;
-                if (model.Picture != null)
-                {
-
-                    var result = await this._productService
-                        .CreateAsync(uniqueFileName, model);
-
-                    return RedirectToAction();
-                }
-                else
-                {
-                    var errors = ModelState.Values.SelectMany(v => v.Errors);
-                }
-
+                return this.View();
             }
-            else
-            {
-                var errors = ModelState.Values.SelectMany(v => v.Errors);
-            }
+
+            var product = await this._productService.CreateAsync(model);
 
             return View();
-
         }
 
         [HttpGet]
         public IActionResult Edit(string id)
         {
-            
+
             return this.View();
         }
 

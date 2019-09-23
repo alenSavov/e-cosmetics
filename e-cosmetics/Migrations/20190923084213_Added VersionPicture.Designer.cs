@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using e_cosmetics.Data;
 
 namespace e_cosmetics.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190923084213_Added VersionPicture")]
+    partial class AddedVersionPicture
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -189,11 +191,13 @@ namespace e_cosmetics.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("CategoryPictureId");
-
                     b.Property<string>("Description");
 
                     b.Property<string>("Name");
+
+                    b.Property<string>("PictureId");
+
+                    b.Property<string>("VersionPicture");
 
                     b.HasKey("Id");
 
@@ -210,8 +214,6 @@ namespace e_cosmetics.Migrations
                     b.Property<string>("Folder");
 
                     b.Property<string>("Url");
-
-                    b.Property<string>("VersionPicture");
 
                     b.HasKey("Id");
 

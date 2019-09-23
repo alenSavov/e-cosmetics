@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using e_cosmetics.Models;
 using e_cosmetics.Services.Categories.Models;
+using e_cosmetics.Services.Pictures.Models;
 using e_cosmetics.Services.Products.Models;
 
 namespace e_cosmetics.Infrastructure.AutoMapper
@@ -10,11 +11,15 @@ namespace e_cosmetics.Infrastructure.AutoMapper
         public AutoMapperProfile()
         {
             CreateMap<Category, CategoryViewModel>().ReverseMap();
-            CreateMap<Category, CreateCategoryInputModel>().ReverseMap()
-                 .ForMember(dest => dest.Picture, opt => opt.Ignore()); ;
+            CreateMap<Category, CreateCategoryInputModel>().ReverseMap();
 
             CreateMap<Category, EditCategoryInputModel>().ReverseMap();
 
+            CreateMap<CategoryPicture, BasePictureViewModel>()
+                .ForMember(d => d.CategoryId, x => x.MapFrom(s => s.CategoryId));
+
+
+            CreateMap<Product, CreateProductInputModel>().ReverseMap();
             CreateMap<Product, ProductViewModel>().ReverseMap();
         }
     }

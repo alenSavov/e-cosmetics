@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 
 namespace e_cosmetics.Services.Products.Models
 {
@@ -11,8 +12,7 @@ namespace e_cosmetics.Services.Products.Models
         public string Description { get; set; }
 
         public string CategoryId { get; set; }
-        //public IEnumerable<Category> Categories { get; set; }
 
-        public IFormFile Picture { get; set; }
+        public ICollection<IFormFile> PictFormFiles { get; set; }
     }
 }

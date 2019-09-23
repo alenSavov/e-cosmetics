@@ -1,4 +1,7 @@
-﻿namespace e_cosmetics.Services.Products.Models
+﻿using e_cosmetics.Services.Pictures.Models;
+using System.Collections.Generic;
+
+namespace e_cosmetics.Services.Products.Models
 {
     public class ProductViewModel
     {
@@ -8,6 +11,7 @@
 
         public string Description { get; set; }
 
-        public string PictureName { get; set; }
+        public ICollection<BasePictureViewModel> Pictures { get; set; }
+
     }
 }

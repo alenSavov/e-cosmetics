@@ -33,13 +33,17 @@ namespace e_cosmetics.Controllers
         }
 
         public IActionResult GetAll()
-        {
+       {
             var categories = this._categoryService
                 .GetAll();
+                      
 
             foreach (var category in categories)
             {
-                category.CategoryPictureUrl = this._pictureService.BuildCategoryPictureUrl(category.Name, category.ProjectVersionPicture);
+                category.Picture = this._pictureService
+                .GetAllPicturesById(category.Id);
+
+                category.Picture.Url = this._pictureService.BuildCategoryPictureUrl(category.Picture.Id, category.Picture.VersionPicture);
             }
 
             var categoryCollection = new CategoriesCollectionViewModel

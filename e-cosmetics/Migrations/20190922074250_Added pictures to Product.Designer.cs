@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using e_cosmetics.Data;
 
 namespace e_cosmetics.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190922074250_Added pictures to Product")]
+    partial class AddedpicturestoProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -189,37 +191,17 @@ namespace e_cosmetics.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("CategoryPictureId");
-
                     b.Property<string>("Description");
 
                     b.Property<string>("Name");
 
+                    b.Property<string>("PictureId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("PictureId");
 
                     b.ToTable("Categories");
-                });
-
-            modelBuilder.Entity("e_cosmetics.Models.CategoryPicture", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CategoryId");
-
-                    b.Property<string>("Folder");
-
-                    b.Property<string>("Url");
-
-                    b.Property<string>("VersionPicture");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId")
-                        .IsUnique()
-                        .HasFilter("[CategoryId] IS NOT NULL");
-
-                    b.ToTable("CategoryPictures");
                 });
 
             modelBuilder.Entity("e_cosmetics.Models.Picture", b =>
@@ -229,11 +211,11 @@ namespace e_cosmetics.Migrations
 
                     b.Property<string>("Folder");
 
-                    b.Property<string>("Url");
-
-                    b.Property<string>("VersionPicture");
+                    b.Property<string>("ProductId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("Pictures");
                 });
@@ -254,26 +236,6 @@ namespace e_cosmetics.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("e_cosmetics.Models.ProductPicture", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Folder");
-
-                    b.Property<string>("ProductId");
-
-                    b.Property<string>("Url");
-
-                    b.Property<string>("VersionPicture");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("ProductPictures");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -321,11 +283,18 @@ namespace e_cosmetics.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("e_cosmetics.Models.CategoryPicture", b =>
+            modelBuilder.Entity("e_cosmetics.Models.Category", b =>
                 {
-                    b.HasOne("e_cosmetics.Models.Category", "Category")
-                        .WithOne("CategoryPicture")
-                        .HasForeignKey("e_cosmetics.Models.CategoryPicture", "CategoryId");
+                    b.HasOne("e_cosmetics.Models.Picture", "Picture")
+                        .WithMany()
+                        .HasForeignKey("PictureId");
+                });
+
+            modelBuilder.Entity("e_cosmetics.Models.Picture", b =>
+                {
+                    b.HasOne("e_cosmetics.Models.Product")
+                        .WithMany("Pictures")
+                        .HasForeignKey("ProductId");
                 });
 
             modelBuilder.Entity("e_cosmetics.Models.Product", b =>
@@ -333,14 +302,6 @@ namespace e_cosmetics.Migrations
                     b.HasOne("e_cosmetics.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("e_cosmetics.Models.ProductPicture", b =>
-                {
-                    b.HasOne("e_cosmetics.Models.Product", "Product")
-                        .WithMany("ProductPictures")
-                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

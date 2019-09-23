@@ -17,6 +17,11 @@ namespace e_cosmetics.Data
 
         public DbSet<Picture> Pictures { get; set; }
 
+        public DbSet<ProductPicture> ProductPictures { get; set; }
+
+        public DbSet<CategoryPicture> CategoryPictures { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder
@@ -26,6 +31,18 @@ namespace e_cosmetics.Data
                 .HasForeignKey(f => f.CategoryId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            builder
+                .Entity<Category>()
+                .HasOne(p => p.CategoryPicture)
+                .WithOne(p => p.Category)
+                .HasForeignKey<CategoryPicture>(f => f.CategoryId);
+
+            builder
+             .Entity<Product>()
+             .HasMany(p => p.ProductPictures)
+             .WithOne(pr => pr.Product)
+             .HasForeignKey(pr => pr.ProductId)
+             .OnDelete(DeleteBehavior.Cascade);
 
             base.OnModelCreating(builder);
         }

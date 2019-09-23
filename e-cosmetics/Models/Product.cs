@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace e_cosmetics.Models
 {
@@ -7,6 +8,7 @@ namespace e_cosmetics.Models
         public Product()
         {
             this.Id = Guid.NewGuid().ToString();
+            this.ProductPictures = new List<ProductPicture>();
         }
 
         public string Id { get; set; }
@@ -14,11 +16,11 @@ namespace e_cosmetics.Models
         public string Name { get; set; }
 
         public string Description { get; set; }
-
-        public string PictureName { get; set; }
-
+        
         public string CategoryId { get; set; }
 
         public Category Category { get; set; }
+
+        public ICollection<ProductPicture> ProductPictures { get; set; }
     }
 }

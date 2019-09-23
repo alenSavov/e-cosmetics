@@ -29,9 +29,9 @@
                     <span asp-validation-for="CategoryId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Picture" class="control-label btn btn-warning">Upload Picture </label>
-                    <input asp-for="Picture" hidden accept=".gif,.png,.jpg,.jpeg" />
-                    <span asp-validation-for="Picture" class="text-danger"></span>
+                    <label asp-for="PictFormFiles" class="control-label btn btn-warning">Upload Picture </label>
+                    <input asp-for="PictFormFiles" hidden accept=".gif,.png,.jpg,.jpeg" multiple/>
+                    <span asp-validation-for="PictFormFiles" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-success">Create Product</button>

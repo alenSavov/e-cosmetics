@@ -18,32 +18,35 @@ namespace e_cosmetics.Services.Products.Implementation
         private readonly ApplicationDbContext _dbContext;
         private readonly IHostingEnvironment _appEnvironment;
         private readonly IMapper _mapper;
+        private readonly IPictureService _pictureService;
 
         public ProductService(
                     ICategoryService categoryService,
                     ApplicationDbContext dbContext,
                     IMapper mapper,
-                    IHostingEnvironment appEnvironment
+                    IHostingEnvironment appEnvironment,
+                     IPictureService pictureService
             )
         {
             this._categoryService = categoryService;
             this._dbContext = dbContext;
             this._mapper = mapper;
             this._appEnvironment = appEnvironment;
+            this._pictureService = pictureService;
         }
 
-        public async Task<bool> CreateAsync(string uniqueFileName, CreateProductInputModel model)
+        public async Task<bool> CreateAsync(CreateProductInputModel model)
         {
-            Product product = new Product
-            {
-                Name = model.Name,
-                Description = model.Description,
-                PictureName = uniqueFileName,
-                CategoryId = model.CategoryId
-            };
+            
+            var file = model.PictFormFiles;
+            var productPictureId = string.Format(GlobalConstants.ProductPicture, model.Name);
 
-            this._dbContext.Products.Add(product);
+            var product = this._mapper.Map<Product>(model);
+
+           await this._dbContext.Products.AddAsync(product);
+
             await this._dbContext.SaveChangesAsync();
+            await this._pictureService.UploadPicturesAsync(model.PictFormFiles, product.GetType(), productPictureId, product.Id);
 
             return true;
         }
@@ -56,13 +59,15 @@ namespace e_cosmetics.Services.Products.Implementation
             var productsView = _mapper
                 .Map<List<ProductViewModel>>(products);
 
-            string uploadsFolder = Path.Combine(_appEnvironment.WebRootPath, GlobalConstants.imageFolderName);
+           
+           
+            //string uploadsFolder = Path.Combine(_appEnvironment.WebRootPath, GlobalConstants.imageFolderName);
 
-            foreach (var product in productsView)
-            {
-                string filePath = Path.Combine(uploadsFolder, product.PictureName);
-                product.PictureName = $"{GlobalConstants.imageFolderPath}{product.PictureName}";
-            }
+            //foreach (var product in productsView)
+            //{
+            //    string filePath = Path.Combine(uploadsFolder, product.PictureName);
+            //    product.PictureName = $"{GlobalConstants.imageFolderPath}{product.PictureName}";
+            //}
 
             return productsView;
         }
@@ -98,5 +103,13 @@ namespace e_cosmetics.Services.Products.Implementation
                  .FirstOrDefault(x => x.Id == id);
 
         }
+
+        //public async Task AddPicturesAsync(ICollection<Picture> pictures, string productId)
+        //{
+        //    var product = this.GetById(productId)
+        //        .Pictures = pictures;
+
+        //   await this._dbContext.SaveChangesAsync();
+        //}
     }
 }
