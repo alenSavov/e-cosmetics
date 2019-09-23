@@ -70,6 +70,16 @@ namespace e_cosmetics.Services.Categories.Implementation
 
             try
             {
+                var pictures = this._dbContext.CategoryPictures
+                   .Where(x => x.CategoryId == category.Id)
+                   .ToList();
+
+                foreach (var picture in pictures)
+                {
+                    this._pictureService.DeletePicture(category.GetType(), picture.Id);
+                    this._dbContext.CategoryPictures.Remove(picture);
+                }
+
                 this._dbContext.Categories.Remove(category);
                 await this._dbContext.SaveChangesAsync();
 

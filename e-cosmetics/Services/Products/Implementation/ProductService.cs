@@ -82,9 +82,11 @@ namespace e_cosmetics.Services.Products.Implementation
                 foreach (var picture in pictures)
                 {
                     this._pictureService.DeletePicture(product.GetType(), picture.Id);
+                    this._dbContext.ProductPictures.Remove(picture);
                 }
 
                 this._dbContext.Products.Remove(product);
+
                 await this._dbContext.SaveChangesAsync();
 
                 return true;
