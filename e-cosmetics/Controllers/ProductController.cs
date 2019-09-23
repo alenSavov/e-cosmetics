@@ -39,11 +39,6 @@ namespace e_cosmetics.Controllers
                 var pictures = this._pictureService.GetAllProductPicturesById(product.Id);
                 product.Pictures = pictures;
 
-                //foreach (var picture in product.Pictures)
-                //{
-                //    picture.Url = this._pictureService.BuildCategoryPictureUrl(picture.Id, picture.VersionPicture);
-
-                //}
             }
 
             var productCollection = new ProductCollectionViewModel

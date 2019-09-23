@@ -37,17 +37,17 @@ namespace e_cosmetics.Services.Products.Implementation
 
         public async Task<bool> CreateAsync(CreateProductInputModel model)
         {
-            
+
             var file = model.PictFormFiles;
             var productPictureId = string.Format(GlobalConstants.ProductPicture, model.Name);
 
             var product = this._mapper.Map<Product>(model);
 
-           await this._dbContext.Products.AddAsync(product);
+            await this._dbContext.Products.AddAsync(product);
             await this._dbContext.SaveChangesAsync();
 
             await this._pictureService.UploadPicturesAsync(model.PictFormFiles, product.GetType(), productPictureId, product.Id);
-                  
+
 
             return true;
         }
@@ -75,6 +75,15 @@ namespace e_cosmetics.Services.Products.Implementation
 
             try
             {
+                var pictures = this._dbContext.ProductPictures
+                    .Where(x => x.ProductId == product.Id)
+                    .ToList();
+
+                foreach (var picture in pictures)
+                {
+                    this._pictureService.DeletePicture(product.GetType(), picture.Id);
+                }
+
                 this._dbContext.Products.Remove(product);
                 await this._dbContext.SaveChangesAsync();
 
