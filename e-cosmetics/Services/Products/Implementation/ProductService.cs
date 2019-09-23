@@ -44,9 +44,10 @@ namespace e_cosmetics.Services.Products.Implementation
             var product = this._mapper.Map<Product>(model);
 
            await this._dbContext.Products.AddAsync(product);
-
             await this._dbContext.SaveChangesAsync();
+
             await this._pictureService.UploadPicturesAsync(model.PictFormFiles, product.GetType(), productPictureId, product.Id);
+                  
 
             return true;
         }
@@ -58,16 +59,6 @@ namespace e_cosmetics.Services.Products.Implementation
 
             var productsView = _mapper
                 .Map<List<ProductViewModel>>(products);
-
-           
-           
-            //string uploadsFolder = Path.Combine(_appEnvironment.WebRootPath, GlobalConstants.imageFolderName);
-
-            //foreach (var product in productsView)
-            //{
-            //    string filePath = Path.Combine(uploadsFolder, product.PictureName);
-            //    product.PictureName = $"{GlobalConstants.imageFolderPath}{product.PictureName}";
-            //}
 
             return productsView;
         }

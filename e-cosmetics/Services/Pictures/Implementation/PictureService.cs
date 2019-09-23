@@ -173,7 +173,7 @@ namespace e_cosmetics.Services.Pictures.Implementation
             return pictureUrl;
         }
 
-        public BasePictureViewModel GetAllPicturesById(string id)
+        public BasePictureViewModel GetCategoryPicturesById(string id)
         {
             var picture = this._dbContext
                 .CategoryPictures
@@ -181,6 +181,30 @@ namespace e_cosmetics.Services.Pictures.Implementation
 
             var picturesView = this._mapper
                 .Map<BasePictureViewModel>(picture);
+
+            return picturesView;
+        }
+
+        public ProductPictureViewModel GetProductPicturesById(string id)
+        {
+            var picture = this._dbContext
+                .ProductPictures
+                .FirstOrDefault(p => p.ProductId == id);
+
+            var picturesView = this._mapper
+                .Map<ProductPictureViewModel>(picture);
+
+            return picturesView;
+        }
+
+        public IEnumerable<ProductPictureViewModel> GetAllProductPicturesById(string id)
+        {
+            var pictures = this._dbContext
+                .ProductPictures
+                .Where(p => p.ProductId == id);
+
+            var picturesView = this._mapper
+                .Map<IEnumerable<ProductPictureViewModel>>(pictures);
 
             return picturesView;
         }

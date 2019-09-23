@@ -41,7 +41,7 @@ namespace e_cosmetics.Controllers
             foreach (var category in categories)
             {
                 category.Picture = this._pictureService
-                .GetAllPicturesById(category.Id);
+                .GetCategoryPicturesById(category.Id);
 
                 category.Picture.Url = this._pictureService.BuildCategoryPictureUrl(category.Picture.Id, category.Picture.VersionPicture);
             }

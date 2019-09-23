@@ -31,21 +31,6 @@ namespace e_cosmetics.Services.Categories.Implementation
 
         public async Task<bool> CreateAsync(CreateCategoryInputModel model)
         {
-            //Category category;
-            //var file = model.Picture;
-            //var categoryPictureId = string.Format(GlobalConstants.CategoryPicture, model.Name);
-            //var fileStream = file.OpenReadStream();
-            //category = this._mapper.Map<Category>(model);
-
-            //category.Name = model.Name;
-            //category.Description = model.Description;            
-
-            //this._dbContext.Categories.Add(category);
-            //await this._dbContext.SaveChangesAsync();
-            ////var imageUploadResult = await this._pictureService.UploadPictureAsync(category.GetType(), categoryPictureId, fileStream, category.Id);
-
-            //var imageUploadResult = await this._pictureService.UploadPicturesAsync();
-            //return true;
 
             var categoryPictureId = string.Format(GlobalConstants.CategoryPicture, model.Name);
 

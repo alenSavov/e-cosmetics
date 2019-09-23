@@ -20,7 +20,11 @@ namespace e_cosmetics.Services.Interfaces
 
         DelResResult DeletePicture(Type entityType, string pictureId);
 
-        BasePictureViewModel GetAllPicturesById(string id);
+        BasePictureViewModel GetCategoryPicturesById(string id);
+
+        ProductPictureViewModel GetProductPicturesById(string id);
+
+        IEnumerable<ProductPictureViewModel> GetAllProductPicturesById(string id);
 
 
     }

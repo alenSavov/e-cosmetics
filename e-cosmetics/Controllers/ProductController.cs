@@ -11,13 +11,16 @@ namespace e_cosmetics.Controllers
     {
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
+        private readonly IPictureService _pictureService;
 
         public ProductController(
                                  IProductService productService,
-                                 ICategoryService categoryService)
+                                 ICategoryService categoryService,
+                                  IPictureService pictureService)
         {
             this._productService = productService;
             this._categoryService = categoryService;
+            this._pictureService = pictureService;
         }
 
         public IActionResult Index()
@@ -30,7 +33,25 @@ namespace e_cosmetics.Controllers
             var products = this._productService
                 .GetAll();
 
-            return this.View(products);
+
+            foreach (var product in products)
+            {
+                var pictures = this._pictureService.GetAllProductPicturesById(product.Id);
+                product.Pictures = pictures;
+
+                //foreach (var picture in product.Pictures)
+                //{
+                //    picture.Url = this._pictureService.BuildCategoryPictureUrl(picture.Id, picture.VersionPicture);
+
+                //}
+            }
+
+            var productCollection = new ProductCollectionViewModel
+            {
+                Products = products
+            };
+
+            return View(productCollection);
         }
 
         [HttpGet]
@@ -54,7 +75,7 @@ namespace e_cosmetics.Controllers
 
             var product = await this._productService.CreateAsync(model);
 
-            return View();
+            return RedirectToAction("GetAll");
         }
 
         [HttpGet]

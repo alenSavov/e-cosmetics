@@ -11,7 +11,9 @@ namespace e_cosmetics.Services.Products.Models
 
         public string Description { get; set; }
 
-        public ICollection<BasePictureViewModel> Pictures { get; set; }
+        public string ProductId { get; set; }
+
+        public IEnumerable<ProductPictureViewModel> Pictures { get; set; }
 
     }
 }
