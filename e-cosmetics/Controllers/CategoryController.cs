@@ -102,8 +102,15 @@ namespace e_cosmetics.Controllers
             var category = this._categoryService
                 .GetById(id);
 
+
             var categoryView = this._mapper
                 .Map<EditCategoryInputModel>(category);
+
+            categoryView.Picture = this._pictureService
+               .GetCategoryPicturesById(category.Id);
+
+            categoryView.Picture.Url = this._pictureService.BuildCategoryPictureUrl(categoryView.Picture.Id, categoryView.Picture.VersionPicture);
+
 
             return View(categoryView);
         }

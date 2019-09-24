@@ -31,12 +31,12 @@ namespace e_cosmetics
         public void ConfigureServices(IServiceCollection services)
         {
             services
-              .Configure<CloudinaryOptions>(options =>
-              {
-                  options.CloudName = this.Configuration.GetSection("Cloudinary:CloudName").Value;
-                  options.ApiKey = this.Configuration.GetSection("Cloudinary:ApiKey").Value;
-                  options.ApiSecret = this.Configuration.GetSection("Cloudinary:ApiSecret").Value;
-              });
+             .Configure<CloudinaryOptions>(options =>
+             {
+                 options.CloudName = this.Configuration.GetSection("Cloudinary:CloudName").Value;
+                 options.ApiKey = this.Configuration.GetSection("Cloudinary:ApiKey").Value;
+                 options.ApiSecret = this.Configuration.GetSection("Cloudinary:ApiSecret").Value;
+             });
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -79,7 +79,9 @@ namespace e_cosmetics
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
+                //app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }

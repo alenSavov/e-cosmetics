@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using e_cosmetics.Services.Pictures.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace e_cosmetics.Services.Categories.Models
 {
@@ -10,12 +11,6 @@ namespace e_cosmetics.Services.Categories.Models
 
         public string Description { get; set; }
 
-        public string FullPicturePath { get; set; }
-
-        public string PictureName { get; set; }  
-
-        public IFormFile Picture { get; set; }
-
-        public string CategoryPictureUrl { get; set; }
+        public BasePictureViewModel Picture { get; set; }
     }
 }
