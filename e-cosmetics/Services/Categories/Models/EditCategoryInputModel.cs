@@ -1,5 +1,5 @@
-﻿using e_cosmetics.Services.Pictures.Models;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
 
 namespace e_cosmetics.Services.Categories.Models
 {
@@ -7,10 +7,13 @@ namespace e_cosmetics.Services.Categories.Models
     {
         public string Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public string Description { get; set; }
 
-        public BasePictureViewModel Picture { get; set; }
+        [Required]
+        public IFormFile Picture { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace e_cosmetics.Services.Interfaces
 
         Task<bool> DeleteAsync(string id);
 
-        //Task<bool> EditAsync(string uniqueFileName, EditCategoryInputModel model);
+        Task<bool> EditAsync(EditCategoryInputModel model);
 
         Category GetById(string id);
 

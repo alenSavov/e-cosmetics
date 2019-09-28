@@ -13,7 +13,7 @@ namespace e_cosmetics.Infrastructure.AutoMapper
             CreateMap<Category, CategoryViewModel>().ReverseMap();
             CreateMap<Category, CreateCategoryInputModel>().ReverseMap();
 
-            CreateMap<Category, EditCategoryInputModel>().ReverseMap();
+            CreateMap<Category, EditCategoryViewModel>().ReverseMap();
 
             CreateMap<CategoryPicture, BasePictureViewModel>()
                 .ForMember(d => d.CategoryId, x => x.MapFrom(s => s.CategoryId));

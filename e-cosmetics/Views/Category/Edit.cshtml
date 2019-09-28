@@ -1,4 +1,4 @@
-﻿@model e_cosmetics.Services.Categories.Models.EditCategoryInputModel
+﻿@model e_cosmetics.Services.Categories.Models.EditCategoryViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -6,7 +6,7 @@
 
 <h1>Edit</h1>
 
-<form asp-area="" asp-controller="Category" asp-action="Edit" asp-route-id="@Model.Id" class="" enctype="multipart/form-data">
+<form asp-area="" asp-controller="Category" asp-action="EditAsync" asp-route-id="@Model.Id" method="post" class="" enctype="multipart/form-data">
     <div asp-validation-summary="All" class="text-danger "></div>
 
     <label asp-for="Name" class=""></label>

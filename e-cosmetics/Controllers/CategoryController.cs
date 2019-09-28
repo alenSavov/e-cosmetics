@@ -99,12 +99,16 @@ namespace e_cosmetics.Controllers
         [HttpGet]
         public IActionResult Edit(string id)
         {
+            if (id == null)
+            {
+                return this.View();
+            }
+
             var category = this._categoryService
                 .GetById(id);
-
-
+            
             var categoryView = this._mapper
-                .Map<EditCategoryInputModel>(category);
+                .Map<EditCategoryViewModel>(category);
 
             categoryView.Picture = this._pictureService
                .GetCategoryPicturesById(category.Id);
@@ -115,21 +119,21 @@ namespace e_cosmetics.Controllers
             return View(categoryView);
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> EditAsync(CreateCategoryInputModel model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View();
-        //    }
+        [HttpPost]
+        public async Task<IActionResult> EditAsync(EditCategoryInputModel model)
+        {
+            //if (!ModelState.IsValid)
+            //{
+            //    return View();
+            //}
 
-        //    //TODO Add validations
+            //TODO Add validations
 
-        //    var success = await this._categoryService
-        //        .EditAsync(id);
+            var success = await this._categoryService
+                .EditAsync(model);
 
-        //    return RedirectToAction("GetAll");
-        //}
+            return RedirectToAction("GetAll");
+        }
 
 
     }

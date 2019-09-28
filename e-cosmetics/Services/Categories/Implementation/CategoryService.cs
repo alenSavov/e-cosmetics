@@ -93,31 +93,30 @@ namespace e_cosmetics.Services.Categories.Implementation
 
         }
 
-        //public async Task<bool> EditAsync(EditCategoryInputModel model)
-        //{
-        //    var category = this._dbContext.Categories
-        //        .FirstOrDefault(x => x.Id == model.Id);
+        public async Task<bool> EditAsync(EditCategoryInputModel model)
+        {
+            var category = this._dbContext.Categories
+                .FirstOrDefault(x => x.Id == model.Id);
 
-        //    if (category == null)
-        //    {
-        //        return false;
-        //    }
+            if (category == null)
+            {
+                return false;
+            }
 
-        //    try
-        //    {
-        //        category.Name = model.Name;
-        //        category.Description = model.Description;
-        //        category.
+            try
+            {
+                category.Name = model.Name;
+                category.Description = model.Description;
 
-        //        await this._dbContext.SaveChangesAsync();
+                await this._dbContext.SaveChangesAsync();
 
-        //        return true;
-        //    }
-        //    catch
-        //    {
-        //        return false;
-        //    }
-        //}
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         public Category GetById(string id)
         {
