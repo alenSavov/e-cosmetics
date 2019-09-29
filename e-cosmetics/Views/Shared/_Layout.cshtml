@@ -45,18 +45,27 @@
     <header class="site-header">
         <section class="site-header-nav">
             <section class="nav-left-part">
-                <img src="~/img/Brand-Pictures/brand-pic-white.png" class="brand-nav"alt="e-cosmetics brand" />
+                <img src="~/img/Brand-Pictures/brand-pic-white.png" class="brand-nav" alt="e-cosmetics brand" />
 
             </section>
             <section class="nav-right-part">
-                <p >MENU</p>
-                <p><i class="fas fa-bars"></i></p>
+                <p>MENU</p>
+                <p class="hamburger-nav" ><i class="fas fa-bars hamburger-nav-icon" onclick="show()"></i></p>
             </section>
             @*<ul class="site-header-nav">
-            <li><a asp-controller="Home" asp-action="index">Projects</a></li>
-            <li><a asp-controller="Home" asp-action="AboutMe">About me</a></li>
-            <li><a asp-controller="Home" asp-action="contact">Contact</a></li>
-        </ul>*@
+                    <li><a asp-controller="Home" asp-action="index">Projects</a></li>
+                    <li><a asp-controller="Home" asp-action="AboutMe">About me</a></li>
+                    <li><a asp-controller="Home" asp-action="contact">Contact</a></li>
+                </ul>*@
+        </section>
+        <section id="nav-toggle">
+            <p id="close-btn"><i class="fas fa-times" onclick="closeToggle()"></i></p>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
         </section>
     </header>
 

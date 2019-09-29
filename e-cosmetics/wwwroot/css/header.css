@@ -5,7 +5,7 @@
     background-color: var(--color-main-black);
 }
 
-.site-header-nav {    
+.site-header-nav {
     display: flex;
     flex: 0 0 100%;
     align-items: center;
@@ -13,14 +13,12 @@
 }
 
 .nav-left-part {
- 
     display: flex;
     flex: 0 0 80%;
 }
 
 .brand-nav {
     padding-left: 3em;
-
     height: 60px;
     width: 120px;
 }
@@ -42,6 +40,42 @@
 }
 
 .nav-right-part > p > i {
-        font-size: 3em;
-        font-weight:400;
- }
+    -webkit-text-stroke: 5px white;
+    font-size: 3em;
+}
+
+
+/* Toggle Navigation Menu*/
+#nav-toggle {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: -100vh;
+    background-color: var(--color-main-more-deeper-black);
+    transition: .4s;
+}
+
+#nav-toggle.active {
+    top: 0vh;
+}
+
+#nav-toggle.deActive {
+    top: -100vh;
+}
+
+#nav-toggle ul li {
+    list-style: none;
+    padding: 20px 24px;
+}
+
+#nav-toggle ul li a {
+    list-style: none;
+    color: var(--color-main-white);
+    font-size: 20px;
+}
+
+#close-btn {
+    color: var(--color-main-white);
+    font-size: 40px;
+    -webkit-text-stroke: -5px white;
+}
