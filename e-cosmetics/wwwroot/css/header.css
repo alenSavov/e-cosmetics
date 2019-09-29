@@ -47,6 +47,8 @@
 
 /* Toggle Navigation Menu*/
 #nav-toggle {
+    display:flex;
+    flex-wrap: wrap;
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -78,4 +80,20 @@
     color: var(--color-main-white);
     font-size: 40px;
     -webkit-text-stroke: -5px white;
+    position: absolute;
+    top: 25px;
+    right: 140px;
+}
+
+.toggle-top-menu{
+    display:flex;
+    flex: 0 0 100%;
+}
+
+.brand-nav-toggle-menu {
+    position: absolute;
+    top: 25px;
+    left: 140px;
+    height: 110px;
+    width: 240px;
 }
