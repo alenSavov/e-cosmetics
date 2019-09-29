@@ -9,7 +9,6 @@ function show() {
 }
 
 function closeToggle() {
-    console.log('work');
     document.getElementById('nav-toggle')
         .classList.remove('active');
 }

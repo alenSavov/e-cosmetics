@@ -3,4 +3,8 @@
     --color-main-black: rgb(25, 25, 25);
     --color-main-more-deeper-black: rgb(16, 16, 16);
     --color-main-white: rgb(255, 255, 255);
+    --color-hover: rgb(183, 194, 198);
+    /*Buttons*/
+    --def: #96B7C4;
+    --inv: #fff;
 }
