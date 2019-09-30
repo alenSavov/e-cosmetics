@@ -52,7 +52,6 @@
 
     .aside-right p {
         position: absolute;
-        /*transform: rotate(90deg);*/
     }
 
         .aside-right p span {
@@ -89,4 +88,5 @@
 
 .site-banner {
     overflow: hidden;
+    height:800px;
 }

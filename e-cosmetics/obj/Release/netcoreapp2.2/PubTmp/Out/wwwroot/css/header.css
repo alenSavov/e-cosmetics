@@ -14,8 +14,14 @@
 
 .nav-left-part {
     display: flex;
+ 
     flex: 0 0 80%;
 }
+
+    .nav-left-part ul {
+        display: flex;
+     
+    }
 
 .brand-nav {
     padding-left: 3em;
@@ -26,17 +32,25 @@
 .nav-right-part {
     background-color: var(--color-main-white);
     display: flex;
+    justify-content: center;
     align-items: center;
     flex: 0 0 20%;
     height: 100%;
 }
 
     .nav-right-part p {
+        display:flex;
+        align-items:center;
+        justify-content: flex-end;
         font-weight: 600;
         font-size: 1em;
         letter-spacing: 5px;
-        padding-left: 2em;
         margin: 0;
+    }
+
+    .nav-right-part p:before {
+        content: "MENU";
+        padding-right: 2em;
     }
 
     .nav-right-part > p > i {
