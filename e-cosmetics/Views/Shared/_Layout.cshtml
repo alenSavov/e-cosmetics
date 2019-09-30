@@ -21,35 +21,13 @@
 </head>
 <body>
 
-    @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">e_cosmetics</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>*@
-
     <header class="site-header">
         <section class="site-header-nav">
             <section class="nav-left-part">
                 <img src="~/img/Brand-Pictures/brand-pic-white.png" class="brand-nav" alt="e-cosmetics brand" />
 
             </section>
-            <section class="nav-right-part">
-                <p>MENU</p>
+            <section class="nav-right-part">               
                 <p class="hamburger-nav"><i class="fas fa-bars hamburger-nav-icon" onclick="show()"></i></p>
             </section>
             @*<ul class="site-header-nav">
@@ -67,22 +45,21 @@
 
             <section class="nav-links">
                 <ul>
-                    <li><a href="#" class="btn from-middle">Home</a></li>
-                    <li><a href="#" class="btn from-middle">About</a></li>
-                    <li><a href="#" class="btn from-middle">Contacts</a></li>
-                    <li><a href="#" class="btn from-middle">Blog</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Blog</a></li>
                 </ul>
 
             </section>
         </section>
     </header>
 
-    <div class="container">
+   
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-    </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">

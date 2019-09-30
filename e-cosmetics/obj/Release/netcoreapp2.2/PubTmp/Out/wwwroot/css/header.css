@@ -1,0 +1,135 @@
+﻿.site-header {
+    display: flex;
+    flex: 0 0 100%;
+    height: 6em;
+    background-color: var(--color-main-black);
+}
+
+.site-header-nav {
+    display: flex;
+    flex: 0 0 100%;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-left-part {
+    display: flex;
+    flex: 0 0 80%;
+}
+
+.brand-nav {
+    padding-left: 3em;
+    height: 60px;
+    width: 120px;
+}
+
+.nav-right-part {
+    background-color: var(--color-main-white);
+    display: flex;
+    align-items: center;
+    flex: 0 0 20%;
+    height: 100%;
+}
+
+    .nav-right-part p {
+        font-weight: 600;
+        font-size: 1em;
+        letter-spacing: 5px;
+        padding-left: 2em;
+        margin: 0;
+    }
+
+    .nav-right-part > p > i {
+        -webkit-text-stroke: 5px white;
+        font-size: 3em;
+    }
+
+
+/* Toggle Navigation Menu*/
+#nav-toggle {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: -100vh;
+    background-color: var(--color-main-more-deeper-black);
+    transition: .4s;
+}
+
+    #nav-toggle.active {
+        top: 0vh;
+    }
+
+    #nav-toggle.deActive {
+        top: -100vh;
+    }
+
+    #nav-toggle ul li a {
+        list-style: none;
+        color: var(--color-main-white);
+        font-size: 1.5em;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+#close-btn {
+    color: var(--color-main-white);
+    font-size: 40px;
+    -webkit-text-stroke: -5px white;
+    position: absolute;
+    top: 25px;
+    right: 140px;
+    transition: 4s;
+}
+
+    #close-btn:before {
+        content: 'CLOSE';
+        color: white;
+        position: absolute;
+        top: 17px;
+        right: 85px;
+        font-size: 14px;
+        letter-spacing: 5.6px;
+    }
+
+    #close-btn:hover {
+        cursor:pointer;
+        color: var(--color-hover);
+     
+    }
+
+.toggle-top-menu {
+    display: flex;
+    flex: 0 0 100%;
+}
+
+.brand-nav-toggle-menu {
+    position: absolute;
+    top: 25px;
+    left: 140px;
+    height: 110px;
+    width: 240px;
+}
+
+.nav-links {
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: center;
+}
+
+    .nav-links > ul li {
+        list-style: none;
+        padding: 5px 24px;
+        letter-spacing: 10px;
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+        align-items: center;
+        flex-direction: column;
+    }
+
+        .nav-links > ul li:hover {
+            color: var(--color-hover);
+        }

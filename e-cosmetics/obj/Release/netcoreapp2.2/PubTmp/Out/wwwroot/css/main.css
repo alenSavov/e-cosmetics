@@ -1,0 +1,15 @@
+﻿.site-wrapper{
+    display: flex;
+    flex: 0 0 100%;
+}
+
+.site-links-left-part {
+    display: flex;
+    flex: 0 0 10%;
+}
+
+.site-links-right-part {
+    display: flex;
+    flex: 0 0 10%;
+}
+
