@@ -6,11 +6,10 @@
 
 /*SOCIAL LINKS*/
 .social-links {
-    
     display: flex;
     flex-wrap: wrap;
-    flex-direction:column;
-    align-items:center;
+    flex-direction: column;
+    align-items: center;
     flex: 0 0 6%;
     background-color: var(--color-main-black);
 }
@@ -24,10 +23,12 @@
             color: var(--color-main-white);
             font-family: 'Cormorant', serif;
             background: none;
-            letter-spacing:5.6px;
+            letter-spacing: 5.6px;
+            font-size: 14px;
+            text-decoration: none;
         }
 
-.link-fb{
+.link-fb {
     top: 15em;
 }
 
@@ -40,16 +41,51 @@
 }
 
 
-
-
-
-
-
-
-.site-links-right-part {
+/*ASIDE-RIGHT*/
+.aside-right {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     flex: 0 0 6%;
 }
+
+    .aside-right p {
+        position: absolute;
+        /*transform: rotate(90deg);*/
+    }
+
+        .aside-right p span {
+            font-family: 'Cormorant', serif;
+            background: none;
+            letter-spacing: 5.6px;
+            font-size: 14px;
+            text-transform: uppercase;
+            transform: rotate(90deg);
+            color: var(--color-main-black);
+            flex: 0 0 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+.slogan-part-1 {
+    top: 13em;
+}
+
+.slogan-part-2 {
+    top: 18em;
+}
+
+.slogan-part-3 {
+    top: 24em;
+}
+
+.slogan-part-4 {
+    top: 31em;
+}
+
+
+
 
 .site-banner {
     overflow: hidden;
