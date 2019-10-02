@@ -1,6 +1,7 @@
 ﻿.site-wrapper {
     display: flex;
     flex: 0 0 88%;
+    justify-content:space-between;
 }
 
 
@@ -89,4 +90,6 @@
 .site-banner {
     overflow: hidden;
     height:800px;
+    display:flex;
+    flex: 0 0 88%;
 }
