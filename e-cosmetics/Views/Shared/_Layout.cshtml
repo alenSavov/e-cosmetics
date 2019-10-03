@@ -23,18 +23,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 <body>
 
     <header class="site-header">
         <section class="site-header-nav">
             <section class="nav-left-part">
-               
+
                 <img src="~/img/Brand-Pictures/brand-pic-white.png" class="brand-nav" alt="e-cosmetics brand" />
-                <p>ELIZABETH COSMETICS</p>
+                <p class="brand-p">ELIZABETH COSMETICS</p>
             </section>
             <section class="nav-right-part">
-                <p class="hamburger-nav"><i class="fas fa-bars hamburger-nav-icon" onclick="show()"></i></p>
+                @*<p class="hamburger-nav"><i class="fas fa-bars hamburger-nav-icon" onclick="show()"></i></p>*@
+                <div class="icon">
+                    <div class="hamburger" onclick="show()">
+
+                    </div>
+                </div>
             </section>
             @*<ul class="site-header-nav">
                     <li><a asp-controller="Home" asp-action="index">Projects</a></li>
@@ -60,10 +66,11 @@
             </section>
         </section>
     </header>
+    <!--
 
 
     <partial name="_CookieConsentPartial" />
-    <main role="main">
+    --><main role="main">
         @RenderBody()
     </main>
 

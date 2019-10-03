@@ -3,12 +3,25 @@
 
 // Write your JavaScript code.
 
-function show() {
-    document.getElementById('nav-toggle')
-        .classList.toggle('active');
-}
+$(document).ready(function () {
+    $('.icon').click(function () {
+        $('.icon').toggleClass('active');
+
+        setTimeout(function () {
+            document.getElementById('nav-toggle')
+                .classList.toggle('active');
+        }, 1000);
+    })
+})
+
+//function show() {
+//    document.getElementById('nav-toggle')
+//        .classList.toggle('active');
+//}
 
 function closeToggle() {
     document.getElementById('nav-toggle')
         .classList.remove('active');
+
+    $('.icon').toggleClass('active');
 }
