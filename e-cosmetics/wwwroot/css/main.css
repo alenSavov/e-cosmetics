@@ -1,7 +1,6 @@
 ﻿.site-wrapper {
     display: flex;
     flex: 0 0 94%;
-    /*justify-content: space-between;*/
 }
 
 /*ASIDE*/
@@ -28,32 +27,32 @@
 
             .aside ul li p {
                 font-family: 'Cormorant', serif;
+                line-height: 25px;
                 background: none;
-                letter-spacing: 5.6px;
+                letter-spacing: 8.6px;
                 font-size: 14px;
                 text-transform: uppercase;
                 transform: rotate(90deg);
-                color: var(--color-main-white);
+                color: var(--color-main-gray);
                 flex: 0 0 100%;
                 display: flex;
                 flex-wrap: wrap;
             }
 
                 .aside ul li:nth-child(1) {
-                    /*position: absolute;*/
-                    top: 13em;
+                    top: 15em;
                 }
 
                 .aside ul li:nth-child(2) {
-                    top: 18em;
+                    top: 23em;
                 }
 
                 .aside ul li:nth-child(3) {
-                    top: 24em;
+                    top: 31em;
                 }
 
                 .aside ul li:nth-child(4) {
-                    top: 31em;
+                    top: 38em;
                 }
 
 

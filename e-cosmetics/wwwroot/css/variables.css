@@ -3,12 +3,10 @@
     --color-main-black: rgb(25, 25, 25);
     --color-main-more-deeper-black: rgb(16, 16, 16);
     --color-main-white: rgb(255, 255, 255);
-    --color-hover: rgb(183, 194, 198);
+    --color-main-gray: rgb(242, 242, 242);
 
 
     /*Fonts*/
     --font-cormorant: "Cormorant Garamond";
-
-
-    /*Buttons*/
+    --color-hover: rgb(183, 194, 198);
 }

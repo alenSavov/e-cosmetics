@@ -27,10 +27,21 @@
 
 
 .brand-nav {
-    margin-left: 1em;
-    height: 40px;
-    width: 70px;
+    position:absolute;
+    top:22px;
+    left:26px;
+    height: 50px;
+    width: 58px;
 }
+
+.nav-left-part p {
+    letter-spacing: 6.6px;
+    color: var(--color-main-white);
+    position: absolute;
+    top: 35px;
+    left: 100px;
+}
+
 
 .nav-right-part {
     background-color: var(--color-main-white);
