@@ -1,38 +1,63 @@
 ﻿/* Sticky footer styles
 -------------------------------------------------- */
 
-.footer{
-    display:flex;
+.footer {
+    display: flex;
     flex: 0 0 100%;
-    justify-content:center;
+    justify-content: center;
 }
 
 .site-footer {
     display: flex;
     flex: 0 0 85%;
+    flex-wrap: wrap;
+    justify-content: center;
     background-color: var(--color-main-gray);
     margin: 80px 0px;
 }
 
     .site-footer ul {
-        display:flex;
+        display: flex;
         flex: 0 0 100%;
         list-style-type: none;
         justify-content: center;
     }
 
         .site-footer ul li {
-            display:flex;
-            justify-content:center;
-            align-items:center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: var(--color-main-more-deeper-black);
-            width: 48px;
-            height: 48px;
-            margin: 80px 10px;
-            
+            width: 60px;
+            height: 60px;
+            margin: 80px 10px 0 10px;
         }
 
             .site-footer ul li a i {
                 color: var(--color-main-white);
-                font-size: 17px;
+                font-size: 23px;
             }
+
+.brand-footer {
+    display: block;
+   
+}
+
+.brand-footer img {
+    display: block;
+    margin-top: 60px;
+    height: 190px;
+    width: 334px;
+}
+
+.copyrights {
+    display: flex;
+    justify-content:center;
+    flex: 0 0 100%;
+}
+
+    .copyrights p {
+        font-family: var(--font-cormorant);
+        font-size: 20px;
+        margin: 70px 0; 
+    }
