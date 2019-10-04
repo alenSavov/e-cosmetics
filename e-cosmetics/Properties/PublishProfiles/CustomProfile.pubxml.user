@@ -17,7 +17,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2019 22:29:17</publishTime>
     </File>
     <File Include="appsettings.production.json">
-      <publishTime>10/03/2019 22:45:36</publishTime>
+      <publishTime>10/04/2019 00:06:44</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>08/12/2019 12:42:04</publishTime>
@@ -32,22 +32,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2019 19:52:30</publishTime>
     </File>
     <File Include="e-cosmetics.deps.json">
-      <publishTime>10/03/2019 22:45:36</publishTime>
+      <publishTime>10/04/2019 00:06:44</publishTime>
     </File>
     <File Include="e-cosmetics.dll">
-      <publishTime>10/03/2019 22:45:32</publishTime>
+      <publishTime>10/04/2019 00:06:39</publishTime>
     </File>
     <File Include="e-cosmetics.pdb">
-      <publishTime>10/03/2019 22:45:32</publishTime>
+      <publishTime>10/04/2019 00:06:39</publishTime>
     </File>
     <File Include="e-cosmetics.runtimeconfig.json">
-      <publishTime>10/03/2019 22:45:36</publishTime>
+      <publishTime>10/04/2019 00:06:44</publishTime>
     </File>
     <File Include="e-cosmetics.Views.dll">
-      <publishTime>10/03/2019 22:45:33</publishTime>
+      <publishTime>10/04/2019 00:06:40</publishTime>
     </File>
     <File Include="e-cosmetics.Views.pdb">
-      <publishTime>10/03/2019 22:45:33</publishTime>
+      <publishTime>10/04/2019 00:06:40</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
       <publishTime>08/14/2019 22:22:36</publishTime>
@@ -95,16 +95,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/14/2019 22:22:42</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>10/03/2019 22:45:36</publishTime>
+      <publishTime>10/04/2019 00:06:44</publishTime>
     </File>
     <File Include="wwwroot/css/buttons.css">
       <publishTime>09/29/2019 19:22:23</publishTime>
     </File>
     <File Include="wwwroot/css/footer.css">
-      <publishTime>09/28/2019 16:16:27</publishTime>
+      <publishTime>10/04/2019 00:04:52</publishTime>
     </File>
     <File Include="wwwroot/css/header.css">
-      <publishTime>10/03/2019 22:41:59</publishTime>
+      <publishTime>10/03/2019 23:11:01</publishTime>
     </File>
     <File Include="wwwroot/css/main.css">
       <publishTime>10/03/2019 20:40:09</publishTime>
@@ -5052,6 +5052,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="wwwroot/img/Brand-Pictures/logo_elizabeth-01.jpg">
       <publishTime>08/27/2018 17:27:40</publishTime>
+    </File>
+    <File Include="wwwroot/img/Brand-Pictures/logo_elizabeth-01.png">
+      <publishTime>08/27/2018 17:27:32</publishTime>
     </File>
     <File Include="wwwroot/img/Brand-Pictures/logo_elizabeth_logotype-01.jpg">
       <publishTime>08/27/2018 17:25:10</publishTime>
