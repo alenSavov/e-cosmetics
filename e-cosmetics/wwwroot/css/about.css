@@ -45,6 +45,7 @@
     display: flex;
     flex: 0 0 100%;
     height: 700px;
+    margin-bottom: 17em;
     justify-content: flex-end;
     background-color: var(--color-main-white);
 }
@@ -58,7 +59,11 @@
     .about-main div:nth-child(2) {
         display: flex;
         flex: 0 0 35%;
-        background: url("/img/about2.jpg") no-repeat center center;
+        background-image: url("/img/about-pic.jpg");
+        background-repeat: no-repeat;
+        background-position: 89% -21%;
+
+        /*background: url("/img/about2.jpg") no-repeat center center;*/
     }
 
     .about-main div:nth-child(3) {
@@ -68,6 +73,7 @@
 
 .about-img-box {
     margin-left: 1%;
+    height:830px;
 }
 
 .about-content p {
