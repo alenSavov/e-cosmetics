@@ -17,7 +17,6 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        @*<link rel="stylesheet" href="/fontawesome/css/all.min.css">*@
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -45,18 +44,12 @@
                 <p class="brand-p">ELIZABETH COSMETICS</p>
             </section>
             <section class="nav-right-part">
-                @*<p class="hamburger-nav"><i class="fas fa-bars hamburger-nav-icon" onclick="show()"></i></p>*@
                 <div class="icon">
                     <div class="hamburger" onclick="show()">
 
                     </div>
                 </div>
             </section>
-            @*<ul class="site-header-nav">
-                    <li><a asp-controller="Home" asp-action="index">Projects</a></li>
-                    <li><a asp-controller="Home" asp-action="AboutMe">About me</a></li>
-                    <li><a asp-controller="Home" asp-action="contact">Contact</a></li>
-                </ul>*@
         </section>
         <section id="nav-toggle">
 
@@ -68,7 +61,7 @@
             <section class="nav-links">
                 <ul>
                     <li><a asp-controller="Home" asp-action="index">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a asp-controller="Home" asp-action="About">About</a></li>
                     <li><a href="#">Series</a></li>
                     <li><a asp-controller="Home" asp-action="contacts">Contacts</a></li>
                     <li><a href="#">Blog</a></li>
@@ -86,7 +79,7 @@
         @RenderBody()
     </main>
 
-    <footer class="border-top footer text-muted">
+    <footer class="">
         <div class="site-footer">
             <ul>
                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>

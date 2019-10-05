@@ -31,5 +31,10 @@ namespace e_cosmetics.Controllers
         {
             return this.View();
         }
+
+        public IActionResult About()
+        {
+            return this.View();
+        }
     }
 }
