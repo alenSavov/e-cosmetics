@@ -7,60 +7,74 @@
 
 .about {
     display: flex;
-    flex-wrap:wrap;
-    justify-content:center;
+    flex-wrap: wrap;
+    justify-content: center;
     flex: 0 0 85%;
     background-color: var(--color-main-black);
 }
 
 /*ABOUT-TITLE*/
-    .about-wrapper .about-title {
-        display: flex;
-        flex: 0 0 85%;
-        justify-content:space-around;
-        padding: 7em 0 7em 0;
-        align-items:center;
-   
+.about-wrapper .about-title {
+    display: flex;
+    flex: 0 0 85%;
+    justify-content: space-around;
+    padding: 7em 0 7em 0;
+    align-items: center;
+}
+
+    .about-wrapper .about-title p {
+        color: var(--color-main-white);
     }
 
-        .about-wrapper .about-title p {
-            color: var(--color-main-white);
+        .about-wrapper .about-title p:nth-child(1) {
+            font: 2.5em/1.5 var(--font-cormorant), Georgia, serif;
+            font-weight: 900;
         }
 
-            .about-wrapper .about-title p:nth-child(1) {
-                font: 2.5em/1.5 var(--font-cormorant), Georgia, serif;
-                font-weight: 900;
-            }
-
-            .about-wrapper .about-title p:nth-child(2) {
-                font-size: 1em;
-                font-family: var(--font-cormorant);
-                letter-spacing: 5.5px;
-                color: var(--color-hover);
-                text-transform: uppercase;
-            }
+        .about-wrapper .about-title p:nth-child(2) {
+            font-size: 1em;
+            font-family: var(--font-cormorant);
+            letter-spacing: 5.5px;
+            color: var(--color-hover);
+            text-transform: uppercase;
+        }
 
 
 /*ABOUT-MAIN*/
 .about-main {
     display: flex;
     flex: 0 0 100%;
-    justify-content:flex-end;
+    height: 700px;
+    justify-content: flex-end;
     background-color: var(--color-main-white);
 }
 
     .about-main div:nth-child(1) {
         display: flex;
-        flex: 0 0 10%;
+        flex: 0 0 15%;
         background-color: var(--color-main-black);
     }
 
     .about-main div:nth-child(2) {
         display: flex;
-        flex: 0 0 30%;
+        flex: 0 0 35%;
+        background: url("/img/about2.jpg") no-repeat center center;
     }
 
     .about-main div:nth-child(3) {
         display: flex;
-        flex: 0 0 60%;
+        flex: 0 0 49%;
     }
+
+.about-img-box {
+    margin-left: 1%;
+}
+
+.about-content p {
+    font-family: var(--font-cormorant);
+    font-size: 1.6em;
+    font-weight: 600;
+    padding: 5em 5em;
+    line-height: 1.7em;
+    color: rgb(92, 92, 92);
+}
