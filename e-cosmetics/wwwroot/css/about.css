@@ -2,6 +2,65 @@
     display: flex;
     flex-wrap: wrap;
     flex: 0 0 100%;
-    height:500px;
+    justify-content: center;
+}
+
+.about {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    flex: 0 0 85%;
     background-color: var(--color-main-black);
 }
+
+/*ABOUT-TITLE*/
+    .about-wrapper .about-title {
+        display: flex;
+        flex: 0 0 85%;
+        justify-content:space-around;
+        padding: 7em 0 7em 0;
+        align-items:center;
+   
+    }
+
+        .about-wrapper .about-title p {
+            color: var(--color-main-white);
+        }
+
+            .about-wrapper .about-title p:nth-child(1) {
+                font: 2.5em/1.5 var(--font-cormorant), Georgia, serif;
+                font-weight: 900;
+            }
+
+            .about-wrapper .about-title p:nth-child(2) {
+                font-size: 1em;
+                font-family: var(--font-cormorant);
+                letter-spacing: 5.5px;
+                color: var(--color-hover);
+                text-transform: uppercase;
+            }
+
+
+/*ABOUT-MAIN*/
+.about-main {
+    display: flex;
+    flex: 0 0 100%;
+    justify-content:flex-end;
+    background-color: var(--color-main-white);
+}
+
+    .about-main div:nth-child(1) {
+        display: flex;
+        flex: 0 0 10%;
+        background-color: var(--color-main-black);
+    }
+
+    .about-main div:nth-child(2) {
+        display: flex;
+        flex: 0 0 30%;
+    }
+
+    .about-main div:nth-child(3) {
+        display: flex;
+        flex: 0 0 60%;
+    }
