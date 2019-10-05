@@ -100,12 +100,43 @@
                     font-size: 1.3em;
                     letter-spacing: 4px;
                     text-transform: uppercase;
-                    color: rgb(168, 168, 168);
+                    color: var(--color-depper-gray);
                     padding-top: 6.5em;
                 }
-
-
 
 #contacts-info-p {
     font-size: 5em;
 }
+
+
+.contacts-down {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+    justify-content: center;
+}
+
+    .contacts-down ul {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        /*padding: 0 0 0 5.5em;*/
+        justify-content: center;
+        flex: 0 0 100%;
+    }
+
+        .contacts-down ul li {
+            flex: 0 0 100%;
+            display: flex;
+            font-family: var(--font-cormorant);
+            font-size: 2.5em;
+            padding: 0 38px 20px 0;
+            color: var(--color-main-white);
+            justify-content:center;
+        }
+
+            .contacts-down ul li a {
+                text-decoration: none;
+                padding-left: 20px;
+                color: var(--color-depper-gray);
+            }
