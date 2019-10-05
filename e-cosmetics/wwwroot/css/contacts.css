@@ -1,14 +1,17 @@
 ﻿.contacts-wrapper {
     display: flex;
+    flex-wrap: wrap;
     flex: 0 0 100%;
-    background-color: var(--color-main-gray);
+    justify-content: center;
 }
 
     .contacts-wrapper .contacts-head {
         display: flex;
         flex: 0 0 100%;
         flex-wrap: wrap;
-        margin: 4em 10em;
+        padding: 10px 0 75px 0;
+        align-items: center;
+        background-color: var(--color-main-gray);
     }
 
 .contacts-head h1 {
@@ -16,16 +19,18 @@
     flex: 0 0 100%;
     font-family: var(--font-cormorant);
     font-weight: 900;
+    margin: 55px 0 0 70px;
 }
 
 .contacts-head ul {
     list-style-type: none;
     display: flex;
+    margin: 0 0 0 70px;
 }
 
     .contacts-head ul li {
-        margin: 1em 1em;
-        font-size: 20px;
+        margin: 0 0.5em;
+        font-size: 23px;
         font-weight: 600;
         font-family: var(--font-cormorant);
     }
@@ -36,21 +41,71 @@
             position: relative;
         }
 
-       
-        .contacts-head ul li a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: black;
-            transform-origin: bottom right;
-            transition: transform 0.25s ease-out;
+
+            .contacts-head ul li a::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: black;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+
+            .contacts-head ul li a:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+
+
+
+/*Contacts-Main*/
+.contacts-main {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 85%;
+    margin-top: 5em;
+    background-color: var(--color-main-black);
+}
+
+    .contacts-main .info {
+        display: flex;
+        justify-content: space-around;
+        flex: 0 0 100%;
+    }
+
+        .contacts-main .info div {
+            color: var(--color-main-white);
+            font-family: var(--font-cormorant);
+            display: flex;
         }
 
-        .contacts-head ul li a:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
+            .contacts-main .info div:nth-child(1) {
+                flex: 0 0 85%;
+            }
+
+                .contacts-main .info div:nth-child(1) h2 {
+                    padding: 1em 1em;
+                    font-weight: 600;
+                }
+
+            .contacts-main .info div:nth-child(2) {
+                flex: 0 0 15%;
+            }
+
+                .contacts-main .info div:nth-child(2) p {
+                    font-size: 1.3em;
+                    letter-spacing: 4px;
+                    text-transform: uppercase;
+                    color: rgb(168, 168, 168);
+                    padding-top: 6.5em;
+                }
+
+
+
+#contacts-info-p {
+    font-size: 5em;
+}
