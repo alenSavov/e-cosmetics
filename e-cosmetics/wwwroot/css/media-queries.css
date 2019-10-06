@@ -21,21 +21,46 @@
        content:none;
     }
 
+    .aside ul li:nth-child(1) {
+        top: 10em;
+    }
+
+    .aside ul li:nth-child(2) {
+        top: 19em;
+    }
+
+    .aside ul li:nth-child(3) {
+        top: 27em;
+    }
+
+    .aside ul li:nth-child(4) {
+        top: 34em;
+    }
+
 }
 
-@media (max-width: 820px) {
-    /*.icon:before {
-        content: none;
-        right: -11px;
+@media (max-width: 850px) {
+    #close-btn:before, #close-btn:after {
+        right: 80px;
     }
 
-    .hamburger {
-        width: 36px;
-        height: 3px;
-        left: 50%;
+    #close-btn-before {
+        right: 130px;
+    }
+    
+    .aside ul li:nth-child(1) {
+        top: 8em;
     }
 
-        .hamburger:before, .hamburger:after {
-            width: 36px;
-        }*/
+    .aside ul li:nth-child(2) {
+        top: 16em;
+    }
+
+    .aside ul li:nth-child(3) {
+        top: 23em;
+    }
+
+    .aside ul li:nth-child(4) {
+        top: 30em;
+    }
 }
