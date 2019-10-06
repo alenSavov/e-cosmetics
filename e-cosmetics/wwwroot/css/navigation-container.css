@@ -14,7 +14,7 @@ div.main-nav {
         flex: 0 0 100%;
         font-family: var(--font-cormorant);
         font-weight: 900;
-        margin: 55px 0 0 70px;
+        padding: 55px 0 0 70px;
     }
 
     div.main-nav ul {
