@@ -10,16 +10,43 @@
     .site-banner {
         height: initial;
     }
+
+    /*About Page*/
+    .about-content {
+        justify-content: center;
+        flex: 0 0 100%;
+    }
+
+    .about-img-box {
+        flex: 0 0 90%;
+        background-position: 18% 0%;
+        height: 747px;
+    }
+
+    .about-text {
+        flex: 0 0 90%;
+        line-height: 1.9em;
+    }
+}
+
+@media (max-width: 1250px) {
+    
+    /*About Page*/
+    .about-img-box {
+        flex: 0 0 100%;
+        background-position: 5% 0%;
+        height: 747px;
+    }
 }
 
 @media (max-width: 950px) {
     .icon {
         right: 0px;
     }
-    
-    .icon:before {
-       content:none;
-    }
+
+        .icon:before {
+            content: none;
+        }
 
     .aside ul li:nth-child(1) {
         top: 10em;
@@ -37,6 +64,9 @@
         top: 34em;
     }
 
+    .about-content {
+        flex: 0 0 100%;
+    }
 }
 
 @media (max-width: 850px) {
@@ -47,7 +77,7 @@
     #close-btn-before {
         right: 130px;
     }
-    
+
     .aside ul li:nth-child(1) {
         top: 8em;
     }
