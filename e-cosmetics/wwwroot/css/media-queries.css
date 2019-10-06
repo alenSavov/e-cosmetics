@@ -39,6 +39,43 @@
     }
 }
 
+@media (max-width: 1024px) {
+
+    /*Contact Page*/
+
+    .contacts-main .info {
+        justify-content: center;
+    }
+
+        .contacts-main .info div:nth-child(1) {
+            flex: initial;
+        }
+
+
+    #contacts-info-p {
+        display:none;
+    }
+
+    .contacts-main .info div:nth-child(1) h2 {
+        padding: 0.2em 0.5em;
+        flex: 0 0 60%;
+    }
+
+    .contacts-main .info div:nth-child(2) p {
+        padding-top: 3.5em;
+        font-size: 2.3em;
+    }
+
+    /*About Page*/
+    .welcome-title {
+        display: block;
+    }
+
+    .about-img-box {
+        background-position: 99% 0%;
+    }
+}
+
 @media (max-width: 950px) {
     .icon {
         right: 0px;
