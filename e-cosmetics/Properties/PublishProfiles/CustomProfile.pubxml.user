@@ -17,7 +17,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2019 22:29:17</publishTime>
     </File>
     <File Include="appsettings.production.json">
-      <publishTime>10/04/2019 00:06:44</publishTime>
+      <publishTime>10/06/2019 11:41:09</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>08/12/2019 12:42:04</publishTime>
@@ -32,22 +32,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2019 19:52:30</publishTime>
     </File>
     <File Include="e-cosmetics.deps.json">
-      <publishTime>10/04/2019 00:06:44</publishTime>
+      <publishTime>10/06/2019 11:41:09</publishTime>
     </File>
     <File Include="e-cosmetics.dll">
-      <publishTime>10/04/2019 00:06:39</publishTime>
+      <publishTime>10/06/2019 11:41:06</publishTime>
     </File>
     <File Include="e-cosmetics.pdb">
-      <publishTime>10/04/2019 00:06:39</publishTime>
+      <publishTime>10/06/2019 11:41:06</publishTime>
     </File>
     <File Include="e-cosmetics.runtimeconfig.json">
-      <publishTime>10/04/2019 00:06:44</publishTime>
+      <publishTime>10/06/2019 11:41:09</publishTime>
     </File>
     <File Include="e-cosmetics.Views.dll">
-      <publishTime>10/04/2019 00:06:40</publishTime>
+      <publishTime>10/06/2019 11:41:07</publishTime>
     </File>
     <File Include="e-cosmetics.Views.pdb">
-      <publishTime>10/04/2019 00:06:40</publishTime>
+      <publishTime>10/06/2019 11:41:07</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
       <publishTime>08/14/2019 22:22:36</publishTime>
@@ -95,31 +95,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/14/2019 22:22:42</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>10/04/2019 00:06:44</publishTime>
+      <publishTime>10/06/2019 11:41:09</publishTime>
+    </File>
+    <File Include="wwwroot/css/about.css">
+      <publishTime>10/06/2019 11:39:40</publishTime>
     </File>
     <File Include="wwwroot/css/buttons.css">
       <publishTime>09/29/2019 19:22:23</publishTime>
     </File>
+    <File Include="wwwroot/css/contacts.css">
+      <publishTime>10/06/2019 09:59:33</publishTime>
+    </File>
     <File Include="wwwroot/css/footer.css">
-      <publishTime>10/04/2019 00:04:52</publishTime>
+      <publishTime>10/05/2019 13:21:15</publishTime>
     </File>
     <File Include="wwwroot/css/header.css">
-      <publishTime>10/03/2019 23:11:01</publishTime>
+      <publishTime>10/05/2019 18:27:31</publishTime>
     </File>
     <File Include="wwwroot/css/main.css">
-      <publishTime>10/03/2019 20:40:09</publishTime>
+      <publishTime>10/06/2019 11:36:38</publishTime>
+    </File>
+    <File Include="wwwroot/css/navigation-container.css">
+      <publishTime>10/06/2019 10:45:35</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
-      <publishTime>10/01/2019 21:47:53</publishTime>
+      <publishTime>10/05/2019 22:57:32</publishTime>
     </File>
     <File Include="wwwroot/css/slideshow-container.css">
       <publishTime>10/02/2019 21:33:18</publishTime>
     </File>
     <File Include="wwwroot/css/typography.css">
-      <publishTime>10/02/2019 22:19:15</publishTime>
+      <publishTime>10/05/2019 12:28:16</publishTime>
     </File>
     <File Include="wwwroot/css/variables.css">
-      <publishTime>10/03/2019 20:26:56</publishTime>
+      <publishTime>10/05/2019 12:25:37</publishTime>
     </File>
     <File Include="wwwroot/favicon.ico">
       <publishTime>09/02/2019 21:55:36</publishTime>
@@ -5038,6 +5047,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="wwwroot/img/9aa100ec-5f2a-47dd-b129-bdefb2fc0bf7_XT203599.jpg">
       <publishTime>09/12/2019 22:14:13</publishTime>
     </File>
+    <File Include="wwwroot/img/about-pic.jpg">
+      <publishTime>02/14/2019 15:42:14</publishTime>
+    </File>
+    <File Include="wwwroot/img/about2.jpg">
+      <publishTime>02/14/2019 15:04:16</publishTime>
+    </File>
     <File Include="wwwroot/img/b2cb8be0-96ce-482b-99dd-ddb8b0077fd6_XT203588.jpg">
       <publishTime>09/13/2019 23:03:08</publishTime>
     </File>
@@ -5071,11 +5086,38 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="wwwroot/img/Brand-Pictures/output-onlinejpgtools.png">
       <publishTime>09/29/2019 13:57:34</publishTime>
     </File>
+    <File Include="wwwroot/img/browserconfig.xml">
+      <publishTime>10/04/2019 18:24:38</publishTime>
+    </File>
     <File Include="wwwroot/img/ef021104-431a-4887-b951-cfde8cdc04c5_XT203601.jpg">
       <publishTime>09/12/2019 22:16:02</publishTime>
     </File>
+    <File Include="wwwroot/img/FavIcons/android-chrome-192x192.png">
+      <publishTime>10/04/2019 18:47:44</publishTime>
+    </File>
+    <File Include="wwwroot/img/FavIcons/android-chrome-512x512.png">
+      <publishTime>10/04/2019 18:47:44</publishTime>
+    </File>
+    <File Include="wwwroot/img/FavIcons/apple-touch-icon.png">
+      <publishTime>10/04/2019 18:47:44</publishTime>
+    </File>
+    <File Include="wwwroot/img/FavIcons/favicon-16x16.png">
+      <publishTime>10/04/2019 18:47:44</publishTime>
+    </File>
+    <File Include="wwwroot/img/FavIcons/favicon-32x32.png">
+      <publishTime>10/04/2019 18:47:44</publishTime>
+    </File>
+    <File Include="wwwroot/img/FavIcons/favicon.ico">
+      <publishTime>10/04/2019 18:47:44</publishTime>
+    </File>
+    <File Include="wwwroot/img/FavIcons/site.webmanifest">
+      <publishTime>10/04/2019 18:47:44</publishTime>
+    </File>
     <File Include="wwwroot/img/logo_elizabeth_slogan-01.jpg">
       <publishTime>08/27/2018 17:25:43</publishTime>
+    </File>
+    <File Include="wwwroot/img/manifest.json">
+      <publishTime>10/04/2019 18:24:38</publishTime>
     </File>
     <File Include="wwwroot/img/model1.jpg">
       <publishTime>10/02/2019 20:14:00</publishTime>
