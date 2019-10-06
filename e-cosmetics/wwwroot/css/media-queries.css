@@ -1,10 +1,41 @@
 ﻿@media (max-width: 1350px) {
-    .article-image,
-    .article-image a img {
-        height: 46.7em;
+    .icon {
+        right: -10px;
     }
 
-    .article-s {
-        height: 46.7em;
+        .icon:before {
+            right: 80px;
+        }
+
+    .site-banner {
+        height: initial;
     }
+}
+
+@media (max-width: 950px) {
+    .icon {
+        right: 0px;
+    }
+    
+    .icon:before {
+       content:none;
+    }
+
+}
+
+@media (max-width: 820px) {
+    /*.icon:before {
+        content: none;
+        right: -11px;
+    }
+
+    .hamburger {
+        width: 36px;
+        height: 3px;
+        left: 50%;
+    }
+
+        .hamburger:before, .hamburger:after {
+            width: 36px;
+        }*/
 }
