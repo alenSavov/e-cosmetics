@@ -131,3 +131,54 @@
         top: 30em;
     }
 }
+
+
+@media (max-width: 650px) {
+    
+    /*NavBar*/
+    .icon {
+        right: -23px;
+    }
+
+    /*Home Page*/
+    .aside ul li p {
+        font-size: 7px;
+    }
+
+    .aside ul li:nth-child(1) {
+        top: 7em;
+    }
+
+    .aside ul li:nth-child(2) {
+        top: 13em;
+    }
+
+    .aside ul li:nth-child(3) {
+        top: 18em;
+    }
+
+    .aside ul li:nth-child(4) {
+        top: 22em;
+    }
+
+    /*Contacts Page*/
+    .contacts-down ul li {
+        font-size: 1.5em;
+    }
+
+    /*Navigation menu in main*/
+    div.main-nav {
+        padding: 10px 0 40px 0;
+    }
+
+    div.main-nav h1 {
+        font-size: 3em;
+    }
+
+    /*Toggle menu*/
+    #nav-toggle ul li a {
+        font-size: 1.2em;
+    }
+
+
+}
