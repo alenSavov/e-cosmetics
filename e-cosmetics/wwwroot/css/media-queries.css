@@ -140,6 +140,15 @@
         right: -23px;
     }
 
+    #close-btn:before, #close-btn:after {
+        right: 58px;
+    }
+
+    #close-btn-before {
+        right: 84px;
+    }
+
+
     /*Home Page*/
     .aside ul li p {
         font-size: 7px;
