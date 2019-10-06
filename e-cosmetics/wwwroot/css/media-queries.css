@@ -1,0 +1,10 @@
+﻿@media (max-width: 1350px) {
+    .article-image,
+    .article-image a img {
+        height: 46.7em;
+    }
+
+    .article-s {
+        height: 46.7em;
+    }
+}

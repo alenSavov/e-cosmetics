@@ -17,7 +17,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2019 22:29:17</publishTime>
     </File>
     <File Include="appsettings.production.json">
-      <publishTime>10/06/2019 11:41:09</publishTime>
+      <publishTime>10/06/2019 13:58:52</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>08/12/2019 12:42:04</publishTime>
@@ -32,22 +32,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2019 19:52:30</publishTime>
     </File>
     <File Include="e-cosmetics.deps.json">
-      <publishTime>10/06/2019 11:41:09</publishTime>
+      <publishTime>10/06/2019 13:58:52</publishTime>
     </File>
     <File Include="e-cosmetics.dll">
-      <publishTime>10/06/2019 11:41:06</publishTime>
+      <publishTime>10/06/2019 13:58:47</publishTime>
     </File>
     <File Include="e-cosmetics.pdb">
-      <publishTime>10/06/2019 11:41:06</publishTime>
+      <publishTime>10/06/2019 13:58:47</publishTime>
     </File>
     <File Include="e-cosmetics.runtimeconfig.json">
-      <publishTime>10/06/2019 11:41:09</publishTime>
+      <publishTime>10/06/2019 13:58:52</publishTime>
     </File>
     <File Include="e-cosmetics.Views.dll">
-      <publishTime>10/06/2019 11:41:07</publishTime>
+      <publishTime>10/06/2019 13:58:48</publishTime>
     </File>
     <File Include="e-cosmetics.Views.pdb">
-      <publishTime>10/06/2019 11:41:07</publishTime>
+      <publishTime>10/06/2019 13:58:48</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
       <publishTime>08/14/2019 22:22:36</publishTime>
@@ -95,7 +95,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/14/2019 22:22:42</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>10/06/2019 11:41:09</publishTime>
+      <publishTime>10/06/2019 13:58:52</publishTime>
     </File>
     <File Include="wwwroot/css/about.css">
       <publishTime>10/06/2019 11:39:40</publishTime>
@@ -110,7 +110,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/05/2019 13:21:15</publishTime>
     </File>
     <File Include="wwwroot/css/header.css">
-      <publishTime>10/05/2019 18:27:31</publishTime>
+      <publishTime>10/06/2019 13:57:17</publishTime>
     </File>
     <File Include="wwwroot/css/main.css">
       <publishTime>10/06/2019 11:36:38</publishTime>
