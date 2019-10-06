@@ -1,5 +1,4 @@
 ﻿.site-header {
-    
     display: flex;
     flex: 0 0 100%;
     height: 6em;
@@ -64,9 +63,9 @@
     .icon:before {
         content: 'MENU';
         font-family: var(--font-cormorant);
-        font-size:16px;
+        font-size: 16px;
         font-weight: 600;
-        letter-spacing:6px;
+        letter-spacing: 6px;
         display: block;
         position: absolute;
         top: 30px;
@@ -151,7 +150,45 @@
         text-decoration: none;
     }
 
+
+
 #close-btn {
+    color: var(--color-main-black);
+    font-size: 40px;
+    -webkit-text-stroke: -5px white;
+    transition: 1s;
+    width: 70px;
+    height: 32px;
+    opacity: 0.3;
+}
+
+#close-btn:hover {
+    opacity: 1;
+}
+    #close-btn:before,
+    #close-btn:after {
+        position: absolute;
+        top: 15px;
+        right: 103px;
+
+        content: ' ';
+        height: 60px;
+        width: 5px;
+        background-color: #333;
+    }
+
+    #close-btn:before {
+        transform: rotate(45deg);
+    }
+
+    #close-btn:after {
+        transform: rotate(-45deg);
+    }
+
+
+
+
+/*#close-btn {
     color: var(--color-main-black);
     font-size: 40px;
     -webkit-text-stroke: -5px white;
@@ -174,27 +211,47 @@
     #close-btn:hover {
         cursor: pointer;
         color: var(--color-hover);
+    }*/
+
+  
+
+    /*#close-btn span:before,
+    #close-btn span:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 60px;
+        width: 5px;
+        background-color: black;
     }
+
+    #close-btn span:before {
+        transform: rotate(45deg);
+    }
+
+    #close-btn span:after {
+        transform: rotate(-45deg);
+    }*/
 
 .toggle-top-menu {
     display: flex;
     flex: 0 0 100%;
-    height: 130px;
+    height: 6em;
     background-color: var(--color-main-white);
 }
 
 .brand-nav-toggle-menu {
     position: absolute;
-    top: 25px;
-    left: 140px;
-    height: 70px;
-    width: 96px;
+    top: 22px;
+    left: 26px;
+    height: 50px;
+    width: 58px;
 }
 
-.toggle-top-menu span{
+.toggle-top-menu span {
     position: absolute;
-    left:268px;
-    top:51px;
+    top: 35px;
+    left: 100px;
 }
 
 .nav-links {
@@ -214,11 +271,10 @@
         font-size: 40px;
     }
 
-    .nav-links > ul li a {
-        font-family: var(--font-cormorant);
-        
-    }
-
-        .nav-links > ul li a:hover {
-            color: var(--color-hover) !important;
+        .nav-links > ul li a {
+            font-family: var(--font-cormorant);
         }
+
+            .nav-links > ul li a:hover {
+                color: var(--color-hover) !important;
+            }
