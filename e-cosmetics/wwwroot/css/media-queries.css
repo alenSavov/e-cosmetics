@@ -30,7 +30,7 @@
 }
 
 @media (max-width: 1250px) {
-    
+
     /*About Page*/
     .about-img-box {
         flex: 0 0 100%;
@@ -53,7 +53,7 @@
 
 
     #contacts-info-p {
-        display:none;
+        display: none;
     }
 
     .contacts-main .info div:nth-child(1) h2 {
@@ -134,7 +134,7 @@
 
 
 @media (max-width: 650px) {
-    
+
     /*NavBar*/
     .icon {
         right: -23px;
@@ -180,9 +180,9 @@
         padding: 10px 0 40px 0;
     }
 
-    div.main-nav h1 {
-        font-size: 3em;
-    }
+        div.main-nav h1 {
+            font-size: 3em;
+        }
 
     /*Toggle menu*/
     #nav-toggle ul li a {
@@ -190,4 +190,46 @@
     }
 
 
+    @media (max-width: 550px) {
+        /*Navigation menu*/
+        .nav-left-part p {
+            letter-spacing: 2.6px;
+        }
+
+        .hamburger {
+            left: 63%;
+        }
+
+        /*Main Page*/
+        .about {
+            flex: 0 0 100%;
+            margin: 4em 0;
+        }
+
+        .aside ul li p {
+            letter-spacing: 4.6px;
+            font-size: 8px;
+        }
+
+        .aside ul li p {
+            font-size: 6.5px;
+        }
+
+        .aside ul li:nth-child(1) {
+            top: 6.5em;
+        }
+
+        .aside ul li:nth-child(2) {
+            top: 11em;
+        }
+
+        .aside ul li:nth-child(3) {
+            top: 15em;
+        }
+
+        .aside ul li:nth-child(4) {
+            top: 18.5em;
+        }
+
+    }
 }
