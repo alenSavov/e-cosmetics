@@ -192,10 +192,18 @@
 
     @media (max-width: 550px) {
         /*Navigation menu*/
+        #close-btn-before {
+            display: none;
+        }
+
+        .elizabeth-cosmetics-title {
+            letter-spacing: 1.3px;
+        }
+
         .icon {
             right: -17px;
         }
-        
+
         .nav-left-part p {
             letter-spacing: 2.6px;
         }
@@ -268,6 +276,45 @@
             flex-wrap: wrap;
             flex: 0 0 65%;
         }
+    }
 
+    @media (max-width: 450px) {
+        /*Navigation menu*/
+        .icon {
+            right: -26px;
+        }
+
+        .nav-left-part p {
+             letter-spacing: 1.6px; 
+        }
+
+        /*Toggle nav menu*/
+        #nav-toggle ul li a {
+            font-size: 1.1em;
+        }
+
+
+        /*About Page*/
+        .about-wrapper .about-title {
+            padding: 5em 0 5em 0;
+        }
+
+        .about-text {
+            font-size: 1.2em;
+        }
+
+        /*Footer*/
+        .contacts-down ul li {
+            font-size: 1.2em;
+            padding: 0 0px 20px 0;
+        }
+
+            .contacts-down ul li a {
+                padding-left: 7px;
+            }
+
+        .site-footer {
+            margin: 10px 0px;
+        }
     }
 }
