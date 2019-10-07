@@ -288,6 +288,15 @@
             letter-spacing: 1.6px;
         }
 
+        /*Main nav*/
+        div.main-nav h1 {
+            padding: 20px 0 0 40px;
+        }
+
+        div.main-nav ul {
+            margin: 0 0 0 30px;
+        }
+
         /*Toggle nav menu*/
         #nav-toggle ul li a {
             font-size: 1.1em;
@@ -297,6 +306,10 @@
         /*About Page*/
         .about-wrapper .about-title {
             padding: 5em 0 5em 0;
+        }
+
+        .about-img-box {
+            background-position: 78% 0%;
         }
 
         .about-text {
@@ -331,7 +344,7 @@
         }
 
         .icon {
-            right: -37px;
+            right: -33px;
             top: 36px;
         }
 
@@ -367,7 +380,7 @@
         }
 
         #nav-toggle ul li a {
-            font-size: 0.8em;
+            font-size: 1.2em;
         }
 
         /*Main Page*/
@@ -393,6 +406,14 @@
             top: 14em;
         }
 
+        /*Main nav*/
+        div.main-nav h1 {
+            padding: 20px 0 0 40px;
+        }
+
+        div.main-nav ul {
+            margin: 0 0 0 30px;
+        }
         
         /*About Page*/
         .about-img-box {
