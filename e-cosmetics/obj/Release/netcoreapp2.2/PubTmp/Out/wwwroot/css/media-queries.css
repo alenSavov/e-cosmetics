@@ -192,20 +192,12 @@
 
     @media (max-width: 550px) {
         /*Navigation menu*/
-        .icon {
-            right: -17px;
-        }
-        
         .nav-left-part p {
             letter-spacing: 2.6px;
         }
 
         .hamburger {
             left: 63%;
-        }
-
-        div.main-nav h1 {
-            padding: 20px 0 0 70px;
         }
 
         /*Main Page*/
@@ -237,36 +229,6 @@
 
         .aside ul li:nth-child(4) {
             top: 18.5em;
-        }
-
-        .about-text {
-            text-align: justify;
-            font-size: 1.4em;
-            padding: 1.5em 1.2em;
-            line-height: 1.6em;
-        }
-
-        /*Footer*/
-        .brand-footer img {
-            display: block;
-            margin-top: 35px;
-            height: 120px;
-            width: 230px;
-        }
-
-        .site-footer ul li {
-            width: 45px;
-            height: 45px;
-            margin: 51px 10px 0 10px;
-        }
-
-            .site-footer ul li a i {
-                font-size: 20px;
-            }
-
-        .copyrights {
-            flex-wrap: wrap;
-            flex: 0 0 65%;
         }
 
     }
