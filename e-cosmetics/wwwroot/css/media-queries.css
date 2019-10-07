@@ -329,7 +329,7 @@
             height: 40px;
             width: 44px;
         }
-        
+
         .icon {
             right: -37px;
             top: 36px;
@@ -347,6 +347,28 @@
                 width: 35px;
             }
 
+
+        /*Toggle menu*/
+        .toggle-top-menu span {
+            display: none;
+        }
+
+        #close-btn:before, #close-btn:after {
+            right: 40px;
+            height: 51px;
+            top:12px;
+        }
+
+        .brand-nav-toggle-menu {
+            top: 17px;
+            left: 26px;
+            height: 40px;
+            width: 44px;
+        }
+
+        #nav-toggle ul li a {
+            font-size: 0.8em;
+        }
 
         /*Main Page*/
         .aside ul li p {
@@ -371,6 +393,11 @@
             top: 14em;
         }
 
+        
+        /*About Page*/
+        .about-img-box {
+            background-position: 75% 0%;
+        }
 
         /*Footer*/
         .site-footer ul li {
