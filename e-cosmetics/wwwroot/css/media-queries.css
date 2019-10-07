@@ -376,11 +376,22 @@
         .site-footer ul li {
             width: 35px;
             height: 35px;
-            margin: 51px 10px 0 10px;
+            margin: 40px 10px 0 10px;
         }
 
             .site-footer ul li a i {
                 font-size: 14px;
             }
+
+        .brand-footer img {
+            height: 90px;
+            width: 170px;
+        }
+
+        .copyrights p {
+            font-family: var(--font-cormorant);
+            font-size: 15px;
+            margin: 32px 0;
+        }
     }
 }
