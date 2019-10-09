@@ -98,6 +98,7 @@
 
 .categories-title {
     display: flex;
+    justify-content:space-around;
     flex: 0 0 100%;
     color: var(--color-main-white);
 }
@@ -125,3 +126,6 @@
     flex: 0 0 50%;
     justify-content: space-around;
 }
+
+
+/*Sub-title*/
