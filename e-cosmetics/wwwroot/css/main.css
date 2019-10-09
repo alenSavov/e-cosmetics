@@ -75,3 +75,40 @@
     text-transform:uppercase;
     letter-spacing: 5px;
 }
+
+
+
+/*Categories*/
+.categories-wrapper {
+    display: flex;
+    justify-content:center;
+    flex: 0 0 100%;
+    margin: 2em 0;
+    background-color: var(--color-main-white);
+}
+
+.categories {
+    display: flex;
+    flex-wrap:wrap;
+    flex: 0 0 85%;
+    background-color: var(--color-main-black);
+}
+
+.category{
+    display:flex;
+    flex-wrap:wrap;
+    flex: 0 0 30%;
+}
+
+.category-name{
+    flex: 0 0 100%;
+}
+
+.category-description {
+    flex: 0 0 100%;
+}
+
+.category a {
+    flex: 0 0 50%;
+    justify-content: space-around;
+}
