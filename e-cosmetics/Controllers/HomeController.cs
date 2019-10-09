@@ -1,18 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using e_cosmetics.Models;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using e_cosmetics.Models;
+using e_cosmetics.Services.Interfaces;
+using e_cosmetics.Services.Categories.Models;
 
 namespace e_cosmetics.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ICategoryService _categoryService;
+        private readonly IPictureService _pictureService;
+
+        public HomeController(ICategoryService categoryService,
+            IPictureService pictureService)
+        {
+            this._categoryService = categoryService;
+            this._pictureService = pictureService;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var categories = this._categoryService
+               .GetAll();
+
+
+            foreach (var category in categories)
+            {
+                category.Picture = this._pictureService
+                .GetCategoryPicturesById(category.Id);
+
+                category.Picture.Url = this._pictureService.BuildCategoryPictureUrl(category.Picture.Id, category.Picture.VersionPicture);
+            }
+
+            var categoryCollection = new CategoriesCollectionViewModel
+            {
+                Categories = categories
+            };
+
+            return View(categoryCollection);
         }
 
         public IActionResult Privacy()

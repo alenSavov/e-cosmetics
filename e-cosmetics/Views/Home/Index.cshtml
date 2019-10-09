@@ -1,12 +1,12 @@
-﻿@{
+﻿@model e_cosmetics.Services.Categories.Models.CategoriesCollectionViewModel
+
+@{
     ViewData["Title"] = "Elizabet Cosmetics";
 }
 
 <section class="site-wrapper">
     <aside class="aside">
-        @*<p class="link-fb"><a href="https://www.facebook.com">FACEBOOK</a></p>
-        <p class="link-twitter"><a href="https://www.facebook.com">TWITTER</a></p>
-        <p class="link-instagram"><a href="https://www.facebook.com">INSTAGRAM</a></p>*@
+
         <ul>
             <li><p>beauty</p></li>
             <li><p>about</p></li>
@@ -41,4 +41,19 @@
         </div>
 
     </section>
+
 </section>
+    <section class="categories-wrapper">
+        <div>
+
+            @foreach (var category in Model.Categories)
+            {
+                <p>@category.Name</p>
+                <p>@category.Description</p>
+
+                <img src="@category.Picture.Url" width="800" height="400" />
+                <a asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
+                <a asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
+            }
+        </div>
+    </section>
