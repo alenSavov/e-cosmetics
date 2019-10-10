@@ -1,1 +1,8 @@
-﻿
+﻿.button {
+    font-size: 1.5em;
+    color: var(--color-main-white);
+    text-decoration: none;
+    letter-spacing: 7px;
+    font-family: var(--font-cormorant);
+    text-align:center;
+}
