@@ -107,20 +107,33 @@
 
     .categories-title h2 {
         font-family: var(--font-cormorant);
-        font-size: 6em;
-        letter-spacing: 5px;
+        font-size: 5em;
+        letter-spacing: 13px;
+        padding-right: 7em;
         margin: 0;
         font-family: var(--font-cormorant);
     }
 
 
+.categories-content{
+    display:flex;
+    flex: 0 0 100%;
+    justify-content:center;
+    margin-bottom: 7em;
+}
 
 .category {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    flex: 0 0 20%;
+    flex: 0 0 30%;
     margin: 0 0.8em;
+}
+
+.category img{
+    display: flex;
+    height: 320px;
+    flex: 0 0 100%;
 }
 
 .category-name {
