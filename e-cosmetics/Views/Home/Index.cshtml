@@ -57,7 +57,7 @@
             <div class="category">
                 <p class="category-name">@category.Name</p>
                 <img src="@category.Picture.Url" class="category-picture" width="250" height="250" />
-                <p class="category-description">@category.Description</p>
+                @*<p class="category-description">@category.Description</p>*@
                 <a asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
                 <a asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
             </div>
