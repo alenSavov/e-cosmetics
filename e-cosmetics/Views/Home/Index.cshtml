@@ -61,14 +61,17 @@
                     <span></span>
                     <span></span>
                     <span></span>
-                    <img src="@category.Picture.Url" class="category-picture" width="250" height="250" />
+                    <div class="image-wrapper">
+                        <img src="@category.Picture.Url" class="category-picture" width="250" height="250" />
+                    </div>
                     @*<p class="category-description">@category.Description</p>*@
-                    <p class="category-name">@category.Name</p>
+                    @*<p class="category-name">@category.Name</p>*@
 
-                    <a class="button custom-underline" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
-                    <a class="button custom-underline" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
+                    @*<a class="button custom-underline" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>*@
+                    @*<a class="button custom-underline" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>*@
                 </div>
             }
+
         </section>
     </div>
 </section>
