@@ -56,7 +56,7 @@
 
             @foreach (var category in Model.Categories)
             {
-                <div class="category" href="">
+                <a class="category" href="">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -69,7 +69,7 @@
 
                     @*<a class="button custom-underline" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>*@
                     @*<a class="button custom-underline" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>*@
-                </div>
+                </a>
             }
 
         </section>
