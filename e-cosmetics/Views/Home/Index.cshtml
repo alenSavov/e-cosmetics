@@ -57,12 +57,8 @@
             @foreach (var category in Model.Categories)
             {
                 <a class="category" href="">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
                     <div class="image-wrapper">
-                        <img src="@category.Picture.Url" class="category-picture" width="250" height="250" />
+                        <span><img src="@category.Picture.Url" class="category-picture" width="250" height="250" /></span>
                     </div>
                     @*<p class="category-description">@category.Description</p>*@
                     @*<p class="category-name">@category.Name</p>*@
