@@ -99,14 +99,14 @@
     display: flex;
     flex-wrap: wrap;
     flex: 0 0 85%;
-    padding-bottom: 3em;
+    padding-bottom: 4em;
     justify-content: center;
     background-color: black;
 }
 
 .categories-title {
     display: flex;
-    padding: 5em 0;
+    padding: 6.5em 0;
     align-items:center;
     flex: 0 0 100%;
 }
@@ -114,6 +114,7 @@
     .categories-title h2 {
         flex: 0 0 85%;
         font-family: var(--font-cormorant);
+        color: var(--color-main-white);
         font-size: 5em;
         letter-spacing: 13px;
         margin: 0;
