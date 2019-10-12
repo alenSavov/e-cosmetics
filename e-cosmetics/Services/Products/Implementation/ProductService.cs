@@ -103,8 +103,19 @@ namespace e_cosmetics.Services.Products.Implementation
             return this._dbContext
                  .Products
                  .FirstOrDefault(x => x.Id == id);
-
         }
+
+        public IEnumerable<Product> GetAllProductsForCategoryById(string id)
+        {
+            var products = this._dbContext
+                .Products
+                .Where(p => p.CategoryId == id)
+                .ToList();
+
+            return products;
+        }
+
+       
 
         //public async Task AddPicturesAsync(ICollection<Picture> pictures, string productId)
         //{

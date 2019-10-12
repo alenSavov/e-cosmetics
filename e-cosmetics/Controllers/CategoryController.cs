@@ -1,9 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using AutoMapper;
 using e_cosmetics.Data;
 using e_cosmetics.Models;
 using e_cosmetics.Services.Categories.Models;
 using e_cosmetics.Services.Interfaces;
+using e_cosmetics.Services.Products.Contracts;
 using Microsoft.AspNetCore.Mvc;
 
 namespace e_cosmetics.Controllers
@@ -13,18 +15,21 @@ namespace e_cosmetics.Controllers
         private readonly ICategoryService _categoryService;
         private readonly ApplicationDbContext _dbContext;
         private readonly IPictureService _pictureService;
+        private readonly IProductService _productService;
         private readonly IMapper _mapper;
 
 
         public CategoryController(ICategoryService categoryService,
             ApplicationDbContext dbContext,
             IMapper mapper,
-            IPictureService pictureService)
+            IPictureService pictureService,
+            IProductService productService)
         {
             this._categoryService = categoryService;
             this._dbContext = dbContext;
             this._mapper = mapper;
             this._pictureService = pictureService;
+            this._productService = productService;
         }
 
         public IActionResult Index()
@@ -117,6 +122,20 @@ namespace e_cosmetics.Controllers
 
 
             return View(categoryView);
+        }
+
+        public IActionResult GetById(string id)
+        {
+            if (id == null)
+            {
+                return this.View();
+            }
+
+            var products = this._dbContext
+                .Products
+                .FirstOrDefault(x => x.CategoryId == id);
+
+            return null;
         }
 
         [HttpPost]
