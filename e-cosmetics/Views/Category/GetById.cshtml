@@ -1,20 +1,31 @@
 ﻿@model e_cosmetics.Services.Products.Models.ProductCollectionViewModel
 
 @{
-    ViewData["Title"] = "GetById";
+
+    ViewData["Title"] = "Products";
 }
 
-<h1>GetById</h1>
+<section class="products-wrapper">
+    <div class="main-nav">
+        <h1>Products</h1>
 
-<div>
-    @foreach (var product in @Model.Products)
+        <ul>
+            <li><a asp-controller="Home" asp-action="index">Home</a></li>
+            <li><p>Products</p></li>
+        </ul>
+    </div>
+
+
+    <div>
+        @foreach (var product in @Model.Products)
     {
         <div>@product.Name</div>
         <div>@product.Description</div>
 
         @foreach (var picture in product.Pictures)
         {
-            <img src="@picture.Url" alt="Alternate Text"  height="300" width=" 300"/>
+        <img src="@picture.Url" alt="Alternate Text" height="300" width=" 300" />
         }
     }
-</div>
+    </div>
+</section>

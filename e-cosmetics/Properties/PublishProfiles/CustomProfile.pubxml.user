@@ -17,7 +17,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2019 22:29:17</publishTime>
     </File>
     <File Include="appsettings.production.json">
-      <publishTime>10/07/2019 21:35:50</publishTime>
+      <publishTime>10/13/2019 19:03:36</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>08/12/2019 12:42:04</publishTime>
@@ -32,22 +32,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2019 19:52:30</publishTime>
     </File>
     <File Include="e-cosmetics.deps.json">
-      <publishTime>10/07/2019 21:35:49</publishTime>
+      <publishTime>10/13/2019 19:03:36</publishTime>
     </File>
     <File Include="e-cosmetics.dll">
-      <publishTime>10/07/2019 21:35:46</publishTime>
+      <publishTime>10/13/2019 19:03:34</publishTime>
     </File>
     <File Include="e-cosmetics.pdb">
-      <publishTime>10/07/2019 21:35:46</publishTime>
+      <publishTime>10/13/2019 19:03:34</publishTime>
     </File>
     <File Include="e-cosmetics.runtimeconfig.json">
-      <publishTime>10/07/2019 21:35:50</publishTime>
+      <publishTime>10/13/2019 19:03:36</publishTime>
     </File>
     <File Include="e-cosmetics.Views.dll">
-      <publishTime>10/07/2019 21:35:47</publishTime>
+      <publishTime>10/13/2019 19:03:34</publishTime>
     </File>
     <File Include="e-cosmetics.Views.pdb">
-      <publishTime>10/07/2019 21:35:47</publishTime>
+      <publishTime>10/13/2019 19:03:34</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
       <publishTime>08/14/2019 22:22:36</publishTime>
@@ -95,13 +95,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/14/2019 22:22:42</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>10/07/2019 21:35:50</publishTime>
+      <publishTime>10/13/2019 19:03:36</publishTime>
     </File>
     <File Include="wwwroot/css/about.css">
       <publishTime>10/06/2019 11:39:40</publishTime>
     </File>
     <File Include="wwwroot/css/buttons.css">
-      <publishTime>09/29/2019 19:22:23</publishTime>
+      <publishTime>10/10/2019 21:53:01</publishTime>
     </File>
     <File Include="wwwroot/css/contacts.css">
       <publishTime>10/06/2019 09:59:33</publishTime>
@@ -110,25 +110,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/05/2019 13:21:15</publishTime>
     </File>
     <File Include="wwwroot/css/header.css">
-      <publishTime>10/06/2019 14:18:26</publishTime>
+      <publishTime>10/13/2019 18:49:57</publishTime>
     </File>
     <File Include="wwwroot/css/main.css">
-      <publishTime>10/06/2019 14:18:26</publishTime>
+      <publishTime>10/13/2019 18:49:19</publishTime>
     </File>
     <File Include="wwwroot/css/media-queries.css">
-      <publishTime>10/07/2019 21:30:59</publishTime>
+      <publishTime>10/13/2019 19:01:02</publishTime>
     </File>
     <File Include="wwwroot/css/navigation-container.css">
       <publishTime>10/06/2019 10:45:35</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
-      <publishTime>10/06/2019 14:18:22</publishTime>
+      <publishTime>10/09/2019 20:38:35</publishTime>
     </File>
     <File Include="wwwroot/css/slideshow-container.css">
       <publishTime>10/02/2019 21:33:18</publishTime>
     </File>
     <File Include="wwwroot/css/typography.css">
-      <publishTime>10/05/2019 12:28:16</publishTime>
+      <publishTime>10/07/2019 22:16:48</publishTime>
     </File>
     <File Include="wwwroot/css/variables.css">
       <publishTime>10/05/2019 12:25:37</publishTime>
@@ -5136,6 +5136,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="wwwroot/img/model5.jpg">
       <publishTime>10/02/2019 21:13:03</publishTime>
+    </File>
+    <File Include="wwwroot/img/seria-picture-1.jpg">
+      <publishTime>07/08/2019 15:12:58</publishTime>
     </File>
     <File Include="wwwroot/img/slogan-2.jpg">
       <publishTime>09/30/2019 22:45:03</publishTime>
