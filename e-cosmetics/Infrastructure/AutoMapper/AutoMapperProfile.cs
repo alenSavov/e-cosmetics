@@ -22,7 +22,7 @@ namespace e_cosmetics.Infrastructure.AutoMapper
 
 
             CreateMap<Product, CreateProductInputModel>().ReverseMap();
-            
+
             CreateMap<Product, ProductViewModel>()
                  .ForMember(d => d.Pictures, x => x.MapFrom(s => s.ProductPictures))
                 .ReverseMap();

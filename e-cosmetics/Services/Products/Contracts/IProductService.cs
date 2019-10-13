@@ -15,6 +15,8 @@ namespace e_cosmetics.Services.Products.Contracts
 
         Product GetById(string id);
 
+        IEnumerable<ProductViewModel> GetAllProductsForCategoryById(string id);
+
         //Task AddPicturesAsync(ICollection<Picture> pictures, string productId);
     }
 }

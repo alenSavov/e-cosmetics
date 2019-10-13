@@ -80,6 +80,7 @@ namespace e_cosmetics.Controllers
             return this.View();
         }
 
+        
         public async Task<IActionResult> DeleteAsync(string id)
         {
             if (id == null)

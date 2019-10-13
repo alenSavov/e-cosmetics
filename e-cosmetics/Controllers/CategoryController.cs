@@ -6,6 +6,7 @@ using e_cosmetics.Models;
 using e_cosmetics.Services.Categories.Models;
 using e_cosmetics.Services.Interfaces;
 using e_cosmetics.Services.Products.Contracts;
+using e_cosmetics.Services.Products.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace e_cosmetics.Controllers
@@ -125,17 +126,31 @@ namespace e_cosmetics.Controllers
         }
 
         public IActionResult GetById(string id)
+
         {
             if (id == null)
             {
                 return this.View();
             }
 
-            var products = this._dbContext
-                .Products
-                .FirstOrDefault(x => x.CategoryId == id);
+            var products = this._productService
+                .GetAllProductsForCategoryById(id);
+            
+            foreach (var product in products)
+            {
+                var pictures = this._pictureService.GetAllProductPicturesById(product.Id);
+                product.Pictures = pictures;
 
-            return null;
+            }
+
+            var productsView = new ProductCollectionViewModel
+            {
+                Products = products             
+                
+            };
+
+
+            return this.View(productsView);
         }
 
         [HttpPost]

@@ -1,0 +1,20 @@
+﻿@model e_cosmetics.Services.Products.Models.ProductCollectionViewModel
+
+@{
+    ViewData["Title"] = "GetById";
+}
+
+<h1>GetById</h1>
+
+<div>
+    @foreach (var product in @Model.Products)
+    {
+        <div>@product.Name</div>
+        <div>@product.Description</div>
+
+        @foreach (var picture in product.Pictures)
+        {
+            <img src="@picture.Url" alt="Alternate Text"  height="300" width=" 300"/>
+        }
+    }
+</div>
