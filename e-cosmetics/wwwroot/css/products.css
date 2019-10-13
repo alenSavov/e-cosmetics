@@ -1,2 +1,15 @@
-﻿body {
+﻿.products-section-wrapper{
+    display:flex;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+    justify-content:center;
+    margin-top: 7em;
+   
+}
+
+.products-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 80%;
+    background-color: black;
 }

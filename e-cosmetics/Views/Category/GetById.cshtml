@@ -15,19 +15,23 @@
         </ul>
     </div>
 
-    <section class="products-content-wrapper">
+    <section class="products-section-wrapper">
 
-        <div>
+        <section class="products-section">
             @foreach (var product in @Model.Products)
             {
-            <div>@product.Name</div>
-            <div>@product.Description</div>
+            <section class="product">
 
-            @foreach (var picture in product.Pictures)
-             {
-            <img src="@picture.Url" alt="Alternate Text" height="300" width=" 300" />
-             }
+                @foreach (var picture in product.Pictures.Take(1))
+                  {
+                     
+                <img src="@picture.Url" alt="Product Picture" height="300" width=" 300" />
+                  }
+                <div>@product.Name</div>
+                <div>@product.Description</div>
+
+            </section>
             }
-        </div>
+        </section>
     </section>
 </section>
