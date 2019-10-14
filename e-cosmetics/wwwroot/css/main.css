@@ -105,7 +105,7 @@
 
 .categories-title {
     display: flex;
-    padding: 6.5em 0;
+    padding: 4.5em 0;
     align-items: center;
     flex: 0 0 100%;
     background-color: var( --color-main-black);
