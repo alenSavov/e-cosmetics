@@ -20,17 +20,17 @@
         <section class="products-section">
             @foreach (var product in @Model.Products)
             {
-            <section class="product">
+                <section class="product">
 
-                @foreach (var picture in product.Pictures.Take(1))
-                  {
-                     
-                <img src="@picture.Url" alt="Product Picture" height="300" width=" 300" />
-                  }
-                <div>@product.Name</div>
-                <div>@product.Description</div>
+                    @foreach (var picture in product.Pictures.Take(1))
+                    {
 
-            </section>
+                        <img class="product-picture" src="@picture.Url" alt="Product Picture"  />
+                    }
+                    <p class="product-name">@product.Name</p>
+                    @*<div>@product.Description</div>*@
+
+                </section>
             }
         </section>
     </section>
