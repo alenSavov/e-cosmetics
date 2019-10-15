@@ -1,8 +1,8 @@
-﻿.create-category-wrapper{
+﻿.create-category-wrapper {
     display: flex;
     flex: 0 0 100%;
-    flex-wrap:wrap;
-    justify-content:center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .category-container {
@@ -32,10 +32,30 @@
 
         .category-container form div {
             flex: 0 0 70%;
+            display: flex;
+            justify-content:center;
+            align-content:center;
+            flex-wrap: wrap;
             margin: 1em 0;
         }
 
+            .category-container form div label {
+                flex: 0 0 70%;
+                color: var(--color-main-white);
+                text-align: center;
+                font-family: var(--font-cormorant);
+                font-size: 1.5em;
+                letter-spacing: 3px;
+            }
+
             .category-container form div input,
-            category-container form div textarea {
+            .category-container form div textarea {
                 padding: 0.7em 3em;
+                flex: 0 0 100%;
+            }
+
+            .category-container form div button {
+                color: var(--color-main-white);
+                font-size: 1.5em;
+                border: 1px solid white;
             }
