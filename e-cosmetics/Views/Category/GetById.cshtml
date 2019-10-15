@@ -18,22 +18,26 @@
     <section class="products-section-wrapper">
 
         <section class="products-section">
-            @foreach (var product in @Model.Products)
-            {
-                <a class="product" href="/">
+            <ul>
+                @foreach (var product in @Model.Products)
+                {
+                    <li>
+                        <a class="product" href="/">
 
-                    @foreach (var picture in product.Pictures.Take(1))
-                    {
-                        <img class="product-picture" src="@picture.Url" alt="Product Picture" />
+                            @foreach (var picture in product.Pictures.Take(1))
+                            {
+                                @*<img class="product-picture" src="@picture.Url" alt="Product Picture" />*@
+                                <img style="background-image:url(@picture.Url)" />
 
-                    }
-                    <div class="product-text">
-                        <p class="product-name">@product.Name</p>
-                    </div>
-                    @*<div>@product.Description</div>*@
+                            }
+                            <div class="product-text">
+                                <p class="product-name">@product.Name</p>
+                            </div>
 
-                </a>
-            }
+                        </a>
+                    </li>
+                }
+            </ul>
         </section>
     </section>
 </section>

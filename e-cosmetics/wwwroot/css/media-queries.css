@@ -1,4 +1,5 @@
 ﻿@media (max-width: 1350px) {
+
     .icon {
         right: -10px;
     }
@@ -84,6 +85,11 @@
         flex: 0 0 75%;
         font-size: 3.5em;
     }
+
+    /*Products Page*/
+    .products-section ul li {
+        flex: 0 0 31% !important;
+    }
 }
 
 @media (max-width: 950px) {
@@ -118,6 +124,13 @@
     /*Index Page*/
     .image-wrapper img {
         height: 35em;
+    }
+
+    /*Products Page*/
+   
+    
+    .product {
+        height: 24em;
     }
 }
 
@@ -228,7 +241,7 @@
     }
 
     .categories {
-         padding-bottom: 0; 
+        padding-bottom: 0;
     }
 
     .categories-wrapper {
