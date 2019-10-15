@@ -13,9 +13,11 @@
         <form asp-area="" asp-controller="Category" asp-action="Create" class="" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger "></div>
 
-            <label asp-for="Name" class=""></label>
-            <input asp-for="Name" class="">
-            <span asp-validation-for="Name" class="text-danger"></span>
+            <div>
+                <label asp-for="Name" class=""></label>
+                <input asp-for="Name" class="">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
 
             <div class="">
                 <label asp-for="Description" class=""></label>
