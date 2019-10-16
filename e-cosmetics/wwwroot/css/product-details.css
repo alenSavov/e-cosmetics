@@ -1,0 +1,15 @@
+﻿.details-wrapper {
+    display: flex;
+    flex: 0 0 100%;
+    margin: 6em 0;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.product-details {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 89%;
+    padding-bottom: 4em;
+    justify-content: center;
+}
