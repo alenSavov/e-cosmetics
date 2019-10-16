@@ -3,33 +3,32 @@
     ViewData["Title"] = "Details";
 }
 
-    <section class="details-wrapper">
-        <div class="main-nav">
-            <h1>@Model.Name</h1>
+<section class="details-wrapper">
+    <div class="main-nav">
+        <h1>@Model.Name</h1>
 
-            <ul>
-                <li><a asp-controller="Home" asp-action="index">Home</a></li>
-                <li><p>Details</p></li>
-            </ul>
-        </div>
+        <ul>
+            <li><a asp-controller="Home" asp-action="index">Home</a></li>
+            <li><p>Details</p></li>
+        </ul>
+    </div>
 
-        <section class="product-details">
-            <section class="black-box-title">
-                <h2>@Model.Name</h2>
-                <p class="sub-title">Details</p>
-            </section>
-
-            <ul>
-                @foreach (var picture in @Model.Pictures)
-                {
-                    <div class="image-wrapper">
-                        <span><img src="@picture.Url" class="category-picture" width="250" height="250" /></span>
-                    </div>
-                    <li>@*<img src="picture.Url" width="400" height="400" />*@</li>
-                }
-            </ul>
-
+    <section class="product-details">
+        <section class="black-box-title">
+            <h2>@Model.Name</h2>
+            <p class="sub-title">Details</p>
         </section>
+
+        <ul class="black-box-content">
+            @foreach (var picture in @Model.Pictures)
+            {
+                <li class="image-wrapper">
+                    <span><img src="@picture.Url" class="category-picture" width="250" height="250" /></span>
+                </li>
+
+            }
+        </ul>
+
 
     </section>
 
