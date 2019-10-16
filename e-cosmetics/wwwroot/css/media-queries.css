@@ -437,10 +437,18 @@
         margin-bottom: 3em;
     }
 
-    .black-box h2 {
+    /*.black-box h2 {
         flex: 0 0 61%;
         font-size: 2em;
         letter-spacing: 9px;
+    }*/
+
+    .black-box-title h2 {
+        font-size: 1.5em;
+    }
+
+    .black-box-title h2 {
+        letter-spacing: 7px;
     }
 
     .sub-title {
@@ -565,6 +573,14 @@
     .black-box-title {
         padding: 2.5em 0;
     }
+
+        .black-box-title h2 {
+            font-size: 1.5em;
+        }
+
+        .black-box-title h2 {
+            letter-spacing: 7px;
+        }
 
     .sub-title {
         font-size: 0.6em;
