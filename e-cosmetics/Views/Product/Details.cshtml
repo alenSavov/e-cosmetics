@@ -19,11 +19,11 @@
             <p class="sub-title">Details</p>
         </section>
 
-        <ul class="black-box-content">
+        <ul class="black-box-content black-box-content-product">
             @foreach (var picture in @Model.Pictures)
             {
                 <li class="image-wrapper">
-                    <span><img src="@picture.Url" class="category-picture" width="250" height="250" /></span>
+                    <span><img src="@picture.Url" class="product-picture" width="250" height="250" /></span>
                 </li>
 
             }
