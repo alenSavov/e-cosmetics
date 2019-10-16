@@ -22,7 +22,7 @@
                 @foreach (var product in @Model.Products)
                 {
                     <li>
-                        <a class="product" href="/">
+                        <a class="product" asp-controller="Product" asp-action="GetById" asp-route-id="@product.Id">
 
                             @foreach (var picture in product.Pictures.Take(1))
                             {

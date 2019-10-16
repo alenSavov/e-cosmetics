@@ -99,5 +99,21 @@ namespace e_cosmetics.Controllers
 
             return RedirectToAction("GetAll");
         }
+
+        public IActionResult GetById(string id)
+        {
+            if (id == null)
+            {
+                return this.View();
+            }
+
+            var product = this._productService
+                .GetById(id);
+
+            var pictures = this._pictureService.GetAllProductPicturesById(product.Id);
+            product.Pictures = pictures;
+
+            return this.View("Details",product);
+        }
     }
 }

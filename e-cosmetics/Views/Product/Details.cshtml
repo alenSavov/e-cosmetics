@@ -1,0 +1,20 @@
+﻿@model e_cosmetics.Services.Products.Models.ProductViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>ProductDetails</h1>
+
+<section class="">
+    <section class="">
+        <p>@Model.Name</p>
+        
+        
+        @foreach (var picture in @Model.Pictures)
+        {
+
+            <img src="@picture.Url" width="400" height="400"/>
+        }
+    </section>
+</section>
+

@@ -98,11 +98,16 @@ namespace e_cosmetics.Services.Products.Implementation
 
         }
 
-        public Product GetById(string id)
+        public ProductViewModel GetById(string id)
         {
-            return this._dbContext
+            var product = this._dbContext
                  .Products
                  .FirstOrDefault(x => x.Id == id);
+
+            var productView = this._mapper
+                .Map<ProductViewModel>(product);
+
+            return productView;
         }
 
         public IEnumerable<ProductViewModel> GetAllProductsForCategoryById(string id)

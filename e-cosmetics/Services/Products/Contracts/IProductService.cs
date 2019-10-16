@@ -13,7 +13,7 @@ namespace e_cosmetics.Services.Products.Contracts
 
         Task<bool> DeleteAsync(string id);
 
-        Product GetById(string id);
+        ProductViewModel GetById(string id);
 
         IEnumerable<ProductViewModel> GetAllProductsForCategoryById(string id);
 
