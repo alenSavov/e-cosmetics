@@ -95,7 +95,7 @@
         flex: 0 0 75%;
     }
 
-    .categories-title h2 {
+    .black-box-title h2 {
         flex: 0 0 75%;
         font-size: 3.5em;
     }
@@ -178,7 +178,7 @@
         height: 29em;
     }
 
-    .categories-title {
+    .black-box-title {
         padding: 4.5em 0;
     }
 
@@ -246,14 +246,14 @@
     }
 
     /*Index Page*/
-    .categories-title {
+    .black-box-title {
         padding: 3.5em 0;
     }
 
-        .categories-title h2 {
-            flex: 0 0 65%;
-            font-size: 2.5em;
-        }
+    .black-box h2 {
+        flex: 0 0 65%;
+        font-size: 2.5em;
+    }
 
     .image-wrapper img {
         height: 21em;
@@ -437,7 +437,7 @@
         margin-bottom: 3em;
     }
 
-    .categories-title h2 {
+    .black-box h2 {
         flex: 0 0 61%;
         font-size: 2em;
         letter-spacing: 9px;
@@ -562,7 +562,7 @@
     }
 
     /*Index Page*/
-    .categories-title {
+    .black-box-title {
         padding: 2.5em 0;
     }
 
