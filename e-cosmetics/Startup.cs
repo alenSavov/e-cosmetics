@@ -15,6 +15,7 @@ using e_cosmetics.Services.Products.Implementation;
 using e_cosmetics.Models;
 using e_cosmetics.Services.Interfaces;
 using e_cosmetics.Services.Pictures.Implementation;
+using e_cosmetics.Middleware;
 
 namespace e_cosmetics
 {
@@ -100,6 +101,7 @@ namespace e_cosmetics
                 app.UseHsts();
             }
 
+            app.UseSeedDataMiddleware();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
