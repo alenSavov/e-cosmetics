@@ -44,7 +44,7 @@ namespace e_cosmetics
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-           
+            
 
             var config = new AutoMapper.MapperConfiguration(cfg =>
             {
@@ -53,7 +53,6 @@ namespace e_cosmetics
             var mapper = config.CreateMapper();
             services.AddSingleton(mapper);
 
-            //services.AddScoped<ICloudinaryService, CloudinaryService>();
             services.AddScoped<IPictureService, PictureService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
@@ -61,9 +60,24 @@ namespace e_cosmetics
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
+
+            //services.AddDefaultIdentity<IdentityUser>()
+            services.AddIdentity<User, IdentityRole>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password = new PasswordOptions()
+                {
+                    RequiredLength = 4,
+                    RequiredUniqueChars = 1,
+                    RequireDigit = false,
+                    RequireLowercase = false,
+                    RequireNonAlphanumeric = false,
+                    RequireUppercase = false
+                };
+            });
 
             services.AddMvcCore().AddDataAnnotations();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -89,7 +103,7 @@ namespace e_cosmetics
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-            
+
             app.UseAuthentication();
 
             app.UseMvc(routes =>
