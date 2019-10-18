@@ -1,0 +1,18 @@
+﻿@model e_cosmetics.ViewModels.Account.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Login</h1>
+<form class="" method="post" asp-controller="Account" asp-action="Login">
+    <span asp-validation-for="Username" class="text-danger"></span><br />
+    <input asp-for="Username" class="form-control text-center" placeholder="Username" />
+
+    <span asp-validation-for="Password" class="text-danger"></span><br />
+    <input asp-for="Password" class="form-control text-danger text-center" placeholder="Password" />
+    <div class="d-flex justify-content-center">
+        <button class="site-btn btn-dark  m-1 ">Login</button>
+    </div>
+</form>
+

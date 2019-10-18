@@ -10,6 +10,9 @@
         public const string FilePath = "/{0}/{1}";
 
 
+        public const string InvalidLogin = "Invalid Login.";
+        public const string TempDataSuccessMessageKey = "SuccessMessage";
+        public const string TempDataErrorMessageKey = "ErrorMessage";
 
         public const string imageFolderName = "img";
         public const string imageFolderPath = "../../img/";
