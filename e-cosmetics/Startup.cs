@@ -87,6 +87,8 @@ namespace e_cosmetics
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseAuthentication();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -106,7 +108,6 @@ namespace e_cosmetics
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

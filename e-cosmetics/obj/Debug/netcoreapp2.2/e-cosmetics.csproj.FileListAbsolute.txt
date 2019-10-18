@@ -5,7 +5,6 @@ C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\bin\Debug\netcore
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\bin\Debug\netcoreapp2.2\e-cosmetics.pdb
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\bin\Debug\netcoreapp2.2\e-cosmetics.Views.dll
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\bin\Debug\netcoreapp2.2\e-cosmetics.Views.pdb
-C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\e-cosmetics.csprojAssemblyReference.cache
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\e-cosmetics.csproj.CoreCompileInputs.cache
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\e-cosmetics.RazorAssemblyInfo.cache
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\e-cosmetics.RazorAssemblyInfo.cs
