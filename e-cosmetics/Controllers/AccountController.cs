@@ -1,5 +1,6 @@
 ﻿using e_cosmetics.Models;
 using e_cosmetics.Services.Accounts.Models;
+using e_cosmetics.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -10,10 +11,13 @@ namespace e_cosmetics.Controllers
     public class AccountController : Controller
     {
         private readonly SignInManager<User> _signInManager;
+        private readonly IAccountService _accountService;
 
-        public AccountController(SignInManager<User> signInManager)
+        public AccountController(SignInManager<User> signInManager,
+            IAccountService accountService)
         {
             this._signInManager = signInManager;
+            this._accountService = accountService;
         }
 
         public IActionResult Login()
@@ -75,6 +79,42 @@ namespace e_cosmetics.Controllers
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction(nameof(HomeController.Index), "Home");
+        }
+
+        public IActionResult Register()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterInputModel model, string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            if (ModelState.IsValid)
+            {
+                if (model.Username == null ||
+                    model.Password == null ||
+                    model.Email == null ||
+                    model.FirstName == null ||
+                    model.LastName == null ||
+                    model.ConfirmPassword == null)
+                {
+                    return this.View(model);
+                }
+
+                var userCreateResult = this._accountService.Create(model);
+                if (await userCreateResult)
+                {
+                    if (returnUrl == null)
+                    {
+                        return RedirectToAction(nameof(HomeController.Index), "Home");
+                    }
+
+                    return RedirectToAction(returnUrl);
+                }
+            }
+
+            return View(model);
         }
 
         [HttpGet]

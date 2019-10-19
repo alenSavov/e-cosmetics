@@ -4,6 +4,7 @@
     {
         /*ROLES*/
         public const string ADMINISTRATOR_ROLE = "Admin";
+        public const string EMPLOYEE_ROLE = "Admin";
 
         // Cloudinary
         public const string CategoryPicture = "{0}_categoryPicture";

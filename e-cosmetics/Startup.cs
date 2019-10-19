@@ -58,7 +58,7 @@ namespace e_cosmetics
             services.AddScoped<IPictureService, PictureService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
-            services.AddScoped<AccountService, AccountService>();
+            services.AddScoped<IAccountService, AccountService>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
