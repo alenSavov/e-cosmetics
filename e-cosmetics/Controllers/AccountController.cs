@@ -1,5 +1,5 @@
 ﻿using e_cosmetics.Models;
-using e_cosmetics.ViewModels.Account;
+using e_cosmetics.Services.Accounts.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace e_cosmetics.Services.Account.Implementation
+namespace e_cosmetics.Services.Interfaces
 {
-    public class AccountService
+    interface IAccountService
     {
     }
 }
