@@ -1,9 +1,14 @@
 ﻿.button {
     font-size: 1.5em;
-    color: var(--color-main-white);
+    color: var(--color-main-black);
     text-decoration: none;
     letter-spacing: 7px;
     font-family: var(--font-cormorant);
-    text-align:center;
+    text-align: center;
+}
+
+.button-primary{
+    font-weight: 900;
+    padding: 1em 1em;
 }
 

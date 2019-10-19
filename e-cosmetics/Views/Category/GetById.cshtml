@@ -35,6 +35,9 @@
                             </div>
 
                         </a>
+                        <a class="button button-primary" asp-controller="product" asp-action="delete" asp-route-id="@product.Id">Delete</a>
+                        <a class="button button-primary" asp-controller="product" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+
                     </li>
                 }
             </ul>
