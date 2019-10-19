@@ -15,11 +15,15 @@ namespace e_cosmetics.Data
 
         public DbSet<Product> Products { get; set; }
 
+        public DbSet<Article> Articles { get; set; }
+
         public DbSet<Picture> Pictures { get; set; }
 
         public DbSet<ProductPicture> ProductPictures { get; set; }
 
         public DbSet<CategoryPicture> CategoryPictures { get; set; }
+
+        public DbSet<ArticlePicture> ArticlePictures { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -36,6 +40,12 @@ namespace e_cosmetics.Data
                 .HasOne(p => p.CategoryPicture)
                 .WithOne(p => p.Category)
                 .HasForeignKey<CategoryPicture>(f => f.CategoryId);
+
+            builder
+                .Entity<Article>()
+                .HasOne(p => p.ArticlePicture)
+                .WithOne(p => p.Article)
+                .HasForeignKey<ArticlePicture>(f => f.ArticleId);
 
             builder
              .Entity<Product>()

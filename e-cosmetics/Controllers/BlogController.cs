@@ -8,7 +8,7 @@ namespace e_cosmetics.Controllers
 {
     public class BlogController : Controller
     {
-        public IActionResult Index()
+        public IActionResult GetAll()
         {
             return View();
         }
