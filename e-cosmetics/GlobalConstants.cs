@@ -2,6 +2,9 @@
 {
     public class GlobalConstants
     {
+        /*ROLES*/
+        public const string ADMINISTRATOR_ROLE = "Admin";
+
         // Cloudinary
         public const string CategoryPicture = "{0}_categoryPicture";
         public const string ProductPicture = "{0}_productPicture";

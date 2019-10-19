@@ -55,22 +55,27 @@
         {
         
         }
-        <section class="black-box-content">
+    <section class="black-box-content">
 
-            @foreach (var category in Model.Categories)
+        @foreach (var category in Model.Categories)
+        {
+            <a class="category" asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id">
+                <div class="image-wrapper">
+                    <span><img src="@category.Picture.Url" class="category-picture" width="250" height="250" /></span>
+                </div>
+                @*<p class="category-description">@category.Description</p>*@
+                @*<p class="category-name">@category.Name</p>*@
+
+                @*<a class="button custom-underline" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>*@
+                @*<a class="button custom-underline" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>*@
+            </a>
+            @if (this.User.Identity.IsAuthenticated)
             {
-                <a class="category" asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id">
-                    <div class="image-wrapper">
-                        <span><img src="@category.Picture.Url" class="category-picture" width="250" height="250" /></span>
-                    </div>
-                    @*<p class="category-description">@category.Description</p>*@
-                    @*<p class="category-name">@category.Name</p>*@
-
-                    @*<a class="button custom-underline" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>*@
-                    @*<a class="button custom-underline" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>*@
-                </a>
+                <a class="button button-primary" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
+                <a class="button button-primary" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
             }
+        }
 
-        </section>
+    </section>
     </div>
 </section>

@@ -35,7 +35,7 @@ namespace e_cosmetics.Middleware
             UserManager<User> userManager,
             RoleManager<IdentityRole> roleManager)
         {
-            var adminResult = await roleManager.CreateAsync(new IdentityRole("Admin"));
+            var adminResult = await roleManager.CreateAsync(new IdentityRole(GlobalConstants.ADMINISTRATOR_ROLE));
         }
     }
 }
