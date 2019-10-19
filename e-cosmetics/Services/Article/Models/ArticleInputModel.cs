@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
-namespace e_cosmetics.Services.ArticleService.Models
+namespace e_cosmetics.Services.Article.Models
 {
     public class ArticleInputModel
     {

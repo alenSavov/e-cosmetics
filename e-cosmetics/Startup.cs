@@ -17,7 +17,7 @@ using e_cosmetics.Services.Interfaces;
 using e_cosmetics.Services.Pictures.Implementation;
 using e_cosmetics.Middleware;
 using e_cosmetics.Services.Accounts.Implementation;
-using e_cosmetics.Services.ArticleService.Implementation;
+using e_cosmetics.Services.Article.Implementation;
 
 namespace e_cosmetics
 {

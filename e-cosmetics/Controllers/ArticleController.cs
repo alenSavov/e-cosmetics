@@ -4,7 +4,7 @@ namespace e_cosmetics.Controllers
 {
     public class ArticleController: Controller
     {
-        public IActionResult GetAll()
+        public IActionResult Create()
         {
             return View();
         }
