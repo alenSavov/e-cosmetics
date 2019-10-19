@@ -67,6 +67,7 @@ namespace e_cosmetics
             //services.AddDefaultIdentity<IdentityUser>()
             services.AddIdentity<User, IdentityRole>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
+                .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.Configure<IdentityOptions>(options =>

@@ -15,7 +15,13 @@
         {
             <img src="@picture.Url" width="800" height="400" />
         }
-            <a asp-controller="product" asp-action="deleteAsync" asp-route-id="@product.Id">Delete</a>
-            <a asp-controller="product" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+
+
+        @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
+        {
+            <a class="button button-primary" asp-controller="category" asp-action="delete" asp-route-id="@product.Id">Delete</a>
+            <a class="button button-primary" asp-controller="category" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+        }
+
     }
 </div>
