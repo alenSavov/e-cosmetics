@@ -49,7 +49,7 @@ namespace e_cosmetics.Services.Accounts.Implementation
                 LastName = model.LastName
             };
 
-            var userCreateResult = await this._userManager.CreateAsync(user);
+            var userCreateResult = await this._userManager.CreateAsync(user, model.Password);
 
             if (userCreateResult.Succeeded)
             {
