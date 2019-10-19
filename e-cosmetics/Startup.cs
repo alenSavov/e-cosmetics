@@ -17,6 +17,7 @@ using e_cosmetics.Services.Interfaces;
 using e_cosmetics.Services.Pictures.Implementation;
 using e_cosmetics.Middleware;
 using e_cosmetics.Services.Accounts.Implementation;
+using e_cosmetics.Services.ArticleService.Implementation;
 
 namespace e_cosmetics
 {
@@ -59,6 +60,7 @@ namespace e_cosmetics
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IArticleService, ArticleService>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
