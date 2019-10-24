@@ -14,5 +14,7 @@ namespace e_cosmetics.Services.Interfaces
         Article GetById(string id);
 
         Task<bool> DeleteAsync(string id);
+
+        Task<bool> EditAsync(EditArticleInputModel model);
     }
 }

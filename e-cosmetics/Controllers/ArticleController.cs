@@ -102,5 +102,21 @@ namespace e_cosmetics.Controllers
 
             return View(articleView);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> EditAsync(EditArticleInputModel model)
+        {
+            //if (!ModelState.IsValid)
+            //{
+            //    return View();
+            //}
+
+            //TODO Add validations
+
+            var success = await this._articleService
+                .EditAsync(model);
+
+            return RedirectToAction("GetAll");
+        }
     }
 }

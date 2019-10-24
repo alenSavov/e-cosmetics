@@ -8,7 +8,7 @@
 
     @foreach (var article in Model.Articles)
     {
-        <p>@article.Name</p>
+        <p>@article.Title</p>
         <p>@Html.Raw(article.Content)</p>
 
         <img src="@article.Picture.Url" width="800" height="400" />

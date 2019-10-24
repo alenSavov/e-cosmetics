@@ -100,5 +100,30 @@ namespace e_cosmetics.Services.Articles.Models
             }
 
         }
+
+        public async Task<bool> EditAsync(EditArticleInputModel model)
+        {
+            var article = this._dbContext.Articles
+                .FirstOrDefault(x => x.Id == model.Id);
+
+            if (article == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                article.Title = model.Title;
+                article.Content = model.Content;
+
+                await this._dbContext.SaveChangesAsync();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
