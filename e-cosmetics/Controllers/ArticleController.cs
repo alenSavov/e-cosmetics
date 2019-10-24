@@ -55,5 +55,25 @@ namespace e_cosmetics.Controllers
 
             return View(articleCollection);
         }
+
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return View();
+            }
+
+            //TODO Add validations
+
+            var article = this._articleService
+                .GetById(id);
+
+
+            var success = await this._articleService
+                .DeleteAsync(id);
+
+
+            return RedirectToAction("GetAll");
+        }
     }
 }

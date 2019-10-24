@@ -9,7 +9,7 @@
     @foreach (var article in Model.Articles)
     {
         <p>@article.Name</p>
-        <p>@article.Content</p>
+        <p>@Html.Raw(article.Content)</p>
 
         <img src="@article.Picture.Url" width="800" height="400" />
         <a asp-controller="article" asp-action="delete" asp-route-id="@article.Id">Delete</a>

@@ -1,12 +1,12 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
+using System.Linq;
 using e_cosmetics.Data;
 using e_cosmetics.Models;
-using e_cosmetics.Services.Articles.Models;
-using e_cosmetics.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
+using e_cosmetics.Services.Interfaces;
 
 namespace e_cosmetics.Services.Articles.Models
 {
@@ -56,6 +56,49 @@ namespace e_cosmetics.Services.Articles.Models
                 .Map<List<ArticleViewModel>>(articles);
 
             return articlesView;
+        }
+
+        public Article GetById(string id)
+        {
+            return this._dbContext
+                 .Articles
+                 .FirstOrDefault(x => x.Id == id);
+
+        }
+
+        public async Task<bool> DeleteAsync(string id)
+        {
+            var article = this._dbContext.Articles
+                .FirstOrDefault(c => c.Id == id);
+
+            if (article == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                var pictures = this._dbContext.ArticlePictures
+                   .Where(x => x.ArticleId == article.Id)
+                   .ToList();
+
+                foreach (var picture in pictures)
+                {
+                    this._pictureService.DeletePicture(article.GetType(), picture.Id);
+                    this._dbContext.ArticlePictures.Remove(picture);
+                }
+
+                this._dbContext.Articles.Remove(article);
+                await this._dbContext.SaveChangesAsync();
+
+                return true;
+            }
+            catch
+            {
+
+                return false;
+            }
+
         }
     }
 }
