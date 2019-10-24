@@ -38,6 +38,9 @@ namespace e_cosmetics.Infrastructure.AutoMapper
             
             CreateMap<ArticlePicture, BasePictureViewModel>()
              .ForMember(d => d.EntityId, x => x.MapFrom(s => s.ArticleId));
+
+            CreateMap<Article, EditArticleInputModel>().ReverseMap();
+            
         }
     }
 }

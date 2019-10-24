@@ -1,7 +1,8 @@
-﻿using e_cosmetics.Services.Articles.Models;
-using e_cosmetics.Services.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using e_cosmetics.Services.Interfaces;
+using e_cosmetics.Services.Articles.Models;
 
 namespace e_cosmetics.Controllers
 {
@@ -9,12 +10,15 @@ namespace e_cosmetics.Controllers
     {
         private readonly IArticleService _articleService;
         private readonly IPictureService _pictureService;
+        private readonly IMapper _mapper;
 
         public ArticleController(IArticleService articleService,
-            IPictureService pictureService)
+            IPictureService pictureService,
+            IMapper mapper)
         {
             this._articleService = articleService;
             this._pictureService = pictureService;
+            this._mapper = mapper;
         }
 
         public IActionResult Create()
@@ -74,6 +78,29 @@ namespace e_cosmetics.Controllers
 
 
             return RedirectToAction("GetAll");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(string id)
+        {
+            if (id == null)
+            {
+                return this.View();
+            }
+
+            var article = this._articleService
+                .GetById(id);
+
+            var articleView = this._mapper
+                .Map<EditArticleInputModel>(article);
+
+            articleView.Picture = this._pictureService
+               .GetArticlePicturesById(article.Id);
+
+            articleView.Picture.Url = this._pictureService.BuildArticlePictureUrl(articleView.Picture.Id, articleView.Picture.VersionPicture);
+
+
+            return View(articleView);
         }
     }
 }
