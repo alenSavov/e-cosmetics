@@ -1,4 +1,6 @@
 ﻿
+
+
 /*Hamburger*/
 $(document).ready(function () {
     $('.icon').click(function () {
@@ -11,6 +13,8 @@ $(document).ready(function () {
     })
 })
 
+
+
 //function show() {
 //    document.getElementById('nav-toggle')
 //        .classList.toggle('active');
@@ -22,3 +26,4 @@ function closeToggle() {
 
     $('.icon').toggleClass('active');
 }
+

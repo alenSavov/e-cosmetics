@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
-namespace e_cosmetics.Services.Article.Models
+namespace e_cosmetics.Services.Articles.Models
 {
     public class ArticleInputModel
     {
@@ -11,10 +11,10 @@ namespace e_cosmetics.Services.Article.Models
         [Required]
         public string Content { get; set; }
 
-        [Required]
+       
         public string OwnerName { get; set; }
 
         [Required(ErrorMessage = "Add Image")]
-        public IFormFile ArticlePicture { get; set; }
+        public IFormFile Picture { get; set; }
     }
 }

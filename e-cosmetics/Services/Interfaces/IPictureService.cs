@@ -16,6 +16,8 @@ namespace e_cosmetics.Services.Interfaces
 
         string BuildCategoryPictureUrl(string categoryName, string imageVersion);
 
+        string BuildArticlePictureUrl(string articleName, string imageVersion);
+
         string BuildProductPictureUrl(string courseName, string imageVersion);
 
         DelResResult DeletePicture(Type entityType, string pictureId);
@@ -25,6 +27,8 @@ namespace e_cosmetics.Services.Interfaces
         ProductPictureViewModel GetProductPicturesById(string id);
 
         IEnumerable<ProductPictureViewModel> GetAllProductPicturesById(string id);
+
+        BasePictureViewModel GetArticlePicturesById(string id);
 
 
     }

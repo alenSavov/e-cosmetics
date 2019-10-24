@@ -17,7 +17,7 @@ using e_cosmetics.Services.Interfaces;
 using e_cosmetics.Services.Pictures.Implementation;
 using e_cosmetics.Middleware;
 using e_cosmetics.Services.Accounts.Implementation;
-using e_cosmetics.Services.Article.Implementation;
+using e_cosmetics.Services.Articles.Models;
 
 namespace e_cosmetics
 {
@@ -98,6 +98,7 @@ namespace e_cosmetics
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+                app.UseHsts();
             }
             else
             {
@@ -107,9 +108,8 @@ namespace e_cosmetics
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
-            app.UseSeedDataMiddleware();
             app.UseHttpsRedirection();
+            app.UseSeedDataMiddleware();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 

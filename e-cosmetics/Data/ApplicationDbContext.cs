@@ -41,6 +41,7 @@ namespace e_cosmetics.Data
                 .WithOne(p => p.Category)
                 .HasForeignKey<CategoryPicture>(f => f.CategoryId);
 
+       
             builder
                 .Entity<Article>()
                 .HasOne(p => p.ArticlePicture)

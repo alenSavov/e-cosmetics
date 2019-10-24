@@ -16,8 +16,8 @@ namespace e_cosmetics.Controllers
         private readonly ICategoryService _categoryService;
         private readonly ApplicationDbContext _dbContext;
         private readonly IPictureService _pictureService;
-        private readonly IProductService _productService;
         private readonly IMapper _mapper;
+        private readonly IProductService _productService;
 
 
         public CategoryController(ICategoryService categoryService,

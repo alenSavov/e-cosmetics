@@ -22,6 +22,7 @@ namespace e_cosmetics.Services.Pictures.Implementation
     {
         private const string CategoryPictureFolder = "CategoryPicture";
         private const string ProductPictureFolder = "ProductPicture";
+        private const string ArticlePictureFolder = "ArticlePicture";
 
         private readonly CloudinaryOptions options;
         private readonly CloudinaryDotNet.Cloudinary cloudinary;
@@ -49,7 +50,8 @@ namespace e_cosmetics.Services.Pictures.Implementation
         private readonly Dictionary<Type, string> EntityFolders = new Dictionary<Type, string>
         {
             { typeof(Category), CategoryPictureFolder },
-            { typeof(Product), ProductPictureFolder }
+            { typeof(Product), ProductPictureFolder },
+            { typeof(e_cosmetics.Models.Article), ArticlePictureFolder },
         };
 
         public async Task<ImageUploadResult> UploadPictureAsync(Type entityType, string pictureId, Stream fileStream, string entityId)
@@ -136,6 +138,21 @@ namespace e_cosmetics.Services.Pictures.Implementation
                 await this._dbContext.ProductPictures.AddRangeAsync(picturesToAdd);
                 await this._dbContext.SaveChangesAsync();
             }
+            else if (entityType.Name == "Article")
+            {
+                var picturesToAdd = uploadResults.Select(picture => new ArticlePicture
+                {
+                    Id = picture.PublicId.Substring(picture.PublicId.LastIndexOf('/') + 1),
+                    Folder = this.EntityFolders[entityType],
+                    Url = picture.SecureUri.AbsoluteUri,
+                    ArticleId = entityId,
+                    VersionPicture = picture.Version
+
+                }).ToList();
+
+                await this._dbContext.ArticlePictures.AddRangeAsync(picturesToAdd);
+                await this._dbContext.SaveChangesAsync();
+            }
 
         }
 
@@ -162,6 +179,17 @@ namespace e_cosmetics.Services.Pictures.Implementation
             return pictureUrl;
         }
 
+        public string BuildArticlePictureUrl(string articleName, string imageVersion)
+        {
+            if (string.IsNullOrEmpty(articleName) || string.IsNullOrEmpty(imageVersion) || string.IsNullOrWhiteSpace(articleName) || string.IsNullOrWhiteSpace(imageVersion))
+                return null;
+
+            string path = string.Format(GlobalConstants.FilePath, ArticlePictureFolder, articleName);
+            var pictureUrl = cloudinary.Api.UrlImgUp
+                                    .Version(imageVersion).BuildUrl(path);
+            return pictureUrl;
+        }
+
         public string BuildProductPictureUrl(string productName, string imageVersion)
         {
             if (string.IsNullOrEmpty(productName) || string.IsNullOrEmpty(imageVersion) || string.IsNullOrWhiteSpace(productName) || string.IsNullOrWhiteSpace(imageVersion))
@@ -178,6 +206,18 @@ namespace e_cosmetics.Services.Pictures.Implementation
             var picture = this._dbContext
                 .CategoryPictures
                 .FirstOrDefault(p => p.CategoryId == id);
+
+            var picturesView = this._mapper
+                .Map<BasePictureViewModel>(picture);
+
+            return picturesView;
+        }
+
+        public BasePictureViewModel GetArticlePicturesById(string id)
+        {
+            var picture = this._dbContext
+                .ArticlePictures
+                .FirstOrDefault(p => p.ArticleId == id);
 
             var picturesView = this._mapper
                 .Map<BasePictureViewModel>(picture);

@@ -1,40 +1,35 @@
-﻿@model e_cosmetics.Services.Article.Models.ArticleInputModel
+﻿@model e_cosmetics.Services.Articles.Models.ArticleInputModel
 @{
     ViewData["Title"] = "Create Article";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-<section class="template-wrapper">
+<section class="article-wrapper">
 
-    <section class="template-container">
+    <section class="article-container">
 
-        <h2>Create Article</h2>
-        <form asp-area="" asp-controller="Category" asp-action="Create" class="" enctype="multipart/form-data">
+        <h2 class="article-title">Create Article</h2>
+        <form class="article-form" asp-area="" asp-controller="article" asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger "></div>
 
-            <div>
-                <label asp-for="Title" class=""></label>
-                <input asp-for="Title" class="">
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
+            <label asp-for="Title" class="article-item"></label>
+            <input asp-for="Title" class="article-item">
+            <span asp-validation-for="Title" class="text-danger "></span>
 
-            <div class="">
-                <label asp-for="Content" class=""></label>
-                <textarea asp-for="Content" class=""></textarea>
-                <span asp-validation-for="Content" class=""></span>
-            </div>
 
-            <div class="form-group">
-                <label asp-for="ArticlePicture" class="">Upload Picture </label>
-                <input asp-for="ArticlePicture" hidden accept=".gif,.png,.jpg,.jpeg" />
-                <span asp-validation-for="ArticlePicture" class=""></span>
-            </div>
+            @*<label asp-for="Content" class="article-label"></label>*@
+            <span asp-validation-for="Content" class=""></span>
+            <textarea asp-for="Content" name="content" id="editor" class="article-item"></textarea>
 
-            <div class="button">
-                <button class="btn">Create</button>
-            </div>
+            <label asp-for="Picture" class="article-item">Upload Picture </label>
+            <input asp-for="Picture" class="article-item" hidden accept=".gif,.png,.jpg,.jpeg" />
+            <span asp-validation-for="Picture" class=""></span>
+
+            <button class="btn">Create</button>
 
         </form>
+
     </section>
+    @*<textarea id="textArea">Test</textarea>*@
 </section>
