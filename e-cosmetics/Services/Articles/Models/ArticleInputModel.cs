@@ -10,9 +10,9 @@ namespace e_cosmetics.Services.Articles.Models
         
         [Required]
         public string Content { get; set; }
-
        
-        public string OwnerName { get; set; }
+        [Required]
+        public string Creator { get; set; }
 
         [Required(ErrorMessage = "Add Image")]
         public IFormFile Picture { get; set; }

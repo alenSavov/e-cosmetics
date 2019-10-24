@@ -4,6 +4,7 @@ using e_cosmetics.Models;
 using e_cosmetics.Services.Articles.Models;
 using e_cosmetics.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -27,10 +28,13 @@ namespace e_cosmetics.Services.Articles.Models
         public async Task<bool> CreateAsync(ArticleInputModel model)
         {
 
+
             var articlePictureId = string.Format(GlobalConstants.ArticlePicture, model.Title);
 
             var article = this._mapper
                 .Map<Article>(model);
+
+            article.CreatedOn = DateTime.Now;
 
             await this._dbContext.Articles.AddAsync(article);
             await this._dbContext.SaveChangesAsync();

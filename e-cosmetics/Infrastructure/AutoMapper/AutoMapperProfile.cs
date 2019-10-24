@@ -17,7 +17,7 @@ namespace e_cosmetics.Infrastructure.AutoMapper
             CreateMap<Category, EditCategoryViewModel>().ReverseMap();
 
             CreateMap<CategoryPicture, BasePictureViewModel>()
-                .ForMember(d => d.CategoryId, x => x.MapFrom(s => s.CategoryId));
+                .ForMember(d => d.EntityId, x => x.MapFrom(s => s.CategoryId));
 
 
             CreateMap<Product, CreateProductInputModel>().ReverseMap();
@@ -35,7 +35,7 @@ namespace e_cosmetics.Infrastructure.AutoMapper
             CreateMap<Article, ArticleInputModel>().ReverseMap();
 
             CreateMap<ArticlePicture, BasePictureViewModel>()
-             .ForMember(d => d.CategoryId, x => x.MapFrom(s => s.ArticleId));
+             .ForMember(d => d.EntityId, x => x.MapFrom(s => s.ArticleId));
         }
     }
 }

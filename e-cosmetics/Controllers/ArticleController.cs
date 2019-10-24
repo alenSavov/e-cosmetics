@@ -22,8 +22,17 @@ namespace e_cosmetics.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(ArticleInputModel model)
         {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View();
+            }
 
             var article = await this._articleService.CreateAsync(model);
+            return View();
+        }
+
+        public IActionResult GetAll()
+        {
             return View();
         }
     }

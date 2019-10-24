@@ -10,7 +10,7 @@
 
         public string VersionPicture { get; set; }
 
-        public string CategoryId { get; set; }
+        public string EntityId { get; set; }
 
 
     }
