@@ -46,5 +46,16 @@ namespace e_cosmetics.Services.Articles.Models
 
             return true;
         }
+
+        public IEnumerable<ArticleViewModel> GetAll()
+        {
+            var articles = this._dbContext
+                .Articles;
+
+            var articlesView = _mapper
+                .Map<List<ArticleViewModel>>(articles);
+
+            return articlesView;
+        }
     }
 }

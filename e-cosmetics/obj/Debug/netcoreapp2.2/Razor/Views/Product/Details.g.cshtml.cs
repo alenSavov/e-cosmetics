@@ -24,17 +24,22 @@ using e_cosmetics.Models;
 #line default
 #line hidden
 #line 3 "C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\Views\_ViewImports.cshtml"
-using e_cosmetics.Services.Categories.Models;
-
-#line default
-#line hidden
-#line 4 "C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\Views\_ViewImports.cshtml"
 using e_cosmetics.Services.Pictures.Models;
 
 #line default
 #line hidden
+#line 4 "C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\Views\_ViewImports.cshtml"
+using e_cosmetics.Services.Articles.Models;
+
+#line default
+#line hidden
+#line 5 "C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\Views\_ViewImports.cshtml"
+using e_cosmetics.Services.Categories.Models;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4d54372d5a621d1e23578d6e7161d206735a7102", @"/Views/Product/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a4e0eb136c14b79d033e23078977a60cd4d54d82", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ddbe47edbce130a0ed2f78218a272f2d7d722fba", @"/Views/_ViewImports.cshtml")]
     public class Views_Product_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<e_cosmetics.Services.Products.Models.ProductViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -81,7 +86,7 @@ using e_cosmetics.Services.Pictures.Models;
             WriteLiteral("</h1>\r\n\r\n        <ul>\r\n            <li>");
             EndContext();
             BeginContext(232, 52, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d54372d5a621d1e23578d6e7161d206735a71024869", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d54372d5a621d1e23578d6e7161d206735a71025045", async() => {
                 BeginContext(276, 4, true);
                 WriteLiteral("Home");
                 EndContext();

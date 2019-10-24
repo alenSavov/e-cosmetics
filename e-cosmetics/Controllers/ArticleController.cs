@@ -8,10 +8,13 @@ namespace e_cosmetics.Controllers
     public class ArticleController: Controller
     {
         private readonly IArticleService _articleService;
+        private readonly IPictureService _pictureService;
 
-        public ArticleController(IArticleService articleService)
+        public ArticleController(IArticleService articleService,
+            IPictureService pictureService)
         {
             this._articleService = articleService;
+            this._pictureService = pictureService;
         }
 
         public IActionResult Create()
@@ -33,7 +36,24 @@ namespace e_cosmetics.Controllers
 
         public IActionResult GetAll()
         {
-            return View();
+            var articles = this._articleService
+               .GetAll();
+
+
+            foreach (var article in articles)
+            {
+                article.Picture = this._pictureService
+                .GetArticlePicturesById(article.Id);
+
+                article.Picture.Url = this._pictureService.BuildArticlePictureUrl(article.Picture.Id, article.Picture.VersionPicture);
+            }
+
+            var articleCollection = new ArticlesCollectionViewModel
+            {
+                Articles = articles
+            };
+
+            return View(articleCollection);
         }
     }
 }

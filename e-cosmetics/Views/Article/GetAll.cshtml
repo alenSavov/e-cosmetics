@@ -1,8 +1,19 @@
-﻿
+﻿@model ArticlesCollectionViewModel
+
 @{
-    ViewData["Title"] = "GetAll";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Articles";
 }
 
-<h1>GetAll</h1>
+<div>
 
+    @foreach (var article in Model.Articles)
+    {
+        <p>@article.Name</p>
+        <p>@article.Content</p>
+
+        <img src="@article.Picture.Url" width="800" height="400" />
+        <a asp-controller="article" asp-action="delete" asp-route-id="@article.Id">Delete</a>
+        <a asp-controller="article" asp-action="Edit" asp-route-id="@article.Id">Edit</a>
+
+    }
+</div>

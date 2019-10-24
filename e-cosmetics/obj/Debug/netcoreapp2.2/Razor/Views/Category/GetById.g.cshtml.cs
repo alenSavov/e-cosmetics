@@ -24,17 +24,22 @@ using e_cosmetics.Models;
 #line default
 #line hidden
 #line 3 "C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\Views\_ViewImports.cshtml"
-using e_cosmetics.Services.Categories.Models;
-
-#line default
-#line hidden
-#line 4 "C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\Views\_ViewImports.cshtml"
 using e_cosmetics.Services.Pictures.Models;
 
 #line default
 #line hidden
+#line 4 "C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\Views\_ViewImports.cshtml"
+using e_cosmetics.Services.Articles.Models;
+
+#line default
+#line hidden
+#line 5 "C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\Views\_ViewImports.cshtml"
+using e_cosmetics.Services.Categories.Models;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ed0a11362361a03d32c947f9372576a3a73b704f", @"/Views/Category/GetById.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a4e0eb136c14b79d033e23078977a60cd4d54d82", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ddbe47edbce130a0ed2f78218a272f2d7d722fba", @"/Views/_ViewImports.cshtml")]
     public class Views_Category_GetById : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<e_cosmetics.Services.Products.Models.ProductCollectionViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -82,7 +87,7 @@ using e_cosmetics.Services.Pictures.Models;
             WriteLiteral("\r\n<section class=\"products-wrapper\">\r\n    <div class=\"main-nav\">\r\n        <h1>Products</h1>\r\n\r\n        <ul>\r\n            <li>");
             EndContext();
             BeginContext(245, 52, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed0a11362361a03d32c947f9372576a3a73b704f6893", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed0a11362361a03d32c947f9372576a3a73b704f7069", async() => {
                 BeginContext(289, 4, true);
                 WriteLiteral("Home");
                 EndContext();
@@ -115,7 +120,7 @@ using e_cosmetics.Services.Pictures.Models;
             WriteLiteral("                    <li>\r\n                        ");
             EndContext();
             BeginContext(611, 631, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed0a11362361a03d32c947f9372576a3a73b704f9039", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed0a11362361a03d32c947f9372576a3a73b704f9215", async() => {
                 BeginContext(703, 4, true);
                 WriteLiteral("\r\n\r\n");
                 EndContext();
@@ -203,7 +208,7 @@ WriteAttributeValue("", 993, picture.Url, 993, 12, false);
             WriteLiteral("                            ");
             EndContext();
             BeginContext(1365, 115, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed0a11362361a03d32c947f9372576a3a73b704f13977", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed0a11362361a03d32c947f9372576a3a73b704f14153", async() => {
                 BeginContext(1470, 6, true);
                 WriteLiteral("Delete");
                 EndContext();
@@ -241,7 +246,7 @@ WriteAttributeValue("", 993, picture.Url, 993, 12, false);
             WriteLiteral("\r\n                            ");
             EndContext();
             BeginContext(1510, 111, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed0a11362361a03d32c947f9372576a3a73b704f16710", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed0a11362361a03d32c947f9372576a3a73b704f16886", async() => {
                 BeginContext(1613, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
