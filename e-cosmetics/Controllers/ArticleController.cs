@@ -106,13 +106,11 @@ namespace e_cosmetics.Controllers
         [HttpPost]
         public async Task<IActionResult> EditAsync(EditArticleInputModel model)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return View();
-            //}
-
-            //TODO Add validations
-
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            
             var success = await this._articleService
                 .EditAsync(model);
 

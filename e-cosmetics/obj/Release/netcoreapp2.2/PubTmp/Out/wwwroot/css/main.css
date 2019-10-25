@@ -70,6 +70,9 @@
     filter: invert(100%);
 }
 
+#carouselExampleControls{
+    flex: 0 0 100%;
+}
 /*Elizabrth Cosmetics title styles*/
 .elizabeth-cosmetics-title {
     text-transform: uppercase;

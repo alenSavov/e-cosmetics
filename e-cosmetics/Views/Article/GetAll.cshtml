@@ -4,16 +4,28 @@
     ViewData["Title"] = "Articles";
 }
 
-<div>
+    <section class="articles-wrapper">
+        <div class="main-nav">
+            <h1>Articles</h1>
 
-    @foreach (var article in Model.Articles)
-    {
-        <p>@article.Title</p>
-        <p>@Html.Raw(article.Content)</p>
+            <ul>
+                <li><a asp-controller="Home" asp-action="index">Home</a></li>
+                <li><p>Products</p></li>
+            </ul>
+        </div>
+        </section>
 
-        <img src="@article.Picture.Url" width="800" height="400" />
-        <a asp-controller="article" asp-action="delete" asp-route-id="@article.Id">Delete</a>
-        <a asp-controller="article" asp-action="Edit" asp-route-id="@article.Id">Edit</a>
 
-    }
-</div>
+        <div>
+
+            @foreach (var article in Model.Articles)
+            {
+                <p>@article.Title</p>
+                <p>@Html.Raw(article.Content)</p>
+
+                <img src="@article.Picture.Url" width="800" height="400" />
+                <a asp-controller="article" asp-action="delete" asp-route-id="@article.Id">Delete</a>
+                <a asp-controller="article" asp-action="Edit" asp-route-id="@article.Id">Edit</a>
+
+            }
+        </div>
