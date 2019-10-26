@@ -27,7 +27,8 @@
                 <div class="article-content">
 
                     <div class="article-info">
-                        <p class="article-createdOn">@article.CreatedOn</p>
+                        <p class="article-createdOn">@article.CreatedOn.ToString("MMMM dd, yyyy")</p>
+                        <p class="pipe">|</p>
                         <p class="article-creator">@article.Creator</p>
                     </div>
                     <p class="article-title">@article.Title</p>

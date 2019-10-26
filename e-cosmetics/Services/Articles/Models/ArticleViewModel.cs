@@ -1,6 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Globalization;
 using e_cosmetics.Services.Pictures.Models;
 
 namespace e_cosmetics.Services.Articles.Models
@@ -12,9 +10,8 @@ namespace e_cosmetics.Services.Articles.Models
         public string Title { get; set; }
 
         public string Creator { get; set; }
-
-        //.ToString("MMMM dd, yyyy")
-        public string CreatedOn { get; set; }
+               
+        public DateTime CreatedOn { get; set; }
         
         public string Content { get; set; }
 

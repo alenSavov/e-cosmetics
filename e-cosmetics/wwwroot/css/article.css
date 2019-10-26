@@ -16,15 +16,15 @@
 
 
 
-.articles-container .article {
-    flex: 0 0 44%;
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    justify-content: center;
-    margin: 2em 1em;
-    background-color: rgb(25, 25, 25);
-}
+    .articles-container .article {
+        flex: 0 0 44%;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        justify-content: center;
+        margin: 2em 1em;
+        background-color: rgb(25, 25, 25);
+    }
 
 .article-content {
     display: flex;
@@ -32,38 +32,46 @@
     flex-wrap: wrap;
 }
 
-        .articles-container .article img {
-            height: 300px;
-            flex: 0 0 100%;
-        }
+.articles-container .article img {
+    height: 300px;
+    flex: 0 0 100%;
+}
 
-        .articles-container .article .article-createdOn {
-            color: rgb(163, 163, 163);
-            font-family: var(--font-cormorant);
-            font-size: 2em;
-        }
+.articles-container .article .article-createdOn {
+    color: rgb(163, 163, 163);
+    font-family: var(--font-cormorant);
+    font-size: 1.5em;
+    margin: 0;
+}
 
-        .articles-container .article .article-creator {
-            color: rgb(163, 163, 163);
-        }
+.articles-container .article .article-creator {
+    color: rgb(163, 163, 163);
+    padding-left: 1em;
+    margin: 0;
+}
 
-        .articles-container .article .article-info {
-            display: flex;
-            flex: 0 0 100%;
-            margin: 0.5em 0;
-            align-items: center;
-            color: rgb(92, 92, 92);
-            font-family: var(--font-cormorant);
-            font-size: 1em;
-        }
+.pipe {
+    margin: 0 1em;
+    background-color: rgb(163, 163, 163);
+}
 
-        .articles-container .article .article-title {
-            flex: 0 0 100%;
-            font-size: 3em;
-            font-family: var(--font-cormorant);
-            font-weight: 900;
-            color: var(--color-main-white);
-        }
+.articles-container .article .article-info {
+    display: flex;
+    flex: 0 0 100%;
+    margin: 0.5em 0;
+    align-items: center;
+    color: rgb(92, 92, 92);
+    font-family: var(--font-cormorant);
+    font-size: 1em;
+}
+
+.articles-container .article .article-title {
+    flex: 0 0 100%;
+    font-size: 3em;
+    font-family: var(--font-cormorant);
+    font-weight: 900;
+    color: var(--color-main-white);
+}
 
 .article-buttons-box {
     display: flex;
@@ -74,9 +82,12 @@
 }
 
     .article-buttons-box a {
+        display:flex;
         font-family: var(--font-cormorant);
         color: var(--color-main-white);
         font-size: 1.2em;
+        align-content:center;
+        align-items:center;
     }
 
         .article-buttons-box a:hover {
