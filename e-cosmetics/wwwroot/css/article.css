@@ -175,3 +175,9 @@
     flex: 0 0 100%;
     flex-wrap:wrap;
 }
+
+.article-details-container {
+    display: flex;
+    flex: 0 0 100%;
+    flex-wrap: wrap;
+}
