@@ -16,14 +16,16 @@
 
 
     .articles-container .article {
-        flex: 0 0 30%;
+        flex: 0 0 40%;
         display: flex;
         flex-wrap: wrap;
+        overflow: hidden;
+        margin: 2em 2em;
     }
 
         .articles-container .article img {
             height: 300px;
-            width: 300px;
+            flex: 0 0 100%;
         }
 
         .articles-container .article .article-createdOn {
