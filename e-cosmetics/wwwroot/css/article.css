@@ -167,3 +167,11 @@
 .btn {
     flex: 0 0 100%;
 }
+
+
+/*Details PAGE*/
+.articles-details-wrapper{
+    display:flex;
+    flex: 0 0 100%;
+    flex-wrap:wrap;
+}

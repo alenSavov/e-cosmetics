@@ -12,3 +12,8 @@
     padding: 1em 1em;
 }
 
+.read-more-btn{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+

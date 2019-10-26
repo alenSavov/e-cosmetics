@@ -1,5 +1,4 @@
-﻿using e_cosmetics.Models;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Collections.Generic;
 using e_cosmetics.Services.Articles.Models;
 
@@ -11,10 +10,10 @@ namespace e_cosmetics.Services.Interfaces
 
         IEnumerable<ArticleViewModel> GetAll();
 
-        Article GetById(string id);
-
         Task<bool> DeleteAsync(string id);
 
         Task<bool> EditAsync(EditArticleInputModel model);
+
+        ArticleViewModel GetById(string id);
     }
 }
