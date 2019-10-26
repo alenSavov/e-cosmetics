@@ -25,16 +25,21 @@
                 @*<p class="article-content">@Html.Raw(article.Content)</p>*@
 
                 <div class="article-info">
-                    <p class="article-createdOn">@article.CretedOn.ToString("MMMM dd, yyyy") |</p>
+                    <p class="article-createdOn">@article.CretedOn |</p>
                     <p class="article-creator">@article.Creator</p>
                 </div>
                 <p class="article-title">@article.Title</p>
 
                 <div class="article-buttons-box">
-                    <a asp-controller="article" asp-action="getById" asp-route-id="@article.Id">Read More</a>
-
-                    <a asp-controller="article" asp-action="delete" asp-route-id="@article.Id">Delete</a>
-                    <a asp-controller="article" asp-action="Edit" asp-route-id="@article.Id">Edit</a>
+                    <a class="button" asp-controller="article" asp-action="getById" asp-route-id="@article.Id">Read More</a>
+                    @if (this.User.Identity.IsAuthenticated)
+                    {
+                        @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
+                        {
+                            <a class="button" asp-controller="article" asp-action="delete" asp-route-id="@article.Id">Delete</a>
+                            <a class="button" asp-controller="article" asp-action="Edit" asp-route-id="@article.Id">Edit</a>
+                        }
+                    }
                 </div>
             </div>
 
