@@ -34,7 +34,9 @@ namespace e_cosmetics.Services.Articles.Models
             var article = this._mapper
                 .Map<Article>(model);
 
-            article.CreatedOn = DateTime.UtcNow;
+            var currentDatetimeNow = DateTime.UtcNow;
+            article.CreatedOn = currentDatetimeNow.Date;
+
 
             await this._dbContext.Articles.AddAsync(article);
             await this._dbContext.SaveChangesAsync();

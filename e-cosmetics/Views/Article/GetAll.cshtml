@@ -20,26 +20,29 @@
         @foreach (var article in Model.Articles)
         {
             <div class="article">
-                <img src="@article.Picture.Url" />
+                @*<img src="@article.Picture.Url" />*@
 
                 @*<p class="article-content">@Html.Raw(article.Content)</p>*@
 
-                <div class="article-info">
-                    <p class="article-createdOn">@article.CretedOn |</p>
-                    <p class="article-creator">@article.Creator</p>
-                </div>
-                <p class="article-title">@article.Title</p>
+                <div class="article-content">
 
-                <div class="article-buttons-box">
-                    <a class="button" asp-controller="article" asp-action="getById" asp-route-id="@article.Id">Read More</a>
-                    @if (this.User.Identity.IsAuthenticated)
-                    {
-                        @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
+                    <div class="article-info">
+                        <p class="article-createdOn">@article.CreatedOn</p>
+                        <p class="article-creator">@article.Creator</p>
+                    </div>
+                    <p class="article-title">@article.Title</p>
+
+                    <div class="article-buttons-box">
+                        <a class="button read-more-btn" asp-controller="article" asp-action="getById" asp-route-id="@article.Id">Read More</a>
+                        @if (this.User.Identity.IsAuthenticated)
                         {
-                            <a class="button" asp-controller="article" asp-action="delete" asp-route-id="@article.Id">Delete</a>
-                            <a class="button" asp-controller="article" asp-action="Edit" asp-route-id="@article.Id">Edit</a>
+                            @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
+                            {
+                                <a class="button" asp-controller="article" asp-action="delete" asp-route-id="@article.Id">Delete</a>
+                                <a class="button" asp-controller="article" asp-action="Edit" asp-route-id="@article.Id">Edit</a>
+                            }
                         }
-                    }
+                    </div>
                 </div>
             </div>
 
