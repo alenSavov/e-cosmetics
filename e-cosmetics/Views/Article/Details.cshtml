@@ -6,7 +6,7 @@
 
 <section class="articles-details-wrapper">
     <div class="main-nav">
-        <h1>Articles</h1>
+        <h1>Articles: @Model.Title</h1>
 
         <ul>
             <li><a asp-controller="Home" asp-action="index">Home</a></li>
@@ -17,7 +17,7 @@
     <section class="article-details-container">
         <img src="@Model.Picture.Url" />
 
-        <p class="article-content">@Html.Raw(Model.Content)</p>
+        <p class="article-details-content">@Html.Raw(Model.Content)</p>
     </section>
 
 </section>

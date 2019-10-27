@@ -181,3 +181,7 @@
     flex: 0 0 100%;
     flex-wrap: wrap;
 }
+
+.article-details-content i{
+    font-family: var(--font-cormorant);
+}
