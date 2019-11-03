@@ -1,11 +1,12 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="180x180" href="~/img//FavIcons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="~/img/FavIcons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="~/img//FavIcons//favicon-16x16.png">
-    <link rel="manifest" href="~/img/FavIcons/site.webmanifest" mimeType="application/manifest+json">
+    @*<link rel="manifest" href="~/img/FavIcons/site.webmanifest" mimeType="application/manifest+json">*@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -17,23 +18,19 @@
     <title>@ViewData["Title"]</title>
 
     <environment include="Development">
-            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        </environment>
-        <environment exclude="Development">
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
-                  crossorigin="anonymous"
-                  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
-        </environment>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
 
 
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-
-    <script src="https://kit.fontawesome.com/23be4a20c7.js" crossorigin="anonymous"></script>
-
-
 
 
 </head>
@@ -71,6 +68,8 @@
                     <li><a asp-controller="Home" asp-action="index" id="series">Series</a></li>
                     <li><a asp-controller="Home" asp-action="contacts">Contacts</a></li>
                     <li><a asp-controller="Article" asp-action="GetAll">Blog</a></li>
+
+
                 </ul>
 
             </section>
@@ -79,10 +78,8 @@
 
 
 
-    @*<partial name="_CookieConsentPartial" />*@
-
-
     <main role="main">
+    <partial name="_CookieConsentPartial" />
         @RenderBody()
     </main>
 
@@ -97,8 +94,11 @@
                 <li><a href="https://www.instagram.com/elizabethcosmeticsbulgaria/?igshid=wibzh2v1enxz"><i class="fab fa-instagram"></i></a></li>
             </ul>
             <div class="copyrights">
-                <p>Copyright &#9400;2019 elizabeth-cosmetics, All rights reserved.</p>
+                <p>Copyright &#9400;2019 elizabeth-cosmetics, Всички права запазени.</p>
             </div>
+            @*<div class="col-sm-6 text-right">
+                @await Html.PartialAsync("_SelectLanguagePartial")
+            </div>*@
         </div>
     </footer>
 
@@ -123,14 +123,15 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @*<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>*@
     <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
+    <script src="https://kit.fontawesome.com/23be4a20c7.js" crossorigin="anonymous"></script>
     @RenderSection("Scripts", required: false)
 
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
+    @*<script>
+            ClassicEditor
+                .create(document.querySelector('#editor'))
+                .catch(error => {
+                    console.error(error);
+                });
+        </script>*@
 </body>
 </html>

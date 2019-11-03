@@ -26,6 +26,7 @@ namespace e_cosmetics.Data
         public DbSet<ArticlePicture> ArticlePictures { get; set; }
 
 
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder

@@ -3,6 +3,9 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using e_cosmetics.Services.Interfaces;
 using e_cosmetics.Services.Categories.Models;
+using System;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Http;
 
 namespace e_cosmetics.Controllers
 {
@@ -10,16 +13,34 @@ namespace e_cosmetics.Controllers
     {
         private readonly ICategoryService _categoryService;
         private readonly IPictureService _pictureService;
+        //private readonly IStringLocalizer<HomeController> _localizer;
 
         public HomeController(ICategoryService categoryService,
-            IPictureService pictureService)
+            IPictureService pictureService
+            /*IStringLocalizer<HomeController> localizer*/)
         {
             this._categoryService = categoryService;
             this._pictureService = pictureService;
+            //this._localizer = localizer;
+        }
+
+
+
+        [HttpPost]
+        public IActionResult SetLanguage(string culture, string returnUrl)
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+            );
+
+            return LocalRedirect(returnUrl);
         }
 
         public IActionResult Index()
         {
+
             var categories = this._categoryService
                .GetAll();
 
@@ -59,6 +80,7 @@ namespace e_cosmetics.Controllers
 
         public IActionResult About()
         {
+
             return this.View();
         }
     }

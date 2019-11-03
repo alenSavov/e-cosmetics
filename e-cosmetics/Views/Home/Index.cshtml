@@ -1,8 +1,11 @@
 ﻿@model e_cosmetics.Services.Categories.Models.CategoriesCollectionViewModel
 
+
+
 @{
-    ViewData["Title"] = "Elizabet Cosmetics";
+        ViewData["Title"] = "Elizabet Cosmetics";
 }
+
 
 <section class="site-wrapper">
     <aside class="aside">
@@ -48,7 +51,7 @@
 
     <div class="categories">
         <section class="black-box-title">
-            <h2>Series</h2>
+            <h2>Серии</h2>
             <p class="sub-title">Popular</p>
         </section>
         @if (this.User.Identity.IsAuthenticated)
@@ -79,6 +82,6 @@
                 }
             }
 
-            </section>
-        </div>
-    </section>
+        </section>
+    </div>
+</section>
