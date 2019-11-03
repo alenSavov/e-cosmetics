@@ -64,6 +64,48 @@
     flex: 0 0 94%;
 }
 
+.content-over-banner {
+    font-size: 4em;
+    display: block;
+    font-weight: 700;
+    position: absolute;
+    top: 3em;
+    left: 2em;
+    transform: scale(0.8, 1.8);
+    color: white;
+    font-family: var(--font-cormorant);
+    text-transform: uppercase;
+    animation-iteration-count: 1;
+}
+
+.content-over-banner2 {
+    font-size: 4em;
+    display: block;
+    font-weight: 700;
+    position: absolute;
+    top: 5em;
+    left: 2em;
+    transform: scale(0.8, 1.8);
+    color: white;
+    font-family: var(--font-cormorant);
+    text-transform: uppercase;
+    animation-iteration-count: 1;
+}
+
+/*.site-banner:after {
+    content: 'The truth about beauty';
+    font-size: 4em;
+    display: block;
+    font-weight: 700;
+    position: absolute;
+    top: 12em;
+    left: 1em;
+    transform: scale(0.8, 1.8);
+    color: white;
+    font-family: var(--font-cormorant);
+    text-transform: uppercase;
+}*/
+
 
 .carousel-control-next,
 .carousel-control-prev {
