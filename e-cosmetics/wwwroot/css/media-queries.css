@@ -67,6 +67,7 @@
         left: 2em;
     }
 
+   
 
     /*Contact Page*/
 
@@ -115,6 +116,16 @@
     /*Products Page*/
     .product {
         height: 36em !important;
+    }
+
+
+    /*Article Page*/
+    .articles-container .article {
+        flex: 0 0 75% !important;
+    }
+
+    .article-buttons-box a {
+        flex: 0 0 100%;
     }
 }
 
@@ -421,6 +432,27 @@
 
     .product {
         height: 30em !important;
+    }
+
+    /*Article Page*/
+    .articles-container .article .article-createdOn {
+        font-size: 1em !important;
+    }
+
+    .articles-container .article .article-title {
+        font-size: 1.5em !important;
+    }
+
+    .articles-container .article .article-info {
+        flex-wrap: wrap;
+    }
+
+    .pipe {
+        display: none;
+    }
+
+    .article-buttons-box a {
+        font-size: 0.9em !important;
     }
 
     /*Footer*/

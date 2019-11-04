@@ -56,6 +56,18 @@
 
 @media (max-width: 1024px) {
 
+    /*Home Page*/
+    .content-over-banner {
+        top: 5em;
+        left: 2em;
+    }
+
+    .content-over-banner2 {
+        top: 7em;
+        left: 2em;
+    }
+
+
     /*Contact Page*/
 
     .contacts-main .info {
@@ -149,6 +161,19 @@
 }
 
 @media (max-width: 850px) {
+   /*Home Page*/
+    .content-over-banner {
+        top: 3em;
+        left: 2em;
+    }
+
+    .content-over-banner2 {
+        top: 5em;
+        left: 2em;
+    }
+    
+    
+    
     #close-btn:before, #close-btn:after {
         right: 80px;
     }
@@ -224,6 +249,14 @@
 
     .aside ul li:nth-child(4) {
         top: 22em;
+    }
+
+    .content-over-banner {
+        font-size: 3em;
+    }
+
+    .content-over-banner2 {
+        font-size: 3em;
     }
 
     /*Contacts Page*/
@@ -322,7 +355,7 @@
         padding: 20px 0 0 70px;
     }
 
-    /*Main Page*/
+    /*Home Page*/
     .about {
         flex: 0 0 100%;
         margin: 4em 0;
@@ -358,6 +391,27 @@
         font-size: 1.4em;
         padding: 1.5em 1.2em;
         line-height: 1.6em;
+    }
+
+    .content-over-banner {
+        font-size: 2em;
+        top: 6em;
+        left: 2em;
+    }
+
+    .content-over-banner2 {
+        font-size: 2em;
+        top: 8em;
+        left: 2em;
+    }
+
+    .black-box-title h2 {
+        flex: 0 0 60%;
+        font-size: 2.4em;
+    }
+
+    .sub-title {
+        font-size: 0.8em;
     }
 
     /*Products Page*/

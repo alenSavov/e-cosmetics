@@ -1102,3 +1102,66 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20191029210453_Added Localization')
+BEGIN
+    CREATE TABLE [localizations] (
+        [Id] int NOT NULL IDENTITY,
+        [Bg] nvarchar(max) NULL,
+        [En] nvarchar(max) NULL,
+        CONSTRAINT [PK_localizations] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20191029210453_Added Localization')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20191029210453_Added Localization', N'2.2.6-servicing-10079');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20191029210757_Changed property')
+BEGIN
+    DECLARE @var18 sysname;
+    SELECT @var18 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[localizations]') AND [c].[name] = N'Bg');
+    IF @var18 IS NOT NULL EXEC(N'ALTER TABLE [localizations] DROP CONSTRAINT [' + @var18 + '];');
+    ALTER TABLE [localizations] DROP COLUMN [Bg];
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20191029210757_Changed property')
+BEGIN
+    EXEC sp_rename N'[localizations].[En]', N'lang', N'COLUMN';
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20191029210757_Changed property')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20191029210757_Changed property', N'2.2.6-servicing-10079');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20191102192428_Removed Localization entity')
+BEGIN
+    DROP TABLE [localizations];
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20191102192428_Removed Localization entity')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20191102192428_Removed Localization entity', N'2.2.6-servicing-10079');
+END;
+
+GO
+

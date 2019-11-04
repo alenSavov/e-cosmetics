@@ -41,11 +41,8 @@
           "e-cosmetics.dll": {}
         },
         "resources": {
-          "bg/e-cosmetics.resources.dll": {
-            "locale": "bg"
-          },
-          "en/e-cosmetics.resources.dll": {
-            "locale": "en"
+          "fr/e-cosmetics.resources.dll": {
+            "locale": "fr"
           }
         },
         "compile": {
