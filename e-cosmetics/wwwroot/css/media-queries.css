@@ -669,6 +669,11 @@
         margin: 0 0 0 30px;
     }
 
+    /*Contact Page*/
+    .contacts-down ul li {
+        padding: 0 0 20px 0;
+    }
+
     /*About Page*/
     .about-img-box {
         background-position: 75% 0%;
