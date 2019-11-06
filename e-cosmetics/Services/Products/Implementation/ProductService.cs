@@ -130,7 +130,30 @@ namespace e_cosmetics.Services.Products.Implementation
             return productsView;
         }
 
+        public async Task<bool> EditAsync(EditProductViewModel model)
+        {
+            var product = this._dbContext.Products
+                .FirstOrDefault(x => x.Id == model.Id);
 
+            if (product == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                product.Name = model.Name;
+                product.Description = model.Description;
+
+                await this._dbContext.SaveChangesAsync();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         //public async Task AddPicturesAsync(ICollection<Picture> pictures, string productId)
         //{

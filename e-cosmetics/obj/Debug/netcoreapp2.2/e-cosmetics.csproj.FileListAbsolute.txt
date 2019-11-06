@@ -85,4 +85,3 @@ C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\bin\Debug\netcore
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\e_cosmetics.Resources.Views.Home.Index.fr.resources
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\fr\e-cosmetics.resources.dll
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\e_cosmetics.Resources.Controllers.HomeController.fr.resources
-C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\fr\e-cosmetics.resources.cs

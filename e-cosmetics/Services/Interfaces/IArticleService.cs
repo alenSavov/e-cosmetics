@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Collections.Generic;
 using e_cosmetics.Services.Articles.Models;
+using e_cosmetics.Models;
 
 namespace e_cosmetics.Services.Interfaces
 {
@@ -14,6 +15,6 @@ namespace e_cosmetics.Services.Interfaces
 
         Task<bool> EditAsync(EditArticleInputModel model);
 
-        ArticleViewModel GetById(string id);
+        Article GetById(string id);
     }
 }

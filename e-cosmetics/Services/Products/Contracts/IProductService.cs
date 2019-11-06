@@ -1,5 +1,4 @@
-﻿using e_cosmetics.Models;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Collections.Generic;
 using e_cosmetics.Services.Products.Models;
 
@@ -16,6 +15,8 @@ namespace e_cosmetics.Services.Products.Contracts
         ProductViewModel GetById(string id);
 
         IEnumerable<ProductViewModel> GetAllProductsForCategoryById(string id);
+
+        Task<bool> EditAsync(EditProductViewModel model);
 
         //Task AddPicturesAsync(ICollection<Picture> pictures, string productId);
     }

@@ -13,6 +13,8 @@ namespace e_cosmetics.Services.Products.Models
 
         public string ProductId { get; set; }
 
+        public string CategoryId { get; set; }
+
         public IEnumerable<ProductPictureViewModel> Pictures { get; set; }
 
     }

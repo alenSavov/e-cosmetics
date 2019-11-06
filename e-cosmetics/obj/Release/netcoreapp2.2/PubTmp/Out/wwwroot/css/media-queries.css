@@ -67,6 +67,7 @@
         left: 2em;
     }
 
+   
 
     /*Contact Page*/
 
@@ -115,6 +116,16 @@
     /*Products Page*/
     .product {
         height: 36em !important;
+    }
+
+
+    /*Article Page*/
+    .articles-container .article {
+        flex: 0 0 75% !important;
+    }
+
+    .article-buttons-box a {
+        flex: 0 0 100%;
     }
 }
 
@@ -305,6 +316,14 @@
         height: 19em !important;
     }
 
+    .articles-container .article .article-title {
+        font-size: 2em;
+    }
+    .articles-container .article .article-createdOn {
+        font-size: 1em;
+    }
+
+
     /*Footer*/
     .brand-footer img {
         margin-top: 39px;
@@ -422,6 +441,38 @@
     .product {
         height: 30em !important;
     }
+
+    /*Article Page*/
+    .articles-container .article .article-createdOn {
+        font-size: 1em ;
+    }
+
+    .articles-container .article .article-title {
+        font-size: 1.5em;
+    }
+
+    .articles-container .article .article-info {
+        flex-wrap: wrap;
+    }
+
+    .pipe {
+        display: none;
+    }
+
+    .article-buttons-box a {
+        font-size: 0.9em;
+    }
+
+    /*Article Details*/
+    .article-content {
+        flex: 0 0 100%;
+    }
+
+    div.main-nav h1 {
+        font-size: 1.5em;
+        padding: 20px 0 20px 12px;
+    }
+
 
     /*Footer*/
     .brand-footer img {
@@ -618,6 +669,11 @@
         margin: 0 0 0 30px;
     }
 
+    /*Contact Page*/
+    .contacts-down ul li {
+        padding: 0 0 20px 0;
+    }
+
     /*About Page*/
     .about-img-box {
         background-position: 75% 0%;
@@ -643,6 +699,12 @@
     .image-wrapper img {
         height: 17em;
     }
+
+    /*Article Details*/
+    .articles-container .article {
+        flex: 0 0 100% !important;
+    }
+
 
     /*Footer*/
     .site-footer ul li {

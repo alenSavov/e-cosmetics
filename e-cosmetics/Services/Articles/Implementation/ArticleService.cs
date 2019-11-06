@@ -60,16 +60,14 @@ namespace e_cosmetics.Services.Articles.Models
             return articlesView;
         }
 
-        public ArticleViewModel GetById (string id)
+        public Article GetById (string id)
         {
-            var product = this._dbContext
+            var article = this._dbContext
                  .Articles
                  .FirstOrDefault(x => x.Id == id);
 
-            var articleView = this._mapper
-                .Map<ArticleViewModel>(product);
 
-            return articleView;
+            return article;
         }
 
 
