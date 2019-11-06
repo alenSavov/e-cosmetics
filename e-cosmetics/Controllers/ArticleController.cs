@@ -117,7 +117,7 @@ namespace e_cosmetics.Controllers
             var success = await this._articleService
                 .EditAsync(model);
 
-            return RedirectToAction("GetAll");
+            return RedirectToAction("GetById", new { id = model.Id });
         }
                 
         public IActionResult GetById(string id)
