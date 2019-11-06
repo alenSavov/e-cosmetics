@@ -6,11 +6,11 @@
 
 <section class="articles-wrapper">
     <div class="main-nav">
-        <h1>Articles</h1>
+        <h1>Статии</h1>
 
         <ul>
-            <li><a asp-controller="Home" asp-action="index">Home</a></li>
-            <li><p>Articles</p></li>
+            <li><a asp-controller="Home" asp-action="index">Начало</a></li>
+            <li><p>Статии</p></li>
         </ul>
     </div>
 
@@ -35,7 +35,7 @@
                     <p class="article-title">@article.Title</p>
 
                     <div class="article-buttons-box">
-                        <a class="button read-more-btn" asp-controller="article" asp-action="getById" asp-route-id="@article.Id">Read More</a>
+                        <a class="button read-more-btn" asp-controller="article" asp-action="getById" asp-route-id="@article.Id">Прочети още</a>
                         @if (this.User.Identity.IsAuthenticated)
                         {
                             @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))

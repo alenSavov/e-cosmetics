@@ -10,7 +10,7 @@ div.main-nav {
 }
 
     div.main-nav h1 {
-        font-size: 6em;
+        font-size: 4em;
         flex: 0 0 100%;
         font-family: var(--font-cormorant);
         font-weight: 900;
@@ -20,7 +20,8 @@ div.main-nav {
     div.main-nav ul {
         list-style-type: none;
         display: flex;
-        margin: 0 0 0 70px;
+        margin: 2em 0 0 59px;
+
     }
 
         div.main-nav ul li {
