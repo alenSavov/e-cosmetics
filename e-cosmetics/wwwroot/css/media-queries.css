@@ -31,11 +31,11 @@
 
     /*Products Page*/
     .products-section ul li {
-        flex: 0 0 58% !important;
+        flex: 0 0 58%;
     }
 
     .product {
-        height: 52em !important;
+        height: 52em ;
     }
 }
 
@@ -50,7 +50,7 @@
 
     /*Products Page*/
     .product {
-        height: 43em !important;
+        height: 43em;
     }
 }
 
@@ -73,6 +73,10 @@
 
     .contacts-main .info {
         justify-content: center;
+    }
+
+    .contacts-down ul {
+        padding: 10em 0 0 0;
     }
 
         .contacts-main .info div:nth-child(1) {
@@ -115,13 +119,13 @@
 
     /*Products Page*/
     .product {
-        height: 36em !important;
+        height: 36em;
     }
 
 
     /*Article Page*/
     .articles-container .article {
-        flex: 0 0 75% !important;
+        flex: 0 0 75%;
     }
 
     .article-buttons-box a {
@@ -220,7 +224,7 @@
 
     /*Product Page*/
     .product {
-        height: 28em !important;
+        height: 28em;
     }
 }
 
@@ -313,7 +317,12 @@
 
     /*Products Page*/
     .product {
-        height: 19em !important;
+        height: 19em;
+    }
+
+    /*Article Page*/
+    .articles-container {
+        margin-top: 1em;
     }
 
     .articles-container .article .article-title {
@@ -323,9 +332,8 @@
         font-size: 1em;
     }
 
-    /*Article Page*/
     .articles-container .article {
-        flex: 0 0 100% !important;
+        flex: 0 0 100%;
     }
 
 
@@ -363,11 +371,8 @@
         flex: 0 0 100%;
     }
 
-    /*Main Nav*/
-    div.main-nav h1 {
-        font-size: 1.8em;
-        padding: 34px 20px;
-    }
+  
+
 
     div.main-nav ul {
          margin: 0; 
@@ -397,6 +402,8 @@
     div.main-nav h1 {
         padding: 20px 0 0 70px;
     }
+
+ 
 
     /*Home Page*/
     .about {
@@ -438,11 +445,11 @@
 
     /*Products Page*/
     .products-section ul li {
-        flex: 0 0 100% !important;
+        flex: 0 0 100%;
     }
 
     .product {
-        height: 30em !important;
+        height: 30em;
     }
 
     /*Article Page*/
@@ -452,6 +459,7 @@
 
     .article-content {
         flex: 0 0 80%;
+        padding: 3em;
     }
 
 
@@ -488,7 +496,14 @@
          padding: 0; 
     }
 
+    /*Main Nav*/
+    div.main-nav {
+        padding: 10px 0 40px 0;
+    }
 
+        div.main-nav h1 {
+            font-size: 3em;
+        }
 
     /*Footer*/
     .brand-footer img {
@@ -558,11 +573,7 @@
         margin-bottom: 3em;
     }
 
-    /*.black-box h2 {
-        flex: 0 0 61%;
-        font-size: 2em;
-        letter-spacing: 9px;
-    }*/
+  
 
     .black-box-title h2 {
         font-size: 1.5em;
@@ -578,7 +589,16 @@
 
     /*Products Page*/
     .product {
-        height: 25em !important;
+        height: 25em;
+    }
+
+    /*Contact Page*/
+    .contacts-main {
+        margin: 3em;
+    }
+
+    .contacts-down ul li {
+        padding: 0;
     }
 
     /*Footer*/
@@ -731,7 +751,7 @@
 
     /*Article Details*/
     .articles-container .article {
-        flex: 0 0 100% !important;
+        flex: 0 0 100%;
     }
 
 
