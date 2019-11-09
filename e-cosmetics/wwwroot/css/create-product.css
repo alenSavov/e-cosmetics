@@ -19,9 +19,9 @@
         flex: 0 0 100%;
         color: white;
         font-family: var(--font-cormorant);
-        margin: 1.5em 0;
+        margin: 1.5em 0 0.5em 0;
         text-align: center;
-        font-size: 3em;
+        font-size: 3.6em;
     }
 
     .product-container form {
@@ -29,7 +29,13 @@
         flex: 0 0 40%;
         flex-wrap: wrap;
         background-color: var(--color-main-black);
+        margin: 0 0 3em 0;
     }
+
+        .product-container form label {
+            font-family: var(--font-cormorant);
+            font-size: 1.5em;
+        }
 
     .product-container form div{
         flex: 0 0 100%;
@@ -37,13 +43,3 @@
         margin: 1em 0;
     }
 
-/*.product-container form .picture-box {
-    flex: 0 0 100%;
-    color: white;
-}*/
-
-/*.create-product-btn{
-    background-color:white;
-    /*color: white;
-    font-size: 4em;*/
-}*/
