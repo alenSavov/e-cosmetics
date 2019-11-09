@@ -14,25 +14,23 @@
         </ul>
     </div>
 
-    <section class="product-details">
-        <section class="black-box-title">
-            <h2>@Model.Name</h2>
-            <p class="sub-title">Детайли</p>
-        </section>
 
-        <ul class="black-box-content black-box-content-product">
-            @foreach (var picture in @Model.Pictures)
-            {
-                <li class="image-wrapper">
-                    <span><img src="@picture.Url" class="product-picture" width="250" height="250" /></span>
-                </li>
+    <section class="product-box-section-wrapper">
 
-            }
-        </ul>
+        <div class="product-template">
 
-        <section class="product-content">
-            <p class="product-text">@Model.Description</p>
-        </section>
+            <div class="product-picture-box">
+                @foreach (var picture in @Model.Pictures)
+                {
+                    <img src="@picture.Url" class="product-picture" />
+                }
+            </div>
+
+            <div class="product-content">
+                <h2 class="product-title">@Model.Name</h2>
+                <p>@Model.Description</p>
+            </div>
+        </div>
 
     </section>
 </section>
