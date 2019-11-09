@@ -99,6 +99,8 @@
            display:flex;
             flex: 0 0 100%;
             flex-wrap: wrap;
+            margin: 1em 0;
+            color: white;
         }
 
             .category-container form div label {
@@ -115,15 +117,7 @@
                 flex: 0 0 100%
             }
 
-        /*.category-container form label {
-            font-family: var(--font-cormorant);
-            font-size: 1.5em;
-            flex: 0 0 100%
-        }*/
-
-        .category-container form div {
-            flex: 0 0 100%;
-            color: white;
-            margin: 1em 0;
-        }
+.category-container form div.button{
+    justify-content: center;
+}
 
