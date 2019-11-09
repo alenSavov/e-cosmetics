@@ -522,6 +522,12 @@
     }
 
     /*Article Details*/
+    .article-text-wrapper {
+        margin-top: 2em;
+        display: flex;
+        justify-content: center;
+    }
+
     .article-content {
         flex: 0 0 100%;
     }
@@ -533,6 +539,10 @@
 
     .article-details-container {
         margin-top: 0;
+    }
+
+    .article-details-text{
+        flex: 0 0 90%
     }
 
     .article-content {
