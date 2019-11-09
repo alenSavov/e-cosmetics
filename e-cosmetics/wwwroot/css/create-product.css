@@ -8,9 +8,42 @@
 
 .product-container {
     display: flex;
-    flex: 0 0 80%;
+    flex: 0 0 85%;
     flex-wrap: wrap;
     justify-content: center;
     background-color: var(--color-main-black);
     margin: 5em 0;
 }
+
+    .product-container h2 {
+        flex: 0 0 100%;
+        color: white;
+        font-family: var(--font-cormorant);
+        margin: 1.5em 0;
+        text-align: center;
+        font-size: 3em;
+    }
+
+    .product-container form {
+        display: flex;
+        flex: 0 0 40%;
+        flex-wrap: wrap;
+        background-color: var(--color-main-black);
+    }
+
+    .product-container form div{
+        flex: 0 0 100%;
+        color: white;
+        margin: 1em 0;
+    }
+
+/*.product-container form .picture-box {
+    flex: 0 0 100%;
+    color: white;
+}*/
+
+/*.create-product-btn{
+    background-color:white;
+    /*color: white;
+    font-size: 4em;*/
+}*/

@@ -6,14 +6,13 @@
 }
 
 <section class="create-product-wrapper">
-    <section class="category-container">
+    <section class="product-container">
         <h2>Create Product</h2>
 
         <form asp-area="Administration" asp-controller="Product" asp-action="CreateProduct" class="contact-form" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger "></div>
 
             <div>
-
                 <label asp-for="Name" class="control-label font-weight-bold"></label>
                 <input asp-for="Name" class="font-weight-bold form-control">
                 <span asp-validation-for="Name" class="text-danger"></span>
@@ -29,14 +28,14 @@
                 <select asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.ListOfCategories,"Id","Name"))" class="form-control"></select>
                 <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="picture-box form-group">
                 <label asp-for="PictFormFiles" class="control-label btn btn-warning">Upload Picture </label>
                 <input asp-for="PictFormFiles" hidden accept=".gif,.png,.jpg,.jpeg" multiple />
                 <span asp-validation-for="PictFormFiles" class="text-danger"></span>
             </div>
 
-            <div class="button">
-                <button class="btn">Create</button>
+            <div class="button ">
+                <button class="white-button create-product-btn">Create</button>
             </div>
         </form>
     </section>
