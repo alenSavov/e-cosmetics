@@ -11,6 +11,7 @@
 
         <ul>
             <li><a asp-controller="Home" asp-action="index">Начало</a></li>
+            <li><a asp-controller="Category" asp-action="GetById" asp-route-id="@Model.Products.Select(x => x.CategoryId)">Начало</a></li>
             <li><p>Продукти</p></li>
         </ul>
     </div>
