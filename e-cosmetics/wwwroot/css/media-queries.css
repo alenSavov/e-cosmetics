@@ -339,12 +339,21 @@
     }
 
     /*Products Page*/
+
     .products-section-wrapper {
         margin-top: 2em;
     }
 
+    .product-template {
+        flex: 0 0 89%;
+    }
+
     .product {
         height: 19em;
+    }
+
+    .product-content {
+         padding: 0; 
     }
 
     /*Article Page*/

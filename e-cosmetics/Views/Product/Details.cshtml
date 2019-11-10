@@ -3,35 +3,44 @@
     ViewData["Title"] = "Details";
 }
 
-<section class="details-wrapper">
-    <div class="main-nav">
-        <h1>@Model.Name</h1>
+    <section class="details-wrapper">
+        <div class="main-nav">
+            <h1>@Model.Name</h1>
 
-        <ul>
-            <li><a asp-controller="Home" asp-action="index">Начало</a></li>
-            <li><a asp-controller="Category" asp-action="GetById" asp-route-id="@Model.CategoryId">Продукти</a></li>
-            <li><p>@Model.Name</p></li>
-        </ul>
-    </div>
-
-
-    <section class="product-box-section-wrapper">
-
-        <div class="product-template">
-
-            <div class="product-picture-box">
-                @foreach (var picture in @Model.Pictures)
-                {
-                    <img src="@picture.Url" class="product-picture" />
-                }
-            </div>
-
-            <div class="product-content">
-                <h2 class="product-title">@Model.Name</h2>
-                <p>@Model.Description</p>
-            </div>
+            <ul>
+                <li><a asp-controller="Home" asp-action="index">Начало</a></li>
+                <li><a asp-controller="Category" asp-action="GetById" asp-route-id="@Model.CategoryId">Продукти</a></li>
+                <li><p>@Model.Name</p></li>
+            </ul>
         </div>
 
+
+
+        <div class="categories">
+            <section class="black-box-title">
+                <h2 id="black-box-product-title">@Model.Name</h2>
+                <p class="sub-title">Popular</p>
+            </section>
+           
+            <section class="black-box-content">
+
+                @foreach (var picture in Model.Pictures)
+                {
+                    <a class="category" >
+                        <div class="image-wrapper">
+                            <span><img src="@picture.Url" class="category-picture" id="product-image" width="250" height="250" /></span>
+                        </div>
+                    </a>
+                }
+
+            </section>
+        </div>
+
+        <div class="product-decsription-wrapper">
+            <p>@Model.Description</p>
+        </div>
     </section>
-</section>
+
+
+
 

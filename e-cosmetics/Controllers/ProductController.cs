@@ -74,7 +74,7 @@ namespace e_cosmetics.Controllers
 
             var product = await this._productService.CreateAsync(model);
 
-            return RedirectToAction("GetAll");
+            return RedirectToAction("/");
         }
 
         [HttpGet]
