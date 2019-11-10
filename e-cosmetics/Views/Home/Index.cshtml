@@ -53,13 +53,10 @@
 
     <div class="categories">
         <section class="black-box-title">
-            <h2>Серии</h2>
+            <h2 id="black-box-title-index">Серии</h2>
             <p class="sub-title">Popular</p>
         </section>
-        @if (this.User.Identity.IsAuthenticated)
-        {
-
-        }
+      
         <section class="black-box-content">
 
             @foreach (var category in Model.Categories)
@@ -68,11 +65,7 @@
                     <div class="image-wrapper">
                         <span><img src="@category.Picture.Url" class="category-picture" width="250" height="250" /></span>
                     </div>
-                    @*<p class="category-description">@category.Description</p>*@
-                    @*<p class="category-name">@category.Name</p>*@
-
-                    @*<a class="button custom-underline" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>*@
-                    @*<a class="button custom-underline" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>*@
+                  
                 </a>
                 @if (this.User.Identity.IsAuthenticated)
                 {

@@ -127,6 +127,16 @@
         height: 36em;
     }
 
+    /*Product Details*/
+    #product-image {
+        height: 47em;
+    }
+    .image-wrapper img {
+        /* flex: 0 0 100%; */
+        width: 900px;
+        max-width: 900px;
+    }
+
 
     /*Article Page*/
     .articles-container .article {
@@ -182,6 +192,12 @@
 
     .product {
         height: 24em;
+    }
+
+    /*Product Details*/
+    .image-wrapper img {
+        width: 700px;
+        max-width: 700px;
     }
 }
 
@@ -239,6 +255,19 @@
     /*Product Page*/
     .product {
         height: 28em;
+    }
+
+    /*Product Details*/
+    .black-box-title p {
+        display: none;
+    }
+
+    .black-box-title {
+        justify-content: center;
+    }
+
+    #black-box-product-title {
+        font-size: 2em;
     }
 
     /*Main Nav*/
@@ -354,6 +383,38 @@
 
     .product-content {
          padding: 0; 
+    }
+
+    /*Product Details*/
+    #black-box-product-title {
+        font-size: 2em;
+    }
+
+    .image-wrapper img {
+        width: 500px;
+        max-width: 500px;
+    }
+
+    #product-image {
+        height: 37em;
+    }
+
+    #black-box-product-title {
+        font-size: 1.2em;
+        letter-spacing: 2.5px;
+    }
+
+    .black-box-title p {
+        display: none;
+    }
+
+    div.main-nav ul li {
+        font-size: 15px;
+    }
+
+    #black-box-product-title {
+        font-size: 2em;
+        letter-spacing: 3px;
     }
 
     /*Article Page*/
@@ -650,7 +711,22 @@
         height: 25em;
     }
 
+    div.main-nav ul li {
+        font-size: 13px;
+    }
 
+    #black-box-product-title {
+        flex: 0 0 100%;
+    }
+
+    .image-wrapper img {
+        width: 350px;
+        max-width: 350px;
+    }
+
+    #product-image {
+        height: 26em;
+    }
 
     .contacts-down ul li {
         padding: 0;
@@ -785,6 +861,8 @@
             letter-spacing: 7px;
         }
 
+ 
+
     .sub-title {
         font-size: 0.6em;
     }
@@ -811,6 +889,27 @@
         flex: 0 0 100%;
     }
 
+
+    #black-box-product-title {
+        font-size: 1.3em;
+    }
+    .image-wrapper img {
+        width: 300px;
+        max-width: 300px;
+    }
+
+    #product-image {
+        height: 21em;
+    }
+
+    .product-decsription-wrapper p {
+        flex: 0 0 90%;
+        font-size: 1.7em;
+    }
+
+    #black-box-title-index {
+        font-size: 3em;
+    }
 
     /*Footer*/
     .site-footer ul li {

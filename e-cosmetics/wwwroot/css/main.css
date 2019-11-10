@@ -183,6 +183,10 @@
         flex: 0 0 15%;
     }
 
+#black-box-title-index{
+    /*font-size: 5em;*/
+}
+
 .black-box-content {
     display: flex;
     justify-content: center;
