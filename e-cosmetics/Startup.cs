@@ -119,21 +119,6 @@ namespace e_cosmetics
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            //var supportedCultures = new[]
-            //   {
-            //        new CultureInfo("en-US"),
-            //        new CultureInfo("bg-BG"),
-            //         new CultureInfo("fr")
-            //    };
-
-            //app.UseRequestLocalization(new RequestLocalizationOptions
-            //{
-            //    DefaultRequestCulture = new RequestCulture("bg-BG"),
-            //    // Formatting numbers, dates, etc.
-            //    SupportedCultures = supportedCultures,
-            //    // UI strings that we have localized.
-            //    SupportedUICultures = supportedCultures
-            //});
 
             app.UseAuthentication();
 

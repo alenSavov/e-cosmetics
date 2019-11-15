@@ -1,18 +1,22 @@
-﻿@model e_cosmetics.Services.Products.Models.ProductCollectionViewModel
+﻿
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@model e_cosmetics.Services.Products.Models.ProductCollectionViewModel
 
 @{
 
     ViewData["Title"] = "Products";
 }
-
+<h2>@Localizer["Начало"]</h2>
 <section class="products-wrapper">
     <div class="main-nav">
-        <h1>Продукти</h1>
+        <h1>@Localizer["Продукти"]</h1>
 
         <ul>
-            <li><a asp-controller="Home" asp-action="index">Начало</a></li>
+            <li><a asp-controller="Home" asp-action="index">@Localizer["Начало"]</a></li>
             @*<li><a asp-controller="Category" asp-action="GetById" asp-route-id="@Model.Products.Select(x => x.CategoryId)">Начало</a></li>*@
-            <li><p>Продукти</p></li>
+            <li><p>@Localizer["Продукти"]</p></li>
         </ul>
     </div>
 
