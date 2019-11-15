@@ -1,11 +1,12 @@
-﻿@model e_cosmetics.Services.Categories.Models.CategoriesCollectionViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
-
+@model e_cosmetics.Services.Categories.Models.CategoriesCollectionViewModel
 
 @{
     ViewData["Title"] = "Elizabet Cosmetics";
 }
-
+    <h2>@Localizer["Работи"]</h2>
 
 <section class="site-wrapper">
     <aside class="aside">
@@ -56,7 +57,7 @@
             <h2 id="black-box-title-index">Серии</h2>
             <p class="sub-title">Popular</p>
         </section>
-      
+
         <section class="black-box-content">
 
             @foreach (var category in Model.Categories)
@@ -65,7 +66,7 @@
                     <div class="image-wrapper">
                         <span><img src="@category.Picture.Url" class="category-picture" width="250" height="250" /></span>
                     </div>
-                  
+
                 </a>
                 @if (this.User.Identity.IsAuthenticated)
                 {
