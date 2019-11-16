@@ -21,7 +21,21 @@
         </div>
 
         <div class="product-details-content">
+            <div class="details-content-box">
+                @foreach (var picture in Model.Pictures)
+                {
+                    <img class="product-image-box" src="@picture.Url" alt="Product Picture" />
+                }
 
+            <div class="product-promo-text">
+                <p>@Model.Description</p>
+
+            </div>
+            </div>
+
+            @*<div class="product-description">
+                <p>@Model.Description</p>
+            </div>*@
         </div>
     </section>
 
@@ -49,7 +63,6 @@
             <p>@Model.Description</p>
         </div>*@
 </section>
-
 
 
 
