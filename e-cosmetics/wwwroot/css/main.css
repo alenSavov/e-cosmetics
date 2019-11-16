@@ -139,6 +139,8 @@
     color: var(--color-depper-gray);
     font-family: var(--font-cormorant);
     margin: 0;
+    display: flex;
+    align-items: center;
 }
 
 /*Categories*/

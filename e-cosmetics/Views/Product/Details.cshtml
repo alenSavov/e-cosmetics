@@ -3,26 +3,35 @@
     ViewData["Title"] = "Details";
 }
 
-    <section class="details-wrapper">
-        <div class="main-nav">
-            <h1>@Model.Name</h1>
+<section class="details-wrapper">
+    <div class="main-nav" id="main-nav-product-details">
+        <h1>@Model.Name</h1>
 
-            <ul>
-                <li><a asp-controller="Home" asp-action="index">Начало</a></li>
-                <li><a asp-controller="Category" asp-action="GetById" asp-route-id="@Model.CategoryId">Продукти</a></li>
-                <li><p>@Model.Name</p></li>
-            </ul>
+        <ul id="main-nav-product-details-ul">
+            <li><a asp-controller="Home" asp-action="index">Начало</a></li>
+            <li><a asp-controller="Category" asp-action="GetById" asp-route-id="@Model.CategoryId">Продукти</a></li>
+            <li><p id="main-nav-product-name">@Model.Name</p></li>
+        </ul>
+    </div>
+
+    <section class="product-details-container">
+        <div class="product-details-title-box">
+            <h2 id="">@Model.Name</h2>
+            <p class="sub-title">Popular</p>
         </div>
 
+        <div class="product-details-content">
 
+        </div>
+    </section>
 
-        <div class="categories">
+    @*<div class="categories">
             <section class="black-box-title">
                 <h2 id="black-box-product-title">@Model.Name</h2>
                 <p class="sub-title">Popular</p>
             </section>
-           
-            <section class="black-box-content">
+
+            <section class="black-box-content" id="black-box-content-product-details">
 
                 @foreach (var picture in Model.Pictures)
                 {
@@ -38,8 +47,8 @@
 
         <div class="product-decsription-wrapper">
             <p>@Model.Description</p>
-        </div>
-    </section>
+        </div>*@
+</section>
 
 
 
