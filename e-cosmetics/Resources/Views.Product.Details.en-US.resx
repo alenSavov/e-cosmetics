@@ -117,22 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="БЛОГ" xml:space="preserve">
-    <value>BLOG</value>
+  <data name="Начало" xml:space="preserve">
+    <value>Home</value>
   </data>
-  <data name="Всички права запазени." xml:space="preserve">
-    <value>All rights reserved.</value>
+  <data name="Околоочният крем с хиалуронова киселина от продуктовата гама на" xml:space="preserve">
+    <value>The hyaluronic acid eye cream from the ELIZABETH cosmetics product range is designed to hydrate and tone the area around the eyes. Hyaluronic acid is the main ingredient in the product that will remove the signs of aging and prevent their reoccurrence. Shea oil will nourish the delicate area around the eyes, and coconut oil with its strong moisturizing effect will soothe your skin. Jojoba oil will create an invisible layer, guaranteeing its protection. Wheat germ oil has the ability to reduce and smooth the wrinkles around the eyes and also prevent their recurrence. D-panthenol softens, nourishes and enhances vitality and elasticity. Vitamin E, as an active antioxidant, helps heal damaged skin and prevents the retention of scars. Aloe vera, arnica and calendula extracts reduce fatigue and make the area around the eyes look more fresh and radiant. Thanks to the hyaluronic acid eye cream, the dark circles under the eyes will be reduced and the tan will be equalized. Rich formula of the cream helps reduce fine wrinkles, skin is noticeably softer and smoother.</value>
   </data>
-  <data name="ЗА НАС" xml:space="preserve">
-    <value>ABOUT</value>
-  </data>
-  <data name="КОНТАКТИ" xml:space="preserve">
-    <value>CONTACTS</value>
-  </data>
-  <data name="НАЧАЛО" xml:space="preserve">
-    <value>HOME</value>
-  </data>
-  <data name="СЕРИИ" xml:space="preserve">
-    <value>SERIES</value>
+  <data name="Продукти" xml:space="preserve">
+    <value>Products</value>
   </data>
 </root>

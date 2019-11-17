@@ -1,4 +1,7 @@
-﻿@model e_cosmetics.Services.Products.Models.ProductViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@model e_cosmetics.Services.Products.Models.ProductViewModel
 @{
     ViewData["Title"] = "Details";
 }
@@ -8,8 +11,8 @@
         <h1>@Model.Name</h1>
 
         <ul id="main-nav-product-details-ul">
-            <li><a asp-controller="Home" asp-action="index">Начало</a></li>
-            <li><a asp-controller="Category" asp-action="GetById" asp-route-id="@Model.CategoryId">Продукти</a></li>
+            <li><a asp-controller="Home" asp-action="index">@Localizer["Начало"]</a></li>
+            <li><a asp-controller="Category" asp-action="GetById" asp-route-id="@Model.CategoryId">@Localizer["Продукти"]</a></li>
             <li><p id="main-nav-product-name">@Model.Name</p></li>
         </ul>
     </div>
@@ -27,41 +30,28 @@
                     <img class="product-image-box" src="@picture.Url" alt="Product Picture" />
                 }
 
-            <div class="product-promo-text">
-                <p>@Model.Description</p>
+                @*<div class="product-promo-text">
+                    <ul>
+                        <li>Детоксикира</li>
+                        <li>Хидратира и възстановява кожата</li>
+                        <li>Изглажда несъвършенствата</li>
+                        <li>Създава обем и плътност</li>
+                        <li>Предпазва от слънчево изгаряне</li>
+                        <li>Придава по-свеж и тонизиращ вид</li>
+                        <li>Подмладява, освежава и уплътнява кожата.</li>
+                    </ul>
 
-            </div>
+                </div>*@
             </div>
 
-            @*<div class="product-description">
-                <p>@Model.Description</p>
-            </div>*@
+
+            <div class="product-description" id="product-description">
+                <p id="text-styles-description">@Localizer[@"Model.Description"]</p>
+            </div>
         </div>
     </section>
 
-    @*<div class="categories">
-            <section class="black-box-title">
-                <h2 id="black-box-product-title">@Model.Name</h2>
-                <p class="sub-title">Popular</p>
-            </section>
 
-            <section class="black-box-content" id="black-box-content-product-details">
-
-                @foreach (var picture in Model.Pictures)
-                {
-                    <a class="category" >
-                        <div class="image-wrapper">
-                            <span><img src="@picture.Url" class="category-picture" id="product-image" width="250" height="250" /></span>
-                        </div>
-                    </a>
-                }
-
-            </section>
-        </div>
-
-        <div class="product-decsription-wrapper">
-            <p>@Model.Description</p>
-        </div>*@
 </section>
 
 
