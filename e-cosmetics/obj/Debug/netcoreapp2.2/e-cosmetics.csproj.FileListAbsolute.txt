@@ -90,3 +90,6 @@ C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcore
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\fr\e-cosmetics.resources.dll
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\e_cosmetics.Resources.Views.Category.GetById.en-US.resources
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\e_cosmetics.Resources.Views.Product.Details.en-US.resources
+C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\e_cosmetics.Resources.Views.Article.GetAll.en-US.resources
+C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\e_cosmetics.Resources.Views.Article.Details.en-US.resources
+C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\e-cosmetics\obj\Debug\netcoreapp2.2\e_cosmetics.Resources.Views.Home.Contacts.en-US.resources

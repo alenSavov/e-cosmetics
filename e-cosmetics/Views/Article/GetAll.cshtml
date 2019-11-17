@@ -1,4 +1,7 @@
-﻿@model ArticlesCollectionViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@model ArticlesCollectionViewModel
 
 @{
     ViewData["Title"] = "Articles";
@@ -6,11 +9,11 @@
 
 <section class="articles-wrapper">
     <div class="main-nav">
-        <h1>Статии</h1>
+        <h1>@Localizer["Статии"]</h1>
 
         <ul>
-            <li><a asp-controller="Home" asp-action="index">Начало</a></li>
-            <li><p>Статии</p></li>
+            <li><a asp-controller="Home" asp-action="index">@Localizer["Начало"]</a></li>
+            <li><p>@Localizer["Статии"]</p></li>
         </ul>
     </div>
 
@@ -20,10 +23,7 @@
         @foreach (var article in Model.Articles)
         {
             <div class="article">
-                @*<img src="@article.Picture.Url" />*@
-
-                @*<p class="article-content">@Html.Raw(article.Content)</p>*@
-
+               
                 <div class="article-content">
                     <p class="article-brand">Elizabeth-Cosmetics</p>
 
@@ -35,7 +35,7 @@
                     <p class="article-title">@article.Title</p>
 
                     <div class="article-buttons-box">
-                        <a class="button read-more-btn" asp-controller="article" asp-action="getById" asp-route-id="@article.Id">Прочети още</a>
+                        <a class="button read-more-btn" asp-controller="article" asp-action="getById" asp-route-id="@article.Id">@Localizer["Прочети още"]</a>
                         @if (this.User.Identity.IsAuthenticated)
                         {
                             @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))

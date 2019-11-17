@@ -1,4 +1,7 @@
-﻿@model e_cosmetics.Services.Articles.Models.ArticleViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@model e_cosmetics.Services.Articles.Models.ArticleViewModel
 @{
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,8 +12,8 @@
         <h1>Articles: @Model.Title</h1>
 
         <ul>
-            <li><a asp-controller="Home" asp-action="index">Начало</a></li>
-            <li><a asp-controller="Article" asp-action="GetAll">Статии</a></li>
+            <li><a asp-controller="Home" asp-action="index">@Localizer["Начало"]</a></li>
+            <li><a asp-controller="Article" asp-action="GetAll">@Localizer["Статии"]</a></li>
         </ul>
     </div>
 
