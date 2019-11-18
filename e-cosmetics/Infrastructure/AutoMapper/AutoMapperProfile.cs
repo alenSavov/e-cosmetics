@@ -26,9 +26,14 @@ namespace e_cosmetics.Infrastructure.AutoMapper
                  .ForMember(d => d.Pictures, x => x.MapFrom(s => s.ProductPictures))
                 .ReverseMap();
 
+            CreateMap<Product, EditProductViewModel>()
+               .ForMember(d => d.Pictures, x => x.MapFrom(s => s.ProductPictures))
+              .ReverseMap();
+
+            CreateMap<ProductViewModel, EditProductViewModel>().ReverseMap();
+
             CreateMap<ProductPicture, ProductPictureViewModel>()
            .ForMember(d => d.ProductId, x => x.MapFrom(s => s.ProductId));
-
 
 
 

@@ -64,13 +64,64 @@
     flex: 0 0 94%;
 }
 
+.carousel-inner {
+    position: absolute;
+    left: 0px;
+}
+
+.carousel-control-next-icon,
+ .carousel-control-prev-icon {
+    margin-top: 45em;
+}
+
+.content-over-banner {
+    font-size: 4em;
+    display: block;
+    font-weight: 700;
+    position: absolute;
+    top: 7em;
+    left: 3em;
+    transform: scale(1.2, 1.8);
+    color: white;
+    font-family: var(--font-cormorant);
+    animation-iteration-count: 1;
+    z-index: 101;
+}
+
+.content-over-banner2 {
+    font-size: 4em;
+    display: block;
+    font-weight: 700;
+    position: absolute;
+    top: 9em;
+    left: 3em;
+    transform: scale(1.2, 1.8);
+    color: white;
+    font-family: var(--font-cormorant);
+    animation-iteration-count: 1;
+    z-index: 101;
+}
+
+#carouselExampleControls:after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background: -webkit-radial-gradient(top center, ellipse cover, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.5) 100%);
+
+}
+
 
 .carousel-control-next,
 .carousel-control-prev {
     filter: invert(100%);
+    z-index: 101;
 }
 
-#carouselExampleControls{
+#carouselExampleControls {
     flex: 0 0 100%;
 }
 /*Elizabrth Cosmetics title styles*/
@@ -88,6 +139,8 @@
     color: var(--color-depper-gray);
     font-family: var(--font-cormorant);
     margin: 0;
+    display: flex;
+    align-items: center;
 }
 
 /*Categories*/
@@ -122,7 +175,7 @@
         font-family: var(--font-cormorant);
         color: var(--color-main-white);
         font-size: 5em;
-        letter-spacing: 13px;
+        letter-spacing: 5px;
         margin: 0;
         padding-left: 1em;
         font-family: var(--font-cormorant);
@@ -132,9 +185,13 @@
         flex: 0 0 15%;
     }
 
+#black-box-title-index{
+    /*font-size: 5em;*/
+}
+
 .black-box-content {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     flex-wrap: wrap;
     flex: 0 0 85%;
 }
@@ -142,7 +199,7 @@
 /*One category styles*/
 .category {
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     flex: 0 0 100%;
     margin-bottom: 2em;
 }
@@ -156,6 +213,7 @@
         display: flex;
         flex: 0 0 100%;
         position: relative;
+        justify-content:center;
     }
 
         .image-wrapper span:before {
@@ -181,7 +239,9 @@
     }
 
     .image-wrapper img {
-        flex: 0 0 100%;
+        /*flex: 0 0 100%;*/
+        width: 1400px;
+        max-width: 1200px;
         height: 45em;
         filter: gray;
         -webkit-filter: grayscale(0);

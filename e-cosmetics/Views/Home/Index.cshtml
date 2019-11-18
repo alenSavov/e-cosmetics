@@ -1,4 +1,7 @@
-﻿@model e_cosmetics.Services.Categories.Models.CategoriesCollectionViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@model e_cosmetics.Services.Categories.Models.CategoriesCollectionViewModel
 
 @{
     ViewData["Title"] = "Elizabet Cosmetics";
@@ -20,14 +23,15 @@
         <!-- Slideshow container -->
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="~/img/model4.jpg" alt="First slide">
+                <div class="carousel-item active slide-pic-1">
+                    <img class="slide-pic-1 d-block w-100" src="~/img/slider-pic-2.jpg" alt="First slide">
+
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="~/img//banner.jpg" alt="Second slide">
+                    <img class="slide-pic-2 d-block w-100" src="~/img/slider-pic-1.jpg" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="~/img/model5.jpg" alt="Third slide">
+                    <img class="slide-pic-3 d-block w-100" src="~/img/unsplash-6.jpg" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -43,18 +47,16 @@
     </section>
 
 </section>
-
+<p class="content-over-banner animated zoomIn delay-1s">THE TRUTH</p>
+<p class="content-over-banner2 animated zoomIn delay-1s">ABOUT BEAUTY</p>
 <section class="categories-wrapper" id="series">
 
     <div class="categories">
         <section class="black-box-title">
-            <h2>Series</h2>
+            <h2 id="black-box-title-index">@Localizer["Серии"]</h2>
             <p class="sub-title">Popular</p>
         </section>
-        @if (this.User.Identity.IsAuthenticated)
-        {
 
-        }
         <section class="black-box-content">
 
             @foreach (var category in Model.Categories)
@@ -63,11 +65,7 @@
                     <div class="image-wrapper">
                         <span><img src="@category.Picture.Url" class="category-picture" width="250" height="250" /></span>
                     </div>
-                    @*<p class="category-description">@category.Description</p>*@
-                    @*<p class="category-name">@category.Name</p>*@
 
-                    @*<a class="button custom-underline" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>*@
-                    @*<a class="button custom-underline" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>*@
                 </a>
                 @if (this.User.Identity.IsAuthenticated)
                 {
@@ -79,6 +77,6 @@
                 }
             }
 
-            </section>
-        </div>
-    </section>
+        </section>
+    </div>
+</section>

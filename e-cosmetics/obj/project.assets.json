@@ -49,6 +49,19 @@
       "jQuery/1.9.0": {
         "type": "package"
       },
+      "Localization.AspNetCore.TagHelpers/0.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Localization": "2.2.0",
+          "Microsoft.AspNetCore.Razor.Runtime": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Localization.AspNetCore.TagHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Localization.AspNetCore.TagHelpers.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -4869,6 +4882,19 @@
         "Tools/uninstall.ps1",
         "jquery.1.9.0.nupkg.sha512",
         "jquery.nuspec"
+      ]
+    },
+    "Localization.AspNetCore.TagHelpers/0.6.0": {
+      "sha512": "jfirfCU68ZMdHgJef0DzOHnj/Us9PxSYX+R5em/usWcy75Vjv/P60V5wcsfx6YFiiXNGxGNYxjptlxlmnfIrvA==",
+      "type": "package",
+      "path": "localization.aspnetcore.taghelpers/0.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Localization.AspNetCore.TagHelpers.dll",
+        "lib/netstandard2.0/Localization.AspNetCore.TagHelpers.xml",
+        "localization.aspnetcore.taghelpers.0.6.0.nupkg.sha512",
+        "localization.aspnetcore.taghelpers.nuspec"
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -13108,9 +13134,12 @@
       "AutoMapper >= 9.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 7.0.0",
       "CloudinaryDotNet >= 1.8.0",
+      "Localization.AspNetCore.TagHelpers >= 0.6.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
+      "Microsoft.AspNetCore.Mvc.Localization >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.Extensions.Configuration.UserSecrets >= 2.2.0",
+      "Microsoft.Extensions.Localization >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.4",
       "SweetAlert.Bootstrap >= 1.0.1"
@@ -13169,11 +13198,19 @@
             "target": "Package",
             "version": "[1.8.0, )"
           },
+          "Localization.AspNetCore.TagHelpers": {
+            "target": "Package",
+            "version": "[0.6.0, )"
+          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.2.0, )",
             "autoReferenced": true
+          },
+          "Microsoft.AspNetCore.Mvc.Localization": {
+            "target": "Package",
+            "version": "[2.2.0, )"
           },
           "Microsoft.AspNetCore.Razor.Design": {
             "suppressParent": "All",
@@ -13181,6 +13218,10 @@
             "version": "[2.2.0, )"
           },
           "Microsoft.Extensions.Configuration.UserSecrets": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "Microsoft.Extensions.Localization": {
             "target": "Package",
             "version": "[2.2.0, )"
           },

@@ -6,37 +6,36 @@
 }
 
 <section class="create-product-wrapper">
-    <section class="category-container">
+    <section class="product-container">
         <h2>Create Product</h2>
 
         <form asp-area="Administration" asp-controller="Product" asp-action="CreateProduct" class="contact-form" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger "></div>
 
             <div>
-
-                <label asp-for="Name" class="control-label font-weight-bold"></label>
-                <input asp-for="Name" class="font-weight-bold form-control">
+                <label asp-for="Name" class=""></label>
+                <input asp-for="Name" class="">
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
 
             <div class="">
-                <label asp-for="Description" class="control-label font-weight-bold"></label>
-                <textarea asp-for="Description" class="font-weight-bold form-control"></textarea>
+                <label asp-for="Description" class=""></label>
+                <textarea asp-for="Description" class=""></textarea>
                 <span asp-validation-for="Description" class="text-danger "></span>
             </div>
             <div>
-                <label asp-for="CategoryId" class="control-label font-weight-bold">Category</label>
-                <select asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.ListOfCategories,"Id","Name"))" class="form-control"></select>
+                <label asp-for="CategoryId" class="">Category</label>
+                <select asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.ListOfCategories,"Id","Name"))" class=""></select>
                 <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="PictFormFiles" class="control-label btn btn-warning">Upload Picture </label>
+            <div class="picture-box form-group">
+                <label asp-for="PictFormFiles" class="">Upload Picture </label>
                 <input asp-for="PictFormFiles" hidden accept=".gif,.png,.jpg,.jpeg" multiple />
                 <span asp-validation-for="PictFormFiles" class="text-danger"></span>
             </div>
 
-            <div class="button">
-                <button class="btn">Create</button>
+            <div class="button ">
+                <button class="white-button">Create</button>
             </div>
         </form>
     </section>

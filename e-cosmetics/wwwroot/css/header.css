@@ -63,7 +63,7 @@
 }
 
     .icon:before {
-        content: 'MENU';
+        content: 'МЕНЮ';
         font-family: var(--font-cormorant);
         font-size: 16px;
         font-weight: 600;

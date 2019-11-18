@@ -22,5 +22,7 @@ namespace e_cosmetics.Models
         public Category Category { get; set; }
 
         public ICollection<ProductPicture> ProductPictures { get; set; }
+
+
     }
 }

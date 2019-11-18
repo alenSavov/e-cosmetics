@@ -1,32 +1,34 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
 @{
     ViewData["Title"] = "Contacts";
 }
 
 <section class="contacts-wrapper">
     <div class="main-nav">
-        <h1>Contacts</h1>
+        <h1>@Localizer["Контакти"]</h1>
 
         <ul>
-            <li><a asp-controller="Home" asp-action="index">Home</a></li>
-            <li><p>Contacts</p></li>
+            <li><a asp-controller="Home" asp-action="index">@Localizer["Начало"]</a></li>
+            <li><p>@Localizer["Контакти"]</p></li>
         </ul>
     </div>
 
     <section class="contacts-main">
         <div class="info">
             <div>
-                <h2 id="contacts-info-p">Contact info</h2>
+                <h2 id="contacts-info-p">@Localizer["Контакти"]</h2>
             </div>
             <div>
-                <p id="contacts-p">contacts</p>
+                @*<p id="contacts-p">Контакти</p>*@
             </div>
         </div>
 
         <div class="contacts-down">
             <ul>
-                <li>Phone<a href="tel:+359888888653">+359888888653</a></li>
-                <li>Email<a href="mailto:office@elizabeth-cosmetics.com">office@elizabeth-cosmetics.com</a></li>
+                <li>@Localizer["Телефон"]<a href="tel:+359888888653">+359888888653</a></li>
+                <li>@Localizer["Имейл"]<a href="mailto:office@elizabeth-cosmetics.com">office@elizabeth-cosmetics.com</a></li>
             </ul>
         </div>
     </section>

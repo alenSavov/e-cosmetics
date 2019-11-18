@@ -10,17 +10,18 @@ div.main-nav {
 }
 
     div.main-nav h1 {
-        font-size: 6em;
+        font-size: 4em;
         flex: 0 0 100%;
         font-family: var(--font-cormorant);
         font-weight: 900;
-        padding: 55px 0 0 70px;
+        padding: 1em;
     }
 
     div.main-nav ul {
         list-style-type: none;
         display: flex;
-        margin: 0 0 0 70px;
+        margin: 0 0 0 3em;
+
     }
 
         div.main-nav ul li {

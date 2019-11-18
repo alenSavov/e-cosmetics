@@ -18,6 +18,11 @@ using e_cosmetics.Services.Pictures.Implementation;
 using e_cosmetics.Middleware;
 using e_cosmetics.Services.Accounts.Implementation;
 using e_cosmetics.Services.Articles.Models;
+using Microsoft.AspNetCore.Mvc.Razor;
+using System.Collections.Generic;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
 
 namespace e_cosmetics
 {
@@ -33,6 +38,19 @@ namespace e_cosmetics
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+            services.AddMvc()
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+                .AddDataAnnotationsLocalization();
+
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
             services
              .Configure<CloudinaryOptions>(options =>
              {
@@ -41,13 +59,7 @@ namespace e_cosmetics
                  options.ApiSecret = this.Configuration.GetSection("Cloudinary:ApiSecret").Value;
              });
 
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
-            
+
 
             var config = new AutoMapper.MapperConfiguration(cfg =>
             {
@@ -85,13 +97,29 @@ namespace e_cosmetics
                 };
             });
 
-            services.AddMvcCore().AddDataAnnotations();
+            services.Configure<RequestLocalizationOptions>(
+        opts =>
+        {
+            var supportedCultures = new List<CultureInfo>
+            {
+                new CultureInfo("en-US"),
+                new CultureInfo("bg-BG")
+            };
+
+            opts.DefaultRequestCulture = new RequestCulture("bg-BG");
+            // Formatting numbers, dates, etc.
+            opts.SupportedCultures = supportedCultures;
+            // UI strings that we have localized.
+            opts.SupportedUICultures = supportedCultures;
+        });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
             app.UseAuthentication();
 
             if (env.IsDevelopment())
@@ -113,6 +141,9 @@ namespace e_cosmetics
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+
+            var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(options.Value);
 
             app.UseMvc(routes =>
             {

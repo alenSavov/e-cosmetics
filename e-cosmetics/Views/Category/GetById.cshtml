@@ -1,17 +1,21 @@
-﻿@model e_cosmetics.Services.Products.Models.ProductCollectionViewModel
+﻿
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@model e_cosmetics.Services.Products.Models.ProductCollectionViewModel
 
 @{
 
     ViewData["Title"] = "Products";
 }
-
 <section class="products-wrapper">
     <div class="main-nav">
-        <h1>Products</h1>
+        <h1>@Localizer["Продукти"]</h1>
 
         <ul>
-            <li><a asp-controller="Home" asp-action="index">Home</a></li>
-            <li><p>Products</p></li>
+            <li><a asp-controller="Home" asp-action="index">@Localizer["Начало"]</a></li>
+            @*<li><a asp-controller="Category" asp-action="GetById" asp-route-id="@Model.Products.Select(x => x.CategoryId)">Начало</a></li>*@
+            <li><p>@Localizer["Продукти"]</p></li>
         </ul>
     </div>
 
@@ -39,7 +43,7 @@
                         {
                             @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
                             {
-                                <a class="button button-primary" asp-controller="product" asp-action="delete" asp-route-id="@product.Id">Delete</a>
+                                <a class="button button-primary" asp-controller="product" asp-action="DeleteAsync" asp-route-id="@product.Id">Delete</a>
                                 <a class="button button-primary" asp-controller="product" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
                             }
                         }

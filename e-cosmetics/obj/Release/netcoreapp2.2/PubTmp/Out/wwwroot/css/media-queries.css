@@ -56,6 +56,19 @@
 
 @media (max-width: 1024px) {
 
+    /*Home Page*/
+    .content-over-banner {
+        top: 5em;
+        left: 2em;
+    }
+
+    .content-over-banner2 {
+        top: 7em;
+        left: 2em;
+    }
+
+   
+
     /*Contact Page*/
 
     .contacts-main .info {
@@ -104,6 +117,16 @@
     .product {
         height: 36em !important;
     }
+
+
+    /*Article Page*/
+    .articles-container .article {
+        flex: 0 0 75% !important;
+    }
+
+    .article-buttons-box a {
+        flex: 0 0 100%;
+    }
 }
 
 @media (max-width: 950px) {
@@ -149,6 +172,19 @@
 }
 
 @media (max-width: 850px) {
+   /*Home Page*/
+    .content-over-banner {
+        top: 3em;
+        left: 2em;
+    }
+
+    .content-over-banner2 {
+        top: 5em;
+        left: 2em;
+    }
+    
+    
+    
     #close-btn:before, #close-btn:after {
         right: 80px;
     }
@@ -226,6 +262,14 @@
         top: 22em;
     }
 
+    .content-over-banner {
+        font-size: 3em;
+    }
+
+    .content-over-banner2 {
+        font-size: 3em;
+    }
+
     /*Contacts Page*/
     .contacts-down ul li {
         font-size: 1.5em;
@@ -271,6 +315,14 @@
     .product {
         height: 19em !important;
     }
+
+    .articles-container .article .article-title {
+        font-size: 2em;
+    }
+    .articles-container .article .article-createdOn {
+        font-size: 1em;
+    }
+
 
     /*Footer*/
     .brand-footer img {
@@ -322,7 +374,7 @@
         padding: 20px 0 0 70px;
     }
 
-    /*Main Page*/
+    /*Home Page*/
     .about {
         flex: 0 0 100%;
         margin: 4em 0;
@@ -360,6 +412,27 @@
         line-height: 1.6em;
     }
 
+    .content-over-banner {
+        font-size: 2em;
+        top: 6em;
+        left: 2em;
+    }
+
+    .content-over-banner2 {
+        font-size: 2em;
+        top: 8em;
+        left: 2em;
+    }
+
+    .black-box-title h2 {
+        flex: 0 0 60%;
+        font-size: 2.4em;
+    }
+
+    .sub-title {
+        font-size: 0.8em;
+    }
+
     /*Products Page*/
     .products-section ul li {
         flex: 0 0 100% !important;
@@ -368,6 +441,38 @@
     .product {
         height: 30em !important;
     }
+
+    /*Article Page*/
+    .articles-container .article .article-createdOn {
+        font-size: 1em ;
+    }
+
+    .articles-container .article .article-title {
+        font-size: 1.5em;
+    }
+
+    .articles-container .article .article-info {
+        flex-wrap: wrap;
+    }
+
+    .pipe {
+        display: none;
+    }
+
+    .article-buttons-box a {
+        font-size: 0.9em;
+    }
+
+    /*Article Details*/
+    .article-content {
+        flex: 0 0 100%;
+    }
+
+    div.main-nav h1 {
+        font-size: 1.5em;
+        padding: 20px 0 20px 12px;
+    }
+
 
     /*Footer*/
     .brand-footer img {
@@ -564,6 +669,11 @@
         margin: 0 0 0 30px;
     }
 
+    /*Contact Page*/
+    .contacts-down ul li {
+        padding: 0 0 20px 0;
+    }
+
     /*About Page*/
     .about-img-box {
         background-position: 75% 0%;
@@ -589,6 +699,12 @@
     .image-wrapper img {
         height: 17em;
     }
+
+    /*Article Details*/
+    .articles-container .article {
+        flex: 0 0 100% !important;
+    }
+
 
     /*Footer*/
     .site-footer ul li {

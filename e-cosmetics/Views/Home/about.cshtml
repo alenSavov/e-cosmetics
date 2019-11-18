@@ -1,22 +1,25 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
 @{
     ViewData["Title"] = "About";
 }
 
+
 <section class="about-wrapper">
     <div class="main-nav">
-        <h1>About</h1>
+        <h1>@Localizer["За Нас"]</h1>
 
         <ul>
-            <li><a asp-controller="Home" asp-action="index">Home</a></li>
-            <li><p>About</p></li>
+            <li><a asp-controller="Home" asp-action="index">@Localizer["Начало"]</a></li>
+            <li><p>@Localizer["За Нас"]</p></li>
         </ul>
     </div>
 
     <section class="about">
 
         <section class="about-title">
-            <p><span class="welcome-title">Welcome to</span><span class="elizabeth-cosmetics-title">Elizabeth Cosmetics</span></p>
+            <p><span class="welcome-title">@Localizer["Добре дошли в"]</span><span class="elizabeth-cosmetics-title">Elizabeth Cosmetics</span></p>
             @*<p>Welcome</p>*@
         </section>
 
@@ -26,10 +29,8 @@
                 <div class="about-content">
                     <div class="about-img-box">
                     </div>
-                    <p class="about-text">
-                        ELIZABETH cosmetics иска да Ви предостави, неповторимото усещане за лукс и  мекота на кожата. Основната цел на ELIZABETH cosmetics е да ви покаже: „Истината за красотата!“.
-                        Луксозните продукти на марката, предлагат професионална грижа за вашата кожата. Създадени от висококачесвени съставки и иновативни формули, те Ви осигуряват чувството на комфорт и свежест. Продуктовата гама на  ELIZABETH cosmetics гарантира за по-здрава, по-нежна и по-красива кожа. С любов и внимание към детайла, нашите специалисти създават продукти, отговарящи на високите изисквания на нашите клиенти. ELIZABETH cosmetics изпозлва внимателно подбрани активни комплекси, които помагат и на най-капризната кожа да си възвърне естествената красота.
-                        Основната мисия на марката е да създава високачествена козметика, която да поглези  сетивата  на нашите клиенти. Продуктите на ELIZABETH cosmetics ще ви осигурят кожата, за която всеки мечтае.
+                    <p class="about-text" localize-content>
+                        @Localizer["ELIZABETH cosmetics иска да Ви предостави, неповторимото усещане за лукс и  мекота на кожата. Основната цел на ELIZABETH cosmetics е да ви покаже: „Истината за красотата!“. Луксозните продукти на марката, предлагат професионална грижа за вашата кожата. Създадени от висококачесвени съставки и иновативни формули, те Ви осигуряват чувството на комфорт и свежест. Продуктовата гама на  ELIZABETH cosmetics гарантира за по-здрава, по-нежна и по-красива кожа. С любов и внимание към детайла, нашите специалисти създават продукти, отговарящи на високите изисквания на нашите клиенти. ELIZABETH cosmetics изпозлва внимателно подбрани активни комплекси, които помагат и на най-капризната кожа да си възвърне естествената красота. Основната мисия на марката е да създава високачествена козметика, която да поглези  сетивата  на нашите клиенти. Продуктите на ELIZABETH cosmetics ще ви осигурят кожата, за която всеки мечтае."]
                     </p>
                 </div>
             </div>
@@ -37,4 +38,3 @@
 
     </section>
 </section>
-

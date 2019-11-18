@@ -92,12 +92,15 @@ namespace e_cosmetics.Controllers
                 .GetById(id);
 
             var articleView = this._mapper
-                .Map<EditArticleInputModel>(article);
+               .Map<EditArticleInputModel>(article);
 
-            articleView.Picture = this._pictureService
-               .GetArticlePicturesById(article.Id);
+            //var articleView = this._mapper
+            //    .Map<ArticleInputModel>(article);
 
-            articleView.Picture.Url = this._pictureService.BuildArticlePictureUrl(articleView.Picture.Id, articleView.Picture.VersionPicture);
+            //articleView.Picture = this._pictureService
+            //   .GetArticlePicturesById(article.Id);
+
+            //articleView.Picture.Url = this._pictureService.BuildArticlePictureUrl(articleView.Picture.Id, articleView.Picture.VersionPicture);
 
 
             return View(articleView);
@@ -114,7 +117,7 @@ namespace e_cosmetics.Controllers
             var success = await this._articleService
                 .EditAsync(model);
 
-            return RedirectToAction("GetAll");
+            return RedirectToAction("GetById", new { id = model.Id });
         }
                 
         public IActionResult GetById(string id)
@@ -125,10 +128,13 @@ namespace e_cosmetics.Controllers
                 return this.View();
             }
 
-            var articleView = this._articleService
+            var article = this._articleService
                 .GetById(id);
-            
-                var pictures = this._pictureService.GetArticlePicturesById(articleView.Id);
+
+            var articleView = this._mapper
+                .Map<ArticleViewModel>(article);
+
+            var pictures = this._pictureService.GetArticlePicturesById(articleView.Id);
             articleView.Picture = pictures;
             
 
