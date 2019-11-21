@@ -13,15 +13,12 @@ namespace e_cosmetics.Controllers
     {
         private readonly ICategoryService _categoryService;
         private readonly IPictureService _pictureService;
-        //private readonly IStringLocalizer<HomeController> _localizer;
 
         public HomeController(ICategoryService categoryService,
-            IPictureService pictureService
-            /*IStringLocalizer<HomeController> localizer*/)
+            IPictureService pictureService)
         {
             this._categoryService = categoryService;
             this._pictureService = pictureService;
-            //this._localizer = localizer;
         }
 
 
@@ -39,7 +36,7 @@ namespace e_cosmetics.Controllers
         }
 
         public IActionResult Index()
-        {
+        {          
 
             var categories = this._categoryService
                .GetAll();

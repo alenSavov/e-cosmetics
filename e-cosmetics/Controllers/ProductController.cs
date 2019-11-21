@@ -74,7 +74,7 @@ namespace e_cosmetics.Controllers
 
             var product = await this._productService.CreateAsync(model);
 
-            return RedirectToAction("/");
+            return Redirect("/");
         }
 
         [HttpGet]
@@ -133,7 +133,7 @@ namespace e_cosmetics.Controllers
                   .DeleteAsync(id);
 
 
-            return RedirectToAction("GetAll");
+            return Redirect("/");
         }
 
         public IActionResult GetById(string id)

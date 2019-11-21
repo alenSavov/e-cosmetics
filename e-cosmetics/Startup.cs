@@ -1,28 +1,30 @@
 ﻿using e_cosmetics.Data;
+using e_cosmetics.Models;
+using System.Globalization;
+using e_cosmetics.Middleware;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using e_cosmetics.Infrastructure.AutoMapper;
-using e_cosmetics.Services.Categories.Implementation;
-using e_cosmetics.Services.Products.Contracts;
-using e_cosmetics.Services.Products.Implementation;
-using e_cosmetics.Models;
-using e_cosmetics.Services.Interfaces;
-using e_cosmetics.Services.Pictures.Implementation;
-using e_cosmetics.Middleware;
-using e_cosmetics.Services.Accounts.Implementation;
-using e_cosmetics.Services.Articles.Models;
 using Microsoft.AspNetCore.Mvc.Razor;
-using System.Collections.Generic;
-using System.Globalization;
+using Microsoft.EntityFrameworkCore;
+using e_cosmetics.Services.Interfaces;
+using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Localization;
-using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Configuration;
+using e_cosmetics.Infrastructure.AutoMapper;
+using e_cosmetics.Services.Products.Contracts;
+using Microsoft.Extensions.DependencyInjection;
+using e_cosmetics.Services.Articles.Models;
+using e_cosmetics.Services.Products.Implementation;
+using e_cosmetics.Services.Accounts.Implementation;
+using e_cosmetics.Services.Pictures.Implementation;
+using e_cosmetics.Services.Categories.Implementation;
+using Elmah.Io.AspNetCore;
+using System;
 
 namespace e_cosmetics
 {
@@ -38,6 +40,12 @@ namespace e_cosmetics
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddElmahIo(o =>
+            {
+                o.ApiKey = "950b050ee281484f8c0e27b85a3cc0a8";
+                o.LogId = new Guid("561a760e-7fb6-4ca0-b622-f7f4520c078e");
+            });
+
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 
             services.AddMvc()
@@ -138,9 +146,9 @@ namespace e_cosmetics
             }
             app.UseHttpsRedirection();
             app.UseSeedDataMiddleware();
+            app.UseElmahIo();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
 
             var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
             app.UseRequestLocalization(options.Value);

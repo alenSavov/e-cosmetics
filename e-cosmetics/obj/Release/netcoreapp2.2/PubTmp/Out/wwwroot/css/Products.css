@@ -97,26 +97,11 @@
 
 .product-text .product-name {
     font-family: var( --font-cormorant);
-    font-size: 2.5em;
+    font-size: 1.5em;
     letter-spacing: 5px;
-    padding-bottom: 1.2em;
+    padding: 1.2em;
    
 }
 
 
 
-/*Product Details*/
-.product-content{
-    display: flex;
-    flex: 0 0 100%;
-    flex-wrap:wrap;
-    justify-content: center;
-}
-
-.product-text {
-    font-family: var(--font-cormorant);
-    font-size: 2em;
-    margin-top: 3em;
-    flex: 0 0 85%
-
-}
