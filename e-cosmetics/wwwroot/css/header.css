@@ -120,10 +120,15 @@
         top: 0;
         transform: rotate(135deg);
     }
-
+                    
 .nav-button{
     margin: 0 1em;
+    
 }
+.nav-button:hover{
+    text-decoration:none;
+}
+
 /* Toggle Navigation Menu*/
 #nav-toggle {
     display: flex;
