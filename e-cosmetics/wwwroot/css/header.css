@@ -17,6 +17,7 @@
 .nav-left-part {
     display: flex;
     flex: 0 0 80%;
+    justify-content: flex-end;
 }
 
     .nav-left-part ul {
@@ -120,8 +121,9 @@
         transform: rotate(135deg);
     }
 
-
-
+.nav-button{
+    margin: 0 1em;
+}
 /* Toggle Navigation Menu*/
 #nav-toggle {
     display: flex;
