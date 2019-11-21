@@ -45,21 +45,20 @@
 
                 <a asp-controller="Home" asp-action="index"><img src="~/img/Brand-Pictures/brand-pic-white.png" class="brand-nav" alt="e-cosmetics brand" /></a>
                 <p class="brand-p">ELIZABETH COSMETICS</p>
-
-                @if (this.User.Identity.IsAuthenticated)
-                {
-                    @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
-                    {
-                        <a class="nav-button white-button " asp-controller="category" asp-action="create">Create Category</a>
-                        <a class="nav-button white-button" asp-controller="product" asp-action="create">Create Product</a>
-                        <a class="nav-button white-button" asp-controller="article" asp-action="create">Create Article</a>
-                        <a class="nav-button white-button" asp-controller="account" asp-action="logout">LOGOUT</a>
-                    }
-                }
-
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Administration
+                    </button>
+                    <div class="dropdown-menu administration-dropdown" aria-labelledby="dropdownMenuButton">
+                        <a class=" white-button dropdown-item" asp-controller="category" asp-action="create">Create Category</a>
+                        <a class=" white-button dropdown-item" asp-controller="product" asp-action="create">Create Product</a>
+                        <a class=" white-button dropdown-item" asp-controller="article" asp-action="create">Create Article</a>
+                        <a class=" white-button dropdown-item" asp-controller="account" asp-action="logout">LOGOUT</a>
+                    </div>
+                </div>
             </section>
             <section class="nav-right-part">
-               
+
                 <div class="icon">
                     <div class="hamburger" onclick="show()">
 
@@ -67,6 +66,20 @@
                 </div>
             </section>
         </section>
+        @*@if (this.User.Identity.IsAuthenticated)
+            {
+                @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
+                {
+                    <div class="administration-layer">
+                        <a class="nav-button white-button " asp-controller="category" asp-action="create">Create Category</a>
+                        <a class="nav-button white-button" asp-controller="product" asp-action="create">Create Product</a>
+                        <a class="nav-button white-button" asp-controller="article" asp-action="create">Create Article</a>
+                        <a class="nav-button white-button" asp-controller="account" asp-action="logout">LOGOUT</a>
+                    </div>
+                }
+            }*@
+
+
         <section id="nav-toggle">
 
             <section class="toggle-top-menu">
@@ -142,6 +155,6 @@
     <script src="https://kit.fontawesome.com/23be4a20c7.js" crossorigin="anonymous"></script>
     @RenderSection("Scripts", required: false)
 
-   
+
 </body>
 </html>
