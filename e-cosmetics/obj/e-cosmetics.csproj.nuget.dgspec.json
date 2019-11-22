@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "CKEditor": {
+              "target": "Package",
+              "version": "[3.6.4, )"
+            },
             "CloudinaryDotNet": {
               "target": "Package",
               "version": "[1.8.0, )"
