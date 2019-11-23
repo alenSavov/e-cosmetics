@@ -10,6 +10,9 @@
 
 using System;
 using System.Reflection;
+using Microsoft.Extensions.Localization;
+
+[assembly: RootNamespace("e-cosmetics")]
 
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-e_cosmetics-6AD79BED-F044-4D5F-843A-2A1DABD858C7")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("e-cosmetics")]

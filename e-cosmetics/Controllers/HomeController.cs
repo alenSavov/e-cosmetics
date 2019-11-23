@@ -6,23 +6,25 @@ using e_cosmetics.Services.Categories.Models;
 using System;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Localization;
 
 namespace e_cosmetics.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IStringLocalizer<HomeController> _localizer;
         private readonly ICategoryService _categoryService;
         private readonly IPictureService _pictureService;
 
         public HomeController(ICategoryService categoryService,
-            IPictureService pictureService)
+            IPictureService pictureService, IStringLocalizer<HomeController> localizer)
         {
             this._categoryService = categoryService;
             this._pictureService = pictureService;
+            _localizer = localizer;
         }
 
-
-
+  
         [HttpPost]
         public IActionResult SetLanguage(string culture, string returnUrl)
         {

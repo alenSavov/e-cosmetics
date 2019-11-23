@@ -25,6 +25,10 @@ using e_cosmetics.Services.Pictures.Implementation;
 using e_cosmetics.Services.Categories.Implementation;
 using Elmah.Io.AspNetCore;
 using System;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Localization;
+
+//[assembly: RootNamespace("e-cosmetics")]
 
 namespace e_cosmetics
 {
@@ -40,17 +44,20 @@ namespace e_cosmetics
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+            services.AddMvc()
+                 .AddViewLocalization(
+                     LanguageViewLocationExpanderFormat.Suffix,
+                     opts => { opts.ResourcesPath = "Resources"; })
+                 .AddDataAnnotationsLocalization();
+
             services.AddElmahIo(o =>
             {
                 o.ApiKey = "950b050ee281484f8c0e27b85a3cc0a8";
                 o.LogId = new Guid("561a760e-7fb6-4ca0-b622-f7f4520c078e");
             });
 
-            services.AddLocalization(options => options.ResourcesPath = "Resources");
-
-            services.AddMvc()
-                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
-                .AddDataAnnotationsLocalization();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -106,20 +113,20 @@ namespace e_cosmetics
             });
 
             services.Configure<RequestLocalizationOptions>(
-        opts =>
-        {
-            var supportedCultures = new List<CultureInfo>
-            {
-                new CultureInfo("en-US"),
-                new CultureInfo("bg-BG")
-            };
+                opts =>
+                {
+                    var supportedCultures = new List<CultureInfo>
+                    {
+                        new CultureInfo("en-US"),
+                        new CultureInfo("bg-BG")
+                    };
 
-            opts.DefaultRequestCulture = new RequestCulture("bg-BG");
-            // Formatting numbers, dates, etc.
-            opts.SupportedCultures = supportedCultures;
-            // UI strings that we have localized.
-            opts.SupportedUICultures = supportedCultures;
-        });
+                    opts.DefaultRequestCulture = new RequestCulture("bg-BG");
+                    // Formatting numbers, dates, etc.
+                    opts.SupportedCultures = supportedCultures;
+                    // UI strings that we have localized.
+                    opts.SupportedUICultures = supportedCultures;
+                });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -127,6 +134,8 @@ namespace e_cosmetics
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(locOptions.Value);
 
             app.UseAuthentication();
 
@@ -144,14 +153,14 @@ namespace e_cosmetics
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
             app.UseSeedDataMiddleware();
             app.UseElmahIo();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
-            app.UseRequestLocalization(options.Value);
+
 
             app.UseMvc(routes =>
             {
@@ -161,4 +170,6 @@ namespace e_cosmetics
             });
         }
     }
+
+
 }
