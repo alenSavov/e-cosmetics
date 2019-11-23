@@ -6,6 +6,10 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RootNamespace>e_cosmetics</RootNamespace>
   </PropertyGroup>
+  
+  <PropertyGroup>
+   <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+</PropertyGroup> 
 
 
   <ItemGroup>

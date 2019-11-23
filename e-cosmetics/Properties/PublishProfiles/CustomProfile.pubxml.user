@@ -17,7 +17,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2019 22:29:17</publishTime>
     </File>
     <File Include="appsettings.production.json">
-      <publishTime>11/20/2019 23:05:11</publishTime>
+      <publishTime>11/23/2019 17:14:06</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>08/12/2019 12:42:04</publishTime>
@@ -32,22 +32,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2019 19:58:14</publishTime>
     </File>
     <File Include="e-cosmetics.deps.json">
-      <publishTime>11/20/2019 23:05:10</publishTime>
+      <publishTime>11/23/2019 17:14:06</publishTime>
     </File>
     <File Include="e-cosmetics.dll">
-      <publishTime>11/20/2019 23:05:05</publishTime>
+      <publishTime>11/23/2019 17:14:01</publishTime>
     </File>
     <File Include="e-cosmetics.pdb">
-      <publishTime>11/20/2019 23:05:05</publishTime>
+      <publishTime>11/23/2019 17:14:01</publishTime>
     </File>
     <File Include="e-cosmetics.runtimeconfig.json">
-      <publishTime>11/20/2019 23:05:11</publishTime>
+      <publishTime>11/23/2019 17:14:06</publishTime>
     </File>
     <File Include="e-cosmetics.Views.dll">
-      <publishTime>11/20/2019 23:05:07</publishTime>
+      <publishTime>11/23/2019 17:14:02</publishTime>
     </File>
     <File Include="e-cosmetics.Views.pdb">
-      <publishTime>11/20/2019 23:05:07</publishTime>
+      <publishTime>11/23/2019 17:14:02</publishTime>
     </File>
     <File Include="Elmah.Io.AspNetCore.dll">
       <publishTime>08/29/2019 17:22:28</publishTime>
@@ -56,10 +56,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/12/2019 11:56:14</publishTime>
     </File>
     <File Include="en-US/e-cosmetics.resources.dll">
-      <publishTime>11/20/2019 23:05:06</publishTime>
+      <publishTime>11/23/2019 17:14:01</publishTime>
     </File>
     <File Include="fr/e-cosmetics.resources.dll">
-      <publishTime>11/20/2019 23:05:06</publishTime>
+      <publishTime>11/23/2019 17:14:01</publishTime>
     </File>
     <File Include="Localization.AspNetCore.TagHelpers.dll">
       <publishTime>03/01/2019 17:20:02</publishTime>
@@ -113,13 +113,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/14/2019 22:22:42</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>11/20/2019 23:05:11</publishTime>
+      <publishTime>11/23/2019 17:14:06</publishTime>
     </File>
     <File Include="wwwroot/css/about.css">
       <publishTime>10/06/2019 11:39:40</publishTime>
     </File>
     <File Include="wwwroot/css/article.css">
-      <publishTime>11/18/2019 22:29:47</publishTime>
+      <publishTime>11/23/2019 17:11:13</publishTime>
     </File>
     <File Include="wwwroot/css/buttons.css">
       <publishTime>11/18/2019 22:29:47</publishTime>
@@ -127,8 +127,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="wwwroot/css/contacts.css">
       <publishTime>11/18/2019 22:29:47</publishTime>
     </File>
+    <File Include="wwwroot/css/create-article.css">
+      <publishTime>11/23/2019 17:11:13</publishTime>
+    </File>
     <File Include="wwwroot/css/create-category.css">
-      <publishTime>11/18/2019 22:29:47</publishTime>
+      <publishTime>11/23/2019 17:11:13</publishTime>
     </File>
     <File Include="wwwroot/css/create-product.css">
       <publishTime>11/18/2019 22:29:47</publishTime>
@@ -137,25 +140,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/14/2019 22:32:15</publishTime>
     </File>
     <File Include="wwwroot/css/header.css">
-      <publishTime>11/18/2019 22:29:47</publishTime>
+      <publishTime>11/23/2019 17:11:13</publishTime>
+    </File>
+    <File Include="wwwroot/css/login.css">
+      <publishTime>11/23/2019 17:11:13</publishTime>
     </File>
     <File Include="wwwroot/css/main.css">
-      <publishTime>11/18/2019 22:29:47</publishTime>
+      <publishTime>11/23/2019 17:11:13</publishTime>
     </File>
     <File Include="wwwroot/css/media-queries.css">
-      <publishTime>11/18/2019 22:29:47</publishTime>
+      <publishTime>11/23/2019 17:11:13</publishTime>
     </File>
     <File Include="wwwroot/css/navigation-container.css">
       <publishTime>11/18/2019 22:29:47</publishTime>
     </File>
     <File Include="wwwroot/css/product-details.css">
-      <publishTime>11/18/2019 22:29:47</publishTime>
+      <publishTime>11/23/2019 17:11:13</publishTime>
     </File>
     <File Include="wwwroot/css/Products.css">
       <publishTime>11/18/2019 22:29:47</publishTime>
     </File>
+    <File Include="wwwroot/css/register.css">
+      <publishTime>11/23/2019 17:11:13</publishTime>
+    </File>
     <File Include="wwwroot/css/site.css">
-      <publishTime>11/18/2019 22:29:47</publishTime>
+      <publishTime>11/23/2019 17:11:13</publishTime>
     </File>
     <File Include="wwwroot/css/slideshow-container.css">
       <publishTime>02/10/2019 21:33:18</publishTime>

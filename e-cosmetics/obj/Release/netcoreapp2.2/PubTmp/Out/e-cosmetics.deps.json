@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "f36939c1255eb9dda5c3562b669a060d966efeb7"
+    "signature": "5efe75fd02ce31695d51579862272d77e2a1184d"
   },
   "compilationOptions": {
     "defines": [
@@ -26,6 +26,7 @@
         "dependencies": {
           "AutoMapper": "9.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "7.0.0",
+          "CKEditor": "3.6.4",
           "CloudinaryDotNet": "1.8.0",
           "Elmah.Io.AspNetCore": "3.7.86",
           "Localization.AspNetCore.TagHelpers": "0.6.0",
@@ -87,6 +88,7 @@
           "jQuery": "1.9.0"
         }
       },
+      "CKEditor/3.6.4": {},
       "CloudinaryDotNet/1.8.0": {
         "dependencies": {
           "Newtonsoft.Json": "11.0.2"
@@ -3696,6 +3698,13 @@
       "sha512": "sha512-rwpiPJiWRbGRypo/NnyqzwS9hWLMLujLU1vM2OfeuZJ2yNGb86RzmQKEcWbewWu+eJkcYatCqpn/U5zNgotVHQ==",
       "path": "bootstrap/3.0.1",
       "hashPath": "bootstrap.3.0.1.nupkg.sha512"
+    },
+    "CKEditor/3.6.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-roGF09wJmp7Zyyvq/bDzbLccKUfMumMpmgPav5U/naoVoDis1izPsSL8H/MEFG3hfFBC4HegSRwlYZG+PWHnaQ==",
+      "path": "ckeditor/3.6.4",
+      "hashPath": "ckeditor.3.6.4.nupkg.sha512"
     },
     "CloudinaryDotNet/1.8.0": {
       "type": "package",

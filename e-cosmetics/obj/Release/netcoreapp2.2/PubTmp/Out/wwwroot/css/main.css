@@ -253,3 +253,10 @@
             -webkit-filter: grayscale(0);
             -webkit-transform: scale(1.05);
         }
+
+
+.navigation-admin-buttons{
+    flex: 0 0 80%;
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -44,10 +44,7 @@
     font-weight: 900;
     margin: 0em;
 }
-/*.articles-container .article img {
-    height: 300px;
-    flex: 0 0 100%;
-}*/
+
 .articles-container .article .article-createdOn {
     color: rgb(163, 163, 163);
     font-family: var(--font-cormorant);
@@ -126,7 +123,7 @@
 
 
 /*Create-article*/
-.article-wrapper {
+/*.article-wrapper {
     display: flex;
     flex-wrap: wrap;
     flex: 0 0 100%;
@@ -166,7 +163,7 @@
 
 .btn {
     flex: 0 0 100%;
-}
+}*/
 
 
 /*Details PAGE*/
