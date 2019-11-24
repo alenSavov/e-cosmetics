@@ -135,7 +135,7 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
-    top: -100vh;
+    top: -150vh;
     background-color: var(--color-main-more-deeper-black);
     transition: .4s;
     z-index: 1000;
@@ -143,10 +143,11 @@
 
     #nav-toggle.active {
         top: 0vh;
+        position: fixed;
     }
 
     #nav-toggle.deActive {
-        top: -100vh;
+        top: -150vh;
     }
 
     #nav-toggle ul li a {
