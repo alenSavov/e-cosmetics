@@ -1,0 +1,27 @@
+﻿@model ecosmetics.Services.Products.Models.ProductCollectionViewModel
+
+@{
+    ViewData["Title"] = "All";
+}
+
+<div>
+
+    @foreach (var product in Model.Products)
+    {
+        <p>@product.Name</p>
+        <p>@product.Description</p>
+
+        @foreach (var picture in product.Pictures)
+        {
+            <img src="@picture.Url" width="800" height="400" />
+        }
+
+
+        @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
+        {
+            <a class="button button-primary" asp-controller="category" asp-action="delete" asp-route-id="@product.Id">Delete</a>
+            <a class="button button-primary" asp-controller="category" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+        }
+
+    }
+</div>

@@ -1,0 +1,111 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\alenSavov\\Desktop\\SoftUni-Hub\\e-cosmetics\\ecosmetics\\ecosmetics.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\alenSavov\\Desktop\\SoftUni-Hub\\e-cosmetics\\ecosmetics\\ecosmetics.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\alenSavov\\Desktop\\SoftUni-Hub\\e-cosmetics\\ecosmetics\\ecosmetics.csproj",
+        "projectName": "ecosmetics",
+        "projectPath": "C:\\Users\\alenSavov\\Desktop\\SoftUni-Hub\\e-cosmetics\\ecosmetics\\ecosmetics.csproj",
+        "packagesPath": "C:\\Users\\alenSavov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alenSavov\\Desktop\\SoftUni-Hub\\e-cosmetics\\ecosmetics\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\alenSavov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "CKEditor": {
+              "target": "Package",
+              "version": "[3.6.4, )"
+            },
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.8.0, )"
+            },
+            "Elmah.Io.AspNetCore": {
+              "target": "Package",
+              "version": "[3.7.86, )"
+            },
+            "Localization.AspNetCore.TagHelpers": {
+              "target": "Package",
+              "version": "[0.6.0, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Mvc.Localization": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Localization": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
