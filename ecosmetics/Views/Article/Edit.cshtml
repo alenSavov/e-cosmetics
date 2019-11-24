@@ -4,36 +4,33 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<section class="article-wrapper">
-
+<section class="edit-article-wrapper">
     <section class="article-container">
+        <h2>Edit Article</h2>
 
-        <h2 class="article-title">Edit Article</h2>
         <form class="article-form" asp-area="" asp-controller="article" asp-action="EditAsync" asp-route-id="@Model.Id" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger "></div>
 
-            <label asp-for="Title" class="article-item"></label>
-            <input asp-for="Title" class="article-item">
-            <span asp-validation-for="Title" class="text-danger "></span>
-
-
-            @*<label asp-for="Content" class="article-label"></label>*@
-            @*<span asp-validation-for="Content" class=""></span>
-                <textarea asp-for="Content" name="content" id="editor" class="article-item"></textarea>*@
-
-            <span asp-validation-for="Content" class=""></span>
-            <textarea asp-for="Content" name="content" id="editor" class="article-item"></textarea>
-
-
-            <div class="form-group">
-                <button class="btn btn-success">Save</button>
+            <div>
+                <label asp-for="Title" class="control-label font-weight-bold"></label>
+                <input asp-for="Title" class="font-weight-bold form-control">
+                <span asp-validation-for="Title" class="text-danger"></span>
             </div>
 
-            @*<img src="@Model.Picture.Url" width="800" height="400" />*@
-
+            <div class="">
+                <label asp-for="Content" class="control-label font-weight-bold"></label>
+                <textarea asp-for="Content" class="font-weight-bold form-control"></textarea>
+                <span asp-validation-for="Content" class="text-danger "></span>
+            </div>
+                  
+         
+            <div class="button">
+                <button class="white-button">Save</button>
+            </div>
         </form>
-
     </section>
-    @*<textarea id="textArea">Test</textarea>*@
 </section>
+
+<script>
+    CKEDITOR.replace('Content');
+</script>
