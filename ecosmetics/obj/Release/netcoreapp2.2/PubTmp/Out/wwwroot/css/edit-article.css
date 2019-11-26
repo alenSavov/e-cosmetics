@@ -1,4 +1,4 @@
-﻿.create-product-wrapper {
+﻿.edit-article-wrapper {
     display: flex;
     flex: 0 0 100%;
     flex-wrap: wrap;
@@ -6,7 +6,7 @@
 }
 
 
-.product-container {
+.article-container {
     display: flex;
     flex: 0 0 85%;
     flex-wrap: wrap;
@@ -15,7 +15,7 @@
     margin: 5em 0;
 }
 
-    .product-container h2 {
+    .article-container h2 {
         flex: 0 0 100%;
         color: white;
         font-family: var(--font-cormorant);
@@ -24,7 +24,7 @@
         font-size: 3.6em;
     }
 
-    .product-container form {
+    .article-container form {
         display: flex;
         flex: 0 0 95%;
         flex-wrap: wrap;
@@ -32,18 +32,8 @@
         margin: 0 0 3em 0;
     }
 
-        /*.product-container form label {
-            font-family: var(--font-cormorant);
-            font-size: 1.5em;
-        }
 
-    .product-container form div{
-        flex: 0 0 100%;
-        color: white;
-        margin: 1em 0;
-    }*/
-
-        .product-container form div {
+        .article-container form div {
             display: flex;
             flex: 0 0 100%;
             flex-wrap: wrap;
@@ -51,22 +41,22 @@
             color: white;
         }
 
-            .product-container form div label {
+            .article-container form div label {
                 font-family: var(--font-cormorant);
                 font-size: 1.5em;
                 flex: 0 0 100%
             }
 
-            .product-container form div input {
+            .article-container form div input {
                 flex: 0 0 100%
             }
 
-            .product-container form div textarea {
+            .article-container form div textarea {
                 flex: 0 0 100%
             }
 
 
 
-            .product-container form div.button {
+            .article-container form div.button {
                 justify-content: center;
             }

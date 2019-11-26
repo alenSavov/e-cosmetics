@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "c39f43c76bda0ad6247aff3c1ae46876713b7058"
+    "signature": "d3adb982c629d495447b7ad80bbf25077a145cde"
   },
   "compilationOptions": {
     "defines": [
@@ -36,8 +36,7 @@
           "Microsoft.Extensions.Configuration.UserSecrets": "2.2.0",
           "Microsoft.Extensions.Localization": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.4",
-          "bootstrap-toggle": "2.2.2"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.4"
         },
         "runtime": {
           "ecosmetics.dll": {}
@@ -82,12 +81,6 @@
         },
         "compile": {
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
-        }
-      },
-      "bootstrap/2.3.2": {},
-      "bootstrap-toggle/2.2.2": {
-        "dependencies": {
-          "bootstrap": "2.3.2"
         }
       },
       "CKEditor/3.6.4": {},
@@ -3687,20 +3680,6 @@
       "sha512": "sha512-szI4yeRIM7GWe9JyekW0dKYehPB0t6M+I55fPeCebN6PhS7zQZa0eG3bgOnOx+eP3caSNoE7KEJs2rk7MLsh8w==",
       "path": "automapper.extensions.microsoft.dependencyinjection/7.0.0",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512"
-    },
-    "bootstrap/2.3.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-LF309o8BZa2IzBfQHeQmweAXSpGefltx0fSN/CXdyMpU1vvLFzd4OHkQ/blq3rGET3p3h4AxAc3SRKr35DiSSw==",
-      "path": "bootstrap/2.3.2",
-      "hashPath": "bootstrap.2.3.2.nupkg.sha512"
-    },
-    "bootstrap-toggle/2.2.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-V72GUkeilTJ/rMfQi0jvGh9ILs43/GOx0CB7QkGAJrE+hSIiKruwu532CiidD/u9xwjMwNVvqQX24abs9qM5og==",
-      "path": "bootstrap-toggle/2.2.2",
-      "hashPath": "bootstrap-toggle.2.2.2.nupkg.sha512"
     },
     "CKEditor/3.6.4": {
       "type": "package",

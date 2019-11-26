@@ -29,22 +29,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2019 19:58:14</publishTime>
     </File>
     <File Include="ecosmetics.deps.json">
-      <publishTime>11/24/2019 14:19:17</publishTime>
+      <publishTime>11/24/2019 19:00:06</publishTime>
     </File>
     <File Include="ecosmetics.dll">
-      <publishTime>11/24/2019 14:19:03</publishTime>
+      <publishTime>11/24/2019 18:59:56</publishTime>
     </File>
     <File Include="ecosmetics.pdb">
-      <publishTime>11/24/2019 14:19:03</publishTime>
+      <publishTime>11/24/2019 18:59:56</publishTime>
     </File>
     <File Include="ecosmetics.runtimeconfig.json">
-      <publishTime>11/24/2019 14:19:17</publishTime>
+      <publishTime>11/24/2019 19:00:06</publishTime>
     </File>
     <File Include="ecosmetics.Views.dll">
-      <publishTime>11/24/2019 14:19:05</publishTime>
+      <publishTime>11/24/2019 18:59:58</publishTime>
     </File>
     <File Include="ecosmetics.Views.pdb">
-      <publishTime>11/24/2019 14:19:05</publishTime>
+      <publishTime>11/24/2019 18:59:58</publishTime>
     </File>
     <File Include="Elmah.Io.AspNetCore.dll">
       <publishTime>08/29/2019 17:22:28</publishTime>
@@ -53,10 +53,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/12/2019 11:56:14</publishTime>
     </File>
     <File Include="en-US/ecosmetics.resources.dll">
-      <publishTime>11/24/2019 14:19:04</publishTime>
+      <publishTime>11/24/2019 18:59:56</publishTime>
     </File>
     <File Include="fr/ecosmetics.resources.dll">
-      <publishTime>11/24/2019 14:19:04</publishTime>
+      <publishTime>11/24/2019 18:59:56</publishTime>
+    </File>
+    <File Include="libman.json">
+      <publishTime>11/24/2019 18:08:59</publishTime>
     </File>
     <File Include="Localization.AspNetCore.TagHelpers.dll">
       <publishTime>03/01/2019 17:20:02</publishTime>
@@ -110,7 +113,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/14/2019 22:22:42</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>11/24/2019 14:19:17</publishTime>
+      <publishTime>11/24/2019 19:00:06</publishTime>
     </File>
     <File Include="wwwroot/css/about.css">
       <publishTime>10/06/2019 11:39:40</publishTime>
@@ -131,22 +134,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/23/2019 18:00:17</publishTime>
     </File>
     <File Include="wwwroot/css/create-product.css">
-      <publishTime>11/18/2019 22:29:47</publishTime>
+      <publishTime>11/24/2019 17:18:59</publishTime>
+    </File>
+    <File Include="wwwroot/css/edit-article.css">
+      <publishTime>11/24/2019 17:08:23</publishTime>
     </File>
     <File Include="wwwroot/css/footer.css">
       <publishTime>10/14/2019 22:32:15</publishTime>
     </File>
     <File Include="wwwroot/css/header.css">
-      <publishTime>11/23/2019 18:00:17</publishTime>
+      <publishTime>11/24/2019 18:49:58</publishTime>
     </File>
     <File Include="wwwroot/css/login.css">
       <publishTime>11/23/2019 18:00:17</publishTime>
     </File>
     <File Include="wwwroot/css/main.css">
-      <publishTime>11/23/2019 18:00:17</publishTime>
+      <publishTime>11/24/2019 18:24:35</publishTime>
     </File>
     <File Include="wwwroot/css/media-queries.css">
-      <publishTime>11/23/2019 18:00:17</publishTime>
+      <publishTime>11/24/2019 18:55:16</publishTime>
     </File>
     <File Include="wwwroot/css/navigation-container.css">
       <publishTime>11/18/2019 22:29:47</publishTime>
@@ -161,7 +167,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/23/2019 18:00:17</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
-      <publishTime>11/23/2019 18:00:17</publishTime>
+      <publishTime>11/24/2019 16:58:50</publishTime>
     </File>
     <File Include="wwwroot/css/typography.css">
       <publishTime>10/07/2019 22:16:48</publishTime>

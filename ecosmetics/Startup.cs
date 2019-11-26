@@ -126,6 +126,8 @@ namespace ecosmetics
                     opts.SupportedUICultures = supportedCultures;
                 });
 
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
