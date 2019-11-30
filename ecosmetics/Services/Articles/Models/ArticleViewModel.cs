@@ -11,6 +11,7 @@ namespace ecosmetics.Services.Articles.Models
         [Required]
         public string Title { get; set; }
 
+        [Required]
         public string TitleEn { get; set; }
 
         [Required]
@@ -21,6 +22,7 @@ namespace ecosmetics.Services.Articles.Models
         [Required]
         public string Content { get; set; }
 
+        [Required]
         public string ContentEn { get; set; }
 
         public BasePictureViewModel Picture { get; set; }
