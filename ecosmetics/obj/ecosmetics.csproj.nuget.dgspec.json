@@ -71,6 +71,10 @@
               "version": "[2.2.0, )",
               "autoReferenced": true
             },
+            "Microsoft.AspNetCore.Localization.Routing": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Mvc.Localization": {
               "target": "Package",
               "version": "[2.2.0, )"

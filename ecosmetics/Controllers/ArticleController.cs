@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using ecosmetics.Services.Articles.Models;
 using ecosmetics.Services.Interfaces;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ecosmetics.Controllers
@@ -46,6 +47,9 @@ namespace ecosmetics.Controllers
             var articles = this._articleService
                .GetAll();
 
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var culture = rqf.RequestCulture.Culture;
+            ViewData["Culture"] = culture.Name;
 
             foreach (var article in articles)
             {
@@ -130,6 +134,11 @@ namespace ecosmetics.Controllers
             {
                 return this.View();
             }
+
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            // Culture contains the information of the requested culture
+            var culture = rqf.RequestCulture.Culture;
+            ViewData["Culture"] = culture.Name;
 
             var article = this._articleService
                 .GetById(id);

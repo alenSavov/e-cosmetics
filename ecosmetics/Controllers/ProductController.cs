@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using ecosmetics.Services.Interfaces;
 using ecosmetics.Services.Products.Models;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ecosmetics.Controllers
@@ -26,6 +27,7 @@ namespace ecosmetics.Controllers
             this._categoryService = categoryService;
             this._pictureService = pictureService;
             this._mapper = mapper;
+
         }
 
         public IActionResult Index()
@@ -143,6 +145,11 @@ namespace ecosmetics.Controllers
             {
                 return this.View();
             }
+
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            // Culture contains the information of the requested culture
+            var culture = rqf.RequestCulture.Culture;
+            ViewData["Culture"] = culture.Name;
 
             var product = this._productService
                 .GetById(id);

@@ -8,18 +8,46 @@
 
 <section class="details-wrapper">
     <div class="main-nav" id="main-nav-product-details">
-        <h1>@Model.Name</h1>
+        @{
+            var currentCulture = ViewData["Culture"];
+            if (currentCulture.ToString() == GlobalConstants.cultureEn)
+            {
+                <h1>@Model.NameEn</h1>
+            }
+            else
+            {
+                <h1>@Model.Name</h1>
+            }
 
-        <ul id="main-nav-product-details-ul">
-            <li><a asp-controller="Home" asp-action="index">@Localizer["Начало"]</a></li>
-            <li><a asp-controller="Category" asp-action="GetById" asp-route-id="@Model.CategoryId">@Localizer["Продукти"]</a></li>
-            <li><p id="main-nav-product-name">@Model.Name</p></li>
-        </ul>
+            <ul id="main-nav-product-details-ul">
+                <li><a asp-controller="Home" asp-action="index">@Localizer["Начало"]</a></li>
+                <li><a asp-controller="Category" asp-action="GetById" asp-route-id="@Model.CategoryId">@Localizer["Продукти"]</a></li>
+
+                @if (currentCulture.ToString() == GlobalConstants.cultureEn)
+                {
+                    <li><p id="main-nav-product-name">@Model.NameEn</p></li>
+                }
+                else
+                {
+                    <li><p id="main-nav-product-name">@Model.Name</p></li>
+
+                }
+            </ul>
+        }
     </div>
 
     <section class="product-details-container">
         <div class="product-details-title-box">
-            <h2 id="">@Model.Name</h2>
+            @{
+                if (currentCulture.ToString() == GlobalConstants.cultureEn)
+                {
+                    <h2 id="">@Model.NameEn</h2>
+                }
+                else
+                {
+                    <h2 id="">@Model.Name</h2>
+                }
+            }
             <p class="sub-title">Popular</p>
         </div>
 
@@ -30,25 +58,26 @@
                     <img class="product-image-box" src="@picture.Url" alt="Product Picture" />
                 }
 
-                @*<div class="product-promo-text">
-                        <ul>
-                            <li>Детоксикира</li>
-                            <li>Хидратира и възстановява кожата</li>
-                            <li>Изглажда несъвършенствата</li>
-                            <li>Създава обем и плътност</li>
-                            <li>Предпазва от слънчево изгаряне</li>
-                            <li>Придава по-свеж и тонизиращ вид</li>
-                            <li>Подмладява, освежава и уплътнява кожата.</li>
-                        </ul>
-
-                    </div>*@
             </div>
+            @{
+
+                if (currentCulture.ToString() == GlobalConstants.cultureEn)
+                {
+                    <div class="product-description" id="product-description">
+
+                        <p id="text-styles-description">@Localizer[Model.DescriptionEn]</p>
+                    </div>
+                }
+                else
+                {
+                    <div class="product-description" id="product-description">
+
+                        <p id="text-styles-description">@Localizer[Model.Description]</p>
+                    </div>
+                }
+            }
 
 
-            <div class="product-description" id="product-description">
-
-                <p id="text-styles-description">@Localizer[Model.Description]</p>
-            </div>
         </div>
     </section>
 

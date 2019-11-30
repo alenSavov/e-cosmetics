@@ -53,13 +53,13 @@
                     {
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Administration
+                                @Localizer["Администрация"]
                             </button>
                             <div class="dropdown-menu administration-dropdown" aria-labelledby="dropdownMenuButton">
-                                <a class=" white-button dropdown-item" asp-controller="category" asp-action="create">Create Category</a>
-                                <a class=" white-button dropdown-item" asp-controller="product" asp-action="create">Create Product</a>
-                                <a class=" white-button dropdown-item" asp-controller="article" asp-action="create">Create Article</a>
-                                <a class=" white-button dropdown-item" asp-controller="account" asp-action="logout">LOGOUT</a>
+                                <a class=" white-button dropdown-item" asp-controller="category" asp-action="create">@Localizer["Създай серия"]</a>
+                                <a class=" white-button dropdown-item" asp-controller="product" asp-action="create">@Localizer["Създай продукт"]</a>
+                                <a class=" white-button dropdown-item" asp-controller="article" asp-action="create">@Localizer["Създай статия"]</a>
+                                <a class=" white-button dropdown-item" asp-controller="account" asp-action="logout">@Localizer["ИЗХОД"]</a>
                             </div>
                         </div>
                     }
@@ -71,7 +71,7 @@
 
                 <div class="icon">
                     <div class="hamburger" onclick="show()">
-
+                        <p id="hamburger-menu-p">@Localizer["Меню"]</p>
                     </div>
                 </div>
             </section>
@@ -82,8 +82,10 @@
             <section class="toggle-top-menu">
                 <img src="~/img/Brand-Pictures/logo_elizabeth_logotype-01.png" class="brand-nav-toggle-menu" alt="e-cosmetics brand" />
                 <span class="elizabeth-cosmetics-title">Elizabeth Cosmetics</span>
-                <P id="close-btn-before">Затвори</P>
-                <p id="close-btn" onclick="closeToggle()"></p>
+
+                <div id="close-btn" onclick="closeToggle()">
+                     <P id="close-btn-before">@Localizer["Затвори"]</P>
+                </div>
 
             </section>
 
@@ -91,12 +93,22 @@
                 <ul>
                     <li><a asp-controller="Home" asp-action="index">@Localizer["НАЧАЛО"]</a></li>
                     <li><a asp-controller="Home" asp-action="About">@Localizer["ЗА НАС"]</a></li>
-                    <li><a asp-controller="Home" asp-action="index" id="series">@Localizer["СЕРИИ"]</a></li>
                     <li><a asp-controller="Home" asp-action="contacts">@Localizer["КОНТАКТИ"]</a></li>
+                    <li><a asp-controller="Home" asp-action="index" id="series">@Localizer["СЕРИИ"]</a></li>
                     <li><a asp-controller="Article" asp-action="GetAll">@Localizer["БЛОГ"]</a></li>
-
+                    @*@foreach (var category in ViewBag.ListOfCategories)
+                        {
+                            <li><a asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id">@category.Name</a></li>
+                        }*@
+                    @*<li>
+                            <select asp-items="@(new SelectList(ViewBag.ListOfCategories,"Id","Name"))" class=""></select>
+                        </li>*@
 
                 </ul>
+                @*<div>
+                        <select  asp-items="@(new SelectList(ViewBag.ListOfCategories,"Id","Name"))" class=""></select>
+
+                    </div>*@
 
             </section>
         </section>
@@ -123,8 +135,8 @@
                 <p>Copyright &#9400;2019 elizabeth-cosmetics, @Localizer["Всички права запазени."]</p>
             </div>
             @*<div class="col-sm-6 text-right">
-                @await Html.PartialAsync("_SelectLanguagePartial")
-            </div>*@
+                    @await Html.PartialAsync("_SelectLanguagePartial")
+                </div>*@
         </div>
     </footer>
 

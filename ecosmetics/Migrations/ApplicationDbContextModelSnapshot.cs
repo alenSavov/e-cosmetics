@@ -3,17 +3,15 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ecosmetics.Data;
 
-namespace ecosmetics.Data.Migrations
+namespace ecosmetics.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191124111322_InitialCreate")]
-    partial class InitialCreate
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -140,11 +138,15 @@ namespace ecosmetics.Data.Migrations
 
                     b.Property<string>("Content");
 
+                    b.Property<string>("ContentEn");
+
                     b.Property<DateTime>("CreatedOn");
 
                     b.Property<string>("Creator");
 
                     b.Property<string>("Title");
+
+                    b.Property<string>("TitleEn");
 
                     b.HasKey("Id");
 
@@ -182,7 +184,11 @@ namespace ecosmetics.Data.Migrations
 
                     b.Property<string>("Description");
 
+                    b.Property<string>("DescriptionEn");
+
                     b.Property<string>("Name");
+
+                    b.Property<string>("NameEn");
 
                     b.HasKey("Id");
 
@@ -236,7 +242,11 @@ namespace ecosmetics.Data.Migrations
 
                     b.Property<string>("Description");
 
+                    b.Property<string>("DescriptionEn");
+
                     b.Property<string>("Name");
+
+                    b.Property<string>("NameEn");
 
                     b.HasKey("Id");
 

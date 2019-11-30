@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ecosmetics.Data;
 
-namespace ecosmetics.Data.Migrations
+namespace ecosmetics.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191130073828_added properties for en")]
+    partial class addedpropertiesforen
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -138,6 +140,8 @@ namespace ecosmetics.Data.Migrations
 
                     b.Property<string>("Content");
 
+                    b.Property<string>("ContentEn");
+
                     b.Property<DateTime>("CreatedOn");
 
                     b.Property<string>("Creator");
@@ -179,6 +183,8 @@ namespace ecosmetics.Data.Migrations
                     b.Property<string>("CategoryPictureId");
 
                     b.Property<string>("Description");
+
+                    b.Property<string>("DescriptionEn");
 
                     b.Property<string>("Name");
 
@@ -233,6 +239,8 @@ namespace ecosmetics.Data.Migrations
                     b.Property<string>("CategoryId");
 
                     b.Property<string>("Description");
+
+                    b.Property<string>("DescriptionEn");
 
                     b.Property<string>("Name");
 

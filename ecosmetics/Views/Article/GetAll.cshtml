@@ -32,7 +32,18 @@
                         <p class="pipe">|</p>
                         <p class="article-creator">@article.Creator</p>
                     </div>
-                    <p class="article-title">@article.Title</p>
+                    @{
+                        var currentCulture = ViewData["Culture"];
+                        if (currentCulture.ToString() == GlobalConstants.cultureEn)
+                        {
+                            <p class="article-title">@article.TitleEn</p>
+                        }
+                        else
+                        {
+                            <p class="article-title">@article.Title</p>
+                        }
+                    }
+
 
                     <div class="article-buttons-box">
                         <a class="button read-more-btn" asp-controller="article" asp-action="getById" asp-route-id="@article.Id">@Localizer["Прочети още"]</a>

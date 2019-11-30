@@ -142,7 +142,9 @@ namespace ecosmetics.Services.Products.Implementation
             try
             {
                 product.Name = model.Name;
+                product.NameEn = model.NameEn;
                 product.Description = model.Description;
+                product.DescriptionEn = model.DescriptionEn;
 
                 await this._dbContext.SaveChangesAsync();
 

@@ -9,7 +9,19 @@
 
 <section class="articles-details-wrapper">
     <div class="main-nav">
-        <h1>Articles: @Model.Title</h1>
+
+        @{
+            var currentCulture = ViewData["Culture"];
+            if (currentCulture.ToString() == GlobalConstants.cultureEn)
+            {
+                <h1>@Model.TitleEn</h1>
+            }
+            else
+            {
+                <h1>@Model.Title</h1>
+            }
+        }
+
 
         <ul>
             <li><a asp-controller="Home" asp-action="index">@Localizer["Начало"]</a></li>
@@ -22,11 +34,27 @@
 
             <img class="article-img" src="@Model.Picture.Url" />
 
-            <div class="article-text-wrapper">
-                <p class="article-details-text">@Html.Raw(Model.Content)</p>
-            </div>
+            @*<div class="article-text-wrapper">
+                    <p class="article-details-text">@Html.Raw(Model.Content)</p>
+                </div>*@
+            @{
+                if (currentCulture.ToString() == GlobalConstants.cultureEn)
+                {
+                    <div class="article-text-wrapper">
+                        <p class="article-details-text">@Html.Raw(Model.ContentEn)</p>
+                    </div>
+                }
+                else
+                {
+                    <div class="article-text-wrapper">
+                        <p class="article-details-text">@Html.Raw(Model.Content)</p>
+                    </div>
+                }
+            }
         </div>
     </section>
+
+
 
 </section>
 

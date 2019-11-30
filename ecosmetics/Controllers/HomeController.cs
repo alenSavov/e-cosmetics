@@ -42,7 +42,9 @@ namespace ecosmetics.Controllers
 
         public IActionResult Index()
         {
-
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var culture = rqf.RequestCulture.Culture;
+            ViewData["Culture"] = culture.Name;
             var categories = this._categoryService
                .GetAll();
 
@@ -60,6 +62,14 @@ namespace ecosmetics.Controllers
                 Categories = categories
             };
 
+            //if (culture.ToString() == "en-US")
+            //{
+               
+            //}
+            //else if (culture.ToString() == "bg-BG")
+            //{
+               
+            //}
             return View(categoryCollection);
         }
 

@@ -14,8 +14,12 @@ namespace ecosmetics.Services.Categories.Models
         [Required]
         public string Name { get; set; }
 
+        public string NameEn { get; set; }
+
         [Required]
         public string Description { get; set; }
+
+        public string DescriptionEn { get; set; }
 
         [Required]
         public IFormFile Picture { get; set; }

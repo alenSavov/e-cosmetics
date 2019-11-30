@@ -20,6 +20,12 @@
             </div>
 
             <div>
+                <label asp-for="TitleEn" class="article-item"></label>
+                <input asp-for="TitleEn" class="article-item">
+                <span asp-validation-for="TitleEn" class="text-danger "></span>
+            </div>
+
+            <div>
                 <label asp-for="Creator" class="article-item"></label>
                 <input asp-for="Creator" class="article-item">
                 <span asp-validation-for="Creator" class="text-danger "></span>
@@ -29,6 +35,12 @@
                 <label asp-for="Content" class="article-label"></label>
                 <textarea asp-for="Content" name="content" id="editor" class="article-item "></textarea>
                 <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+
+            <div>
+                <label asp-for="ContentEn" class="article-label"></label>
+                <textarea asp-for="ContentEn" name="contentEn" id="editor" class="article-item "></textarea>
+                <span asp-validation-for="ContentEn" class="text-danger"></span>
             </div>
 
 
@@ -50,4 +62,5 @@
 
 <script>
     CKEDITOR.replace('content');
+    CKEDITOR.replace('contentEn');
 </script>

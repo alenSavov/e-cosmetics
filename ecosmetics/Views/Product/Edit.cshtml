@@ -18,12 +18,23 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
 
+            <div>
+                <label asp-for="NameEn" class="control-label font-weight-bold"></label>
+                <input asp-for="NameEn" class="font-weight-bold form-control">
+                <span asp-validation-for="NameEn" class="text-danger"></span>
+            </div>
+
             <div class="">
                 <label asp-for="Description" class="control-label font-weight-bold"></label>
                 <textarea asp-for="Description" class="font-weight-bold form-control"></textarea>
                 <span asp-validation-for="Description" class="text-danger "></span>
             </div>
 
+            <div class="">
+                <label asp-for="DescriptionEn" class="control-label font-weight-bold"></label>
+                <textarea asp-for="DescriptionEn" class="font-weight-bold form-control"></textarea>
+                <span asp-validation-for="DescriptionEn" class="text-danger "></span>
+            </div>
 
             <input class="form-control" type="file" name="Pictures" accept=".gif,.png,.jpg,.jpeg" accept="image/*" multiple />
 
@@ -36,4 +47,5 @@
 
 <script>
     CKEDITOR.replace('Description');
+    CKEDITOR.replace('DescriptionEn');
 </script>

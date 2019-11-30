@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ecosmetics.Models
 {
@@ -11,7 +8,11 @@ namespace ecosmetics.Models
 
         public string Title { get; set; }
 
+        public string TitleEn { get; set; }
+
         public string Content { get; set; }
+
+        public string ContentEn { get; set; }
 
         public string Creator { get; set; }
 

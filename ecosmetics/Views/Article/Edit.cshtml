@@ -17,13 +17,25 @@
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
 
+            <div>
+                <label asp-for="TitleEn" class="control-label font-weight-bold"></label>
+                <input asp-for="TitleEn" class="font-weight-bold form-control">
+                <span asp-validation-for="TitleEn" class="text-danger"></span>
+            </div>
+
             <div class="">
                 <label asp-for="Content" class="control-label font-weight-bold"></label>
                 <textarea asp-for="Content" class="font-weight-bold form-control"></textarea>
                 <span asp-validation-for="Content" class="text-danger "></span>
             </div>
-                  
-         
+
+            <div class="">
+                <label asp-for="ContentEn" class="control-label font-weight-bold"></label>
+                <textarea asp-for="ContentEn" class="font-weight-bold form-control"></textarea>
+                <span asp-validation-for="ContentEn" class="text-danger "></span>
+            </div>
+
+
             <div class="button">
                 <button class="white-button">Save</button>
             </div>
@@ -33,4 +45,5 @@
 
 <script>
     CKEDITOR.replace('Content');
+    CKEDITOR.replace('ContentEn');
 </script>

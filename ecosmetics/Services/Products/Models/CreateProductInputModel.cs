@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ecosmetics.Services.Products.Models
 {
@@ -14,8 +11,14 @@ namespace ecosmetics.Services.Products.Models
         [Required]
         public string Name { get; set; }
 
+        public string NameEn { get; set; }
+
+
         [Required]
         public string Description { get; set; }
+
+     
+        public string DescriptionEn { get; set; }
 
 
         public string CategoryId { get; set; }

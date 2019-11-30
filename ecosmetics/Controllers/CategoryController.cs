@@ -7,6 +7,7 @@ using ecosmetics.Data;
 using ecosmetics.Services.Categories.Models;
 using ecosmetics.Services.Interfaces;
 using ecosmetics.Services.Products.Models;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ecosmetics.Controllers
@@ -99,7 +100,7 @@ namespace ecosmetics.Controllers
                 .DeleteAsync(id);
 
 
-            return RedirectToAction("GetAll");
+            return Redirect("/");
         }
 
         [HttpGet]
@@ -126,12 +127,17 @@ namespace ecosmetics.Controllers
         }
 
         public IActionResult GetById(string id)
-
         {
+          
             if (id == null)
             {
                 return this.View();
             }
+
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            // Culture contains the information of the requested culture
+            var culture = rqf.RequestCulture.Culture;
+            ViewData["Culture"] = culture.Name;
 
             var products = this._productService
                 .GetAllProductsForCategoryById(id);

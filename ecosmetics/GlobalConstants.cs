@@ -26,5 +26,10 @@ namespace ecosmetics
 
         public const string imageFolderName = "img";
         public const string imageFolderPath = "../../img/";
+
+
+        public const string cultureEn = "en-US";
+
+
     }
 }

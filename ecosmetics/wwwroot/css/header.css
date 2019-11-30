@@ -62,8 +62,8 @@
     cursor: pointer;
 }
 
-    .icon:before {
-        content: 'МЕНЮ';
+    /*.icon:before {
+        content: '';
         font-family: var(--font-cormorant);
         font-size: 16px;
         font-weight: 600;
@@ -72,7 +72,18 @@
         position: absolute;
         top: 30px;
         right: 130px;
-    }
+    }*/
+
+#hamburger-menu-p {
+    font-family: var(--font-cormorant);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    display: block;
+    position: absolute;
+    top: -17px;
+    right: 102px;
+}
 
 .hamburger {
     width: 50px;

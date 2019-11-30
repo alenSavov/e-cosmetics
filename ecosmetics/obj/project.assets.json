@@ -13497,6 +13497,7 @@
       "Elmah.Io.AspNetCore >= 3.7.86",
       "Localization.AspNetCore.TagHelpers >= 0.6.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
+      "Microsoft.AspNetCore.Localization.Routing >= 2.2.0",
       "Microsoft.AspNetCore.Mvc.Localization >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.Extensions.Configuration.UserSecrets >= 2.2.0",
@@ -13575,6 +13576,10 @@
             "target": "Package",
             "version": "[2.2.0, )",
             "autoReferenced": true
+          },
+          "Microsoft.AspNetCore.Localization.Routing": {
+            "target": "Package",
+            "version": "[2.2.0, )"
           },
           "Microsoft.AspNetCore.Mvc.Localization": {
             "target": "Package",

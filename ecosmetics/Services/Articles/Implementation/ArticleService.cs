@@ -121,7 +121,9 @@ namespace ecosmetics.Services.Articles.Implementation
             try
             {
                 article.Title = model.Title;
+                article.TitleEn = model.TitleEn;
                 article.Content = model.Content;
+                article.ContentEn = model.ContentEn;
 
                 await this._dbContext.SaveChangesAsync();
 

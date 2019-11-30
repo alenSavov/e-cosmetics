@@ -1,9 +1,6 @@
 ﻿using ecosmetics.Services.Pictures.Models;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ecosmetics.Services.Articles.Models
 {
@@ -14,6 +11,8 @@ namespace ecosmetics.Services.Articles.Models
         [Required]
         public string Title { get; set; }
 
+        public string TitleEn { get; set; }
+
         [Required]
         public string Creator { get; set; }
 
@@ -21,6 +20,8 @@ namespace ecosmetics.Services.Articles.Models
 
         [Required]
         public string Content { get; set; }
+
+        public string ContentEn { get; set; }
 
         public BasePictureViewModel Picture { get; set; }
     }

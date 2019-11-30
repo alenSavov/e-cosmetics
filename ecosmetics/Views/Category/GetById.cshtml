@@ -34,9 +34,23 @@
                                 <img style="background-image:url(@picture.Url)" />
 
                             }
-                            <div class="product-text">
-                                <p class="product-name">@product.Name</p>
-                            </div>
+
+                            @{
+                                var currentCulture = ViewData["Culture"];
+                                if (currentCulture.ToString() == GlobalConstants.cultureEn)
+                                {
+                                    <div class="product-text">
+                                        <p class="product-name">@product.NameEn</p>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="product-text">
+                                        <p class="product-name">@product.Name</p>
+                                    </div>
+                                }
+                            }
+
 
                         </a>
                         @if (this.User.Identity.IsAuthenticated)
