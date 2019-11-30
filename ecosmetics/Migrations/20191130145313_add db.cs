@@ -2,7 +2,7 @@
 
 namespace ecosmetics.Migrations
 {
-    public partial class InitialCreate2 : Migration
+    public partial class adddb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

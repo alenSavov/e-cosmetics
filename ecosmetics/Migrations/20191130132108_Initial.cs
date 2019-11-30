@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ecosmetics.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +14,9 @@ namespace ecosmetics.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     Title = table.Column<string>(nullable: true),
+                    TitleEn = table.Column<string>(nullable: true),
                     Content = table.Column<string>(nullable: true),
+                    ContentEn = table.Column<string>(nullable: true),
                     Creator = table.Column<string>(nullable: true),
                     CreatedOn = table.Column<DateTime>(nullable: false),
                     ArticlePictureId = table.Column<string>(nullable: true)
@@ -71,7 +73,9 @@ namespace ecosmetics.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: true),
+                    NameEn = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
+                    DescriptionEn = table.Column<string>(nullable: true),
                     CategoryPictureId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -247,6 +251,7 @@ namespace ecosmetics.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: true),
+                    NameEn = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     DescriptionEn = table.Column<string>(nullable: true),
                     CategoryId = table.Column<string>(nullable: true)

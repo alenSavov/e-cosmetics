@@ -1,6 +1,9 @@
 ﻿@model ecosmetics.Services.Articles.Models.ArticleInputModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
 @{
-    ViewData["Title"] = "Create Article";
+    ViewData["Title"] = @Localizer["Създай Статия"];
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,36 +12,36 @@
 
     <section class="create-article-container">
 
-        <h2 class="article-title">Create Article</h2>
+        <h2 class="article-title">@Localizer["Създай Статия"]</h2>
         <form class="article-form" asp-area="" asp-controller="article" asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger "></div>
 
             <div>
-                <label asp-for="Title" class="article-item"></label>
+                <label asp-for="Title" class="article-item">@Localizer["Име на Български език"]</label>
                 <input asp-for="Title" class="article-item">
                 <span asp-validation-for="Title" class="text-danger "></span>
             </div>
 
             <div>
-                <label asp-for="TitleEn" class="article-item"></label>
+                <label asp-for="TitleEn" class="article-item">@Localizer["Име на Английски език"]</label>
                 <input asp-for="TitleEn" class="article-item">
                 <span asp-validation-for="TitleEn" class="text-danger "></span>
             </div>
 
             <div>
-                <label asp-for="Creator" class="article-item"></label>
+                <label asp-for="Creator" class="article-item">@Localizer["Автор"]</label>
                 <input asp-for="Creator" class="article-item">
                 <span asp-validation-for="Creator" class="text-danger "></span>
             </div>
 
             <div>
-                <label asp-for="Content" class="article-label"></label>
+                <label asp-for="Content" class="article-label">@Localizer["Съдържание на Български език"]</label>
                 <textarea asp-for="Content" name="content" id="editor" class="article-item "></textarea>
                 <span asp-validation-for="Content" class="text-danger"></span>
             </div>
 
             <div>
-                <label asp-for="ContentEn" class="article-label"></label>
+                <label asp-for="ContentEn" class="article-label">@Localizer["Съдържание на Английски език"]</label>
                 <textarea asp-for="ContentEn" name="contentEn" id="editor" class="article-item "></textarea>
                 <span asp-validation-for="ContentEn" class="text-danger"></span>
             </div>
@@ -46,12 +49,12 @@
 
             <div>
 
-                <label asp-for="Picture" class="article-item">Upload Picture </label>
+                <label asp-for="Picture" class="article-item">@Localizer["Добави снимка"]</label>
                 <input asp-for="Picture" class="article-item" hidden accept=".gif,.png,.jpg,.jpeg" />
                 <span asp-validation-for="Picture" class="text-danger"></span>
             </div>
 
-            <button class="white-button">Create</button>
+            <button class="white-button">@Localizer["Създай"]</button>
 
         </form>
 

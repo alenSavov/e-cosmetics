@@ -88,13 +88,13 @@ namespace ecosmetics.Controllers
         }
 
         [Route("Register")]
-        [Authorize]
         public IActionResult Register()
         {
             return this.View();
         }
 
-        [HttpPost]        
+        [HttpPost]
+        [Route("Register")]
         public async Task<IActionResult> Register(RegisterInputModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;

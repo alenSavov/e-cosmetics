@@ -10,8 +10,8 @@ using ecosmetics.Data;
 namespace ecosmetics.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191130082743_Added properties for en for name and title")]
-    partial class Addedpropertiesforenfornameandtitle
+    [Migration("20191130145313_add db")]
+    partial class adddb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

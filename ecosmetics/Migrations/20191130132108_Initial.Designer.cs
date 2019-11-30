@@ -10,8 +10,8 @@ using ecosmetics.Data;
 namespace ecosmetics.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191130073828_added properties for en")]
-    partial class addedpropertiesforen
+    [Migration("20191130132108_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -148,6 +148,8 @@ namespace ecosmetics.Migrations
 
                     b.Property<string>("Title");
 
+                    b.Property<string>("TitleEn");
+
                     b.HasKey("Id");
 
                     b.ToTable("Articles");
@@ -187,6 +189,8 @@ namespace ecosmetics.Migrations
                     b.Property<string>("DescriptionEn");
 
                     b.Property<string>("Name");
+
+                    b.Property<string>("NameEn");
 
                     b.HasKey("Id");
 
@@ -243,6 +247,8 @@ namespace ecosmetics.Migrations
                     b.Property<string>("DescriptionEn");
 
                     b.Property<string>("Name");
+
+                    b.Property<string>("NameEn");
 
                     b.HasKey("Id");
 

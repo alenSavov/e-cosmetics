@@ -190,3 +190,4 @@ C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Release\netcor
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Release\netcoreapp2.2\ecosmetics.dll
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Release\netcoreapp2.2\ecosmetics.pdb
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Release\netcoreapp2.2\ecosmetics.csproj.CopyComplete
+C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Release\netcoreapp2.2\Razor\Views\Account\AccessDenied.g.cshtml.cs

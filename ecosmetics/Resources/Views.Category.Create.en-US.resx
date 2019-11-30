@@ -117,43 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Администрация" xml:space="preserve">
-    <value>Administration</value>
+  <data name="Име на Английски език" xml:space="preserve">
+    <value>Product name in English</value>
   </data>
-  <data name="БЛОГ" xml:space="preserve">
-    <value>BLOG</value>
+  <data name="Име на български език" xml:space="preserve">
+    <value>Product name in English</value>
   </data>
-  <data name="Всички права запазени." xml:space="preserve">
-    <value>All rights reserved.</value>
+  <data name="Описание на Английски език" xml:space="preserve">
+    <value>Description in English</value>
   </data>
-  <data name="ЗА НАС" xml:space="preserve">
-    <value>ABOUT</value>
+  <data name="Описание на Български език" xml:space="preserve">
+    <value>Description in Bulgarian</value>
   </data>
-  <data name="Затвори" xml:space="preserve">
-    <value>Close</value>
+  <data name="Създай" xml:space="preserve">
+    <value>Create</value>
   </data>
-  <data name="ИЗХОД" xml:space="preserve">
-    <value>LOGOUT</value>
-  </data>
-  <data name="КОНТАКТИ" xml:space="preserve">
-    <value>CONTACTS</value>
-  </data>
-  <data name="Меню" xml:space="preserve">
-    <value>Menu</value>
-  </data>
-  <data name="НАЧАЛО" xml:space="preserve">
-    <value>HOME</value>
-  </data>
-  <data name="СЕРИИ" xml:space="preserve">
-    <value>SERIES</value>
-  </data>
-  <data name="Създай продукт" xml:space="preserve">
-    <value>Create Product</value>
-  </data>
-  <data name="Създай серия" xml:space="preserve">
-    <value>Create Series</value>
-  </data>
-  <data name="Създай статия" xml:space="preserve">
-    <value>Create Article</value>
+  <data name="Създай Серия" xml:space="preserve">
+    <value>Create a series</value>
   </data>
 </root>

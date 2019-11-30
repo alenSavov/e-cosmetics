@@ -1,38 +1,40 @@
 ﻿@model ecosmetics.Services.Categories.Models.CreateCategoryInputModel
 
 @{
-    ViewData["Title"] = "Create Category";
+    ViewData["Title"] = @Localizer["Създай Серия"];
 }
 
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
 <section class="create-category-wrapper">
 
     <section class="category-container">
 
-        <h2>Create Category</h2>
+        <h2>@Localizer["Създай Серия"]</h2>
         <form asp-area="" asp-controller="Category" asp-action="Create" class="contact-form" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger "></div>
 
             <div>
-                <label asp-for="Name" class=""></label>
+                <label asp-for="Name" class="">@Localizer["Име на български език"]</label>
                 <input asp-for="Name" class="">
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
 
             <div>
-                <label asp-for="NameEn" class=""></label>
+                <label asp-for="NameEn" class="">@Localizer["Име на Английски език"]</label>
                 <input asp-for="NameEn" class="">
                 <span asp-validation-for="NameEn" class="text-danger"></span>
             </div>
 
             <div class="">
-                <label asp-for="Description" class=""></label>
+                <label asp-for="Description" class="">@Localizer["Описание на Български език"]</label>
                 <textarea asp-for="Description" class=""></textarea>
                 <span asp-validation-for="Description" class=""></span>
             </div>
 
             <div class="">
-                <label asp-for="DescriptionEn" class=""></label>
+                <label asp-for="DescriptionEn" class="">@Localizer["Описание на Английски език"]</label>
                 <textarea asp-for="DescriptionEn" class=""></textarea>
                 <span asp-validation-for="DescriptionEn" class=""></span>
             </div>
@@ -44,7 +46,7 @@
             </div>
 
             <div class="button">
-                <button class="white-button">Create</button>
+                <button class="white-button">@Localizer["Създай"]</button>
             </div>
         </form>
     </section>
