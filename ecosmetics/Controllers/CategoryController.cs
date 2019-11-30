@@ -7,6 +7,7 @@ using ecosmetics.Data;
 using ecosmetics.Services.Categories.Models;
 using ecosmetics.Services.Interfaces;
 using ecosmetics.Services.Products.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -62,12 +63,14 @@ namespace ecosmetics.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
         public async Task<IActionResult> Create(CreateCategoryInputModel model)
         {
             if (!this.ModelState.IsValid)
@@ -83,6 +86,8 @@ namespace ecosmetics.Controllers
             return View();
         }
 
+
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -104,6 +109,7 @@ namespace ecosmetics.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
         public IActionResult Edit(string id)
         {
             if (id == null)
@@ -160,6 +166,7 @@ namespace ecosmetics.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
         public async Task<IActionResult> EditAsync(EditCategoryInputModel model)
         {
             //if (!ModelState.IsValid)

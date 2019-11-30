@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AutoMapper;
 using ecosmetics.Services.Articles.Models;
 using ecosmetics.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,12 +23,14 @@ namespace ecosmetics.Controllers
             this._mapper = mapper;
         }
 
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
         public async Task<IActionResult> Create(ArticleInputModel model)
         {
             if (!this.ModelState.IsValid)
@@ -67,6 +67,7 @@ namespace ecosmetics.Controllers
             return View(articleCollection);
         }
 
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -88,6 +89,7 @@ namespace ecosmetics.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
         public IActionResult Edit(string id)
         {
             if (id == null)
@@ -114,6 +116,7 @@ namespace ecosmetics.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
         public async Task<IActionResult> EditAsync(EditArticleInputModel model)
         {
             if (!ModelState.IsValid)

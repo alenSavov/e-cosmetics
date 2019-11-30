@@ -132,5 +132,10 @@ namespace ecosmetics.Controllers
             return View();
 
         }
+
+        public IActionResult AccessDenied()
+        {
+            return this.View();
+        }
     }
 }
