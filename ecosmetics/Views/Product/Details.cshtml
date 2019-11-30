@@ -7,7 +7,7 @@
 }
 
 <section class="details-wrapper">
-    <div class="main-nav" id="main-nav-product-details">
+    <div class="main-nav animated flipInX delay-0.5s" id="main-nav-product-details ">
         @{
             var currentCulture = ViewData["Culture"];
             if (currentCulture.ToString() == GlobalConstants.cultureEn)
@@ -25,13 +25,11 @@
                 
                 @if (currentCulture.ToString() == GlobalConstants.cultureEn)
                 {
-
                     <li><p id="main-nav-product-name">@Model.NameEn</p></li>
                 }
                 else
                 {
                     <li><p id="main-nav-product-name">@Model.Name</p></li>
-
                 }
             </ul>
         }
@@ -61,23 +59,20 @@
 
             </div>
             @{
-
                 if (currentCulture.ToString() == GlobalConstants.cultureEn)
                 {
-                    <div class="product-description" id="product-description">
+                    <div class="product-description " id="product-description">
 
-                        <p id="text-styles-description">@Localizer[Model.DescriptionEn]</p>
+                        <p class="" id="text-styles-description">@Localizer[Model.DescriptionEn]</p>
                     </div>
                 }
                 else
                 {
                     <div class="product-description" id="product-description">
-
-                        <p id="text-styles-description">@Localizer[Model.Description]</p>
+                        <p class="" id="text-styles-description">@Localizer[Model.Description]</p>
                     </div>
                 }
             }
-
 
         </div>
     </section>

@@ -510,6 +510,14 @@
                 flex: 0 0 100%;
             }
 
+            /*Article Details*/
+        .article-content {
+            flex: 0 0 100%;
+        }
+
+        .article-text-wrapper {
+            padding: 1em;
+        }
 
         /*Footer*/
         .brand-footer img {
