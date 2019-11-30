@@ -27,6 +27,7 @@ using ecosmetics.Services.Pictures.Implementation;
 using ecosmetics.Services.Products.Implementation;
 using ecosmetics.Services.Accounts.Implementation;
 using ecosmetics.Services.Articles.Implementation;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace ecosmetics
 {
@@ -56,6 +57,7 @@ namespace ecosmetics
                 o.LogId = new Guid("561a760e-7fb6-4ca0-b622-f7f4520c078e");
             });
 
+          
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -93,7 +95,7 @@ namespace ecosmetics
 
             //services.AddDefaultIdentity<IdentityUser>()
             services.AddIdentity<User, IdentityRole>()
-                .AddDefaultUI(UIFramework.Bootstrap4)
+                //.AddDefaultUI(UIFramework.Bootstrap4)
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
@@ -126,7 +128,16 @@ namespace ecosmetics
                     opts.SupportedUICultures = supportedCultures;
                 });
 
-
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = "/Account/AccessDenied";
+                options.Cookie.Name = "Cookie";
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(720);
+                options.LoginPath = "/Login";
+                options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                options.SlidingExpiration = true;
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

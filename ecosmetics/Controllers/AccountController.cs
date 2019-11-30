@@ -23,6 +23,7 @@ namespace ecosmetics.Controllers
             this._accountService = accountService;
         }
 
+        [Route("Login")]
         public IActionResult Login()
         {
             if (this.User.Identity.IsAuthenticated)
@@ -34,6 +35,7 @@ namespace ecosmetics.Controllers
         }
 
         [HttpPost]
+        [Route("Login")]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
@@ -78,18 +80,21 @@ namespace ecosmetics.Controllers
             return View(model);
         }
 
+        [Route("Logout")]      
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
+        [Route("Register")]
+        [Authorize]
         public IActionResult Register()
         {
             return this.View();
         }
 
-        [HttpPost]
+        [HttpPost]        
         public async Task<IActionResult> Register(RegisterInputModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
