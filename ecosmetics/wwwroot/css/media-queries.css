@@ -82,6 +82,11 @@
     }
 
     @media (max-width: 1250px) {
+        /*Navigation*/
+        #hamburger-menu-p {
+            display: none;
+        }
+
 
         /*About Page*/
         .about-img-box {

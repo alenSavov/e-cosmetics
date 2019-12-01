@@ -139,6 +139,21 @@
         text-decoration: none;
     }
 
+
+#setLang-nav-form {
+    background-color: var(--color-main-black);
+    margin-right: 1em;
+    align-self: center;
+}
+
+#language-button {
+    background-color: var(--color-main-black);
+    color: white;
+    padding: 0.5em;
+    border: none;
+}
+
+
 /* Toggle Navigation Menu*/
 #nav-toggle {
     display: flex;
