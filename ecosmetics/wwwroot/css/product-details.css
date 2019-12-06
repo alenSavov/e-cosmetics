@@ -51,7 +51,7 @@
         left: 0;
         top: 0;
         height: 39.5rem;
-        width: 20em;
+        width: 10em;
         background-color: var(--color-main-black);
     }
 
@@ -59,15 +59,17 @@
 .details-content-box {
     display: flex;
     flex-wrap: wrap;
-    flex: 0 0 76%;
+    /*flex: 0 0 76%;*/
+    width: 950px;
     overflow: hidden;
-    justify-content: space-around;
+    justify-content: flex-end;
+    margin: 1em 1em;
 }
 
 .product-image-box {
     overflow: hidden;
     height: 57em;
-    flex: 0 0 60%;
+    flex: 0 0 100%;
 }
 
 .product-promo-text {

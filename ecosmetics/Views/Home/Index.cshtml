@@ -6,7 +6,6 @@
     ViewData["Title"] = "Elizabet Cosmetics";
 }
 
-    
 <section class="site-wrapper">
 
     <aside class="aside">
@@ -24,16 +23,18 @@
         <!-- Slideshow container -->
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active slide-pic-1">
-                    <img class="slide-pic-1 d-block w-100" src="~/img/slider-pic-2.jpg" alt="First slide">
+                <cache expires-after="@TimeSpan.FromMinutes(20)">
+                    <div class="carousel-item active slide-pic-1">
+                        <img class="slide-pic-1 d-block w-100" src="~/img/slider-pic-2.jpg" alt="First slide">
 
-                </div>
-                <div class="carousel-item">
-                    <img class="slide-pic-2 d-block w-100" src="~/img/slider-pic-1.jpg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="slide-pic-3 d-block w-100" src="~/img/unsplash-6.jpg" alt="Third slide">
-                </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="slide-pic-2 d-block w-100" src="~/img/slider-pic-1.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="slide-pic-3 d-block w-100" src="~/img/unsplash-6.jpg" alt="Third slide">
+                    </div>
+                </cache>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -60,24 +61,25 @@
 
         <section class="black-box-content">
 
-            @foreach (var category in Model.Categories)
-            {
-                <a class="category" asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id">
-                    <div class="image-wrapper">
-                        <span><img src="@category.Picture.Url" class="category-picture" width="250" height="250" /></span>
-                    </div>
-
-                </a>
-                @if (this.User.Identity.IsAuthenticated)
+            <cache expires-after="@TimeSpan.FromMinutes(20)">
+                @foreach (var category in Model.Categories)
                 {
-                    @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
+                    <a class="category" asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id">
+                        <div class="image-wrapper">
+                            <span><img src="@category.Picture.Url" class="category-picture" width="250" height="250" /></span>
+                        </div>
+
+                    </a>
+                    @if (this.User.Identity.IsAuthenticated)
                     {
-                        <a class="button button-primary" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
-                        <a class="button button-primary" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
+                        @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
+                        {
+                            <a class="white-button bg-danger" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">@Localizer["Изтрий"]</a>
+                            <a class="white-button" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">@Localizer["Промени"]</a>
+                        }
                     }
                 }
-            }
-
+            </cache>
         </section>
     </div>
 </section>

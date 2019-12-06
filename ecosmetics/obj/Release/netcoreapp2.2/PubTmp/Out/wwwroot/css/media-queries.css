@@ -82,6 +82,11 @@
     }
 
     @media (max-width: 1250px) {
+        /*Navigation*/
+        #hamburger-menu-p {
+            display: none;
+        }
+
 
         /*About Page*/
         .about-img-box {
@@ -510,6 +515,14 @@
                 flex: 0 0 100%;
             }
 
+            /*Article Details*/
+        .article-content {
+            flex: 0 0 100%;
+        }
+
+        .article-text-wrapper {
+            padding: 1em;
+        }
 
         /*Footer*/
         .brand-footer img {

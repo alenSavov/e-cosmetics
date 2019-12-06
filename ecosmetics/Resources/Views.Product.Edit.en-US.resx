@@ -117,19 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Изтрий" xml:space="preserve">
-    <value>Delete</value>
+  <data name="Запази" xml:space="preserve">
+    <value>Save</value>
   </data>
-  <data name="Начало" xml:space="preserve">
-    <value>Home</value>
+  <data name="Име на Английски език" xml:space="preserve">
+    <value>Name in English</value>
   </data>
-  <data name="Промени" xml:space="preserve">
-    <value>Edit</value>
+  <data name="Име на Български език" xml:space="preserve">
+    <value>Name in Bulgarian</value>
   </data>
-  <data name="Прочети още" xml:space="preserve">
-    <value>Read More</value>
+  <data name="Описание на Английски език" xml:space="preserve">
+    <value>Description in English</value>
   </data>
-  <data name="Статии" xml:space="preserve">
-    <value>Articles</value>
+  <data name="Описание на Български език" xml:space="preserve">
+    <value>Description in Bulgarian</value>
+  </data>
+  <data name="Промени продукт" xml:space="preserve">
+    <value>Edit Product</value>
   </data>
 </root>

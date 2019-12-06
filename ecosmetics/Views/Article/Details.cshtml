@@ -3,7 +3,17 @@
 
 @model ecosmetics.Services.Articles.Models.ArticleViewModel
 @{
-    ViewData["Title"] = "Details";
+    var currentCulture = ViewData["Culture"];
+
+    if (currentCulture.ToString() == GlobalConstants.cultureEn)
+    {
+        ViewData["Title"] = @Model.TitleEn;
+    }
+    else
+    {
+         ViewData["Title"] = @Model.Title;
+    }
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,7 +21,7 @@
     <div class="main-nav">
 
         @{
-            var currentCulture = ViewData["Culture"];
+
             if (currentCulture.ToString() == GlobalConstants.cultureEn)
             {
                 <h1>@Model.TitleEn</h1>
@@ -32,25 +42,27 @@
     <section class="article-details-container">
         <div class="article-content">
 
-            <img class="article-img" src="@Model.Picture.Url" />
+            <cache expires-after="@TimeSpan.FromMinutes(20)">
+                <img class="article-img" src="@Model.Picture.Url" />
 
-            @*<div class="article-text-wrapper">
-                    <p class="article-details-text">@Html.Raw(Model.Content)</p>
-                </div>*@
-            @{
-                if (currentCulture.ToString() == GlobalConstants.cultureEn)
-                {
-                    <div class="article-text-wrapper">
-                        <p class="article-details-text">@Html.Raw(Model.ContentEn)</p>
-                    </div>
-                }
-                else
-                {
-                    <div class="article-text-wrapper">
+                @*<div class="article-text-wrapper">
                         <p class="article-details-text">@Html.Raw(Model.Content)</p>
-                    </div>
+                    </div>*@
+                @{
+                    if (currentCulture.ToString() == GlobalConstants.cultureEn)
+                    {
+                        <div class="article-text-wrapper">
+                            <p class="article-details-text">@Html.Raw(Model.ContentEn)</p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="article-text-wrapper">
+                            <p class="article-details-text">@Html.Raw(Model.Content)</p>
+                        </div>
+                    }
                 }
-            }
+            </cache>
         </div>
     </section>
 

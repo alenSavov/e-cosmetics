@@ -93,6 +93,10 @@ namespace ecosmetics.Services.Pictures.Implementation
                     PublicId = guid,
                     File = new FileDescription(guid, picture.OpenReadStream()),
                     Folder = this.EntityFolders[entityType],
+                    EagerTransforms = new List<Transformation>()
+                    {
+                       new Transformation().Quality("low") 
+                    }
                 };
                 var uploadResult = this.cloudinary.UploadLarge(uploadParams);
                 uploadResults.Add(uploadResult);
@@ -171,8 +175,11 @@ namespace ecosmetics.Services.Pictures.Implementation
             if (string.IsNullOrEmpty(categoryName) || string.IsNullOrEmpty(imageVersion) || string.IsNullOrWhiteSpace(categoryName) || string.IsNullOrWhiteSpace(imageVersion))
                 return null;
 
+
+
             string path = string.Format(GlobalConstants.FilePath, CategoryPictureFolder, categoryName);
             var pictureUrl = cloudinary.Api.UrlImgUp
+                                    .Transform(new Transformation().Quality("auto:low"))
                                     .Version(imageVersion).BuildUrl(path);
             return pictureUrl;
         }
@@ -195,6 +202,7 @@ namespace ecosmetics.Services.Pictures.Implementation
 
             string path = string.Format(GlobalConstants.FilePath, CategoryPictureFolder, string.Format(GlobalConstants.CategoryPicture, productName));
             var pictureUrl = cloudinary.Api.UrlImgUp
+                                    .Transform(new Transformation().Quality("auto:low"))
                                     .Version(imageVersion).BuildUrl(path);
             return pictureUrl;
         }

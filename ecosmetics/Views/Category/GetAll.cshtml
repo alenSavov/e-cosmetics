@@ -4,16 +4,26 @@
     ViewData["Title"] = "All";
 }
 
-<div>
+<div class="all-categories-wrapper">
 
-    @foreach (var category in Model.Categories)
-    {
-        <p>@category.Name</p>
-        <p>@category.Description</p>
+    <div class="category-template">
 
-        <img src="@category.Picture.Url" width="800" height="400" />
-        <a asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
-        <a asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
+        @foreach (var category in Model.Categories)
+        {
+            <p>@category.Name</p>
+            <p>@category.Description</p>
 
-    }
+            <img src="@category.Picture.Url" width="800" height="400" />
+
+            @if (this.User.Identity.IsAuthenticated)
+            {
+                @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
+                {
+                    <a asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
+                    <a asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
+
+                }
+            }
+        }
+    </div>
 </div>

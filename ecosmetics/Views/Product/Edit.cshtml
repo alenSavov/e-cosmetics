@@ -1,4 +1,7 @@
-﻿@model ecosmetics.Services.Products.Models.EditProductViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@model ecosmetics.Services.Products.Models.EditProductViewModel
 @{
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,31 +10,31 @@
 
 <section class="create-product-wrapper">
     <section class="product-container">
-        <h2>Edit Product</h2>
+        <h2>@Localizer["Промени продукт"]</h2>
 
         <form asp-area="" asp-controller="Product" asp-action="EditAsync" asp-route-id="@Model.Id" method="post" class="contact-form" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger "></div>
 
             <div>
-                <label asp-for="Name" class="control-label font-weight-bold"></label>
+                <label asp-for="Name" class="control-label font-weight-bold">@Localizer["Име на Български език"]</label>
                 <input asp-for="Name" class="font-weight-bold form-control">
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
 
             <div>
-                <label asp-for="NameEn" class="control-label font-weight-bold"></label>
+                <label asp-for="NameEn" class="control-label font-weight-bold">@Localizer["Име на Английски език"]</label>
                 <input asp-for="NameEn" class="font-weight-bold form-control">
                 <span asp-validation-for="NameEn" class="text-danger"></span>
             </div>
 
             <div class="">
-                <label asp-for="Description" class="control-label font-weight-bold"></label>
+                <label asp-for="Description" class="control-label font-weight-bold">@Localizer["Описание на Български език"]</label>
                 <textarea asp-for="Description" class="font-weight-bold form-control"></textarea>
                 <span asp-validation-for="Description" class="text-danger "></span>
             </div>
 
             <div class="">
-                <label asp-for="DescriptionEn" class="control-label font-weight-bold"></label>
+                <label asp-for="DescriptionEn" class="control-label font-weight-bold">@Localizer["Описание на Английски език"]</label>
                 <textarea asp-for="DescriptionEn" class="font-weight-bold form-control"></textarea>
                 <span asp-validation-for="DescriptionEn" class="text-danger "></span>
             </div>
@@ -39,7 +42,7 @@
             <input class="form-control" type="file" name="Pictures" accept=".gif,.png,.jpg,.jpeg" accept="image/*" multiple />
 
             <div class="button">
-                <button class="white-button">Save</button>
+                <button class="white-button">@Localizer["Запази"]</button>
             </div>
         </form>
     </section>

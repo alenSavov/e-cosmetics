@@ -107,7 +107,9 @@ namespace ecosmetics.Services.Categories.Implementation
             try
             {
                 category.Name = model.Name;
+                category.NameEn = model.NameEn;
                 category.Description = model.Description;
+                category.DescriptionEn = model.DescriptionEn;
 
                 await this._dbContext.SaveChangesAsync();
 

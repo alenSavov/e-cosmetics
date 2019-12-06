@@ -66,17 +66,17 @@
                 }
 
                 @*<span id="language-button">@await Html.PartialAsync("_SelectLanguagePartial")</span>*@
-            <form id="setLang-nav-form" method="POST" sp-route-returnurl="returnUrl">
-                <button type="submit" id="language-button" asp-controller="Home" asp-action="SetLanguage" asp-route-culture="en-US" value="Submit">EN</button>
-                <button type="submit" id="language-button" asp-controller="Home" asp-action="SetLanguage" asp-route-culture="bg-BG" value="Submit">BG</button>
-            </form>
+                <form id="setLang-nav-form" method="POST" sp-route-returnurl="returnUrl">
+                    <button type="submit" id="language-button" asp-controller="Home" asp-action="SetLanguage" asp-route-culture="en-US" value="Submit">EN</button>
+                    <button type="submit" id="language-button" asp-controller="Home" asp-action="SetLanguage" asp-route-culture="bg-BG" value="Submit">BG</button>
+                </form>
 
             </section>
             <section class="nav-right-part">
 
+                <p id="hamburger-menu-p">@Localizer["Меню"]</p>
                 <div class="icon">
                     <div class="hamburger" onclick="show()">
-                        <p id="hamburger-menu-p">@Localizer["Меню"]</p>
                     </div>
                 </div>
             </section>
@@ -91,7 +91,7 @@
                 <span class="elizabeth-cosmetics-title">Elizabeth Cosmetics</span>
 
                 <div id="close-btn" onclick="closeToggle()">
-                     <P id="close-btn-before">@Localizer["Затвори"]</P>
+                    <P id="close-btn-before">@Localizer["Затвори"]</P>
                 </div>
 
             </section>
@@ -101,7 +101,7 @@
                     <li><a asp-controller="Home" asp-action="index">@Localizer["НАЧАЛО"]</a></li>
                     <li><a asp-controller="Home" asp-action="About">@Localizer["ЗА НАС"]</a></li>
                     <li><a asp-controller="Home" asp-action="contacts">@Localizer["КОНТАКТИ"]</a></li>
-                    <li><a asp-controller="Home" asp-action="index" id="series">@Localizer["СЕРИИ"]</a></li>
+                    <li><a asp-controller="Category" asp-action="GetAll" id="series">@Localizer["СЕРИИ"]</a></li>
                     <li><a asp-controller="Article" asp-action="GetAll">@Localizer["БЛОГ"]</a></li>
                     @*@foreach (var category in ViewBag.ListOfCategories)
                         {

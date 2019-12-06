@@ -51,8 +51,8 @@
                         {
                             @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
                             {
-                                <a class="button" asp-controller="article" asp-action="delete" asp-route-id="@article.Id">Delete</a>
-                                <a class="button" asp-controller="article" asp-action="Edit" asp-route-id="@article.Id">Edit</a>
+                                <a class="white bg-danger" asp-controller="article" asp-action="delete" asp-route-id="@article.Id">@Localizer["Изтрий"]</a>
+                                <a class="button" asp-controller="article" asp-action="Edit" asp-route-id="@article.Id">@Localizer["Промени"]</a>
                             }
                         }
                     </div>

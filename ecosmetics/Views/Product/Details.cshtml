@@ -22,7 +22,7 @@
             <ul id="main-nav-product-details-ul">
                 <li><a asp-controller="Home" asp-action="index">@Localizer["Начало"]</a></li>
                 <li><a asp-controller="Category" asp-action="GetById" asp-route-id="@Model.CategoryId">@Localizer["Продукти"]</a></li>
-                
+
                 @if (currentCulture.ToString() == GlobalConstants.cultureEn)
                 {
                     <li><p id="main-nav-product-name">@Model.NameEn</p></li>
@@ -52,11 +52,12 @@
 
         <div class="product-details-content">
             <div class="details-content-box">
-                @foreach (var picture in Model.Pictures)
-                {
-                    <img class="product-image-box" src="@picture.Url" alt="Product Picture" />
-                }
-
+                <cache expires-after="@TimeSpan.FromMinutes(20)">
+                    @foreach (var picture in Model.Pictures)
+                    {
+                        <img class="product-image-box" src="@picture.Url" alt="Product Picture" />
+                    }
+                </cache>
             </div>
             @{
                 if (currentCulture.ToString() == GlobalConstants.cultureEn)

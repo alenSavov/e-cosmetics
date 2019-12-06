@@ -28,12 +28,13 @@
                     <li>
                         <a class="product" asp-controller="Product" asp-action="GetById" asp-route-id="@product.Id">
 
-                            @foreach (var picture in product.Pictures.Take(1))
-                            {
-                                @*<img class="product-picture" src="@picture.Url" alt="Product Picture" />*@
-                                <img style="background-image:url(@picture.Url)" />
-
-                            }
+                            <cache expires-after="@TimeSpan.FromMinutes(60)">
+                                @foreach (var picture in product.Pictures.Take(1))
+                                {
+                                    @*<img class="product-picture" src="@picture.Url" alt="Product Picture" />*@
+                                    <img style="background-image:url(@picture.Url)" />
+                                }
+                            </cache>
 
                             @{
                                 var currentCulture = ViewData["Culture"];
@@ -57,8 +58,8 @@
                         {
                             @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
                             {
-                                <a class="button button-primary" asp-controller="product" asp-action="DeleteAsync" asp-route-id="@product.Id">Delete</a>
-                                <a class="button button-primary" asp-controller="product" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+                                <a class="white-button bg-danger" asp-controller="product" asp-action="DeleteAsync" asp-route-id="@product.Id">@Localizer["Изтрий"]</a>
+                                <a class="white-button" asp-controller="product" asp-action="Edit" asp-route-id="@product.Id">@Localizer["Промени"]</a>
                             }
                         }
 
@@ -67,4 +68,5 @@
             </ul>
         </section>
     </section>
+
 </section>

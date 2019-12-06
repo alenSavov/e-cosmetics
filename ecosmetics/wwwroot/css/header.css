@@ -76,13 +76,15 @@
 
 #hamburger-menu-p {
     font-family: var(--font-cormorant);
-    font-size: 24px;
+    font-size: 17px;
     font-weight: 600;
     letter-spacing: 6px;
     display: block;
-    position: absolute;
+    /*position: absolute;*/
+    margin: 0;
     top: -17px;
     right: 102px;
+    text-transform: uppercase;
 }
 
 .hamburger {
@@ -142,15 +144,17 @@
 
 #setLang-nav-form {
     background-color: var(--color-main-black);
-    margin-right: 1em;
+    margin-right: 2em;
     align-self: center;
 }
 
 #language-button {
     background-color: var(--color-main-black);
-    color: white;
-    padding: 0.5em;
+    padding: 0.3em;
     border: none;
+    font-size: 1.3em;
+    color: rgb(242, 242, 242);
+    font-family: var(--font-cormorant);
 }
 
 
