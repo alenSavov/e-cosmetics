@@ -92,11 +92,7 @@ namespace ecosmetics.Services.Pictures.Implementation
                 {
                     PublicId = guid,
                     File = new FileDescription(guid, picture.OpenReadStream()),
-                    Folder = this.EntityFolders[entityType],
-                    EagerTransforms = new List<Transformation>()
-                    {
-                       new Transformation().Quality("low") 
-                    }
+                    Folder = this.EntityFolders[entityType]
                 };
                 var uploadResult = this.cloudinary.UploadLarge(uploadParams);
                 uploadResults.Add(uploadResult);

@@ -5,8 +5,8 @@
 @{
     ViewData["Title"] = "Elizabet Cosmetics";
 }
-
 <section class="site-wrapper">
+   
 
     <aside class="aside">
 
@@ -52,6 +52,7 @@
 <p class="content-over-banner animated zoomIn delay-1s">THE TRUTH</p>
 <p class="content-over-banner2 animated zoomIn delay-1s">ABOUT BEAUTY</p>
 <section class="categories-wrapper" id="series">
+  
 
     <div class="categories ">
         <section class="black-box-title">
@@ -61,25 +62,25 @@
 
         <section class="black-box-content">
 
-            <cache expires-after="@TimeSpan.FromMinutes(20)">
-                @foreach (var category in Model.Categories)
-                {
-                    <a class="category" asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id">
-                        <div class="image-wrapper">
-                            <span><img src="@category.Picture.Url" class="category-picture" width="250" height="250" /></span>
-                        </div>
+            @*<cache expires-after="@TimeSpan.FromMinutes(20)">*@
+            @foreach (var category in Model.Categories)
+            {
+                <a class="category" asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id">
+                    <div class="image-wrapper">
+                        <span><img src="@category.Picture.Url" class="category-picture" width="250" height="250" /></span>
+                    </div>
 
-                    </a>
-                    @if (this.User.Identity.IsAuthenticated)
+                </a>
+                @if (this.User.Identity.IsAuthenticated)
+                {
+                    @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
                     {
-                        @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
-                        {
-                            <a class="white-button bg-danger" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">@Localizer["Изтрий"]</a>
-                            <a class="white-button" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">@Localizer["Промени"]</a>
-                        }
+                        <a class="white-button bg-danger" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">@Localizer["Изтрий"]</a>
+                        <a class="white-button" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">@Localizer["Промени"]</a>
                     }
                 }
-            </cache>
+            }
+            @*</cache>*@
         </section>
     </div>
 </section>

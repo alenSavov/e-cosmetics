@@ -56,7 +56,7 @@
     .articles-container .article .article-createdOn:hover,
     .articles-container .article .article-creator:hover {
         color: var(--color-main-white);
-        cursor: pointer;
+        cursor: default;
     }
 
 .articles-container .article .article-creator {
@@ -93,7 +93,7 @@
 
     .articles-container .article .article-title:hover {
         color: rgb(186, 186, 186);
-        cursor: pointer;
+        cursor: default;
     }
 
 .article-buttons-box {

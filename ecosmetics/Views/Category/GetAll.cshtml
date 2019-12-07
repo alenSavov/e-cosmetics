@@ -1,29 +1,43 @@
-﻿@model CategoriesCollectionViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@model CategoriesCollectionViewModel
 
 @{
     ViewData["Title"] = "All";
 }
 
 <div class="all-categories-wrapper">
+    <div class="main-nav">
+        <h1>@Localizer["Всички серии"]</h1>
 
-    <div class="category-template">
+        <ul>
+            <li><a asp-controller="Home" asp-action="index">@Localizer["Начало"]</a></li>
+            <li>@Localizer["Серии"]</li>
+        </ul>
+    </div>
 
-        @foreach (var category in Model.Categories)
-        {
-            <p>@category.Name</p>
-            <p>@category.Description</p>
+    <div class="category-template-wrapper">
 
-            <img src="@category.Picture.Url" width="800" height="400" />
-
-            @if (this.User.Identity.IsAuthenticated)
+        <div class="category-card">
+            @foreach (var category in Model.Categories)
             {
-                @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
-                {
-                    <a asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
-                    <a asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
+                <p>@category.Name</p>
 
+                <img src="@category.Picture.Url" width="800" height="400" />
+                <p>@category.Description</p>
+
+                @if (this.User.Identity.IsAuthenticated)
+                {
+                    @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
+                    {
+                        <a asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
+                        <a asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
+
+                    }
                 }
             }
-        }
+        </div>
     </div>
 </div>
+

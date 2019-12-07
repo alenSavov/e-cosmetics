@@ -1,0 +1,15 @@
+﻿.all-categories-wrapper{
+    display: flex;
+    flex: 0 0 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category-template-wrapper {
+    display: flex;
+    flex: 0 0 85%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10em;
+    background-color: rgb(243, 243, 243);
+}
