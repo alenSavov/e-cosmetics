@@ -45,6 +45,9 @@ namespace ecosmetics.Controllers
             var categories = this._categoryService
                 .GetAll();
 
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var culture = rqf.RequestCulture.Culture;
+            ViewData["Culture"] = culture.Name;
 
             foreach (var category in categories)
             {

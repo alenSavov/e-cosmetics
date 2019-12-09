@@ -24,6 +24,19 @@
     }
 }
 
+@media (max-width: 1650px) {
+    .category-card {
+        display: flex;
+        flex: 0 0 65%;
+        flex-wrap: wrap;
+        overflow: hidden;
+        margin: 7em 1em;
+    }
+
+    #hamburger-menu-p {
+        display: none;
+    }
+}
 
     @media (max-width: 1350px) {
 
@@ -264,6 +277,11 @@
         .image-wrapper img {
             width: 700px;
             max-width: 700px;
+        }
+
+        /*Category Details*/
+        .category-card {
+            flex: 0 0 95%;
         }
     }
 
@@ -546,6 +564,12 @@
             display: flex;
             flex: 0 0 65%;
         }
+
+
+        /*Category Details Page*/
+        .category-card img {
+            height: 28em;
+        }
     }
 
     @media (max-width: 550px) {
@@ -749,6 +773,20 @@
         .copyrights {
             flex-wrap: wrap;
             flex: 0 0 65%;
+        }
+
+        .category-template-wrapper {
+             margin-top: 0; 
+        }
+
+        /*Category Details Page*/
+        .category-card img {
+            height: 21em;
+            margin: 2em 1em;
+        }
+
+        .category-card {
+            margin: 3em 1em;
         }
     }
 

@@ -4,8 +4,10 @@
 @model CategoriesCollectionViewModel
 
 @{
+    var currentCulture = ViewData["Culture"];
     ViewData["Title"] = "All";
 }
+
 
 <div class="all-categories-wrapper">
     <div class="main-nav">
@@ -19,25 +21,41 @@
 
     <div class="category-template-wrapper">
 
-        <div class="category-card">
-            @foreach (var category in Model.Categories)
-            {
-                <p>@category.Name</p>
+        @foreach (var category in Model.Categories)
+        {
+            <a class="category-card" asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id">
+                @if (currentCulture.ToString() == GlobalConstants.cultureEn)
+                {
+                    <p id="category-name">@category.NameEn</p>
+                    
+                    <img src="@category.Picture.Url" />
+                    <p id="category-description">@category.DescriptionEn</p>
+                }
+                else
+                {
+                    <p id="category-name">@category.Name</p>
 
-                <img src="@category.Picture.Url" width="800" height="400" />
-                <p>@category.Description</p>
+                    <img src="@category.Picture.Url" />
+
+                    @if (@category.Description != null)
+                    {
+                        <div class="description-box">
+                            <p id="category-description">@category.Description</p>
+                        </div>
+                    }
+                }
 
                 @if (this.User.Identity.IsAuthenticated)
                 {
                     @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
                     {
-                        <a asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
-                        <a asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
+                        <a class="white-button bg-danger" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
+                        <a class="white-button" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
 
                     }
                 }
-            }
-        </div>
+            </a>
+        }
     </div>
 </div>
 

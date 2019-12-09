@@ -1,6 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
 
+@{
+    var returnUrl = @Context.Request.Query["returnurl"];
+}
+
 <!DOCTYPE html>
 <html>
 <head>
