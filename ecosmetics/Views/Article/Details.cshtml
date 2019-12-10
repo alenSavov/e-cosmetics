@@ -31,25 +31,27 @@
                 <h1>@Model.Title</h1>
             }
         }
-
-
-        <ul>
-            <li><a asp-controller="Home" asp-action="index">@Localizer["Начало"]</a></li>
-            <li><a asp-controller="Article" asp-action="GetAll">@Localizer["Статии"]</a></li>
-        </ul>
+        
+    <ul>
+        <li><a asp-controller="Home" asp-action="index">@Localizer["Начало"]</a></li>
+        <li><a asp-controller="Article" asp-action="GetAll">@Localizer["Статии"]</a></li>
+        @if (currentCulture.ToString() == GlobalConstants.cultureEn)
+        {
+            <li>@Model.TitleEn</li>
+        }
+        else
+        {
+            <li>@Model.Title</li>
+        }
+    </ul>
     </div>
 
     <section class="article-details-container">
         <div class="article-content">
-
-            <cache expires-after="@TimeSpan.FromMinutes(20)">
+        
                 <img class="article-img" src="@Model.Picture.Url" />
-
-                @*<div class="article-text-wrapper">
-                        <p class="article-details-text">@Html.Raw(Model.Content)</p>
-                    </div>*@
-                @{
-                    if (currentCulture.ToString() == GlobalConstants.cultureEn)
+             
+                    @if (currentCulture.ToString() == GlobalConstants.cultureEn)
                     {
                         <div class="article-text-wrapper">
                             <p class="article-details-text">@Html.Raw(Model.ContentEn)</p>
@@ -61,8 +63,7 @@
                             <p class="article-details-text">@Html.Raw(Model.Content)</p>
                         </div>
                     }
-                }
-            </cache>
+                }        
         </div>
     </section>
 

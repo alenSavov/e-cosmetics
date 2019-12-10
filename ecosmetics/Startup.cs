@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ecosmetics.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc.Razor;
-using Elmah.Io.AspNetCore;
 using System.Globalization;
 using ecosmetics.Middleware;
 using Microsoft.Extensions.Options;
@@ -50,13 +45,6 @@ namespace ecosmetics
                      LanguageViewLocationExpanderFormat.Suffix,
                      opts => { opts.ResourcesPath = "Resources"; })
                  .AddDataAnnotationsLocalization();
-
-            services.AddElmahIo(o =>
-            {
-                o.ApiKey = "950b050ee281484f8c0e27b85a3cc0a8";
-                o.LogId = new Guid("561a760e-7fb6-4ca0-b622-f7f4520c078e");
-            });
-
           
 
             services.Configure<CookiePolicyOptions>(options =>
@@ -168,11 +156,10 @@ namespace ecosmetics
 
             app.UseHttpsRedirection();
             app.UseSeedDataMiddleware();
-            app.UseElmahIo();
+            app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
-
+            
 
             app.UseMvc(routes =>
             {

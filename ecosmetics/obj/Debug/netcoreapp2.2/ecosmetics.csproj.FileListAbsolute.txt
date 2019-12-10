@@ -201,5 +201,3 @@ C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Debug\netcorea
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Debug\netcoreapp2.2\ecosmetics.Resources.Views.Article.Edit.en-US.resources
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Debug\netcoreapp2.2\Razor\Views\Shared\AccessDenided.g.cshtml.cs
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Debug\netcoreapp2.2\Razor\Views\Home\Error.g.cshtml.cs
-C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Debug\netcoreapp2.2\fr\ecosmetics.resources.cs
-C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Debug\netcoreapp2.2\en-US\ecosmetics.resources.cs
