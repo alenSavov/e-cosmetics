@@ -7,69 +7,132 @@
     ViewData["Title"] = "Edit";
 }
 
-    <section class="edit-category-wrapper">
-        <section class="category-container">
-            <h2>@Localizer["Промени Категория"]</h2>
+<section class="edit-category-wrapper">
+    <section class="category-container">
+        <h2>@Localizer["Промени Категория"]</h2>
 
-            <form class="category-form" asp-area="" asp-controller="category" asp-action="EditAsync" asp-route-id="@Model.Id" enctype="multipart/form-data">
-                <div asp-validation-summary="All" class="text-danger "></div>
+        <form class="category-form" asp-area="" asp-controller="category" asp-action="EditAsync" asp-route-id="@Model.Id" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger "></div>
 
-                <div>
-                    <label asp-for="Name" class="control-label font-weight-bold">@Localizer["Заглавие на Български език"]</label>
-                    <input asp-for="Name" class="font-weight-bold form-control">
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
+            <div>
+                <label asp-for="Name" class="control-label font-weight-bold">@Localizer["Заглавие на Български език"]</label>
+                <input asp-for="Name" class="font-weight-bold form-control">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
 
-                <div>
-                    <label asp-for="NameEn" class="control-label font-weight-bold">@Localizer["Заглавие на Английски език"]</label>
-                    <input asp-for="NameEn" class="font-weight-bold form-control">
-                    <span asp-validation-for="NameEn" class="text-danger"></span>
-                </div>
+            <div>
+                <label asp-for="NameEn" class="control-label font-weight-bold">@Localizer["Заглавие на Английски език"]</label>
+                <input asp-for="NameEn" class="font-weight-bold form-control">
+                <span asp-validation-for="NameEn" class="text-danger"></span>
+            </div>
 
-                <div class="">
-                    <label asp-for="Description" class="control-label font-weight-bold">@Localizer["Съдържание на Български език"]</label>
-                    <textarea asp-for="Description" class="font-weight-bold form-control"></textarea>
-                    <span asp-validation-for="Description" class="text-danger "></span>
-                </div>
+            <div class="">
+                <label asp-for="Description" class="control-label font-weight-bold">@Localizer["Съдържание на Български език"]</label>
+                <textarea asp-for="Description" class="font-weight-bold form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger "></span>
+            </div>
 
-                <div class="">
-                    <label asp-for="DescriptionEn" class="control-label font-weight-bold">@Localizer["Съдържание на Английски език"]</label>
-                    <textarea asp-for="DescriptionEn" class="font-weight-bold form-control"></textarea>
-                    <span asp-validation-for="DescriptionEn" class="text-danger "></span>
-                </div>
+            <div class="">
+                <label asp-for="DescriptionEn" class="control-label font-weight-bold">@Localizer["Съдържание на Английски език"]</label>
+                <textarea asp-for="DescriptionEn" class="font-weight-bold form-control"></textarea>
+                <span asp-validation-for="DescriptionEn" class="text-danger "></span>
+            </div>
 
-                @*<div class="picture-box form-group">
+            @*<div class="picture-box form-group">
                     <label asp-for="Picture" class="">Upload Picture </label>
                     <input asp-for="Picture" hidden accept=".gif,.png,.jpg,.jpeg" />
                     <span asp-validation-for="Picture" class=""></span>
                 </div>*@
-                <div class="container">
-                    <label for="input-file-now" class="text-white font-weight-bold">
-                        Here you can drop your
-                        file
-                    </label>
-                    <input type="file" asp-for="Picture" id="input-file-now" class="dropify" />
-                </div>
-
-
-                <div class="button">
-                    <button class="white-button">@Localizer["Запази"]</button>
-                </div>
-            </form>
-        </section>
-
-        <form class="category-form" asp-area="" asp-controller="category" asp-action="ChangePicture" asp-route-id="@Model.Id" enctype="multipart/form-data">
-
-            <div class="container">
-                <label for="input-file-now" class="text-white font-weight-bold">
-                    Here you can drop your
-                    file
-                </label>
-                <input type="file" asp-for="Picture" id="input-file-now" class="dropify" />
-            </div>
 
             <div class="button">
                 <button class="white-button">@Localizer["Запази"]</button>
             </div>
         </form>
     </section>
+
+    <form class="category-form category-change-pic-form" asp-area="" asp-controller="category" asp-action="ChangePicture" asp-route-id="@Model.Id" enctype="multipart/form-data">
+        <p id="pic-form-title">@Localizer["Смени снимка"]</p>
+
+        @*<div class="container">
+                <label for="input-file-now" class="text-white font-weight-bold">
+                    Here you can drop your
+                    file
+                </label>
+                <input type="file" asp-for="Picture" id="input-file-now" class="dropify" />
+            </div>*@
+
+        @*<div class="dropify-wrapper">
+                <div class="dropify-message">
+                    <span class="file-icon"></span>
+                    <p>Drag and drop a file here or click</p>
+                    <p class="dropify-error">Ooops, something wrong appended.</p>
+                </div>
+                <div class="dropify-loader"></div>
+                <div class="dropify-errors-container">
+                    <ul></ul>
+                </div>
+                <input type="file" id="input-file-now" asp-for="Picture" class="dropify">
+                <button type="button" class="dropify-clear">Remove</button>
+                <div class="dropify-preview">
+                    <span class="dropify-render"></span>
+                    <div class="dropify-infos">
+                        <div class="dropify-infos-inner">
+                            <p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>
+                            <p class="dropify-infos-message">Drag and drop or click to replace</p>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+        @*<div class="dropify-wrapper has-preview">
+                <div class="dropify-message">
+                    <span class="file-icon"></span>
+                    <p>Drag and drop a file here or click</p>
+                    <p class="dropify-error">Ooops, something wrong appended.</p>
+                </div>
+                <div class="dropify-loader" style="display: none;"></div>
+                <div class="dropify-errors-container">
+                    <ul></ul>
+                </div>
+                <input type="file" id="input-file-now-custom-1" class="dropify" data-default-file="@Model.Picture.Url">
+                <button type="button" class="dropify-clear">Remove</button>
+                <div class="dropify-preview" style="display: block;">
+                    <span class="dropify-render"><img src="@Model.Picture.Url"></span>
+                    <div class="dropify-infos">
+                        <div class="dropify-infos-inner">
+                            <p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner">@Model.Picture.Url</span></p>
+                            <p class="dropify-infos-message">Drag and drop or click to replace</p>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+        <div class="dropify-wrapper has-preview" style="height: 514px;">
+            <div class="dropify-message">
+                <span class="file-icon"></span>
+                <p>Drag and drop a file here or click</p>
+                <p class="dropify-error">Ooops, something wrong appended.</p>
+            </div>
+            <div class="dropify-loader" style="display: none;"></div>
+            <div class="dropify-errors-container">
+                <ul></ul>
+            </div>
+            <input type="file" id="input-file-now-custom-3" asp-for="Picture" class="dropify" data-height="500" data-default-file="@Model.Picture.Url">
+            <button type="button" class="dropify-clear">Remove</button>
+            <div class="dropify-preview" style="display: block;">
+                <span class="dropify-render"><img src="@Model.Picture.Url" style="max-height: 500px;"></span>
+                <div class="dropify-infos">
+                    <div class="dropify-infos-inner">
+                        <p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner">@Model.Picture.Url</span></p>
+                        <p class="dropify-infos-message">Drag and drop or click to replace</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="button">
+            <button class="white-button">@Localizer["Запази"]</button>
+        </div>
+    </form>
+</section>

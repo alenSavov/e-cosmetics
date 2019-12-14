@@ -57,10 +57,6 @@
               "target": "Package",
               "version": "[1.8.0, )"
             },
-            "Elmah.Io.AspNetCore": {
-              "target": "Package",
-              "version": "[3.7.86, )"
-            },
             "Localization.AspNetCore.TagHelpers": {
               "target": "Package",
               "version": "[0.6.0, )"

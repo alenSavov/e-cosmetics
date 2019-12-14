@@ -129,6 +129,9 @@
   <data name="Промени Статия" xml:space="preserve">
     <value>Edit Article</value>
   </data>
+  <data name="Смени снимка" xml:space="preserve">
+    <value>Change Picture</value>
+  </data>
   <data name="Съдържание на Английски език" xml:space="preserve">
     <value>Content in English</value>
   </data>
