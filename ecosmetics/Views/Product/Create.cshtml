@@ -29,12 +29,12 @@
 
             <div class="">
                 <label asp-for="Description" class="">@Localizer["Описание на Български език"]</label>
-                <textarea asp-for="Description" class=""></textarea>
+                <textarea asp-for="Description" id="mytextarea" class=""></textarea>
                 <span asp-validation-for="Description" class="text-danger "></span>
             </div>
             <div class="">
                 <label asp-for="DescriptionEn" class="">@Localizer["Описание на Английски език"]</label>
-                <textarea asp-for="DescriptionEn" class=""></textarea>
+                <textarea asp-for="DescriptionEn"  class=""></textarea>
                 <span asp-validation-for="DescriptionEn" class="text-danger "></span>
             </div>
             <div>
@@ -42,20 +42,42 @@
                 <select asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.ListOfCategories,"Id","Name"))" class=""></select>
                 <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
-            <div class="picture-box form-group">
-                <label asp-for="PictFormFiles" class="">Upload Picture </label>
-                <input asp-for="PictFormFiles" hidden accept=".gif,.png,.jpg,.jpeg" multiple />
-                <span asp-validation-for="PictFormFiles" class="text-danger"></span>
-            </div>
+            @*<div class="picture-box form-group">
+                    <label asp-for="PictFormFiles" class="">Upload Picture </label>
+                    <input asp-for="PictFormFiles" hidden accept=".gif,.png,.jpg,.jpeg" multiple />
+                    <span asp-validation-for="PictFormFiles" class="text-danger"></span>
+                </div>*@
+            <div>
+                <label asp-for="PictFormFiles" class="">@Localizer["Добави снимка"]</label>
 
+                <div class="dropify-wrapper">
+                    <div class="dropify-message">
+                        <span class="file-icon"></span>
+                        <p>Drag and drop a file here or click</p>
+                        <p class="dropify-error">Ooops, something wrong appended.</p>
+                    </div>
+                    <div class="dropify-loader"></div>
+                    <div class="dropify-errors-container">
+                        <ul></ul>
+                    </div>
+                    <input type="file" asp-for="PictFormFiles" id="input-file-now" class="dropify">
+                    <button type="button" class="dropify-clear">Remove</button>
+                    <div class="dropify-preview">
+                        <span class="dropify-render"></span>
+                        <div class="dropify-infos">
+                            <div class="dropify-infos-inner">
+                                <p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>
+                                <p class="dropify-infos-message">Drag and drop or click to replace</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span asp-validation-for="PictFormFiles" class=""></span>
+            </div>
+            <div>https://html-online.com/editor/</div>
             <div class="button ">
                 <button class="white-button">Create</button>
             </div>
         </form>
     </section>
 </section>
-
-<script>
-    CKEDITOR.replace('Description');
-    CKEDITOR.replace('DescriptionEn');
-</script>

@@ -48,10 +48,31 @@
 
 
             <div>
+                <label asp-for="Picture" class="">@Localizer["Добави снимка"]</label>
 
-                <label asp-for="Picture" class="article-item">@Localizer["Добави снимка"]</label>
-                <input asp-for="Picture" class="article-item" hidden accept=".gif,.png,.jpg,.jpeg" />
-                <span asp-validation-for="Picture" class="text-danger"></span>
+                <div class="dropify-wrapper">
+                    <div class="dropify-message">
+                        <span class="file-icon"></span>
+                        <p>Drag and drop a file here or click</p>
+                        <p class="dropify-error">Ooops, something wrong appended.</p>
+                    </div>
+                    <div class="dropify-loader"></div>
+                    <div class="dropify-errors-container">
+                        <ul></ul>
+                    </div>
+                    <input type="file" asp-for="Picture" id="input-file-now" class="dropify">
+                    <button type="button" class="dropify-clear">Remove</button>
+                    <div class="dropify-preview">
+                        <span class="dropify-render"></span>
+                        <div class="dropify-infos">
+                            <div class="dropify-infos-inner">
+                                <p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>
+                                <p class="dropify-infos-message">Drag and drop or click to replace</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span asp-validation-for="Picture" class=""></span>
             </div>
 
             <button class="white-button">@Localizer["Създай"]</button>
@@ -64,6 +85,7 @@
 
 
 <script>
-    CKEDITOR.replace('content');
-    CKEDITOR.replace('contentEn');
+    tinymce.init({
+        selector: '#mytextarea'
+    });
 </script>

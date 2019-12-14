@@ -23,6 +23,7 @@
 
         @foreach (var category in Model.Categories)
         {
+            
             <a class="category-card" asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id">
                 @if (currentCulture.ToString() == GlobalConstants.cultureEn)
                 {
@@ -44,7 +45,6 @@
                         </div>
                     }
                 }
-
                 @if (this.User.Identity.IsAuthenticated)
                 {
                     @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
@@ -54,6 +54,7 @@
 
                     }
                 }
+
             </a>
         }
     </div>
