@@ -50,6 +50,8 @@ namespace ecosmetics.Infrastructure.AutoMapper
 
             CreateMap<Article, EditArticleInputModel>().ReverseMap();
 
+            CreateMap<BasePictureViewModel, CategoryPicture>().ReverseMap();
+
         }
     }
 }

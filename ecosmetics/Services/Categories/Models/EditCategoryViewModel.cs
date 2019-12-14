@@ -17,7 +17,6 @@ namespace ecosmetics.Services.Categories.Models
         public string DescriptionEn { get; set; }
 
         [Required]
-
         public BasePictureViewModel Picture { get; set; }
     }
 }

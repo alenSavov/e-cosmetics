@@ -4,10 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using ecosmetics.Data;
+using ecosmetics.Models;
 using ecosmetics.Services.Categories.Models;
 using ecosmetics.Services.Interfaces;
+using ecosmetics.Services.Pictures.Models;
 using ecosmetics.Services.Products.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -137,7 +140,7 @@ namespace ecosmetics.Controllers
 
         public IActionResult GetById(string id)
         {
-          
+
             if (id == null)
             {
                 return this.View();
@@ -185,6 +188,52 @@ namespace ecosmetics.Controllers
             return RedirectToAction("GetAll");
         }
 
+        [HttpPost]
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
+        public async Task<IActionResult> ChangePicture(EditCategoryInputModel model)
+        {
+            var currentPicture = _pictureService.GetCategoryPicturesById(model.Id);
+            var entityType = typeof(Category);
+            var categoryPictureId = string.Format(GlobalConstants.CategoryPicture, model.Name);
 
+            //Delete the old picture from cloudinary
+            _pictureService.DeletePicture(entityType, currentPicture.Id);
+
+            //Delete old picture from DB
+            DeletePictureFromDB(currentPicture);
+
+
+            //Add new picture to Cloudinary
+            var pictures = new List<IFormFile>();
+            pictures.Add(model.Picture);
+            await this._pictureService.UploadPicturesAsync(pictures, entityType, categoryPictureId, model.Id);
+
+
+            return Redirect("/");
+        }
+
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
+        private void DeletePictureFromDB(BasePictureViewModel currentPicture)
+        {
+            var picture = this._dbContext
+                           .CategoryPictures
+                           .FirstOrDefault(p => p.Id == currentPicture.Id);
+
+            try
+            {
+                this._dbContext
+               .CategoryPictures
+               .Remove(picture);
+
+                this._dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+        }
     }
 }

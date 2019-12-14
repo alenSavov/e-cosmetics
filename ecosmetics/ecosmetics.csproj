@@ -5,6 +5,10 @@
     <UserSecretsId>aspnet-ecosmetics-98F84D5D-E764-4BF2-ACDA-32724E6878C8</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />

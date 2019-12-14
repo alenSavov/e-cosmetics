@@ -21,6 +21,21 @@
     <meta name="theme-color" content="#ffffff">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154344790-1"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154620191-1"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-154620191-1');
+    </script>
+
+
+
     <title>@ViewData["Title"]</title>
 
     <environment include="Development">
@@ -34,11 +49,11 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
 
-
+    <link rel="stylesheet" href="~/css/dropify.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-    <script src="https://cdn.ckeditor.com/4.13.0/full-all/ckeditor.js"></script>
+
 
 
 </head>
@@ -107,19 +122,7 @@
                     <li><a asp-controller="Home" asp-action="contacts">@Localizer["КОНТАКТИ"]</a></li>
                     <li><a asp-controller="Category" asp-action="GetAll" id="series">@Localizer["СЕРИИ"]</a></li>
                     <li><a asp-controller="Article" asp-action="GetAll">@Localizer["БЛОГ"]</a></li>
-                    @*@foreach (var category in ViewBag.ListOfCategories)
-                        {
-                            <li><a asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id">@category.Name</a></li>
-                        }*@
-                    @*<li>
-                            <select asp-items="@(new SelectList(ViewBag.ListOfCategories,"Id","Name"))" class=""></select>
-                        </li>*@
-
                 </ul>
-                @*<div>
-                        <select  asp-items="@(new SelectList(ViewBag.ListOfCategories,"Id","Name"))" class=""></select>
-
-                    </div>*@
 
             </section>
         </section>
@@ -130,13 +133,7 @@
     <main role="main">
         @*<partial name="_CookieConsentPartial" />*@
         @RenderBody()
-        <div class="row">
-            <div class="col-md-12">
-                <div id="top-btn">
-                    <i class="fa fa-angle-up"></i>
-                </div>
-            </div>
-        </div>
+
     </main>
 
     <footer class="footer">
@@ -155,6 +152,13 @@
             @*<div class="col-sm-6 text-right">
                     @await Html.PartialAsync("_SelectLanguagePartial")
                 </div>*@
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="top-btn">
+                    <i class="fa fa-angle-up"></i>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -176,12 +180,17 @@
                 integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
         </script>
     </environment>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/dropify.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
     <script src="https://kit.fontawesome.com/23be4a20c7.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/4.13.0/full-all/ckeditor.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
     @RenderSection("Scripts", required: false)
 
-
+    <script>
+        $('.dropify').dropify();
+    </script>>
 </body>
 </html>

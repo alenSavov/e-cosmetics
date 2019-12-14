@@ -11,27 +11,27 @@
     }
     else
     {
-         ViewData["Title"] = @Model.Title;
+        ViewData["Title"] = @Model.Title;
     }
 
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<section class="articles-details-wrapper">
-    <div class="main-nav">
 
-        @{
+<div class="main-nav">
 
-            if (currentCulture.ToString() == GlobalConstants.cultureEn)
-            {
-                <h1>@Model.TitleEn</h1>
-            }
-            else
-            {
-                <h1>@Model.Title</h1>
-            }
+    @{
+
+        if (currentCulture.ToString() == GlobalConstants.cultureEn)
+        {
+            <h1>@Model.TitleEn</h1>
         }
-        
+        else
+        {
+            <h1>@Model.Title</h1>
+        }
+    }
+
     <ul>
         <li><a asp-controller="Home" asp-action="index">@Localizer["Начало"]</a></li>
         <li><a asp-controller="Article" asp-action="GetAll">@Localizer["Статии"]</a></li>
@@ -44,30 +44,26 @@
             <li>@Model.Title</li>
         }
     </ul>
+</div>
+
+<section class="a-details-container">
+        <img class="a-img" src="@Model.Picture.Url" />
+    <div class="a-content">
+
+
+        @if (currentCulture.ToString() == GlobalConstants.cultureEn)
+        {
+            <div class="a-text-wrapper">
+                <p class="a-details-text">@Html.Raw(Model.ContentEn)</p>
+            </div>
+        }
+        else
+        {
+            <div class="a-text-wrapper">
+                <p class="a-details-text">@Html.Raw(Model.Content)</p>
+            </div>
+        }
+
     </div>
-
-    <section class="article-details-container">
-        <div class="article-content">
-        
-                <img class="article-img" src="@Model.Picture.Url" />
-             
-                    @if (currentCulture.ToString() == GlobalConstants.cultureEn)
-                    {
-                        <div class="article-text-wrapper">
-                            <p class="article-details-text">@Html.Raw(Model.ContentEn)</p>
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="article-text-wrapper">
-                            <p class="article-details-text">@Html.Raw(Model.Content)</p>
-                        </div>
-                    }
-                }        
-        </div>
-    </section>
-
-
-
 </section>
 

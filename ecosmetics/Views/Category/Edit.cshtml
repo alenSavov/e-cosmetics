@@ -7,41 +7,65 @@
     ViewData["Title"] = "Edit";
 }
 
-<section class="edit-category-wrapper">
-    <section class="category-container">
-        <h2>@Localizer["Промени Категория"]</h2>
+    <section class="edit-category-wrapper">
+        <section class="category-container">
+            <h2>@Localizer["Промени Категория"]</h2>
 
-        <form class="category-form" asp-area="" asp-controller="category" asp-action="EditAsync" asp-route-id="@Model.Id" enctype="multipart/form-data">
-            <div asp-validation-summary="All" class="text-danger "></div>
+            <form class="category-form" asp-area="" asp-controller="category" asp-action="EditAsync" asp-route-id="@Model.Id" enctype="multipart/form-data">
+                <div asp-validation-summary="All" class="text-danger "></div>
 
-            <div>
-                <label asp-for="Name" class="control-label font-weight-bold">@Localizer["Заглавие на Български език"]</label>
-                <input asp-for="Name" class="font-weight-bold form-control">
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
+                <div>
+                    <label asp-for="Name" class="control-label font-weight-bold">@Localizer["Заглавие на Български език"]</label>
+                    <input asp-for="Name" class="font-weight-bold form-control">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
 
-            <div>
-                <label asp-for="NameEn" class="control-label font-weight-bold">@Localizer["Заглавие на Английски език"]</label>
-                <input asp-for="NameEn" class="font-weight-bold form-control">
-                <span asp-validation-for="NameEn" class="text-danger"></span>
-            </div>
+                <div>
+                    <label asp-for="NameEn" class="control-label font-weight-bold">@Localizer["Заглавие на Английски език"]</label>
+                    <input asp-for="NameEn" class="font-weight-bold form-control">
+                    <span asp-validation-for="NameEn" class="text-danger"></span>
+                </div>
 
-            <div class="">
-                <label asp-for="Description" class="control-label font-weight-bold">@Localizer["Съдържание на Български език"]</label>
-                <textarea asp-for="Description" class="font-weight-bold form-control"></textarea>
-                <span asp-validation-for="Description" class="text-danger "></span>
-            </div>
+                <div class="">
+                    <label asp-for="Description" class="control-label font-weight-bold">@Localizer["Съдържание на Български език"]</label>
+                    <textarea asp-for="Description" class="font-weight-bold form-control"></textarea>
+                    <span asp-validation-for="Description" class="text-danger "></span>
+                </div>
 
-            <div class="">
-                <label asp-for="DescriptionEn" class="control-label font-weight-bold">@Localizer["Съдържание на Английски език"]</label>
-                <textarea asp-for="DescriptionEn" class="font-weight-bold form-control"></textarea>
-                <span asp-validation-for="DescriptionEn" class="text-danger "></span>
-            </div>
+                <div class="">
+                    <label asp-for="DescriptionEn" class="control-label font-weight-bold">@Localizer["Съдържание на Английски език"]</label>
+                    <textarea asp-for="DescriptionEn" class="font-weight-bold form-control"></textarea>
+                    <span asp-validation-for="DescriptionEn" class="text-danger "></span>
+                </div>
 
-            <div class="picture-box form-group">
-                <label asp-for="Picture" class="">Upload Picture </label>
-                <input asp-for="Picture" hidden accept=".gif,.png,.jpg,.jpeg" />
-                <span asp-validation-for="Picture" class=""></span>
+                @*<div class="picture-box form-group">
+                    <label asp-for="Picture" class="">Upload Picture </label>
+                    <input asp-for="Picture" hidden accept=".gif,.png,.jpg,.jpeg" />
+                    <span asp-validation-for="Picture" class=""></span>
+                </div>*@
+                <div class="container">
+                    <label for="input-file-now" class="text-white font-weight-bold">
+                        Here you can drop your
+                        file
+                    </label>
+                    <input type="file" asp-for="Picture" id="input-file-now" class="dropify" />
+                </div>
+
+
+                <div class="button">
+                    <button class="white-button">@Localizer["Запази"]</button>
+                </div>
+            </form>
+        </section>
+
+        <form class="category-form" asp-area="" asp-controller="category" asp-action="ChangePicture" asp-route-id="@Model.Id" enctype="multipart/form-data">
+
+            <div class="container">
+                <label for="input-file-now" class="text-white font-weight-bold">
+                    Here you can drop your
+                    file
+                </label>
+                <input type="file" asp-for="Picture" id="input-file-now" class="dropify" />
             </div>
 
             <div class="button">
@@ -49,4 +73,3 @@
             </div>
         </form>
     </section>
-</section>
