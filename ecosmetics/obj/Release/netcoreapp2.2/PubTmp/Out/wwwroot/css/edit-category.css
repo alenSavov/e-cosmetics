@@ -60,3 +60,28 @@
             .category-container form div.button {
                 justify-content: center;
             }
+
+
+.category-change-pic-form {
+    display: flex;
+    flex: 0 0 85%;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(25, 25, 25);
+    padding: 2em 2em;
+}
+
+    .category-change-pic-form div {
+        margin-top: 1em 0;
+        flex: 0 0 100%;
+        flex-wrap: wrap;
+    }
+
+#pic-form-title {
+   
+    color: white;
+    font-size: 3.6em;
+    font-family: "Cormorant Garamond";
+    flex: 0 0 100%;
+    text-align: center;
+}

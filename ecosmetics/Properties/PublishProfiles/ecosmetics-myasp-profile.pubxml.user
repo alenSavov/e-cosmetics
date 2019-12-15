@@ -14,7 +14,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/26/2019 21:38:56</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>12/10/2019 21:54:11</publishTime>
+      <publishTime>12/14/2019 22:00:41</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>08/12/2019 12:42:04</publishTime>
@@ -29,22 +29,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2019 19:58:14</publishTime>
     </File>
     <File Include="ecosmetics.deps.json">
-      <publishTime>12/11/2019 23:12:01</publishTime>
+      <publishTime>12/14/2019 22:00:57</publishTime>
     </File>
     <File Include="ecosmetics.dll">
-      <publishTime>12/11/2019 23:02:43</publishTime>
+      <publishTime>12/14/2019 21:42:31</publishTime>
     </File>
     <File Include="ecosmetics.pdb">
-      <publishTime>12/11/2019 23:02:43</publishTime>
+      <publishTime>12/14/2019 21:42:31</publishTime>
     </File>
     <File Include="ecosmetics.runtimeconfig.json">
-      <publishTime>12/11/2019 23:12:01</publishTime>
+      <publishTime>12/14/2019 22:00:58</publishTime>
     </File>
     <File Include="ecosmetics.Views.dll">
-      <publishTime>12/11/2019 23:02:45</publishTime>
+      <publishTime>12/14/2019 22:00:01</publishTime>
     </File>
     <File Include="ecosmetics.Views.pdb">
-      <publishTime>12/11/2019 23:02:45</publishTime>
+      <publishTime>12/14/2019 22:00:01</publishTime>
     </File>
     <File Include="Elmah.Io.AspNetCore.dll">
       <publishTime>08/29/2019 17:22:28</publishTime>
@@ -53,10 +53,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/12/2019 11:56:14</publishTime>
     </File>
     <File Include="en-US/ecosmetics.resources.dll">
-      <publishTime>12/11/2019 23:02:43</publishTime>
+      <publishTime>12/14/2019 21:42:31</publishTime>
     </File>
     <File Include="fr/ecosmetics.resources.dll">
-      <publishTime>12/11/2019 23:02:43</publishTime>
+      <publishTime>12/14/2019 21:42:31</publishTime>
     </File>
     <File Include="libman.json">
       <publishTime>11/26/2019 21:38:56</publishTime>
@@ -113,58 +113,67 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/14/2019 22:22:42</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>12/11/2019 23:12:01</publishTime>
+      <publishTime>12/14/2019 22:00:58</publishTime>
     </File>
     <File Include="wwwroot/css/about.css">
       <publishTime>11/26/2019 21:38:57</publishTime>
     </File>
     <File Include="wwwroot/css/all-categories.css">
-      <publishTime>12/09/2019 21:28:04</publishTime>
+      <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/css/article.css">
-      <publishTime>12/11/2019 22:52:55</publishTime>
+      <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/css/buttons.css">
-      <publishTime>12/06/2019 21:49:42</publishTime>
+      <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/css/contacts.css">
       <publishTime>11/26/2019 21:38:57</publishTime>
     </File>
     <File Include="wwwroot/css/create-article.css">
-      <publishTime>12/06/2019 21:05:59</publishTime>
+      <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/css/create-category.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/css/create-product.css">
       <publishTime>11/26/2019 21:38:57</publishTime>
+    </File>
+    <File Include="wwwroot/css/demo.css">
+      <publishTime>12/14/2019 20:39:14</publishTime>
+    </File>
+    <File Include="wwwroot/css/dropify.css">
+      <publishTime>12/14/2019 20:39:14</publishTime>
+    </File>
+    <File Include="wwwroot/css/dropify.min.css">
+      <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/css/edit-article.css">
       <publishTime>11/26/2019 21:38:57</publishTime>
     </File>
     <File Include="wwwroot/css/edit-category.css">
-      <publishTime>12/06/2019 21:35:36</publishTime>
+      <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/css/footer.css">
       <publishTime>11/26/2019 21:38:57</publishTime>
     </File>
     <File Include="wwwroot/css/header.css">
-      <publishTime>12/02/2019 20:33:52</publishTime>
+      <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/css/login.css">
       <publishTime>11/26/2019 21:38:57</publishTime>
     </File>
     <File Include="wwwroot/css/main.css">
-      <publishTime>12/07/2019 12:08:12</publishTime>
+      <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/css/media-queries.css">
-      <publishTime>12/11/2019 22:54:37</publishTime>
+      <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/css/navigation-container.css">
       <publishTime>11/26/2019 21:38:57</publishTime>
     </File>
     <File Include="wwwroot/css/product-details.css">
-      <publishTime>12/06/2019 22:03:10</publishTime>
+      <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/css/products.css">
       <publishTime>11/26/2019 21:38:57</publishTime>
@@ -173,7 +182,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/26/2019 21:38:57</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
-      <publishTime>12/07/2019 10:07:44</publishTime>
+      <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/css/typography.css">
       <publishTime>11/26/2019 21:38:57</publishTime>
@@ -183,6 +192,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="wwwroot/favicon.ico">
       <publishTime>11/26/2019 21:38:57</publishTime>
+    </File>
+    <File Include="wwwroot/fonts/dropify.eot">
+      <publishTime>12/14/2019 20:39:14</publishTime>
+    </File>
+    <File Include="wwwroot/fonts/dropify.svg">
+      <publishTime>12/14/2019 20:39:14</publishTime>
+    </File>
+    <File Include="wwwroot/fonts/dropify.ttf">
+      <publishTime>12/14/2019 20:39:14</publishTime>
+    </File>
+    <File Include="wwwroot/fonts/dropify.woff">
+      <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/img/0b8656d3-a2be-453f-abfb-cd0459505a93_XT203583.jpg">
       <publishTime>11/26/2019 21:38:57</publishTime>
@@ -289,8 +310,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="wwwroot/img/unsplash-6.jpg">
       <publishTime>11/26/2019 21:38:57</publishTime>
     </File>
+    <File Include="wwwroot/js/dropify.min.js">
+      <publishTime>12/14/2019 20:39:14</publishTime>
+    </File>
     <File Include="wwwroot/js/site.js">
-      <publishTime>12/07/2019 12:08:01</publishTime>
+      <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css">
       <publishTime>11/26/2019 21:38:57</publishTime>

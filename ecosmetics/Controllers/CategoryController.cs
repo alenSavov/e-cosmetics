@@ -192,6 +192,11 @@ namespace ecosmetics.Controllers
         [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
         public async Task<IActionResult> ChangePicture(EditCategoryInputModel model)
         {
+            if (model.Id == null || model.Picture == null)
+            {
+                return this.RedirectToAction("Edit", new { id = model.Id });
+            }
+
             var currentPicture = _pictureService.GetCategoryPicturesById(model.Id);
             var entityType = typeof(Category);
             var categoryPictureId = string.Format(GlobalConstants.CategoryPicture, model.Name);
