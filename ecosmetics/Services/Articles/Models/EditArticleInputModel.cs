@@ -1,4 +1,5 @@
 ﻿using ecosmetics.Services.Pictures.Models;
+using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
 namespace ecosmetics.Services.Articles.Models
@@ -18,8 +19,9 @@ namespace ecosmetics.Services.Articles.Models
 
         public string ContentEn { get; set; }
 
-              
-        public BasePictureViewModel Picture { get; set; }
+
+        [Required(ErrorMessage = "Add Image")]
+        public IFormFile Picture { get; set; }
     }
 }
 

@@ -1,8 +1,15 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using AutoMapper;
+using ecosmetics.Data;
+using ecosmetics.Models;
 using ecosmetics.Services.Articles.Models;
 using ecosmetics.Services.Interfaces;
+using ecosmetics.Services.Pictures.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,14 +20,17 @@ namespace ecosmetics.Controllers
         private readonly IArticleService _articleService;
         private readonly IPictureService _pictureService;
         private readonly IMapper _mapper;
+        private readonly ApplicationDbContext _dbContext;
 
         public ArticleController(IArticleService articleService,
             IPictureService pictureService,
-            IMapper mapper)
+            IMapper mapper,
+            ApplicationDbContext dbContext)
         {
             this._articleService = articleService;
             this._pictureService = pictureService;
             this._mapper = mapper;
+            this._dbContext = dbContext;
         }
 
         [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
@@ -154,6 +164,59 @@ namespace ecosmetics.Controllers
 
 
             return this.View("Details", articleView);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
+        public async Task<IActionResult> ChangePicture(EditArticleInputModel model)
+        {
+            if (model.Id == null || model.Picture == null)
+            {
+                return this.RedirectToAction("Edit", new { id = model.Id });
+            }
+
+            var currentPicture = _pictureService.GetArticlePicturesById(model.Id);
+            var entityType = typeof(Article);
+            var articlePictureId = string.Format(GlobalConstants.ArticlePicture, model.Title);
+
+            //Delete the old picture from cloudinary
+            _pictureService.DeletePicture(entityType, currentPicture.Id);
+
+            //Delete old picture from DB
+            DeletePictureFromDB(currentPicture);
+
+
+            //Add new picture to Cloudinary
+            var pictures = new List<IFormFile>();
+            pictures.Add(model.Picture);
+            await this._pictureService.UploadPicturesAsync(pictures, entityType, articlePictureId, model.Id);
+
+
+            return Redirect("/");
+        }
+
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
+        private void DeletePictureFromDB(BasePictureViewModel currentPicture)
+        {
+            var picture = this._dbContext
+                           .ArticlePictures
+                           .FirstOrDefault(p => p.Id == currentPicture.Id);
+
+            try
+            {
+                this._dbContext
+               .ArticlePictures
+               .Remove(picture);
+
+                this._dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
         }
     }
 }

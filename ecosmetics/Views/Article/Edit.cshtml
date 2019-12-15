@@ -43,10 +43,37 @@
                 <button class="white-button">@Localizer["Запази"]</button>
             </div>
         </form>
+
+        <form class="product-form product-change-pic-form" id="product-change-picture-form" asp-area="" asp-controller="article" asp-action="ChangePicture" asp-route-id="@Model.Id"  enctype="multipart/form-data">
+            <p id="pic-form-title">@Localizer["Смени снимка"]</p>
+
+            <div class="dropify-wrapper">
+                <div class="dropify-message">
+                    <span class="file-icon"></span>
+                    <p>Drag and drop a file here or click</p>
+                    <p class="dropify-error">Ooops, something wrong appended.</p>
+                </div>
+                <div class="dropify-loader"></div>
+                <div class="dropify-errors-container">
+                    <ul></ul>
+                </div>
+                <input type="file" asp-for="Picture" id="input-file-now" class="dropify">
+                <button type="button" class="dropify-clear">Remove</button>
+                <div class="dropify-preview">
+                    <span class="dropify-render"></span>
+                    <div class="dropify-infos">
+                        <div class="dropify-infos-inner">
+                            <p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>
+                            <p class="dropify-infos-message">Drag and drop or click to replace</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="button">
+                <button class="white-button">@Localizer["Запази"]</button>
+            </div>
+        </form>
     </section>
 </section>
-
-<script>
-    CKEDITOR.replace('Content');
-    CKEDITOR.replace('ContentEn');
-</script>
