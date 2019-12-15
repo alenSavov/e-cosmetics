@@ -23,20 +23,35 @@
 
         @foreach (var category in Model.Categories)
         {
-            
-            <a class="category-card" asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id">
+
+            <div class="category-card" asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id">
                 @if (currentCulture.ToString() == GlobalConstants.cultureEn)
                 {
                     <p id="category-name">@category.NameEn</p>
-                    
-                    <img src="@category.Picture.Url" />
-                    <p id="category-description">@category.DescriptionEn</p>
+
+                    <a asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id"><img src="@category.Picture.Url"/></a>
+                    @if (@category.Description != null)
+                    {
+                        <div class="description-box">
+                            <p id="category-description">@category.DescriptionEn</p>
+                        </div>
+                    }
+
+                    @if (this.User.Identity.IsAuthenticated)
+                    {
+                        @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
+                        {
+                            <a class="white-button bg-danger" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
+                            <a class="white-button" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
+
+                        }
+                    }
                 }
                 else
                 {
                     <p id="category-name">@category.Name</p>
 
-                    <img src="@category.Picture.Url" />
+                    <a asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id"><img src="@category.Picture.Url" /></a>
 
                     @if (@category.Description != null)
                     {
@@ -44,18 +59,18 @@
                             <p id="category-description">@category.Description</p>
                         </div>
                     }
-                }
-                @if (this.User.Identity.IsAuthenticated)
-                {
-                    @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
+                    @if (this.User.Identity.IsAuthenticated)
                     {
-                        <a class="white-button bg-danger" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
-                        <a class="white-button" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
+                        @if (this.User.IsInRole(GlobalConstants.ADMINISTRATOR_ROLE))
+                        {
+                            <a class="white-button bg-danger" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
+                            <a class="white-button" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
 
+                        }
                     }
                 }
 
-            </a>
+            </div>
         }
     </div>
 </div>
