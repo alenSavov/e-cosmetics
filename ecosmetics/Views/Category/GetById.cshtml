@@ -28,13 +28,13 @@
                     <li>
                         <a class="product" asp-controller="Product" asp-action="GetById" asp-route-id="@product.Id">
 
-                            <cache expires-after="@TimeSpan.FromMinutes(60)">
+                            @*<cache expires-after="@TimeSpan.FromMinutes(60)">*@
                                 @foreach (var picture in product.Pictures.Take(1))
                                 {
                                     @*<img class="product-picture" src="@picture.Url" alt="Product Picture" />*@
                                     <img style="background-image:url(@picture.Url)" />
                                 }
-                            </cache>
+                            @*</cache>*@
 
                             @{
                                 var currentCulture = ViewData["Culture"];

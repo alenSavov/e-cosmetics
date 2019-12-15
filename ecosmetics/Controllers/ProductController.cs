@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using ecosmetics.Data;
+using ecosmetics.Models;
 using ecosmetics.Services.Interfaces;
+using ecosmetics.Services.Pictures.Models;
 using ecosmetics.Services.Products.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,18 +21,20 @@ namespace ecosmetics.Controllers
         private readonly ICategoryService _categoryService;
         private readonly IPictureService _pictureService;
         private readonly IMapper _mapper;
+        private readonly ApplicationDbContext _dbContext;
 
         public ProductController(
                                  IProductService productService,
                                  ICategoryService categoryService,
                                   IPictureService pictureService,
-                                  IMapper mapper)
+                                  IMapper mapper,
+                                  ApplicationDbContext dbContext)
         {
             this._productService = productService;
             this._categoryService = categoryService;
             this._pictureService = pictureService;
             this._mapper = mapper;
-
+            this._dbContext = dbContext;
         }
 
         public IActionResult Index()
@@ -163,6 +169,59 @@ namespace ecosmetics.Controllers
             product.Pictures = pictures;
 
             return this.View("Details", product);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
+        public async Task<IActionResult> ChangePicture(EditProductViewModel model)
+        {
+            if (model.Id == null || model.Pictures == null)
+            {
+                return this.RedirectToAction("Edit", new { id = model.Id });
+            }
+
+            var currentPicture = _pictureService.GetProductPicturesById(model.Id);
+            var entityType = typeof(Product);
+            var productPictureId = string.Format(GlobalConstants.ProductPicture, model.Name);
+
+            //Delete the old picture from cloudinary
+            _pictureService.DeletePicture(entityType, currentPicture.Id);
+
+            //Delete old picture from DB
+            DeletePictureFromDB(currentPicture);
+
+
+            //Add new picture to Cloudinary
+            var pictures = new List<IFormFile>();
+            pictures.Add(model.Pictures.First());
+            await this._pictureService.UploadPicturesAsync(pictures, entityType, productPictureId, model.Id);
+
+
+            return Redirect("/");
+        }
+
+        [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
+        private void DeletePictureFromDB(ProductPictureViewModel currentPicture)
+        {
+            var picture = this._dbContext
+                           .ProductPictures
+                           .FirstOrDefault(p => p.Id == currentPicture.Id);
+
+            try
+            {
+                this._dbContext
+               .ProductPictures
+               .Remove(picture);
+
+                this._dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
         }
     }
 }

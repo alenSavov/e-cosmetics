@@ -1,4 +1,5 @@
 ﻿using ecosmetics.Services.Pictures.Models;
+using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -19,6 +20,8 @@ namespace ecosmetics.Services.Products.Models
         public string DescriptionEn { get; set; }
 
   
-        public ICollection<ProductPictureViewModel> Pictures { get; set; }
+        //public ICollection<ProductPictureViewModel> Pictures { get; set; }
+
+        public ICollection<IFormFile> Pictures { get; set; }
     }
 }

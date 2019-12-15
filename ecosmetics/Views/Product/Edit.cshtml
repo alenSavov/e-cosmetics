@@ -12,7 +12,7 @@
     <section class="product-container">
         <h2>@Localizer["Промени продукт"]</h2>
 
-        <form asp-area="" asp-controller="Product" asp-action="EditAsync" asp-route-id="@Model.Id" method="post" class="contact-form" enctype="multipart/form-data">
+        <form asp-area="" asp-controller="Product" asp-action="EditAsync" asp-route-id="@Model.Id" method="post" class="" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger "></div>
 
             <div>
@@ -39,7 +39,39 @@
                 <span asp-validation-for="DescriptionEn" class="text-danger "></span>
             </div>
 
-            <input class="form-control" type="file" name="Pictures" accept=".gif,.png,.jpg,.jpeg" accept="image/*" multiple />
+        
+
+            <div class="button">
+                <button class="white-button">@Localizer["Запази"]</button>
+            </div>
+        </form>
+
+        <form class="product-form product-change-pic-form" id="product-change-picture-form" asp-area="" asp-controller="product" asp-action="ChangePicture" asp-route-id="@Model.Id" enctype="multipart/form-data">
+            <p id="pic-form-title">@Localizer["Смени снимка"]</p>
+
+            <div class="dropify-wrapper">
+                <div class="dropify-message">
+                    <span class="file-icon"></span>
+                    <p>Drag and drop a file here or click</p>
+                    <p class="dropify-error">Ooops, something wrong appended.</p>
+                </div>
+                <div class="dropify-loader"></div>
+                <div class="dropify-errors-container">
+                    <ul></ul>
+                </div>
+                <input type="file" asp-for="Pictures" id="input-file-now" class="dropify">
+                <button type="button" class="dropify-clear">Remove</button>
+                <div class="dropify-preview">
+                    <span class="dropify-render"></span>
+                    <div class="dropify-infos">
+                        <div class="dropify-infos-inner">
+                            <p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>
+                            <p class="dropify-infos-message">Drag and drop or click to replace</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="button">
                 <button class="white-button">@Localizer["Запази"]</button>
