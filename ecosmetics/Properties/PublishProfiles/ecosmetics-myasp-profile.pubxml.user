@@ -14,7 +14,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/26/2019 21:38:56</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>12/14/2019 22:00:41</publishTime>
+      <publishTime>12/15/2019 12:41:59</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>08/12/2019 12:42:04</publishTime>
@@ -29,22 +29,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2019 19:58:14</publishTime>
     </File>
     <File Include="ecosmetics.deps.json">
-      <publishTime>12/14/2019 22:00:57</publishTime>
+      <publishTime>12/15/2019 12:43:51</publishTime>
     </File>
     <File Include="ecosmetics.dll">
-      <publishTime>12/14/2019 21:42:31</publishTime>
+      <publishTime>12/15/2019 12:43:36</publishTime>
     </File>
     <File Include="ecosmetics.pdb">
-      <publishTime>12/14/2019 21:42:31</publishTime>
+      <publishTime>12/15/2019 12:43:36</publishTime>
     </File>
     <File Include="ecosmetics.runtimeconfig.json">
-      <publishTime>12/14/2019 22:00:58</publishTime>
+      <publishTime>12/15/2019 12:43:51</publishTime>
     </File>
     <File Include="ecosmetics.Views.dll">
-      <publishTime>12/14/2019 22:00:01</publishTime>
+      <publishTime>12/15/2019 12:43:37</publishTime>
     </File>
     <File Include="ecosmetics.Views.pdb">
-      <publishTime>12/14/2019 22:00:01</publishTime>
+      <publishTime>12/15/2019 12:43:37</publishTime>
     </File>
     <File Include="Elmah.Io.AspNetCore.dll">
       <publishTime>08/29/2019 17:22:28</publishTime>
@@ -53,10 +53,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/12/2019 11:56:14</publishTime>
     </File>
     <File Include="en-US/ecosmetics.resources.dll">
-      <publishTime>12/14/2019 21:42:31</publishTime>
+      <publishTime>12/15/2019 12:43:36</publishTime>
     </File>
     <File Include="fr/ecosmetics.resources.dll">
-      <publishTime>12/14/2019 21:42:31</publishTime>
+      <publishTime>12/15/2019 12:43:36</publishTime>
     </File>
     <File Include="libman.json">
       <publishTime>11/26/2019 21:38:56</publishTime>
@@ -113,7 +113,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/14/2019 22:22:42</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>12/14/2019 22:00:58</publishTime>
+      <publishTime>12/15/2019 12:43:51</publishTime>
     </File>
     <File Include="wwwroot/css/about.css">
       <publishTime>11/26/2019 21:38:57</publishTime>
@@ -122,7 +122,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/css/article.css">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>12/15/2019 11:57:42</publishTime>
     </File>
     <File Include="wwwroot/css/buttons.css">
       <publishTime>12/14/2019 20:39:14</publishTime>
@@ -176,7 +176,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/14/2019 20:39:14</publishTime>
     </File>
     <File Include="wwwroot/css/products.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>12/15/2019 11:22:01</publishTime>
     </File>
     <File Include="wwwroot/css/register.css">
       <publishTime>11/26/2019 21:38:57</publishTime>
