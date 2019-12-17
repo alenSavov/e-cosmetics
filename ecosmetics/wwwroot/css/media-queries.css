@@ -738,6 +738,17 @@
             font-size: 0.9em;
         }
 
+        .articles-container .article .article-creator {
+            padding: 0 1em;
+        }
+
+        .a-text-wrapper {
+            margin-top: 2em;
+        }
+
+        .a-content {
+            padding: 1em;
+        }
 
         /*Product Details */
         .product-details-content:before {
