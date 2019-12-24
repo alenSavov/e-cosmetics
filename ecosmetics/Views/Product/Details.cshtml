@@ -52,32 +52,25 @@
 
         <div class="product-details-content">
             <div class="details-content-box">
-                <cache expires-after="@TimeSpan.FromMinutes(20)">
-                    @foreach (var picture in Model.Pictures)
-                    {
-                        <img class="product-image-box" src="@picture.Url" alt="Product Picture" />
-                    }
-                </cache>
+                @*<cache expires-after="@TimeSpan.FromMinutes(20)">*@
+                @foreach (var picture in Model.Pictures)
+                {
+                    <img class="product-image-box" src="@picture.Url" alt="Product Picture" />
+                }
+                @*</cache>*@
             </div>
             @{
                 if (currentCulture.ToString() == GlobalConstants.cultureEn)
                 {
-                    <div class="product-description " id="product-description">
-
-                        <p class="" id="text-styles-description">@Localizer[Model.DescriptionEn]</p>
-                    </div>
+                    <div class="product-description">@Html.Raw(Model.DescriptionEn)</div>
                 }
                 else
                 {
-                    <div class="product-description" id="product-description">
-                        <p class="" id="text-styles-description">@Localizer[Model.Description]</p>
-                    </div>
+                    <div class="product-description">@Html.Raw(Model.Description)</div>
                 }
             }
-
         </div>
     </section>
-
 
 </section>
 

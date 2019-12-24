@@ -129,10 +129,10 @@ namespace ecosmetics.Controllers
         [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
         public async Task<IActionResult> EditAsync(EditArticleInputModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return View();
+            //}
 
             var success = await this._articleService
                 .EditAsync(model);

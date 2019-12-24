@@ -42,11 +42,7 @@
                 <select asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.ListOfCategories,"Id","Name"))" class=""></select>
                 <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
-            @*<div class="picture-box form-group">
-                    <label asp-for="PictFormFiles" class="">Upload Picture </label>
-                    <input asp-for="PictFormFiles" hidden accept=".gif,.png,.jpg,.jpeg" multiple />
-                    <span asp-validation-for="PictFormFiles" class="text-danger"></span>
-                </div>*@
+         
             <div>
                 <label asp-for="PictFormFiles" class="">@Localizer["Добави снимка"]</label>
 
@@ -74,7 +70,7 @@
                 </div>
                 <span asp-validation-for="PictFormFiles" class=""></span>
             </div>
-            <div>https://html-online.com/editor/</div>
+            <div><a href="https://htmleditor.io/">HTML Editor(wysiwyg)</a></div>
             <div class="button ">
                 <button class="white-button">Create</button>
             </div>
