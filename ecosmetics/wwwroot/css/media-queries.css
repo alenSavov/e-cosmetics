@@ -123,11 +123,7 @@
     }
 }
 
-@media only screen and (orientation: landscape) {
-    .nav-links > ul li {
-        font-size: 18px!important;
-    }
-}
+
 
 @media (max-width: 1024px) {
 
@@ -554,7 +550,7 @@
 
     .product-description {
         font-size: 1.2em;
-        padding: 2em;
+        padding: 1em;
     }
 
     /*Article Page*/
@@ -821,6 +817,11 @@
 
     .a-content {
         flex: 0 0 100%;
+        /*padding: 0 2em;*/
+    }
+
+    .a-text-wrapper {
+         margin-top: 0; 
     }
 
     .a-details-container {
@@ -1101,5 +1102,11 @@
         font-family: var(--font-cormorant);
         font-size: 15px;
         margin: 32px 0;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    .nav-links > ul li {
+        font-size: 25px;
     }
 }

@@ -28,6 +28,7 @@
             justify-content: center;
             flex: 0 0 27%;
             margin: 2em 1em;
+            max-width: 532px;
         }
 
 .product {
