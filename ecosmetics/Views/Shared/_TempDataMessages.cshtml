@@ -1,0 +1,8 @@
+﻿@if (TempData.ContainsKey(GlobalConstants.TempDataSuccessMessageKey))
+{
+    <div id="alert-success-box" class="alert alert-success text-center">@TempData[GlobalConstants.TempDataSuccessMessageKey]</div>
+}
+@if (TempData.ContainsKey(GlobalConstants.TempDataErrorMessageKey))
+{
+    <div id="alert-unsuccess-box" class="alert alert-danger text-center">@TempData[GlobalConstants.TempDataErrorMessageKey]</div>
+}

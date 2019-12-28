@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ecosmetics
+﻿namespace ecosmetics
 {
     public class GlobalConstants
     {
@@ -21,15 +16,43 @@ namespace ecosmetics
 
 
         public const string InvalidLogin = "Invalid Login.";
+
+        public const string InvalidData = "Invalid data";
+
+        public const string InvalidId = "Invalid data";
+
         public const string TempDataSuccessMessageKey = "SuccessMessage";
         public const string TempDataErrorMessageKey = "ErrorMessage";
 
         public const string imageFolderName = "img";
         public const string imageFolderPath = "../../img/";
 
+        public const string WrongMessage = "Something were wrong";
 
         public const string cultureEn = "en-US";
 
+        public const string PasswordChanged = "Your password has been changed.";
 
+        public class CategoryMessage
+        {
+            public const string CreateCategorySuccess = "Successful created category";
+            public const string DeleteCategorySuccess = "Successful delete category";
+            public const string EditCategoryNameRequired = "Name is required";
+        }
+
+        public class ProductMessage
+        {
+            public const string CreateProductSuccess = "Successful created product";
+            public const string DeleteProductSuccess = "Successful deleted product";
+            public const string DeleteProductUnSuccess = "Something were wrong";
+            public const string EditProductSuccess = "Successful updated product";
+        }
+
+        public class ArticleMessage
+        {
+            public const string CreateArticleSuccess = "Successful created article";
+            public const string DeleteArticleSuccess = "Successful deleted article";
+            public const string EditArticleSuccess = "Successful edited article";
+        }
     }
 }

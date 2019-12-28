@@ -165,6 +165,7 @@ namespace ecosmetics.Controllers
         {
             if (!ModelState.IsValid)
             {
+                TempData[GlobalConstants.TempDataErrorMessageKey] = GlobalConstants.InvalidData;
                 return View(model);
             }
 
@@ -183,7 +184,7 @@ namespace ecosmetics.Controllers
 
             await _signInManager.SignInAsync(user, isPersistent: false);
 
-            TempData[GlobalConstants.TempDataSuccessMessageKey] = "Your password has been changed.";
+            TempData[GlobalConstants.TempDataSuccessMessageKey] = GlobalConstants.PasswordChanged;
             return Redirect("/");
         }
 
@@ -196,11 +197,11 @@ namespace ecosmetics.Controllers
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
 
-            //if (user.PasswordHash == null)
-            //{
-            //    TempData[GlobalConstants.TempDataErrorMessageKey] = "Your password can not be changed.";
-            //    return Redirect(UserProfilePath + user.UserName);
-            //}
+            if (user.PasswordHash == null)
+            {
+                TempData[GlobalConstants.TempDataErrorMessageKey] = "Your password can not be changed.";
+                return Redirect("/");
+            }
 
             var hasPassword = await _userManager.HasPasswordAsync(user);
 

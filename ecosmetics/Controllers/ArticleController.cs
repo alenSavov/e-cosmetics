@@ -48,7 +48,18 @@ namespace ecosmetics.Controllers
                 return this.View();
             }
 
-            var article = await this._articleService.CreateAsync(model);
+            var isSuccessfulCreated = await this._articleService.CreateAsync(model);
+            if (isSuccessfulCreated)
+            {
+                TempData[GlobalConstants.TempDataSuccessMessageKey] = GlobalConstants
+                                                                    .ArticleMessage
+                                                                    .CreateArticleSuccess;
+            }
+            else
+            {
+                TempData[GlobalConstants.TempDataErrorMessageKey] = GlobalConstants.WrongMessage;
+            }
+
             return View();
         }
 
@@ -82,6 +93,7 @@ namespace ecosmetics.Controllers
         {
             if (id == null)
             {
+                TempData[GlobalConstants.TempDataErrorMessageKey] = GlobalConstants.InvalidId;
                 return View();
             }
 
@@ -91,8 +103,19 @@ namespace ecosmetics.Controllers
                 .GetById(id);
 
 
-            var success = await this._articleService
+            var isSuccess = await this._articleService
                 .DeleteAsync(id);
+
+            if (isSuccess == true)
+            {
+                TempData[GlobalConstants.TempDataSuccessMessageKey] = GlobalConstants
+                                                                 .ArticleMessage
+                                                                 .DeleteArticleSuccess;
+            }
+            else
+            {
+                TempData[GlobalConstants.TempDataErrorMessageKey] = GlobalConstants.WrongMessage;
+            }
 
 
             return RedirectToAction("GetAll");
@@ -129,13 +152,25 @@ namespace ecosmetics.Controllers
         [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
         public async Task<IActionResult> EditAsync(EditArticleInputModel model)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return View();
-            //}
+            if (model.Id == null)
+            {
+                TempData[GlobalConstants.TempDataErrorMessageKey] = GlobalConstants.InvalidId;
+                return Redirect("/");
+            }
 
-            var success = await this._articleService
+            var isSuccess = await this._articleService
                 .EditAsync(model);
+
+            if (isSuccess == true)
+            {
+                TempData[GlobalConstants.TempDataSuccessMessageKey] = GlobalConstants
+                                                                        .ArticleMessage
+                                                                        .EditArticleSuccess;
+            }
+            else
+            {
+                TempData[GlobalConstants.TempDataErrorMessageKey] = GlobalConstants.WrongMessage;
+            }
 
             return RedirectToAction("GetById", new { id = model.Id });
         }

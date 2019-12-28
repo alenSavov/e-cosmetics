@@ -17,6 +17,7 @@
 
         <h2>Login</h2>
         <form class="" method="post" asp-controller="Account" asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger "></div>
             <div>
                 <label asp-for="Username" class="">Username</label>
                 <span asp-validation-for="Username" class="text-danger"></span><br />

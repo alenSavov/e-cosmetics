@@ -38,6 +38,12 @@ namespace ecosmetics.Controllers
             this._productService = productService;
         }
 
+        [TempData]
+        public string ErrorMessage { get; set; }
+
+        [TempData]
+        public string StatusMessage { get; set; }
+
         public IActionResult Index()
         {
             return View();
@@ -81,6 +87,7 @@ namespace ecosmetics.Controllers
         {
             if (!this.ModelState.IsValid)
             {
+                TempData[GlobalConstants.TempDataErrorMessageKey] = GlobalConstants.InvalidData;
                 return this.View();
             }
 
@@ -89,6 +96,9 @@ namespace ecosmetics.Controllers
             //var imageDeleteResult = this._cloudinaryService.DeletePicture(category.GetType(), categoryPictureId);
             //var imageDeleteResult = this._pictureService.DeletePicture(category.GetType(), categoryPictureId);
 
+            TempData[GlobalConstants.TempDataSuccessMessageKey] = GlobalConstants
+                                                                    .CategoryMessage
+                                                                    .CreateCategorySuccess;
             return View();
         }
 
@@ -110,7 +120,9 @@ namespace ecosmetics.Controllers
             var success = await this._categoryService
                 .DeleteAsync(id);
 
-
+            TempData[GlobalConstants.TempDataSuccessMessageKey] = GlobalConstants
+                                                                    .CategoryMessage
+                                                                    .DeleteCategorySuccess;
             return Redirect("/");
         }
 
@@ -140,7 +152,6 @@ namespace ecosmetics.Controllers
 
         public IActionResult GetById(string id)
         {
-
             if (id == null)
             {
                 return this.View();
@@ -175,13 +186,20 @@ namespace ecosmetics.Controllers
         [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
         public async Task<IActionResult> EditAsync(EditCategoryInputModel model)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return View();
-            //}
+            if (model.Id == null)
+            {
+                TempData[GlobalConstants.TempDataErrorMessageKey] = GlobalConstants.InvalidId;
+                return Redirect("/");
+            }
 
-            //TODO Add validations
-
+            if (model.Name == null)
+            {
+                TempData[GlobalConstants.TempDataErrorMessageKey] = GlobalConstants
+                                                                     .CategoryMessage
+                                                                     .EditCategoryNameRequired;
+                return RedirectToAction("Edit", new { id = model.Id });
+            }
+            
             var success = await this._categoryService
                 .EditAsync(model);
 

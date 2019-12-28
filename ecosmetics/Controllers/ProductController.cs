@@ -88,11 +88,12 @@ namespace ecosmetics.Controllers
 
                 return this.View(model);
             }
-
-
-
+            
             var product = await this._productService.CreateAsync(model);
 
+            TempData[GlobalConstants.TempDataSuccessMessageKey] = GlobalConstants
+                                                                    .ProductMessage
+                                                                    .CreateProductSuccess;
             return Redirect("/");
         }
 
@@ -102,6 +103,7 @@ namespace ecosmetics.Controllers
         {
             if (id == null)
             {
+                TempData[GlobalConstants.TempDataSuccessMessageKey] = GlobalConstants.InvalidId;
                 return this.View();
             }
 
@@ -116,10 +118,8 @@ namespace ecosmetics.Controllers
 
 
             //categoryView.Picture.Url = this._pictureService.BuildCategoryPictureUrl(categoryView.Picture.Id, categoryView.Picture.VersionPicture);
-
-
+            
             return View(productView);
-
         }
 
 
@@ -132,9 +132,20 @@ namespace ecosmetics.Controllers
                 return View();
             }
 
-
             var success = await this._productService
                 .EditAsync(model);
+
+            if (success == true)
+            {
+                TempData[GlobalConstants.TempDataSuccessMessageKey] = GlobalConstants
+                                                                   .ProductMessage
+                                                                   .EditProductSuccess;
+            }
+            else
+            {
+                TempData[GlobalConstants.TempDataSuccessMessageKey] = GlobalConstants
+                                                               .WrongMessage;
+            }
 
             return RedirectToAction("GetById", new { id = model.Id });
         }
@@ -144,6 +155,7 @@ namespace ecosmetics.Controllers
         {
             if (id == null)
             {
+                TempData[GlobalConstants.TempDataErrorMessageKey] = GlobalConstants.InvalidId;
                 return View();
             }
 
@@ -153,6 +165,18 @@ namespace ecosmetics.Controllers
             var success = await this._productService
                   .DeleteAsync(id);
 
+            if (success == true)
+            {
+                TempData[GlobalConstants.TempDataSuccessMessageKey] = GlobalConstants
+                                                                    .ProductMessage
+                                                                    .DeleteProductSuccess;
+            }
+            else
+            {
+                TempData[GlobalConstants.TempDataErrorMessageKey] = GlobalConstants
+                                                                    .ProductMessage
+                                                                    .DeleteProductUnSuccess;
+            }
 
             return Redirect("/");
         }
@@ -184,6 +208,7 @@ namespace ecosmetics.Controllers
         {
             if (model.Id == null || model.Pictures == null)
             {
+                TempData[GlobalConstants.TempDataErrorMessageKey] = GlobalConstants.InvalidData;
                 return this.RedirectToAction("Edit", new { id = model.Id });
             }
 
