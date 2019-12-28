@@ -144,6 +144,9 @@
   <data name="НАЧАЛО" xml:space="preserve">
     <value>HOME</value>
   </data>
+  <data name="Промени парола" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
   <data name="СЕРИИ" xml:space="preserve">
     <value>SERIES</value>
   </data>

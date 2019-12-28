@@ -13,7 +13,7 @@
         <h2>@Localizer["Създай продукт"]</h2>
 
         <form asp-area="Administration" asp-controller="Product" asp-action="CreateProduct" class="contact-form" enctype="multipart/form-data">
-            <div asp-validation-summary="All" class="text-danger "></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger "></div>
 
             <div>
                 <label asp-for="Name" class="">@Localizer["Име на продукта на Български език"]</label>
@@ -38,8 +38,8 @@
                 <span asp-validation-for="DescriptionEn" class="text-danger "></span>
             </div>
             <div>
-                <label asp-for="CategoryId" class="">Category</label>
-                <select asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.ListOfCategories,"Id","Name"))" class=""></select>
+                <label asp-for="CategoryId">Category</label>
+                <select asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.ListOfCategories,"Id","Name"))"></select>
                 <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
          
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-                <span asp-validation-for="PictFormFiles" class=""></span>
+                <span asp-validation-for="PictFormFiles" class="text-danger"></span>
             </div>
             <div><a href="https://htmleditor.io/">HTML Editor(wysiwyg)</a></div>
             <div class="button ">

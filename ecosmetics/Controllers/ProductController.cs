@@ -81,8 +81,15 @@ namespace ecosmetics.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return this.View();
+                var categoryList = this._categoryService
+                    .GetAll();
+
+                ViewBag.ListOfCategories = categoryList;
+
+                return this.View(model);
             }
+
+
 
             var product = await this._productService.CreateAsync(model);
 
