@@ -83,7 +83,8 @@ namespace ecosmetics.Controllers
             return View(model);
         }
 
-        [Route("Logout")]      
+        [Route("Logout")]
+        [Authorize]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
@@ -142,6 +143,7 @@ namespace ecosmetics.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> ChangePassword()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -160,7 +162,7 @@ namespace ecosmetics.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
         {
             if (!ModelState.IsValid)
@@ -189,6 +191,7 @@ namespace ecosmetics.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> SetPassword()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -214,7 +217,7 @@ namespace ecosmetics.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> SetPassword(SetPasswordInputModel model)
         {
             if (!ModelState.IsValid)

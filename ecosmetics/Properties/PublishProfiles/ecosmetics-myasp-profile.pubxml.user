@@ -14,7 +14,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/26/2019 21:38:56</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>12/28/2019 11:31:25</publishTime>
+      <publishTime>12/28/2019 22:15:56</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>08/12/2019 12:42:04</publishTime>
@@ -29,34 +29,34 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2019 19:58:14</publishTime>
     </File>
     <File Include="ecosmetics.deps.json">
-      <publishTime>12/28/2019 11:31:41</publishTime>
+      <publishTime>12/28/2019 22:19:33</publishTime>
     </File>
     <File Include="ecosmetics.dll">
-      <publishTime>12/28/2019 11:31:32</publishTime>
+      <publishTime>12/28/2019 22:19:31</publishTime>
     </File>
     <File Include="ecosmetics.pdb">
-      <publishTime>12/28/2019 11:31:32</publishTime>
+      <publishTime>12/28/2019 22:19:31</publishTime>
     </File>
     <File Include="ecosmetics.runtimeconfig.json">
-      <publishTime>12/28/2019 11:31:41</publishTime>
+      <publishTime>12/28/2019 22:19:33</publishTime>
     </File>
     <File Include="ecosmetics.Views.dll">
-      <publishTime>12/28/2019 11:31:34</publishTime>
+      <publishTime>12/28/2019 22:19:33</publishTime>
     </File>
     <File Include="ecosmetics.Views.pdb">
-      <publishTime>12/28/2019 11:31:34</publishTime>
+      <publishTime>12/28/2019 22:19:33</publishTime>
     </File>
     <File Include="Elmah.Io.AspNetCore.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Elmah.Io.Client.dll">
-      <publishTime>08/12/2019 11:56:14</publishTime>
+      <publishTime>12/08/2019 11:56:14</publishTime>
     </File>
     <File Include="en-US/ecosmetics.resources.dll">
-      <publishTime>12/28/2019 11:31:32</publishTime>
+      <publishTime>12/28/2019 22:19:31</publishTime>
     </File>
     <File Include="fr/ecosmetics.resources.dll">
-      <publishTime>12/28/2019 11:31:32</publishTime>
+      <publishTime>12/28/2019 22:19:31</publishTime>
     </File>
     <File Include="libman.json">
       <publishTime>11/26/2019 21:38:56</publishTime>
@@ -71,7 +71,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/14/2019 22:22:29</publishTime>
     </File>
     <File Include="Microsoft.Rest.ClientRuntime.dll">
-      <publishTime>11/12/2018 01:24:42</publishTime>
+      <publishTime>12/11/2018 01:24:42</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll">
       <publishTime>09/24/2019 19:57:40</publishTime>
@@ -113,7 +113,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/14/2019 22:22:42</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>12/28/2019 11:31:41</publishTime>
+      <publishTime>12/28/2019 22:19:33</publishTime>
     </File>
     <File Include="wwwroot/css/about.css">
       <publishTime>11/26/2019 21:38:57</publishTime>
@@ -164,7 +164,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/26/2019 21:38:57</publishTime>
     </File>
     <File Include="wwwroot/css/main.css">
-      <publishTime>12/18/2019 20:51:21</publishTime>
+      <publishTime>12/28/2019 19:58:37</publishTime>
     </File>
     <File Include="wwwroot/css/media-queries.css">
       <publishTime>12/26/2019 19:10:41</publishTime>
@@ -218,6 +218,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/26/2019 21:38:57</publishTime>
     </File>
     <File Include="wwwroot/img/b2cb8be0-96ce-482b-99dd-ddb8b0077fd6_XT203588.jpg">
+      <publishTime>11/26/2019 21:38:57</publishTime>
+    </File>
+    <File Include="wwwroot/img/banner-pictures/slider-pic-1.jpg">
+      <publishTime>12/28/2019 18:53:17</publishTime>
+    </File>
+    <File Include="wwwroot/img/banner-pictures/slider-pic-2.jpg">
+      <publishTime>11/04/2019 22:13:44</publishTime>
+    </File>
+    <File Include="wwwroot/img/banner-pictures/slider-pic-3.jpg">
       <publishTime>11/26/2019 21:38:57</publishTime>
     </File>
     <File Include="wwwroot/img/banner.jpg">
@@ -281,19 +290,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/26/2019 21:38:57</publishTime>
     </File>
     <File Include="wwwroot/img/model3.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/model4.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/model5.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/seria-picture-1.jpg">
       <publishTime>11/26/2019 21:38:57</publishTime>
     </File>
     <File Include="wwwroot/img/slider-pic-1.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/slider-pic-2.jpg">
       <publishTime>11/26/2019 21:38:57</publishTime>
@@ -305,10 +314,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/26/2019 21:38:57</publishTime>
     </File>
     <File Include="wwwroot/img/unsplash-2.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/unsplash-6.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/js/dropify.min.js">
       <publishTime>12/14/2019 20:39:14</publishTime>
