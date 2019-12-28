@@ -26,14 +26,13 @@
             <div class="carousel-inner">
                 <cache expires-after="@TimeSpan.FromMinutes(20)">
                     <div class="carousel-item active slide-pic-1">
-                        <img class="slide-pic-1 d-block w-100" src="~/img/slider-pic-2.jpg" alt="First slide">
-
+                        <img class="slide-pic-1 d-block w-100" src="~/img/banner-pictures/slider-pic-2.jpg" alt="Model">
                     </div>
                     <div class="carousel-item">
-                        <img class="slide-pic-2 d-block w-100" src="~/img/slider-pic-1.jpg" alt="Second slide">
+                        <img class="slide-pic-2 d-block w-100" src="~/img/banner-pictures/slider-pic-3.jpg" alt="Model">
                     </div>
                     <div class="carousel-item">
-                        <img class="slide-pic-3 d-block w-100" src="~/img/unsplash-6.jpg" alt="Third slide">
+                        <img class="slide-pic-3 d-block w-100" src="~/img/banner-pictures/slider-pic-1.jpg" alt="Model">
                     </div>
                 </cache>
             </div>
@@ -63,7 +62,7 @@
 
         <section class="black-box-content">
 
-            @*<cache expires-after="@TimeSpan.FromMinutes(20)">*@
+            <cache expires-after="@TimeSpan.FromMinutes(20)">
             @foreach (var category in Model.Categories)
             {
                 <a class="category" asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id">
@@ -81,7 +80,7 @@
                     }
                 }
             }
-            @*</cache>*@
+            </cache>
         </section>
     </div>
 </section>

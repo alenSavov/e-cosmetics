@@ -57,7 +57,7 @@
 .details-content-box {
     display: flex;
     flex-wrap: wrap;
-    /*flex: 0 0 76%;*/
+    /*flex: 0 0 92%;*/
     width: 950px;
     overflow: hidden;
     justify-content: flex-end;
@@ -94,4 +94,5 @@
     color: rgb(255, 255, 255);
     font-size: 1.5em;
     padding: 5em;
+    flex: 0 0 100%;
 }

@@ -70,3 +70,7 @@
             .product-container form div.button {
                 justify-content: center;
             }
+
+            .product-container form div select {
+                flex: 0 0 100%;
+            }
