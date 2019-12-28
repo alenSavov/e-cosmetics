@@ -293,6 +293,23 @@
     padding: 1em 3em;
 }
 
+.administration-dropdown.show {
+    background-color: rgb(25, 25, 25);
+}
+
+.administration-dropdown .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    color: white;
+    text-align: center;
+    clear: both;
+    font-weight: 400;
+    /* text-align: inherit; */
+    white-space: nowrap;
+    background-color: rgb(25, 25, 25);
+    border: 0;
+}
 
 
 .administration-dropdown a {

@@ -200,3 +200,4 @@ C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Release\netcor
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Release\netcoreapp2.2\Razor\Views\Home\Error.g.cshtml.cs
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Release\netcoreapp2.2\Razor\Views\Shared\AccessDenided.g.cshtml.cs
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Release\netcoreapp2.2\Razor\Views\Account\ChangePassword.g.cshtml.cs
+C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Release\netcoreapp2.2\ecosmetics.Resources.Views.Account.ChangePassword.en-US.resources
