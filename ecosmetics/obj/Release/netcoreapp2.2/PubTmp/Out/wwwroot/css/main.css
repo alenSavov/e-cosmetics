@@ -173,11 +173,12 @@
         flex: 0 0 85%;
         font-family: var(--font-cormorant);
         color: var(--color-main-white);
-        font-size: 5em;
+        font-size: 3em;
         letter-spacing: 5px;
         margin: 0;
         padding-left: 1em;
         font-family: var(--font-cormorant);
+        text-align: center;
     }
 
     .black-box-title p {

@@ -114,12 +114,18 @@
     }
 
     /*Product Details*/
-    .product-image-box {
-        height: 40em;
-    }
-
+    
     .product-details-content:before {
         width: 16em;
+    }
+
+    .image-wrapper img {
+        height: 40em;
+        width: 853px;
+    }
+
+    .black-box-title h2 {
+        font-size: 2.5em;
     }
 }
 
@@ -189,8 +195,8 @@
     }
 
     .black-box-title h2 {
-        flex: 0 0 75%;
-        font-size: 3.5em;
+        flex: 0 0 82%;
+        font-size: 2em;
     }
 
     /*Products Page*/
@@ -289,7 +295,7 @@
 
     /*Product Details*/
     .image-wrapper img {
-        width: 700px;
+        width: 600px;
         max-width: 700px;
     }
 
@@ -416,6 +422,10 @@
     .details-content-box {
         flex: 0 0 85%;
     }
+
+    #black-box-title-index {
+        padding-left: 0;
+    }
 }
 
 
@@ -495,7 +505,8 @@
     }
 
     .image-wrapper img {
-        height: 21em;
+        height: 27em;
+        width: 550px;
     }
 
     .categories {
@@ -607,6 +618,18 @@
     .category-card img {
         height: 28em;
     }
+
+    .image-wrapper img {
+        height: 23em;
+        width: 449px;
+    }
+
+   
+
+    #black-box-title-index {
+        flex: 0 0 90%;
+        font-size: 2em;
+    }
 }
 
 @media (max-width: 550px) {
@@ -682,11 +705,11 @@
 
     .black-box-title h2 {
         flex: 0 0 60%;
-        font-size: 2.4em;
+        font-size: 2em;
     }
 
     #black-box-title-index {
-        font-size: 3em;
+        font-size: 2em;
     }
 
     .sub-title {
@@ -808,12 +831,14 @@
     /*Category Details Page*/
     .category-card img {
         height: 21em;
-        margin: 2em 1em;
+        margin: 0;
     }
 
     .category-card {
         margin: 3em 1em;
     }
+
+    
 
     .a-content {
         flex: 0 0 100%;
@@ -872,6 +897,7 @@
 
     .black-box-title h2 {
         font-size: 1.5em;
+        flex: 0 0 72%;
     }
 
     .black-box-title h2 {

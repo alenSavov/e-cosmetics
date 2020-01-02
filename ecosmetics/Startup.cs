@@ -119,16 +119,17 @@ namespace ecosmetics
             services.ConfigureApplicationCookie(options =>
             {
                 options.AccessDeniedPath = "/Account/AccessDenied";
-                options.Cookie.Name = "Cookie";
-                options.Cookie.HttpOnly = true;
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(720);
+                //options.Cookie.Name = "Cookie";
+                //options.Cookie.HttpOnly = true;
                 options.LoginPath = "/Login";
-                options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                //options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                //options.ReturnUrlParameter = "ReturnUrl";
                 options.AccessDeniedPath = "/AccessDenied";
                 options.SlidingExpiration = true;
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+                       
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -159,7 +160,6 @@ namespace ecosmetics
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-            
 
             app.UseMvc(routes =>
             {

@@ -49,8 +49,10 @@ namespace ecosmetics.Controllers
             return View();
         }
 
-        public IActionResult GetAll()
+        public IActionResult GetAll(string returnUrl = null)
         {
+            ViewData["ReturnUrl"] = returnUrl;
+
             var categories = this._categoryService
                 .GetAll();
 
@@ -76,15 +78,20 @@ namespace ecosmetics.Controllers
 
         [HttpGet]
         [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
-        public IActionResult Create()
+        public IActionResult Create(string returnUrl = null)
         {
+            if (!String.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                return Redirect(returnUrl);
+
             return View();
         }
 
         [HttpPost]
         [Authorize(Roles = GlobalConstants.ADMINISTRATOR_ROLE)]
-        public async Task<IActionResult> Create(CreateCategoryInputModel model)
+        public async Task<IActionResult> Create(CreateCategoryInputModel model, string returnUrl = null)
         {
+            if (!String.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                return Redirect(returnUrl);
             if (!this.ModelState.IsValid)
             {
                 TempData[GlobalConstants.TempDataErrorMessageKey] = GlobalConstants.InvalidData;
@@ -199,7 +206,7 @@ namespace ecosmetics.Controllers
                                                                      .EditCategoryNameRequired;
                 return RedirectToAction("Edit", new { id = model.Id });
             }
-            
+
             var success = await this._categoryService
                 .EditAsync(model);
 

@@ -31,6 +31,8 @@ namespace ecosmetics.Controllers
         [HttpPost]
         public IActionResult SetLanguage(string culture, string returnUrl = "/")
         {
+            ViewData["ReturnUrl"] = returnUrl;
+
             Response.Cookies.Append(
                 CookieRequestCultureProvider.DefaultCookieName,
                 CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
@@ -40,8 +42,10 @@ namespace ecosmetics.Controllers
             return LocalRedirect(returnUrl);
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string returnUrl = null)
         {
+            ViewData["ReturnUrl"] = returnUrl;
+
             var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
             var culture = rqf.RequestCulture.Culture;
             ViewData["Culture"] = culture.Name;
@@ -62,14 +66,6 @@ namespace ecosmetics.Controllers
                 Categories = categories
             };
 
-            //if (culture.ToString() == "en-US")
-            //{
-               
-            //}
-            //else if (culture.ToString() == "bg-BG")
-            //{
-               
-            //}
             return View(categoryCollection);
         }
 
@@ -90,6 +86,7 @@ namespace ecosmetics.Controllers
             return this.View();
         }
 
+        [HttpGet]
         public IActionResult About()
         {
 

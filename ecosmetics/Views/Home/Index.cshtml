@@ -4,6 +4,7 @@
 
 @{
     ViewData["Title"] = "Elizabet Cosmetics";
+    var currentCulture = ViewData["Culture"];
 }
 
 
@@ -51,23 +52,30 @@
 </section>
 <p class="content-over-banner animated zoomIn delay-1s">THE TRUTH</p>
 <p class="content-over-banner2 animated zoomIn delay-1s">ABOUT BEAUTY</p>
-<section class="categories-wrapper" id="series">
 
+@foreach (var category in Model.Categories)
+{
+    <section class="categories-wrapper" id="series">
 
-    <div class="categories ">
-        <section class="black-box-title">
-            <h2 id="black-box-title-index">@Localizer["Серии"]</h2>
-            <p class="sub-title">Popular</p>
-        </section>
+        <div class="categories ">
+            <section class="black-box-title">
+                @if (currentCulture.ToString() == GlobalConstants.cultureEn)
+                {
+                    <h2 id="black-box-title-index">@category.NameEn</h2>
+                }
+                else
+                {
+                    <h2 id="black-box-title-index">@category.Name</h2>
 
-        <section class="black-box-content">
+                }
+                <p class="sub-title">@Localizer["Серии"]</p>
+            </section>
 
-            <cache expires-after="@TimeSpan.FromMinutes(20)">
-            @foreach (var category in Model.Categories)
-            {
+            <section class="black-box-content">
                 <a class="category" asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id">
                     <div class="image-wrapper">
                         <span><img src="@category.Picture.Url" class="category-picture" width="250" height="250" /></span>
+
                     </div>
 
                 </a>
@@ -79,8 +87,7 @@
                         <a class="white-button" asp-controller="category" asp-action="Edit" asp-route-id="@category.Id">@Localizer["Промени"]</a>
                     }
                 }
-            }
-            </cache>
-        </section>
-    </div>
-</section>
+            </section>
+        </div>
+    </section>
+}

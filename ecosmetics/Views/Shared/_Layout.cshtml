@@ -2,7 +2,7 @@
 @inject IViewLocalizer Localizer
 
 @{
-    var returnUrl = @Context.Request.Query["returnurl"];
+   var returnUrl = @Context.Request.Query["returnurl"];
 }
 
 <!DOCTYPE html>
@@ -85,8 +85,8 @@
 
                 @*<span id="language-button">@await Html.PartialAsync("_SelectLanguagePartial")</span>*@
                 <form id="setLang-nav-form" method="POST" sp-route-returnurl="returnUrl">
-                    <button type="submit" id="language-button" asp-controller="Home" asp-action="SetLanguage" asp-route-culture="en-US" value="Submit">EN</button>
-                    <button type="submit" id="language-button" asp-controller="Home" asp-action="SetLanguage" asp-route-culture="bg-BG" value="Submit">BG</button>
+                    <button type="submit" id="language-button" asp-controller="Home" asp-action="SetLanguage" asp-route-culture="en-US" asp-route-returnUrl="@ViewData["ReturnUrl"]" value="Submit">EN</button>
+                    <button type="submit" id="language-button" asp-controller="Home" asp-action="SetLanguage" asp-route-culture="bg-BG" asp-route-returnUrl="@ViewData["ReturnUrl"]" value="Submit">BG</button>
                 </form>
 
             </section>

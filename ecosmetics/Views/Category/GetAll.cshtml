@@ -6,6 +6,7 @@
 @{
     var currentCulture = ViewData["Culture"];
     ViewData["Title"] = "All";
+    var returnUrl = @Context.Request.Query["returnurl"];
 }
 
 
@@ -29,7 +30,8 @@
                 {
                     <p id="category-name">@category.NameEn</p>
 
-                    <a asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id"><img src="@category.Picture.Url"/></a>
+                    <a asp-controller="Category" asp-action="GetById" asp-route-id="@category.Id" asp-route-returnurl="@returnUrl">
+                    <img src="@category.Picture.Url" /></a>
                     @if (@category.Description != null)
                     {
                         <div class="description-box">

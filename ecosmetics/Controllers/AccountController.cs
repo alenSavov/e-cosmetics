@@ -27,8 +27,10 @@ namespace ecosmetics.Controllers
         }
 
         [Route("Login")]
-        public IActionResult Login()
+        public IActionResult Login(string returnUrl = null)
         {
+            ViewData["ReturnUrl"] = returnUrl;
+
             if (this.User.Identity.IsAuthenticated)
             {
                 return Redirect("\\");
@@ -42,6 +44,9 @@ namespace ecosmetics.Controllers
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
+
+            if (!String.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                return Redirect(returnUrl);
             if (ModelState.IsValid)
             {
                 if (model.Username == null || model.Password == null)
