@@ -238,7 +238,7 @@
 
     /*Main nav*/
     div.main-nav h1 {
-        font-size: 3em;
+        font-size: 3em;        
     }
 
     /*Product Details*/
@@ -249,6 +249,17 @@
 
     .product-image-box {
         flex: 0 0 100%;
+    }
+
+
+    /*Privacy*/
+    .privacy-cookie-conten {
+        flex: 0 0 100%;
+        padding: 1em;
+    }
+
+    .privacy-cookie-conten h1 {
+        text-align: center;
     }
 }
 
@@ -590,6 +601,10 @@
         padding: 1em;
     }
 
+    .a-img {
+        height: 32em;
+    }
+
     /*Footer*/
     .brand-footer img {
         margin-top: 39px;
@@ -630,6 +645,8 @@
         flex: 0 0 90%;
         font-size: 2em;
     }
+
+
 }
 
 @media (max-width: 550px) {
@@ -966,6 +983,11 @@
 
     .copyrights {
         flex: 0 0 94%;
+    }
+
+    /*Article Details*/
+    .a-img {
+        height: 25em;
     }
 }
 

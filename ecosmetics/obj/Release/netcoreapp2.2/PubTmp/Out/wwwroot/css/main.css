@@ -326,8 +326,8 @@
     }
 
 #cookieConsent {
-    width: 319px;
-    height: 170px;
+    width: 341px;
+    height: 216px;
     position: fixed;
     bottom: 13px;
     right: 33px;
@@ -357,7 +357,35 @@
     position: absolute;
     bottom: 0;
     padding: 12px;
+    font-size: 17px;
     background-color: rgb(4, 138, 195);
 }
 
 
+/*Privacy*/
+.privacy-wrapper {
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.privacy-cookie-conten {
+    display: flex;
+    flex: 0 0 70%;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 3em;
+    font-family: "Cormorant Garamond";
+    font-size: 24px;
+}
+
+    .privacy-cookie-conten p {
+        padding: 1em;
+    }
+
+    .privacy-cookie-conten h3 {
+        padding: 1em;
+        font-weight: 600;
+        font-size: 26px;
+    }

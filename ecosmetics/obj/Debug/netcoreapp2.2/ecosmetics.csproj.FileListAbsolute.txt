@@ -207,3 +207,4 @@ C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Debug\netcorea
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Debug\netcoreapp2.2\Razor\Views\Account\ChangePassword.g.cshtml.cs
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_TempDataMessages.g.cshtml.cs
 C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Debug\netcoreapp2.2\ecosmetics.Resources.Views.Category.GetAll.en-US.resources
+C:\Users\alenSavov\Desktop\SoftUni-Hub\e-cosmetics\ecosmetics\obj\Debug\netcoreapp2.2\ecosmetics.Resources.Views.Home.Privacy.en-US.resources

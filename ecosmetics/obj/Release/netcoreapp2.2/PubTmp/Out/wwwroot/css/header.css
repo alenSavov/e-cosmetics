@@ -155,6 +155,12 @@
     font-size: 1.3em;
     color: rgb(242, 242, 242);
     font-family: var(--font-cormorant);
+
+    transition: font-size 0.5s ease;
+}
+
+#language-button:hover{
+    font-size: 1.6em;
 }
 
 

@@ -11,283 +11,283 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
-      <publishTime>11/26/2019 21:38:56</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>12/28/2019 22:15:56</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="AutoMapper.dll">
-      <publishTime>08/12/2019 12:42:04</publishTime>
+      <publishTime>12/08/2019 12:42:04</publishTime>
     </File>
     <File Include="AutoMapper.Extensions.Microsoft.DependencyInjection.dll">
-      <publishTime>08/12/2019 13:19:42</publishTime>
+      <publishTime>12/08/2019 13:19:42</publishTime>
     </File>
     <File Include="CloudinaryDotNet.dll">
-      <publishTime>04/23/2019 07:13:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="dotnet-aspnet-codegenerator-design.dll">
-      <publishTime>09/24/2019 19:58:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="ecosmetics.deps.json">
-      <publishTime>01/02/2020 21:40:25</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="ecosmetics.dll">
-      <publishTime>01/02/2020 21:33:50</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="ecosmetics.pdb">
-      <publishTime>01/02/2020 21:33:50</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="ecosmetics.runtimeconfig.json">
-      <publishTime>01/02/2020 21:40:26</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="ecosmetics.Views.dll">
-      <publishTime>01/02/2020 21:39:08</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="ecosmetics.Views.pdb">
-      <publishTime>01/02/2020 21:39:08</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Elmah.Io.AspNetCore.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Elmah.Io.Client.dll">
-      <publishTime>12/08/2019 11:56:14</publishTime>
+      <publishTime>08/12/2019 11:56:14</publishTime>
     </File>
     <File Include="en-US/ecosmetics.resources.dll">
-      <publishTime>01/02/2020 21:39:07</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="fr/ecosmetics.resources.dll">
-      <publishTime>01/02/2020 21:33:50</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="libman.json">
-      <publishTime>11/26/2019 21:38:56</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Localization.AspNetCore.TagHelpers.dll">
-      <publishTime>03/01/2019 17:20:02</publishTime>
+      <publishTime>01/03/2019 17:20:02</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
-      <publishTime>08/14/2019 22:22:36</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
-      <publishTime>08/14/2019 22:22:29</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.Rest.ClientRuntime.dll">
-      <publishTime>12/11/2018 01:24:42</publishTime>
+      <publishTime>11/12/2018 01:24:42</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll">
-      <publishTime>09/24/2019 19:57:40</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Core.dll">
-      <publishTime>09/24/2019 19:57:46</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.dll">
-      <publishTime>09/24/2019 19:57:50</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll">
-      <publishTime>09/24/2019 19:57:48</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll">
-      <publishTime>09/24/2019 19:57:42</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll">
-      <publishTime>09/24/2019 19:57:42</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll">
-      <publishTime>09/24/2019 19:57:52</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="NuGet.Frameworks.dll">
-      <publishTime>08/14/2019 22:22:35</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="System.Composition.AttributedModel.dll">
-      <publishTime>08/14/2019 22:22:41</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="System.Composition.Convention.dll">
-      <publishTime>08/14/2019 22:22:41</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="System.Composition.Hosting.dll">
-      <publishTime>08/14/2019 22:22:42</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="System.Composition.Runtime.dll">
-      <publishTime>08/14/2019 22:22:42</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="System.Composition.TypedParts.dll">
-      <publishTime>08/14/2019 22:22:42</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>01/02/2020 21:40:26</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/about.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/all-categories.css">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/article.css">
-      <publishTime>12/26/2019 12:13:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/buttons.css">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/contacts.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/create-article.css">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/create-category.css">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/create-product.css">
-      <publishTime>12/27/2019 21:27:16</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/demo.css">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/dropify.css">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/dropify.min.css">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/edit-article.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/edit-category.css">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/footer.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/header.css">
-      <publishTime>12/28/2019 11:24:01</publishTime>
+      <publishTime>03/01/2020 21:22:26</publishTime>
     </File>
     <File Include="wwwroot/css/login.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/main.css">
-      <publishTime>01/01/2020 23:00:23</publishTime>
+      <publishTime>03/01/2020 21:11:17</publishTime>
     </File>
     <File Include="wwwroot/css/media-queries.css">
-      <publishTime>01/01/2020 23:21:21</publishTime>
+      <publishTime>03/01/2020 21:52:52</publishTime>
     </File>
     <File Include="wwwroot/css/navigation-container.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>03/01/2020 21:15:37</publishTime>
     </File>
     <File Include="wwwroot/css/product-details.css">
-      <publishTime>12/27/2019 20:44:04</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/products.css">
-      <publishTime>12/26/2019 12:15:15</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/register.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/typography.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/css/variables.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/favicon.ico">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/fonts/dropify.eot">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/fonts/dropify.svg">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/fonts/dropify.ttf">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/fonts/dropify.woff">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/0b8656d3-a2be-453f-abfb-cd0459505a93_XT203583.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/9aa100ec-5f2a-47dd-b129-bdefb2fc0bf7_XT203599.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/about-pic.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/about2.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/b2cb8be0-96ce-482b-99dd-ddb8b0077fd6_XT203588.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/banner-pictures/slider-pic-1.jpg">
-      <publishTime>12/28/2019 18:53:17</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/banner-pictures/slider-pic-2.jpg">
-      <publishTime>11/04/2019 22:13:44</publishTime>
+      <publishTime>04/11/2019 22:13:44</publishTime>
     </File>
     <File Include="wwwroot/img/banner-pictures/slider-pic-3.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/banner.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/Brand-Pictures/brand-pic-white.png">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/Brand-Pictures/brand-picture2.png">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/Brand-Pictures/logo_elizabeth-01.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/Brand-Pictures/logo_elizabeth-01.png">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/Brand-Pictures/logo_elizabeth_logotype-01.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/Brand-Pictures/logo_elizabeth_logotype-01.png">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/Brand-Pictures/logo_elizabeth_text-01.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/Brand-Pictures/logo_elizabeth_text-01.png">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/browserconfig.xml">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/ef021104-431a-4887-b951-cfde8cdc04c5_XT203601.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/FavIcons/android-chrome-192x192.png">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/FavIcons/android-chrome-512x512.png">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/FavIcons/apple-touch-icon.png">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/FavIcons/favicon-16x16.png">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/FavIcons/favicon-32x32.png">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/FavIcons/favicon.ico">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/FavIcons/site.webmanifest">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/logo_elizabeth_slogan-01.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/manifest.json">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/model3.jpg">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -299,19 +299,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/seria-picture-1.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/slider-pic-1.jpg">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/slider-pic-2.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/slogan-2.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/unsplash-1.jpg">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/img/unsplash-2.jpg">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -320,109 +320,109 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/js/dropify.min.js">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/js/site.js">
-      <publishTime>12/14/2019 20:39:14</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css.map">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.js">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.js.map">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/LICENSE">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.js">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.min.js">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.js">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.min.js">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation/LICENSE.md">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery/dist/jquery.js">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery/dist/jquery.min.js">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery/dist/jquery.min.map">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery/LICENSE.txt">
-      <publishTime>11/26/2019 21:38:57</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
   </ItemGroup>
   <ItemGroup>
