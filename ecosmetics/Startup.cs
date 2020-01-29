@@ -23,6 +23,7 @@ using ecosmetics.Services.Products.Implementation;
 using ecosmetics.Services.Accounts.Implementation;
 using ecosmetics.Services.Articles.Implementation;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Westwind.AspNetCore.LiveReload;
 
 namespace ecosmetics
 {
@@ -38,6 +39,8 @@ namespace ecosmetics
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLiveReload();
+
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 
             services.AddMvc()
@@ -135,6 +138,8 @@ namespace ecosmetics
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseLiveReload();
+
             var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
             app.UseRequestLocalization(locOptions.Value);
 

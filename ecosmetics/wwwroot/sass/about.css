@@ -1,0 +1,73 @@
+﻿.about-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 100%;
+  justify-content: center; }
+  .about-wrapper .about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 0 0 85%;
+    margin: 9em 0;
+    background-color: var(--color-main-black);
+    /*ABOUT-TITLE*/ }
+    .about-wrapper .about .about-title {
+      display: flex;
+      flex: 0 0 85%;
+      justify-content: space-around;
+      padding: 7em 0 7em 0;
+      align-items: center; }
+      .about-wrapper .about .about-title p {
+        color: var(--color-main-white); }
+        .about-wrapper .about .about-title p .welcome-title {
+          font-size: 2em;
+          font-family: var(--font-cormorant);
+          letter-spacing: 3.5px;
+          color: var(--color-hover);
+          text-transform: uppercase;
+          padding-right: 1em; }
+        .about-wrapper .about .about-title p .elizabeth-cosmetics-title {
+          font: 3em/1.5 var(--font-cormorant), Georgia, serif;
+          text-transform: uppercase; }
+        .about-wrapper .about .about-title p p:nth-child(1) {
+          font: 2.5em/1.5 var(--font-cormorant), Georgia, serif;
+          font-weight: 900; }
+
+/*ABOUT-MAIN*/
+.about-main {
+  display: flex;
+  flex: 0 0 100%;
+  flex-wrap: wrap;
+  background-color: var(--color-main-white); }
+
+.about-content-wrapper {
+  display: flex;
+  flex: 0 0 100%;
+  justify-content: flex-end;
+  background-color: var(--color-main-black); }
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 94%;
+  background-color: var(--color-main-white); }
+
+/*Image Box*/
+.about-img-box {
+  display: flex;
+  flex: 0 0 40%;
+  background-image: url("/img/about-pic.jpg");
+  background-repeat: no-repeat;
+  background-position: 78% 0%;
+  height: 800px; }
+
+/*Text after image*/
+.about-text {
+  display: flex;
+  flex: 0 0 60%;
+  font-size: 1.8em;
+  font-family: var(--font-cormorant);
+  color: #5c5c5c;
+  font-weight: 600;
+  padding: 1.5em 2em;
+  line-height: 1.5em; }
