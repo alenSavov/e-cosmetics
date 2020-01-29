@@ -58,7 +58,7 @@
     </environment>
 
     <link rel="stylesheet" href="~/css/dropify.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/sass/site.css" />
     @*<link rel="stylesheet" href="~/css/dropify.css" />*@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
@@ -198,6 +198,9 @@
 
     @RenderSection("Scripts", required: false)
 
-
+    <script id="__bs_script__">
+    //<![CDATA[
+        document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));
+//]]></script>
 </body>
 </html>

@@ -1,0 +1,90 @@
+﻿[
+  {
+    "outputFile": "wwwroot/sass/test.css",
+    "inputFile": "wwwroot/sass/test.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/site.css",
+    "inputFile": "wwwroot/sass/site.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/main.css",
+    "inputFile": "wwwroot/sass/main.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/footer.css",
+    "inputFile": "wwwroot/sass/footer.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/about.css",
+    "inputFile": "wwwroot/sass/about.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/buttons.css",
+    "inputFile": "wwwroot/sass/buttons.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/products.css",
+    "inputFile": "wwwroot/sass/products.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/all-categories.css",
+    "inputFile": "wwwroot/sass/all-categories.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/article.css",
+    "inputFile": "wwwroot/sass/article.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/create-article.css",
+    "inputFile": "wwwroot/sass/create-article.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/create-category.css",
+    "inputFile": "wwwroot/sass/create-category.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/create-product.css",
+    "inputFile": "wwwroot/sass/create-product.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/edit-article.css",
+    "inputFile": "wwwroot/sass/edit-article.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/edit-category.css",
+    "inputFile": "wwwroot/sass/edit-category.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/header.css",
+    "inputFile": "wwwroot/sass/header.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/media-queries.css",
+    "inputFile": "wwwroot/sass/media-queries.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/login.css",
+    "inputFile": "wwwroot/sass/login.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/navigation-container.css",
+    "inputFile": "wwwroot/sass/navigation-container.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/product-details.css",
+    "inputFile": "wwwroot/sass/product-details.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/register.css",
+    "inputFile": "wwwroot/sass/register.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/typography.css",
+    "inputFile": "wwwroot/sass/typography.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/variables.css",
+    "inputFile": "wwwroot/sass/variables.scss"
+  }
+]

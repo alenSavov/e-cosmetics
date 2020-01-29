@@ -1,0 +1,49 @@
+﻿.edit-article-wrapper {
+  display: flex;
+  flex: 0 0 100%;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.article-container {
+  display: flex;
+  flex: 0 0 85%;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--color-main-black);
+  margin: 5em 0; }
+
+.article-container h2 {
+  flex: 0 0 100%;
+  color: white;
+  font-family: var(--font-cormorant);
+  margin: 1.5em 0 0.5em 0;
+  text-align: center;
+  font-size: 3.6em; }
+
+.article-container form {
+  display: flex;
+  flex: 0 0 95%;
+  flex-wrap: wrap;
+  background-color: var(--color-main-black);
+  margin: 0 0 3em 0; }
+
+.article-container form div {
+  display: flex;
+  flex: 0 0 100%;
+  flex-wrap: wrap;
+  margin: 1em 0;
+  color: white; }
+
+.article-container form div label {
+  font-family: var(--font-cormorant);
+  font-size: 1.5em;
+  flex: 0 0 100%; }
+
+.article-container form div input {
+  flex: 0 0 100%; }
+
+.article-container form div textarea {
+  flex: 0 0 100%; }
+
+.article-container form div.button {
+  justify-content: center; }

@@ -1,0 +1,11 @@
+﻿:root {
+  /*Main Colors*/
+  --color-main-black: #191919;
+  --color-main-more-deeper-black: #101010;
+  --color-main-white: white;
+  --color-main-gray: #f2f2f2;
+  --color-depper-gray: #a8a8a8;
+  --color-hover: #b7c2c6;
+  /*Fonts*/
+  --font-cormorant: "Cormorant Garamond";
+  --font-size-body: 14px; }
