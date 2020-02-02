@@ -4,68 +4,56 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<h1>Register</h1>
+<section class="form-template-wrapper">
+    <section class="form-template-container-wrapper">
+        <section class="form-template">
 
-    <form class="signup-form  " asp-controller="Account" asp-action="Register" method="post">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <input asp-for="Username" class="form-control text-center" id="username" placeholder="Username" />
-        <span asp-validation-for="Username" class="text-danger"></span>
-        <input asp-for="Password" class="form-control text-center " placeholder="Password" />
-        <span asp-validation-for="Password" class="text-danger m-1"></span>
-        <input asp-for="ConfirmPassword" class="form-control text-center " placeholder="Confirm Password" />
-        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-        <input asp-for="Email" class="form-control text-center" placeholder="Email" />
-        <span asp-validation-for="Email" class="text-danger"></span>
-        <input asp-for="FirstName" class="form-control text-center" placeholder="First Name" />
-        <span asp-validation-for="FirstName" class="text-danger"></span>
-        <input asp-for="LastName" class="form-control text-center" placeholder="Last Name" />
-        <span asp-validation-for="LastName" class="text-danger"></span>
+            <form class="signup-form" asp-controller="Account" asp-action="Register" method="post">
+                <span class="form-logo">
+                    <img src="~/img/FavIcons/favicon-32x32.png" class="zmdi zmdi-landscape" alt="Alternate Text" />
+                </span>
 
-        <button class="site-btn" style="background-color:black">Register</button>
-    </form>*@
+                <span class="form-title">Register</span>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="wrap-input">
+                    @*<label asp-for="Username" class="">Username</label>*@
+                    <input asp-for="Username" class="input100" id="username" placeholder="Username" />
+                    <span asp-validation-for="Username" class="focus-input100 text-danger"></span>
+                </div>
 
+                <div class="wrap-input">
+                    @*<label asp-for="Password" class="">Password</label>*@
+                    <input asp-for="Password" class="input100" placeholder="Password" />
+                    <span asp-validation-for="Password" class="focus-input100 text-danger m-1"></span>
+                </div>
 
-<section class="register-wrapper">
+                <div class="wrap-input">
+                    @*<label asp-for="ConfirmPassword" class="">Confirm Password</label>*@
+                    <input asp-for="ConfirmPassword" class="input100" placeholder="Confirm Password" />
+                    <span asp-validation-for="ConfirmPassword" class="focus-input100 text-danger"></span>
+                </div>
+                <div class="wrap-input">
+                    @*<label asp-for="Email" class="">Email</label>*@
+                    <input asp-for="Email" class="input100" placeholder="Email" />
+                    <span asp-validation-for="Email" class="focus-input100 text-danger"></span>
+                </div>
+                <div class="wrap-input">
+                    @*<label asp-for="FirstName" class="">FirstName</label>*@
+                    <input asp-for="FirstName" class="input100" placeholder="First Name" />
+                    <span asp-validation-for="FirstName" class="focus-input100 text-danger"></span>
+                </div>
+                <div class="wrap-input">
+                    @*<label asp-for="LastName" class="">LastName</label>*@
+                    <input asp-for="LastName" class="input100" placeholder="Last Name" />
+                    <span asp-validation-for="LastName" class="focus-input100 text-danger"></span>
+                </div>
 
-    <section class="register-container">
-
-        <h2>Register</h2>
-        <form class="signup-form" asp-controller="Account" asp-action="Register" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div>
-                <label asp-for="Username" class="">Username</label>
-                <input asp-for="Username" class="form-control text-center" id="username" placeholder="Username" />
-                <span asp-validation-for="Username" class="text-danger"></span>
-            </div>
-
-            <div>
-                <label asp-for="Password" class="">Password</label>
-                <input asp-for="Password" class="form-control text-center " placeholder="Password" />
-                <span asp-validation-for="Password" class="text-danger m-1"></span>
-            </div>
-
-            <div>
-                <label asp-for="ConfirmPassword" class="">Confirm Password</label>
-                <input asp-for="ConfirmPassword" class="form-control text-center " placeholder="Confirm Password" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            </div>
-            <div>
-                <label asp-for="Email" class="">Email</label>
-                <input asp-for="Email" class="form-control text-center" placeholder="Email" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div>
-                <label asp-for="FirstName" class="">FirstName</label>
-                <input asp-for="FirstName" class="form-control text-center" placeholder="First Name" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div>
-                <label asp-for="LastName" class="">LastName</label>
-                <input asp-for="LastName" class="form-control text-center" placeholder="Last Name" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-
-            <button class="white-button">Register</button>
-        </form>
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">
+                        Register
+                    </button>
+                </div>
+            </form>
+        </section>
     </section>
 </section>

@@ -90,5 +90,9 @@
   {
     "outputFile": "wwwroot/sass/contacts.css",
     "inputFile": "wwwroot/sass/contacts.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/form-template.css",
+    "inputFile": "wwwroot/sass/form-template.scss"
   }
 ]
