@@ -86,6 +86,7 @@
   {
     "outputFile": "wwwroot/sass/variables.css",
     "inputFile": "wwwroot/sass/variables.scss"
+<<<<<<< HEAD
   },
   {
     "outputFile": "wwwroot/sass/contacts.css",
@@ -94,5 +95,7 @@
   {
     "outputFile": "wwwroot/sass/form-template.css",
     "inputFile": "wwwroot/sass/form-template.scss"
+=======
+>>>>>>> d3d1c122780087a1a84fe127c300dd1be4c98242
   }
 ]
