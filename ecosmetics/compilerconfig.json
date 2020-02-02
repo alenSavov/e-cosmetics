@@ -86,5 +86,9 @@
   {
     "outputFile": "wwwroot/sass/variables.css",
     "inputFile": "wwwroot/sass/variables.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/contacts.css",
+    "inputFile": "wwwroot/sass/contacts.scss"
   }
 ]
